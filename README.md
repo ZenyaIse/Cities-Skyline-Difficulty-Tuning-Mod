@@ -14,7 +14,7 @@ Exit to the Main Menu, change the difficulty options, and load the game again.
 - **Medium.** Just a little harder than vanilla.
 - **Hard.** Close to the Hard Mod which comes with the game.
 - **Advanced.** Even harder.
-- **Expert.** Reccommended for experienced players.
+- **Expert.** Recommended for experienced players.
 - **Challenge.** Still playable.
 - **Impossible.** Even don't try this.
 
