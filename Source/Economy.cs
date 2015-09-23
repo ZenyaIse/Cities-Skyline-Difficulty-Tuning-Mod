@@ -1,5 +1,4 @@
-﻿using System;
-using ICities;
+﻿using ICities;
 
 namespace DifficultyTuningMod
 {

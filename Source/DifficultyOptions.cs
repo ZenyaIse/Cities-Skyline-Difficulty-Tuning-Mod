@@ -62,6 +62,13 @@ namespace DifficultyTuningMod
         }
 
         public Difficulties Difficulty = Difficulties.Expert;
+        public static Difficulties GameDifficulty
+        {
+            get
+            {
+                return Instance.Difficulty;
+            }
+        }
         public static string[] DifficultyList
         {
             get

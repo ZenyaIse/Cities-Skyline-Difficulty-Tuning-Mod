@@ -53,15 +53,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Achievements.cs" />
     <Compile Include="DifficultyOptions.cs" />
     <Compile Include="Areas.cs" />
     <Compile Include="Demand.cs" />
+    <Compile Include="ExtendedInfoPanelsObject.cs" />
     <Compile Include="LevelUp.cs" />
     <Compile Include="LoadingExtension.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="Economy.cs" />
     <Compile Include="Milestones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThreadingExtension.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -58,6 +58,7 @@ namespace DifficultyTuningMod
         {
             DifficultyOptions.Instance.Difficulty = (Difficulties)sel;
             DifficultyOptions.Save();
+            Achievements.Update();
         }
         private void ConstructionCostMultiplierOnSelected(int sel)
         {
