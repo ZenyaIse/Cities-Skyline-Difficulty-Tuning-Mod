@@ -13,13 +13,6 @@ namespace DifficultyTuningMod
             }
 
             Achievements.Update();
-
-            //ExtendedInfoPanelsObject.OnLevelLoaded();
-        }
-
-        public override void OnLevelUnloading()
-        {
-            //ExtendedInfoPanelsObject.OnLevelUnloading();
         }
     }
 }
