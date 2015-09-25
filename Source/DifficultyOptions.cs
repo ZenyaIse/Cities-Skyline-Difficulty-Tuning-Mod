@@ -61,7 +61,7 @@ namespace DifficultyTuningMod
             return (m * 100).ToString() + "%";
         }
 
-        public Difficulties Difficulty = Difficulties.Expert;
+        public Difficulties Difficulty = Difficulties.Normal;
         public static Difficulties GameDifficulty
         {
             get
@@ -85,7 +85,7 @@ namespace DifficultyTuningMod
         }
 
         #region ConstructionCost
-        public int ConstructionCostMultiplierIndex = 5;
+        public int ConstructionCostMultiplierIndex = 1;
         private float getConstructionCostMultiplier(int n)
         {
             if (Difficulty == Difficulties.Custom) n = ConstructionCostMultiplierIndex;
@@ -134,7 +134,7 @@ namespace DifficultyTuningMod
             }
         }
 
-        public int RoadConstructionCostMultiplierIndex = 5;
+        public int RoadConstructionCostMultiplierIndex = 1;
         private float getRoadConstructionCostMultiplier(int n)
         {
             if (Difficulty == Difficulties.Custom) n = RoadConstructionCostMultiplierIndex;
@@ -185,7 +185,7 @@ namespace DifficultyTuningMod
         #endregion
 
         #region MaintenanceCost
-        public int MaintenanceCostMultiplierIndex = 5;
+        public int MaintenanceCostMultiplierIndex = 1;
         private float getMaintenanceCostMultiplier(int n)
         {
             if (Difficulty == Difficulties.Custom) n = MaintenanceCostMultiplierIndex;
@@ -234,7 +234,7 @@ namespace DifficultyTuningMod
             }
         }
 
-        public int RoadMaintenanceCostMultiplierIndex = 5;
+        public int RoadMaintenanceCostMultiplierIndex = 1;
         private float getRoadMaintenanceCostMultiplier(int n)
         {
             if (Difficulty == Difficulties.Custom) n = RoadMaintenanceCostMultiplierIndex;
@@ -285,7 +285,7 @@ namespace DifficultyTuningMod
         #endregion
 
         #region Demand
-        public int DemandOffsetIndex = 5;
+        public int DemandOffsetIndex = 1;
         private int getDemandOffset(int n)
         {
             if (Difficulty == Difficulties.Custom) n = DemandOffsetIndex;
@@ -334,7 +334,7 @@ namespace DifficultyTuningMod
             }
         }
 
-        public int DemandMultiplierIndex = 5;
+        public int DemandMultiplierIndex = 1;
         private float getDemandMultiplier(int n)
         {
             if (Difficulty == Difficulties.Custom) n = DemandMultiplierIndex;
@@ -385,7 +385,7 @@ namespace DifficultyTuningMod
         #endregion
 
         #region Area
-        public int AreaCostMultiplierIndex = 5;
+        public int AreaCostMultiplierIndex = 1;
         private float getAreaCostMultiplier(int n)
         {
             if (Difficulty == Difficulties.Custom) n = AreaCostMultiplierIndex;
@@ -436,7 +436,7 @@ namespace DifficultyTuningMod
         #endregion
 
         #region RewardMultiplier
-        public int RewardMultiplierIndex = 5;
+        public int RewardMultiplierIndex = 1;
         private float getRewardMultiplier(int n)
         {
             if (Difficulty == Difficulties.Custom) n = RewardMultiplierIndex;
@@ -487,7 +487,7 @@ namespace DifficultyTuningMod
         #endregion
 
         #region RelocationCostMultiplier
-        public int RelocationCostMultiplierIndex = 5;
+        public int RelocationCostMultiplierIndex = 1;
         private float getRelocationCostMultiplier(int n)
         {
             if (Difficulty == Difficulties.Custom) n = RelocationCostMultiplierIndex;
@@ -518,7 +518,7 @@ namespace DifficultyTuningMod
         #endregion
 
         #region ResidentialTargetLandValue
-        public int ResidentialTargetLandValueIndex = 5;
+        public int ResidentialTargetLandValueIndex = 1;
         private int getResidentialTargetLandValue(int n, Level level)
         {
             if (Difficulty == Difficulties.Custom) n = ResidentialTargetLandValueIndex;
@@ -587,7 +587,7 @@ namespace DifficultyTuningMod
         #endregion
 
         #region ResidentialTooLowLandValue
-        public int ResidentialTooLowLandValueIndex = 5;
+        public int ResidentialTooLowLandValueIndex = 1;
         private int getResidentialTooLowLandValue(int n, Level level)
         {
             if (Difficulty == Difficulties.Custom) n = ResidentialTooLowLandValueIndex;
@@ -637,7 +637,7 @@ namespace DifficultyTuningMod
         #endregion
 
         #region CommercialTargetLandValue
-        public int CommercialTargetLandValueIndex = 5;
+        public int CommercialTargetLandValueIndex = 1;
         private int getCommercialTargetLandValue(int n, Level level)
         {
             if (Difficulty == Difficulties.Custom) n = CommercialTargetLandValueIndex;
@@ -686,7 +686,7 @@ namespace DifficultyTuningMod
         #endregion
 
         #region CommercialTooLowLandValue
-        public int CommercialTooLowLandValueIndex = 5;
+        public int CommercialTooLowLandValueIndex = 1;
         private int getCommercialTooLowLandValue(int n, Level level)
         {
             if (Difficulty == Difficulties.Custom) n = CommercialTooLowLandValueIndex;
@@ -718,7 +718,7 @@ namespace DifficultyTuningMod
         #endregion
 
         #region IndustrialTargetService
-        public int IndustrialTargetServiceIndex = 5;
+        public int IndustrialTargetServiceIndex = 1;
         private int getIndustrialTargetService(int n, Level level)
         {
             if (Difficulty == Difficulties.Custom) n = IndustrialTargetServiceIndex;
@@ -767,7 +767,7 @@ namespace DifficultyTuningMod
         #endregion
 
         #region IndustrialTooFewService
-        public int IndustrialTooFewServiceIndex = 5;
+        public int IndustrialTooFewServiceIndex = 1;
         private int getIndustrialTooFewService(int n, Level level)
         {
             if (Difficulty == Difficulties.Custom) n = IndustrialTooFewServiceIndex;
@@ -799,7 +799,7 @@ namespace DifficultyTuningMod
         #endregion
 
         #region OfficeTargetService
-        public int OfficeTargetServiceIndex = 5;
+        public int OfficeTargetServiceIndex = 1;
         private int getOfficeTargetService(int n, Level level)
         {
             if (Difficulty == Difficulties.Custom) n = OfficeTargetServiceIndex;
@@ -848,7 +848,7 @@ namespace DifficultyTuningMod
         #endregion
 
         #region OfficeTooFewService
-        public int OfficeTooFewServiceIndex = 5;
+        public int OfficeTooFewServiceIndex = 1;
         private int getOfficeTooFewService(int n, Level level)
         {
             if (Difficulty == Difficulties.Custom) n = OfficeTooFewServiceIndex;

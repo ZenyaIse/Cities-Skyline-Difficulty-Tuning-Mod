@@ -46,9 +46,9 @@ namespace DifficultyTuningMod
                 DifficultyOptions.Instance.ResidentialTargetLandValueIndex, ResidentialTargetLandValueOnSelected);
             customOptionsGroup.AddDropdown("Target land values for commercial buildings to level up (Level2, 3):", DifficultyOptions.CommercialTargetLandValueList,
                 DifficultyOptions.Instance.CommercialTargetLandValueIndex, CommercialTargetLandValueOnSelected);
-            customOptionsGroup.AddDropdown("Target service for industrial buildings to level up (Level2, 3):", DifficultyOptions.IndustrialTargetServiceList,
+            customOptionsGroup.AddDropdown("Target service score for industrial buildings to level up (Level2, 3):", DifficultyOptions.IndustrialTargetServiceList,
                 DifficultyOptions.Instance.IndustrialTargetServiceIndex, IndustrialTargetServiceOnSelected);
-            customOptionsGroup.AddDropdown("Target service for office buildings to level up (Level2, 3):", DifficultyOptions.OfficeTargetServiceList,
+            customOptionsGroup.AddDropdown("Target service score for office buildings to level up (Level2, 3):", DifficultyOptions.OfficeTargetServiceList,
                 DifficultyOptions.Instance.OfficeTargetServiceIndex, OfficeTargetServiceOnSelected);
 
             customOptionsGroup.AddSpace(50);
