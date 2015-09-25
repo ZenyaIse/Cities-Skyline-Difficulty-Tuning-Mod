@@ -45,7 +45,8 @@ namespace DifficultyTuningMod
             {
                 return constructionCost;
             }
-            return constructionCost / 2;
+
+            return refundAmount;
         }
     }
 }
