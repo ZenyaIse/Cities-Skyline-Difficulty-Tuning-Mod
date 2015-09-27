@@ -75,9 +75,9 @@ namespace DifficultyTuningMod
             {
                 List<string> sl = new List<string>();
 
-                for (int i = (int)Difficulties.Easy; i <= (int)Difficulties.Custom; i++)
+                for (Difficulties d = Difficulties.Easy; d <= Difficulties.Custom; d++)
                 {
-                    sl.Add(((Difficulties)i).ToString());
+                    sl.Add(d.ToString());
                 }
 
                 return sl.ToArray();
@@ -88,8 +88,6 @@ namespace DifficultyTuningMod
         public int ConstructionCostMultiplierIndex = 1;
         private float getConstructionCostMultiplier(int n)
         {
-            if (Difficulty == Difficulties.Custom) n = ConstructionCostMultiplierIndex;
-
             switch ((Difficulties)n)
             {
                 case Difficulties.Easy:
@@ -116,7 +114,9 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getConstructionCostMultiplier((int)Instance.Difficulty);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.ConstructionCostMultiplierIndex : (int)Instance.Difficulty;
+
+                return Instance.getConstructionCostMultiplier(n);
             }
         }
         public static string[] ConstructionCostMultiplierList
@@ -137,8 +137,6 @@ namespace DifficultyTuningMod
         public int RoadConstructionCostMultiplierIndex = 1;
         private float getRoadConstructionCostMultiplier(int n)
         {
-            if (Difficulty == Difficulties.Custom) n = RoadConstructionCostMultiplierIndex;
-
             switch ((Difficulties)n)
             {
                 case Difficulties.Easy:
@@ -165,7 +163,9 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getRoadConstructionCostMultiplier((int)Instance.Difficulty);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.RoadConstructionCostMultiplierIndex : (int)Instance.Difficulty;
+
+                return Instance.getRoadConstructionCostMultiplier(n);
             }
         }
         public static string[] RoadConstructionCostMultiplierList
@@ -188,8 +188,6 @@ namespace DifficultyTuningMod
         public int MaintenanceCostMultiplierIndex = 1;
         private float getMaintenanceCostMultiplier(int n)
         {
-            if (Difficulty == Difficulties.Custom) n = MaintenanceCostMultiplierIndex;
-
             switch ((Difficulties)n)
             {
                 case Difficulties.Easy:
@@ -216,7 +214,9 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getMaintenanceCostMultiplier((int)Instance.Difficulty);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.MaintenanceCostMultiplierIndex : (int)Instance.Difficulty;
+
+                return Instance.getMaintenanceCostMultiplier(n);
             }
         }
         public static string[] MaintenanceCostMultiplierList
@@ -237,8 +237,6 @@ namespace DifficultyTuningMod
         public int RoadMaintenanceCostMultiplierIndex = 1;
         private float getRoadMaintenanceCostMultiplier(int n)
         {
-            if (Difficulty == Difficulties.Custom) n = RoadMaintenanceCostMultiplierIndex;
-
             switch ((Difficulties)n)
             {
                 case Difficulties.Easy:
@@ -265,7 +263,9 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getRoadMaintenanceCostMultiplier((int)Instance.Difficulty);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.RoadMaintenanceCostMultiplierIndex : (int)Instance.Difficulty;
+
+                return Instance.getRoadMaintenanceCostMultiplier(n);
             }
         }
         public static string[] RoadMaintenanceCostMultiplierList
@@ -288,8 +288,6 @@ namespace DifficultyTuningMod
         public int DemandOffsetIndex = 1;
         private int getDemandOffset(int n)
         {
-            if (Difficulty == Difficulties.Custom) n = DemandOffsetIndex;
-
             switch ((Difficulties)n)
             {
                 case Difficulties.Easy:
@@ -316,7 +314,9 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getDemandOffset((int)Instance.Difficulty);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.DemandOffsetIndex : (int)Instance.Difficulty;
+
+                return Instance.getDemandOffset(n);
             }
         }
         public static string[] DemandOffsetList
@@ -337,8 +337,6 @@ namespace DifficultyTuningMod
         public int DemandMultiplierIndex = 1;
         private float getDemandMultiplier(int n)
         {
-            if (Difficulty == Difficulties.Custom) n = DemandMultiplierIndex;
-
             switch ((Difficulties)n)
             {
                 case Difficulties.Easy:
@@ -365,7 +363,9 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getDemandMultiplier((int)Instance.Difficulty);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.DemandMultiplierIndex : (int)Instance.Difficulty;
+
+                return Instance.getDemandMultiplier(n);
             }
         }
         public static string[] DemandMultiplierList
@@ -388,8 +388,6 @@ namespace DifficultyTuningMod
         public int AreaCostMultiplierIndex = 1;
         private float getAreaCostMultiplier(int n)
         {
-            if (Difficulty == Difficulties.Custom) n = AreaCostMultiplierIndex;
-
             switch ((Difficulties)n)
             {
                 case Difficulties.Easy:
@@ -416,7 +414,9 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getAreaCostMultiplier((int)Instance.Difficulty);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.AreaCostMultiplierIndex : (int)Instance.Difficulty;
+
+                return Instance.getAreaCostMultiplier(n);
             }
         }
         public static string[] AreaCostMultiplierList
@@ -439,8 +439,6 @@ namespace DifficultyTuningMod
         public int RewardMultiplierIndex = 1;
         private float getRewardMultiplier(int n)
         {
-            if (Difficulty == Difficulties.Custom) n = RewardMultiplierIndex;
-
             switch ((Difficulties)n)
             {
                 case Difficulties.Easy:
@@ -467,7 +465,9 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getRewardMultiplier((int)Instance.Difficulty);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.RewardMultiplierIndex : (int)Instance.Difficulty;
+
+                return Instance.getRewardMultiplier(n);
             }
         }
         public static string[] RewardMultiplierList
@@ -490,15 +490,15 @@ namespace DifficultyTuningMod
         public int RelocationCostMultiplierIndex = 1;
         private float getRelocationCostMultiplier(int n)
         {
-            if (Difficulty == Difficulties.Custom) n = RelocationCostMultiplierIndex;
-
             return System.Math.Min(0.9f, 0.2f * n);
         }
         public static float RelocationCostMultiplier
         {
             get
             {
-                return Instance.getRelocationCostMultiplier((int)Instance.Difficulty);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.RelocationCostMultiplierIndex : (int)Instance.Difficulty;
+
+                return Instance.getRelocationCostMultiplier(n);
             }
         }
         public static string[] RelocationCostMultiplierList
@@ -521,8 +521,6 @@ namespace DifficultyTuningMod
         public int ResidentialTargetLandValueIndex = 1;
         private int getResidentialTargetLandValue(int n, Level level)
         {
-            if (Difficulty == Difficulties.Custom) n = ResidentialTargetLandValueIndex;
-
             switch (level)
             {
                 case Level.Level2:
@@ -541,28 +539,36 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getResidentialTargetLandValue((int)Instance.Difficulty, Level.Level2);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.ResidentialTargetLandValueIndex : (int)Instance.Difficulty;
+
+                return Instance.getResidentialTargetLandValue(n, Level.Level2);
             }
         }
         public static int ResidentialTargetLandValueLevel3
         {
             get
             {
-                return Instance.getResidentialTargetLandValue((int)Instance.Difficulty, Level.Level3);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.ResidentialTargetLandValueIndex : (int)Instance.Difficulty;
+
+                return Instance.getResidentialTargetLandValue(n, Level.Level3);
             }
         }
         public static int ResidentialTargetLandValueLevel4
         {
             get
             {
-                return Instance.getResidentialTargetLandValue((int)Instance.Difficulty, Level.Level4);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.ResidentialTargetLandValueIndex : (int)Instance.Difficulty;
+
+                return Instance.getResidentialTargetLandValue(n, Level.Level4);
             }
         }
         public static int ResidentialTargetLandValueLevel5
         {
             get
             {
-                return Instance.getResidentialTargetLandValue((int)Instance.Difficulty, Level.Level5);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.ResidentialTargetLandValueIndex : (int)Instance.Difficulty;
+
+                return Instance.getResidentialTargetLandValue(n, Level.Level5);
             }
         }
         public static string[] ResidentialTargetLandValueList
@@ -590,8 +596,6 @@ namespace DifficultyTuningMod
         public int ResidentialTooLowLandValueIndex = 1;
         private int getResidentialTooLowLandValue(int n, Level level)
         {
-            if (Difficulty == Difficulties.Custom) n = ResidentialTooLowLandValueIndex;
-
             switch (level)
             {
                 case Level.Level2:
@@ -610,28 +614,36 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getResidentialTooLowLandValue((int)Instance.Difficulty, Level.Level2);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.ResidentialTooLowLandValueIndex : (int)Instance.Difficulty;
+
+                return Instance.getResidentialTooLowLandValue(n, Level.Level2);
             }
         }
         public static int ResidentialTooLowLandValueLevel3
         {
             get
             {
-                return Instance.getResidentialTooLowLandValue((int)Instance.Difficulty, Level.Level3);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.ResidentialTooLowLandValueIndex : (int)Instance.Difficulty;
+
+                return Instance.getResidentialTooLowLandValue(n, Level.Level3);
             }
         }
         public static int ResidentialTooLowLandValueLevel4
         {
             get
             {
-                return Instance.getResidentialTooLowLandValue((int)Instance.Difficulty, Level.Level4);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.ResidentialTooLowLandValueIndex : (int)Instance.Difficulty;
+
+                return Instance.getResidentialTooLowLandValue(n, Level.Level4);
             }
         }
         public static int ResidentialTooLowLandValueLevel5
         {
             get
             {
-                return Instance.getResidentialTooLowLandValue((int)Instance.Difficulty, Level.Level5);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.ResidentialTooLowLandValueIndex : (int)Instance.Difficulty;
+
+                return Instance.getResidentialTooLowLandValue(n, Level.Level5);
             }
         }
         #endregion
@@ -640,8 +652,6 @@ namespace DifficultyTuningMod
         public int CommercialTargetLandValueIndex = 1;
         private int getCommercialTargetLandValue(int n, Level level)
         {
-            if (Difficulty == Difficulties.Custom) n = CommercialTargetLandValueIndex;
-
             switch (level)
             {
                 case Level.Level2:
@@ -656,14 +666,18 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getCommercialTargetLandValue((int)Instance.Difficulty, Level.Level2);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.CommercialTargetLandValueIndex : (int)Instance.Difficulty;
+
+                return Instance.getCommercialTargetLandValue(n, Level.Level2);
             }
         }
         public static int CommercialTargetLandValueLevel3
         {
             get
             {
-                return Instance.getCommercialTargetLandValue((int)Instance.Difficulty, Level.Level3);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.CommercialTargetLandValueIndex : (int)Instance.Difficulty;
+
+                return Instance.getCommercialTargetLandValue(n, Level.Level3);
             }
         }
         public static string[] CommercialTargetLandValueList
@@ -689,8 +703,6 @@ namespace DifficultyTuningMod
         public int CommercialTooLowLandValueIndex = 1;
         private int getCommercialTooLowLandValue(int n, Level level)
         {
-            if (Difficulty == Difficulties.Custom) n = CommercialTooLowLandValueIndex;
-
             switch (level)
             {
                 case Level.Level2:
@@ -705,14 +717,18 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getCommercialTooLowLandValue((int)Instance.Difficulty, Level.Level2);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.CommercialTooLowLandValueIndex : (int)Instance.Difficulty;
+
+                return Instance.getCommercialTooLowLandValue(n, Level.Level2);
             }
         }
         public static int CommercialTooLowLandValueLevel3
         {
             get
             {
-                return Instance.getCommercialTooLowLandValue((int)Instance.Difficulty, Level.Level3);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.CommercialTooLowLandValueIndex : (int)Instance.Difficulty;
+
+                return Instance.getCommercialTooLowLandValue(n, Level.Level3);
             }
         }
         #endregion
@@ -721,8 +737,6 @@ namespace DifficultyTuningMod
         public int IndustrialTargetServiceIndex = 1;
         private int getIndustrialTargetService(int n, Level level)
         {
-            if (Difficulty == Difficulties.Custom) n = IndustrialTargetServiceIndex;
-
             switch (level)
             {
                 case Level.Level2:
@@ -737,14 +751,18 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getIndustrialTargetService((int)Instance.Difficulty, Level.Level2);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.IndustrialTargetServiceIndex : (int)Instance.Difficulty;
+
+                return Instance.getIndustrialTargetService(n, Level.Level2);
             }
         }
         public static int IndustrialTargetServiceLevel3
         {
             get
             {
-                return Instance.getIndustrialTargetService((int)Instance.Difficulty, Level.Level3);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.IndustrialTargetServiceIndex : (int)Instance.Difficulty;
+
+                return Instance.getIndustrialTargetService(n, Level.Level3);
             }
         }
         public static string[] IndustrialTargetServiceList
@@ -770,8 +788,6 @@ namespace DifficultyTuningMod
         public int IndustrialTooFewServiceIndex = 1;
         private int getIndustrialTooFewService(int n, Level level)
         {
-            if (Difficulty == Difficulties.Custom) n = IndustrialTooFewServiceIndex;
-
             switch (level)
             {
                 case Level.Level2:
@@ -786,14 +802,18 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getIndustrialTooFewService((int)Instance.Difficulty, Level.Level2);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.IndustrialTooFewServiceIndex : (int)Instance.Difficulty;
+
+                return Instance.getIndustrialTooFewService(n, Level.Level2);
             }
         }
         public static int IndustrialTooFewServiceLevel3
         {
             get
             {
-                return Instance.getIndustrialTooFewService((int)Instance.Difficulty, Level.Level3);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.IndustrialTooFewServiceIndex : (int)Instance.Difficulty;
+
+                return Instance.getIndustrialTooFewService(n, Level.Level3);
             }
         }
         #endregion
@@ -802,8 +822,6 @@ namespace DifficultyTuningMod
         public int OfficeTargetServiceIndex = 1;
         private int getOfficeTargetService(int n, Level level)
         {
-            if (Difficulty == Difficulties.Custom) n = OfficeTargetServiceIndex;
-
             switch (level)
             {
                 case Level.Level2:
@@ -818,14 +836,18 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getOfficeTargetService((int)Instance.Difficulty, Level.Level2);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.OfficeTargetServiceIndex : (int)Instance.Difficulty;
+
+                return Instance.getOfficeTargetService(n, Level.Level2);
             }
         }
         public static int OfficeTargetServiceLevel3
         {
             get
             {
-                return Instance.getOfficeTargetService((int)Instance.Difficulty, Level.Level3);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.OfficeTargetServiceIndex : (int)Instance.Difficulty;
+
+                return Instance.getOfficeTargetService(n, Level.Level3);
             }
         }
         public static string[] OfficeTargetServiceList
@@ -851,8 +873,6 @@ namespace DifficultyTuningMod
         public int OfficeTooFewServiceIndex = 1;
         private int getOfficeTooFewService(int n, Level level)
         {
-            if (Difficulty == Difficulties.Custom) n = OfficeTooFewServiceIndex;
-
             switch (level)
             {
                 case Level.Level2:
@@ -867,14 +887,18 @@ namespace DifficultyTuningMod
         {
             get
             {
-                return Instance.getOfficeTooFewService((int)Instance.Difficulty, Level.Level2);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.OfficeTooFewServiceIndex : (int)Instance.Difficulty;
+
+                return Instance.getOfficeTooFewService(n, Level.Level2);
             }
         }
         public static int OfficeTooFewServiceLevel3
         {
             get
             {
-                return Instance.getOfficeTooFewService((int)Instance.Difficulty, Level.Level3);
+                int n = (Instance.Difficulty == Difficulties.Custom) ? Instance.OfficeTooFewServiceIndex : (int)Instance.Difficulty;
+
+                return Instance.getOfficeTooFewService(n, Level.Level3);
             }
         }
         #endregion
