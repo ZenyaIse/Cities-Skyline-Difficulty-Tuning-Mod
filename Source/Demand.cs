@@ -7,17 +7,23 @@ namespace DifficultyTuningMod
     {
         public override int OnCalculateResidentialDemand(int originalDemand)
         {
-            return (int)Math.Round((originalDemand - DifficultyOptions.DemandOffset) * DifficultyOptions.DemandMultiplier);
+            return scaleDemandByDifficulty(originalDemand);
         }
 
         public override int OnCalculateCommercialDemand(int originalDemand)
         {
-            return (int)Math.Round((originalDemand - DifficultyOptions.DemandOffset) * DifficultyOptions.DemandMultiplier);
+            return scaleDemandByDifficulty(originalDemand);
         }
 
         public override int OnCalculateWorkplaceDemand(int originalDemand)
         {
-            return (int)Math.Round((originalDemand - DifficultyOptions.DemandOffset) * DifficultyOptions.DemandMultiplier);
+            return scaleDemandByDifficulty(originalDemand);
+        }
+
+        private int scaleDemandByDifficulty(int demandValue)
+        {
+            float value = (demandValue - DifficultyOptions.DemandOffset) * DifficultyOptions.DemandMultiplier;
+            return Math.Min(100, (int)Math.Round(value)); // Limit to 100 to avoid possible uncompatibility with other mods
         }
     }
 }
