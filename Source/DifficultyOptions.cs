@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 using ICities;
@@ -77,7 +77,7 @@ namespace DifficultyTuningMod
 
                 for (Difficulties d = Difficulties.Easy; d <= Difficulties.Custom; d++)
                 {
-                    sl.Add(d.ToString());
+                    sl.Add(DTMLang.text(d.ToString()));
                 }
 
                 return sl.ToArray();
