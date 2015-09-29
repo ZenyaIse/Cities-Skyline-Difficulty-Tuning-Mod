@@ -1,55 +1,54 @@
 using ICities;
 
-
 namespace DifficultyTuningMod
 {
-	public class Mod : IUserMod
-	{
+    public class Mod : IUserMod
+    {
         public string Name
-		{
-			get { return DTMLang.text("MOD_NAME"); }
-		}
+        {
+            get { return DTMLang.Text("MOD_NAME"); }
+        }
 
-		public string Description
-		{
-			get { return DTMLang.text("MOD_DESCRIPTION"); }
-		}
+        public string Description
+        {
+            get { return DTMLang.Text("MOD_DESCRIPTION"); }
+        }
 
 
         #region Options UI
 
         public void OnSettingsUI(UIHelperBase helper)
         {
-            UIHelperBase difficultyLevelGroup = helper.AddGroup(DTMLang.text("DTM_OPTIONS"));
-            difficultyLevelGroup.AddDropdown(DTMLang.text("DIFFICULTY_LEVEL"), DifficultyOptions.DifficultyList, (int)DifficultyOptions.Instance.Difficulty, DifficultyLevelOnSelected);
+            UIHelperBase difficultyLevelGroup = helper.AddGroup(DTMLang.Text("DTM_OPTIONS"));
+            difficultyLevelGroup.AddDropdown(DTMLang.Text("DIFFICULTY_LEVEL"), DifficultyOptions.DifficultyList, (int)DifficultyOptions.Instance.Difficulty, DifficultyLevelOnSelected);
             //difficultyLevelGroup.AddButton("Save Options", SaveBtnClick);
 
-            UIHelperBase customOptionsGroup = helper.AddGroup(DTMLang.text("CUSTOM_OPTIONS"));
-            customOptionsGroup.AddDropdown(DTMLang.text("CONSTRUCTION_COST"), DifficultyOptions.ConstructionCostMultiplierList,
+            UIHelperBase customOptionsGroup = helper.AddGroup(DTMLang.Text("CUSTOM_OPTIONS"));
+            customOptionsGroup.AddDropdown(DTMLang.Text("CONSTRUCTION_COST"), DifficultyOptions.ConstructionCostMultiplierList,
                 DifficultyOptions.Instance.ConstructionCostMultiplierIndex, ConstructionCostMultiplierOnSelected);
-            customOptionsGroup.AddDropdown(DTMLang.text("ROAD_CONSTRUCTION_COST"), DifficultyOptions.RoadConstructionCostMultiplierList,
+            customOptionsGroup.AddDropdown(DTMLang.Text("ROAD_CONSTRUCTION_COST"), DifficultyOptions.RoadConstructionCostMultiplierList,
                 DifficultyOptions.Instance.RoadConstructionCostMultiplierIndex, RoadConstructionCostMultiplierOnSelected);
-            customOptionsGroup.AddDropdown(DTMLang.text("MAINTENANCE_COST"), DifficultyOptions.MaintenanceCostMultiplierList,
+            customOptionsGroup.AddDropdown(DTMLang.Text("MAINTENANCE_COST"), DifficultyOptions.MaintenanceCostMultiplierList,
                 DifficultyOptions.Instance.MaintenanceCostMultiplierIndex, MaintenanceCostMultiplierOnSelected);
-            customOptionsGroup.AddDropdown(DTMLang.text("ROAD_MAINTENANCE_COST"), DifficultyOptions.RoadMaintenanceCostMultiplierList,
+            customOptionsGroup.AddDropdown(DTMLang.Text("ROAD_MAINTENANCE_COST"), DifficultyOptions.RoadMaintenanceCostMultiplierList,
                 DifficultyOptions.Instance.RoadMaintenanceCostMultiplierIndex, RoadMaintenanceCostMultiplierOnSelected);
-            customOptionsGroup.AddDropdown(DTMLang.text("AREA_COST_MULTIPLIER"), DifficultyOptions.AreaCostMultiplierList,
+            customOptionsGroup.AddDropdown(DTMLang.Text("AREA_COST_MULTIPLIER"), DifficultyOptions.AreaCostMultiplierList,
                 DifficultyOptions.Instance.AreaCostMultiplierIndex, AreaCostMultiplierOnSelected);
-            customOptionsGroup.AddDropdown(DTMLang.text("DEMAND_OFFSET"), DifficultyOptions.DemandOffsetList,
+            customOptionsGroup.AddDropdown(DTMLang.Text("DEMAND_OFFSET"), DifficultyOptions.DemandOffsetList,
                 DifficultyOptions.Instance.DemandOffsetIndex, DemandOffsetOnSelected);
-            customOptionsGroup.AddDropdown(DTMLang.text("DEMAND_MULTIPLIER"), DifficultyOptions.DemandMultiplierList,
+            customOptionsGroup.AddDropdown(DTMLang.Text("DEMAND_MULTIPLIER"), DifficultyOptions.DemandMultiplierList,
                 DifficultyOptions.Instance.DemandMultiplierIndex, DemandMultiplierOnSelected);
-            customOptionsGroup.AddDropdown(DTMLang.text("REWARD"), DifficultyOptions.RewardMultiplierList,
+            customOptionsGroup.AddDropdown(DTMLang.Text("REWARD"), DifficultyOptions.RewardMultiplierList,
                 DifficultyOptions.Instance.RewardMultiplierIndex, RewardMultiplierOnSelected);
-            customOptionsGroup.AddDropdown(DTMLang.text("RELOCATION_COST"), DifficultyOptions.RelocationCostMultiplierList,
+            customOptionsGroup.AddDropdown(DTMLang.Text("RELOCATION_COST"), DifficultyOptions.RelocationCostMultiplierList,
                 DifficultyOptions.Instance.RelocationCostMultiplierIndex, RelocationCostMultiplierOnSelected);
-            customOptionsGroup.AddDropdown(DTMLang.text("TARGET_RESIDENTIAL"), DifficultyOptions.ResidentialTargetLandValueList,
+            customOptionsGroup.AddDropdown(DTMLang.Text("TARGET_RESIDENTIAL"), DifficultyOptions.ResidentialTargetLandValueList,
                 DifficultyOptions.Instance.ResidentialTargetLandValueIndex, ResidentialTargetLandValueOnSelected);
-            customOptionsGroup.AddDropdown(DTMLang.text("TARGET_COMMERCIAL"), DifficultyOptions.CommercialTargetLandValueList,
+            customOptionsGroup.AddDropdown(DTMLang.Text("TARGET_COMMERCIAL"), DifficultyOptions.CommercialTargetLandValueList,
                 DifficultyOptions.Instance.CommercialTargetLandValueIndex, CommercialTargetLandValueOnSelected);
-            customOptionsGroup.AddDropdown(DTMLang.text("TARGET_INDUSTRIAL"), DifficultyOptions.IndustrialTargetServiceList,
+            customOptionsGroup.AddDropdown(DTMLang.Text("TARGET_INDUSTRIAL"), DifficultyOptions.IndustrialTargetServiceList,
                 DifficultyOptions.Instance.IndustrialTargetServiceIndex, IndustrialTargetServiceOnSelected);
-            customOptionsGroup.AddDropdown(DTMLang.text("TARGET_OFFICE"), DifficultyOptions.OfficeTargetServiceList,
+            customOptionsGroup.AddDropdown(DTMLang.Text("TARGET_OFFICE"), DifficultyOptions.OfficeTargetServiceList,
                 DifficultyOptions.Instance.OfficeTargetServiceIndex, OfficeTargetServiceOnSelected);
 
             customOptionsGroup.AddSpace(50);

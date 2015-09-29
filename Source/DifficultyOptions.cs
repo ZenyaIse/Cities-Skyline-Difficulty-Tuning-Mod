@@ -77,7 +77,7 @@ namespace DifficultyTuningMod
 
                 for (Difficulties d = Difficulties.Easy; d <= Difficulties.Custom; d++)
                 {
-                    sl.Add(DTMLang.text(d.ToString()));
+                    sl.Add(DTMLang.Text(d.ToString()));
                 }
 
                 return sl.ToArray();
