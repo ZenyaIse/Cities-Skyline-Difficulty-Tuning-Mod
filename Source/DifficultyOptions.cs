@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 using ICities;
+//0.using ColossalFramework.UI;
 
 namespace DifficultyTuningMod
 {
@@ -38,7 +39,7 @@ namespace DifficultyTuningMod
                     {
                         _instance = new DifficultyOptions();
                     }
-}
+                }
 
                 return _instance;
             }
@@ -54,6 +55,16 @@ namespace DifficultyTuningMod
             TextWriter writer = new StreamWriter(fileName);
             ser.Serialize(writer, Instance);
             writer.Close();
+
+            //UIPanel electricityGroupPanel = UIView.Find<UIPanel>("ElectricityGroupPanel");
+            //if (electricityGroupPanel == null)
+            //{
+            //    DebugOutputPanel.AddMessage(ColossalFramework.Plugins.PluginManager.MessageType.Message, "Did not find ElectricityGroupPanel");
+            //}
+            //else
+            //{
+            //    electricityGroupPanel.Update();
+            //}
         }
 
         private static string getPercentStringFromMultiplier(float m)

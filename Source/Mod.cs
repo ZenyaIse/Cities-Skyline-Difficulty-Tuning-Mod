@@ -1,4 +1,5 @@
 using ICities;
+using ColossalFramework.UI;
 
 namespace DifficultyTuningMod
 {
@@ -20,8 +21,8 @@ namespace DifficultyTuningMod
         public void OnSettingsUI(UIHelperBase helper)
         {
             UIHelperBase difficultyLevelGroup = helper.AddGroup(DTMLang.Text("DTM_OPTIONS"));
-            difficultyLevelGroup.AddDropdown(DTMLang.Text("DIFFICULTY_LEVEL"), DifficultyOptions.DifficultyList, (int)DifficultyOptions.Instance.Difficulty, DifficultyLevelOnSelected);
-            //difficultyLevelGroup.AddButton("Save Options", SaveBtnClick);
+            UIComponent ddDifficulty = (UIDropDown)difficultyLevelGroup.AddDropdown(DTMLang.Text("DIFFICULTY_LEVEL"), DifficultyOptions.DifficultyList, (int)DifficultyOptions.Instance.Difficulty, DifficultyLevelOnSelected);
+            ddDifficulty.width = 300;
 
             UIHelperBase customOptionsGroup = helper.AddGroup(DTMLang.Text("CUSTOM_OPTIONS"));
             customOptionsGroup.AddDropdown(DTMLang.Text("CONSTRUCTION_COST"), DifficultyOptions.ConstructionCostMultiplierList,
@@ -129,11 +130,6 @@ namespace DifficultyTuningMod
             DifficultyOptions.Instance.OfficeTooFewServiceIndex = sel;
             DifficultyOptions.Save();
         }
-
-        //private void SaveBtnClick()
-        //{
-        //    DifficultyOptions.Save();
-        //}
 
         #endregion
     }

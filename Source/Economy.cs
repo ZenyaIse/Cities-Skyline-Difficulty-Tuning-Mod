@@ -1,4 +1,5 @@
 ﻿using ICities;
+//using ColossalFramework.Plugins;
 
 namespace DifficultyTuningMod
 {
@@ -36,6 +37,14 @@ namespace DifficultyTuningMod
 
         public override int OnGetRelocationCost(int constructionCost, int relocationCost, Service service, SubService subService, Level level)
         {
+            //try
+            //{
+            //    DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, "Service: " + service.ToString() + " subService: " + subService.ToString());
+            //}
+            //catch
+            //{
+
+            //}
             return (int)(constructionCost * DifficultyOptions.RelocationCostMultiplier);
         }
 

@@ -17,7 +17,7 @@ namespace DifficultyTuningMod
             {
                 selectedLanguage = currentLanguage;
                 fillDictionaryWithText(selectedLanguage);
-                //DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, "localeID: " + selectedLanguage);
+                DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, "localeID: " + selectedLanguage);
             }
 
             return texts[key];
@@ -120,6 +120,38 @@ namespace DifficultyTuningMod
                 texts["Challenge"] = "Sfida";
                 texts["Impossible"] = "Impossibile";
                 texts["Custom"] = "Personalizzato";
+            }
+            else if (selectedLanguage == "pt")
+            {
+                texts["MOD_NAME"] = "Mod Ajuste de Dificuldade";
+                texts["MOD_DESCRIPTION"] = "A variedade de níveis de dificuldade. Não ocorreram alterações na jogabilidade.";
+
+                texts["DTM_OPTIONS"] = "Opções a Mod Ajuste de Dificuldade";
+                texts["DIFFICULTY_LEVEL"] = "Nível de dificuldade";
+                texts["CUSTOM_OPTIONS"] = "Opções personalizadas (eficaz se o nível de dificuldade personalizado foi selecionado)";
+                texts["CONSTRUCTION_COST"] = "Custo de construção (todos exceto estradas):";
+                texts["ROAD_CONSTRUCTION_COST"] = "Custo de construção de estradas:";
+                texts["MAINTENANCE_COST"] = "Custo de manutenção (todos exceto estradas):";
+                texts["ROAD_MAINTENANCE_COST"] = "Custo de manutenção de estradas:";
+                texts["AREA_COST_MULTIPLIER"] = "Multiplicador de custos da área:";
+                texts["DEMAND_OFFSET"] = "Compensação de demanda: -> fórmula para a demanda: (Demanda - Compensação) * multiplicador";
+                texts["DEMAND_MULTIPLIER"] = "Multiplicador de demanda";
+                texts["REWARD"] = "Recompensa (valor de dinheiro se obtém quando um marco é atingido):";
+                texts["RELOCATION_COST"] = "Custo de deslocalizações de edifícios de serviços:";
+                texts["TARGET_RESIDENTIAL"] = "Valores-alvo do custo da terra para edifícios residenciais a subir de nível (Nível 2, 3, 4, 5):";
+                texts["TARGET_COMMERCIAL"] = "Valores-alvo do custo da terra para edifícios comerciais a subir de nível (Nível 2, 3):";
+                texts["TARGET_INDUSTRIAL"] = "Valores-alvo do custo da terra para edifícios industriais a subir de nível (Nível 2, 3):";
+                texts["TARGET_OFFICE"] = "Valores-alvo do custo da terra para edifícios de escritórios a subir de nível (Nível 2, 3):";
+
+                texts["Easy"] = "Fácil";
+                texts["Normal"] = "Normal";
+                texts["Medium"] = "Médio";
+                texts["Hard"] = "Difício";
+                texts["Advanced"] = "Advançado";
+                texts["Expert"] = "Perito";
+                texts["Challenge"] = "Desafio";
+                texts["Impossible"] = "Imposivel";
+                texts["Custom"] = "Personalizado";
             }
             else if (selectedLanguage == "ru")
             {
