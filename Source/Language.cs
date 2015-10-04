@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using ColossalFramework.Plugins;
+//using ColossalFramework.Plugins;
 using ColossalFramework.Globalization;
 
 namespace DifficultyTuningMod
@@ -17,7 +17,7 @@ namespace DifficultyTuningMod
             {
                 selectedLanguage = currentLanguage;
                 fillDictionaryWithText(selectedLanguage);
-                DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, "localeID: " + selectedLanguage);
+                //DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, "localeID: " + selectedLanguage);
             }
 
             return texts[key];
