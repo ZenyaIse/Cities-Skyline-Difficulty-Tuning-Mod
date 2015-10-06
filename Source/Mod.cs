@@ -19,7 +19,7 @@ namespace DifficultyTuningMod
 
         #region Options UI
 
-        private bool freeze = false;
+        private bool freeze = true;
         private UIDropDown ddDifficulty;
         private UIDropDown ddConstructionCost;
         private UIDropDown ddRoadConstructionCost;
@@ -193,6 +193,8 @@ namespace DifficultyTuningMod
                 );
             adjustSizes(ddDemandMultiplier);
             placeToTheRight(ddDemandMultiplier, ddDemandOffset);
+
+            freeze = false;
         }
 
         private void DifficultyLevelOnSelected(int sel)

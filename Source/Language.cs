@@ -133,9 +133,9 @@ namespace DifficultyTuningMod
                 texts["DIFFICULTY_LEVEL"] = "Nível de dificuldade";
                 //texts["CUSTOM_OPTIONS"] = "Opções personalizadas (eficaz se o nível de dificuldade personalizado foi selecionado)";
                 texts["CUSTOM_OPTIONS"] = "Opções personalizadas";
-                texts["CONSTRUCTION_COST"] = "Custo de construção (todos exceto estradas)";
+                texts["CONSTRUCTION_COST"] = "Custo de construção (todos exceto estrs)"; // estradas
                 texts["ROAD_CONSTRUCTION_COST"] = "Custo de construção de estradas";
-                texts["MAINTENANCE_COST"] = "Custo de manutenção (todos exceto estradas)";
+                texts["MAINTENANCE_COST"] = "Custo de manutenção (todos exceto estrs)";
                 texts["ROAD_MAINTENANCE_COST"] = "Custo de manutenção de estradas";
                 texts["AREA_COST_MULTIPLIER"] = "Multiplicador de custos da área";
                 texts["DEMAND_OFFSET"] = "Compensação de demanda";
