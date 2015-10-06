@@ -1,15 +1,16 @@
-# Cities-Skyline-Difficulty-Tuning-Mod
+# Cities Skyline: Difficulty Tuning Mod
 
-Eight levels of difficulty. Separate tuning of each difficulty factor.
+Eight levels of difficulty. 
+Custom difficulty with manual settings of each parameter. 
 
-No changes in the gameplay, except costs, demand, and level up requirements.
+Difficulty settings are available from the Main Menu. 
+Main Menu > Options > Mods Settings > Difficulty Tuning Mod 
 
-Difficulty level and other custom parameters can be set in the game options.
-If during a game, exit to the Main Menu, change the difficulty options, and load the game again.
+If during a game, exit to the Main Menu, change the difficulty options, and load the game again. 
 
 ## Difficulty Levels
 - **Easy.** Easier than vanilla. All costs halved. Free relocation of the service buildings. Level up requirements decreased. Demand almost never drops to zero.
-- **Normal.** The same as vanilla.
+- **Normal.** Almost the same as vanilla.
 - **Medium.** Just a little harder than vanilla.
 - **Hard.** Close to the Hard Mod which comes with the game.
 - **Advanced.** Even harder.
@@ -30,6 +31,8 @@ Allows tuning of each difficulty factor.
 - Land value requirements for level up of Residential and Commercial buildings.
 - Service score requirements for level up of Industrial and Office buildings.
 
+When you change a difficulty factor, the game difficulty is automatically set to "Custom".
+
 ## Additional features
 - Unlock purchasing all 25 area tiles, when the last milestone is reached.
 - Unlock the "Basic Road Created" milestone from the beginning.
@@ -39,3 +42,5 @@ Allows tuning of each difficulty factor.
 ## Mod compatibility
 - Extended building info mod: the level up progress bars isn't accurate because the level up requirements is modified.
 - Using together with any mod that changes costs, level up requirements, or demand, may cause game balance issues.
+
+After Dark compatible.
