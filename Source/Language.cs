@@ -38,7 +38,7 @@ namespace DifficultyTuningMod
                 texts["MAINTENANCE_COST"] = "Onderhoudskosten (van alles behalve wegen):";
                 texts["ROAD_MAINTENANCE_COST"] = "Wegonderhoudskosten:";
                 texts["AREA_COST_MULTIPLIER"] = "Vermenigvuldigingsfactor voor aankoop gebieden:";
-                texts["DEMAND_OFFSET"] = "Vraagimpuls:  -->  formule voor vraag: (Vraag - Impuls) * vermenigvuldigingsfactor";
+                texts["DEMAND_OFFSET"] = "Vraagimpuls:  -->  formule voor vraag: (Vraag + Impuls) * vermenigvuldigingsfactor";
                 texts["DEMAND_MULTIPLIER"] = "Vraagvermenigvuldigingsfactor";
                 texts["REWARD"] = "Beloning (hoeveelheid geld die je ontvangt indien een mijlpaal berijkt wordt):";
                 texts["RELOCATION_COST"] = "Verhuizingskosten van nutsgebouwen:";
@@ -70,7 +70,7 @@ namespace DifficultyTuningMod
                 texts["MAINTENANCE_COST"] = "Unterhaltskosten (alles außer Straßen):";
                 texts["ROAD_MAINTENANCE_COST"] = "Straßenunterhaltskosten:";
                 texts["AREA_COST_MULTIPLIER"] = "Multiplikator für Ankauf Gebiete:";
-                texts["DEMAND_OFFSET"] = "Frage-impuls:  -->  Formel für Frage: (Frage - Impuls) * Multiplikator";
+                texts["DEMAND_OFFSET"] = "Frage-impuls:  -->  Formel für Frage: (Frage + Impuls) * Multiplikator";
                 texts["DEMAND_MULTIPLIER"] = "Fragemultiplikationsfaktor";
                 texts["REWARD"] = "Belohnung (Betrag, den du erhaltet, wenn einen Meilenstein erreicht wird):";
                 texts["RELOCATION_COST"] = "Umzugskosten von Nutzgebäude:";
@@ -102,7 +102,7 @@ namespace DifficultyTuningMod
                 texts["MAINTENANCE_COST"] = "Costo di manutenzione (tutti tranne strade):";
                 texts["ROAD_MAINTENANCE_COST"] = "Costo di manutenzione strade:";
                 texts["AREA_COST_MULTIPLIER"] = "Moltiplicatore costi di aree:";
-                texts["DEMAND_OFFSET"] = "Impulso di domanda:  -->  formula per domanda: (Domanda - Impulso) * moltiplicatore";
+                texts["DEMAND_OFFSET"] = "Impulso di domanda:  -->  formula per domanda: (Domanda + Impulso) * moltiplicatore";
                 texts["DEMAND_MULTIPLIER"] = "Moltiplicatore di domanda";
                 texts["REWARD"] = "Ricompensa (fundi che si ottiene quando si raggiunge una pietra miliare):";
                 texts["RELOCATION_COST"] = "Costi trasferimenti dei edifici di utilità:";
@@ -134,7 +134,7 @@ namespace DifficultyTuningMod
                 texts["MAINTENANCE_COST"] = "Custo de manutenção (todos exceto estradas):";
                 texts["ROAD_MAINTENANCE_COST"] = "Custo de manutenção de estradas:";
                 texts["AREA_COST_MULTIPLIER"] = "Multiplicador de custos da área:";
-                texts["DEMAND_OFFSET"] = "Compensação de demanda: -> fórmula para a demanda: (Demanda - Compensação) * multiplicador";
+                texts["DEMAND_OFFSET"] = "Compensação de demanda: -> fórmula para a demanda: (Demanda + Compensação) * multiplicador";
                 texts["DEMAND_MULTIPLIER"] = "Multiplicador de demanda";
                 texts["REWARD"] = "Recompensa (valor de dinheiro se obtém quando um marco é atingido):";
                 texts["RELOCATION_COST"] = "Custo de deslocalizações de edifícios de serviços:";
@@ -166,7 +166,7 @@ namespace DifficultyTuningMod
                 texts["MAINTENANCE_COST"] = "Содержание построек (кроме дорог):";
                 texts["ROAD_MAINTENANCE_COST"] = "Содержание дорог:";
                 texts["AREA_COST_MULTIPLIER"] = "Коэффициент покупки области:";
-                texts["DEMAND_OFFSET"] = "Смещение потребности:  -->  формула: (Потребность - Смещение) * Коэффициент";
+                texts["DEMAND_OFFSET"] = "Смещение потребности:  -->  формула: (Потребность + Смещение) * Коэффициент";
                 texts["DEMAND_MULTIPLIER"] = "Коэффициент потребности:";
                 texts["REWARD"] = "Награда (сумма, которую дают игроку после достижения некоторых этапов):";
                 texts["RELOCATION_COST"] = "Стоимость перемещения зданий:";
@@ -198,7 +198,7 @@ namespace DifficultyTuningMod
                 texts["MAINTENANCE_COST"] = "Maintenance cost (all except roads):";
                 texts["ROAD_MAINTENANCE_COST"] = "Road maintenance cost:";
                 texts["AREA_COST_MULTIPLIER"] = "Area cost multiplier:";
-                texts["DEMAND_OFFSET"] = "Demand offset:  -->  formula for demand: (Demand - Offset) * multiplier";
+                texts["DEMAND_OFFSET"] = "Demand offset:  -->  formula for demand: (Demand + Offset) * multiplier";
                 texts["DEMAND_MULTIPLIER"] = "Demand multiplier";
                 texts["REWARD"] = "Reward (amount of money you get when a milestone is reached):";
                 texts["RELOCATION_COST"] = "Service building relocation cost:";
