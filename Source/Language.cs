@@ -40,7 +40,7 @@ namespace DifficultyTuningMod
                 texts["ROAD_MAINTENANCE_COST"] = "Wegonderhoudskosten";
                 texts["AREA_COST_MULTIPLIER"] = "Vermenigvuldigingsfactor voor aankoop gebieden";
                 texts["DEMAND_OFFSET"] = "Vraagimpuls";
-                texts["DEMAND_MULTIPLIER"] = "Vraagvermenigvuldigingsfactor >>> formule: (Vraag - Impuls) * vermenigvuldigingsfactor";
+                texts["DEMAND_MULTIPLIER"] = "Vraagvermenigvuldigingsfactor >>> formule: (Vraag + Impuls) * vermenigvuldigingsfactor";
                 texts["REWARD"] = "Beloning (hoeveelheid geld die je ontvangt indien een mijlpaal berijkt wordt)";
                 texts["RELOCATION_COST"] = "Verhuizingskosten van nutsgebouwen";
                 texts["TARGET_RESIDENTIAL"] = "Grondrichtprijzen voor woongebouwen om op te waarderen (niveau 2, 3, 4, 5)";
@@ -73,7 +73,7 @@ namespace DifficultyTuningMod
                 texts["ROAD_MAINTENANCE_COST"] = "Straßenunterhaltskosten";
                 texts["AREA_COST_MULTIPLIER"] = "Multiplikator für Ankauf Gebiete";
                 texts["DEMAND_OFFSET"] = "Frage-impuls";
-                texts["DEMAND_MULTIPLIER"] = "Fragemultiplikationsfaktor >>> Formel: (Frage - Impuls) * Multiplikator";
+                texts["DEMAND_MULTIPLIER"] = "Fragemultiplikationsfaktor >>> Formel: (Frage + Impuls) * Multiplikator";
                 texts["REWARD"] = "Belohnung (Betrag, den du erhaltet, wenn einen Meilenstein erreicht wird)";
                 texts["RELOCATION_COST"] = "Umzugskosten von Nutzgebäude";
                 texts["TARGET_RESIDENTIAL"] = "Bodenrichtpreise für Wohngebäude zu verbesseren (Stufe 2, 3, 4, 5)";
@@ -106,7 +106,7 @@ namespace DifficultyTuningMod
                 texts["ROAD_MAINTENANCE_COST"] = "Costo di manutenzione strade";
                 texts["AREA_COST_MULTIPLIER"] = "Moltiplicatore costi di aree";
                 texts["DEMAND_OFFSET"] = "Impulso di domanda";
-                texts["DEMAND_MULTIPLIER"] = "Moltiplicatore di domanda >>> formula: (Domanda - Impulso) * moltiplicatore";
+                texts["DEMAND_MULTIPLIER"] = "Moltiplicatore di domanda >>> formula: (Domanda + Impulso) * moltiplicatore";
                 texts["REWARD"] = "Ricompensa (fundi che si ottiene quando si raggiunge una pietra miliare)";
                 texts["RELOCATION_COST"] = "Costi trasferimenti dei edifici di utilità";
                 texts["TARGET_RESIDENTIAL"] = "Obiettivo valore del terreno per edifici residenziale a salire livello (Livello 2, 3, 4, 5)";
@@ -139,7 +139,7 @@ namespace DifficultyTuningMod
                 texts["ROAD_MAINTENANCE_COST"] = "Custo de manutenção de estradas";
                 texts["AREA_COST_MULTIPLIER"] = "Multiplicador de custos da área";
                 texts["DEMAND_OFFSET"] = "Compensação de demanda";
-                texts["DEMAND_MULTIPLIER"] = "Multiplicador de demanda >>> fórmula: (Demanda - Compensação) * multiplicador";
+                texts["DEMAND_MULTIPLIER"] = "Multiplicador de demanda >>> fórmula: (Demanda + Compensação) * multiplicador";
                 texts["REWARD"] = "Recompensa (valor de dinheiro se obtém quando um marco é atingido)";
                 texts["RELOCATION_COST"] = "Custo de deslocalizações de edifícios de serviços";
                 texts["TARGET_RESIDENTIAL"] = "Valores-alvo do custo da terra para edifícios residenciais a subir de nível (Nível 2, 3, 4, 5)";
@@ -172,7 +172,7 @@ namespace DifficultyTuningMod
                 texts["ROAD_MAINTENANCE_COST"] = "Содержание дорог";
                 texts["AREA_COST_MULTIPLIER"] = "Коэффициент покупки области";
                 texts["DEMAND_OFFSET"] = "Смещение потребности";
-                texts["DEMAND_MULTIPLIER"] = "Коэффициент потребности >>> формула: (Потребность - Смещение) * Коэффициент";
+                texts["DEMAND_MULTIPLIER"] = "Коэффициент потребности >>> формула: (Потребность + Смещение) * Коэффициент";
                 texts["REWARD"] = "Награда (сумма, которую дают игроку после достижения некоторых этапов)";
                 texts["RELOCATION_COST"] = "Стоимость перемещения зданий";
                 texts["TARGET_RESIDENTIAL"] = "Цена земли, необходимая для повышения уровня жилых зданий (уровень 2, 3, 4, 5)";
@@ -205,7 +205,7 @@ namespace DifficultyTuningMod
                 texts["ROAD_MAINTENANCE_COST"] = "Road maintenance cost";
                 texts["AREA_COST_MULTIPLIER"] = "Area cost multiplier";
                 texts["DEMAND_OFFSET"] = "Demand offset";
-                texts["DEMAND_MULTIPLIER"] = "Demand multiplier >>> formula: (Demand - Offset) * multiplier";
+                texts["DEMAND_MULTIPLIER"] = "Demand multiplier >>> formula: (Demand + Offset) * multiplier";
                 texts["REWARD"] = "Reward (amount of money you get when a milestone is reached)";
                 texts["RELOCATION_COST"] = "Service building relocation cost";
                 texts["TARGET_RESIDENTIAL"] = "Target land values for residential buildings to level up (Level2, 3, 4, 5)";

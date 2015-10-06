@@ -302,21 +302,21 @@ namespace DifficultyTuningMod
             switch ((Difficulties)n)
             {
                 case Difficulties.Easy:
-                    return -10;
+                    return 10;
                 case Difficulties.Normal:
                     return 0;
                 case Difficulties.Medium:
-                    return 10;
+                    return -10;
                 case Difficulties.Hard:
-                    return 15;
+                    return -15;
                 case Difficulties.Advanced:
-                    return 18;
+                    return -18;
                 case Difficulties.Expert:
-                    return 20;
+                    return -20;
                 case Difficulties.Challenge:
-                    return 21;
+                    return -21;
                 case Difficulties.Impossible:
-                    return 22;
+                    return -22;
             }
 
             return 0;

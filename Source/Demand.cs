@@ -22,7 +22,7 @@ namespace DifficultyTuningMod
 
         private int scaleDemandByDifficulty(int demandValue)
         {
-            float value = (demandValue - DifficultyOptions.DemandOffset) * DifficultyOptions.DemandMultiplier;
+            float value = (demandValue + DifficultyOptions.DemandOffset) * DifficultyOptions.DemandMultiplier;
             return Math.Min(100, (int)Math.Round(value)); // Limit to 100 to avoid possible uncompatibility with other mods
         }
     }
