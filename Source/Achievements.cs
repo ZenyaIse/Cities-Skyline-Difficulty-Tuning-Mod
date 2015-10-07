@@ -6,13 +6,16 @@ namespace DifficultyTuningMod
     {
         public static void Update()
         {
+            SimulationManager sm = Singleton<SimulationManager>.instance;
+            if (sm == null) return;
+
             if (DifficultyOptions.GameDifficulty == Difficulties.Easy || DifficultyOptions.GameDifficulty == Difficulties.Custom)
             {
-                Singleton<SimulationManager>.instance.m_metaData.m_disableAchievements = SimulationMetaData.MetaBool.True;
+                sm.m_metaData.m_disableAchievements = SimulationMetaData.MetaBool.True;
             }
             else
             {
-                Singleton<SimulationManager>.instance.m_metaData.m_disableAchievements = SimulationMetaData.MetaBool.False;
+                sm.m_metaData.m_disableAchievements = SimulationMetaData.MetaBool.False;
             }
         }
     }

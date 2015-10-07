@@ -1,5 +1,6 @@
 using ICities;
 using ColossalFramework.UI;
+using ColossalFramework.Plugins;
 
 namespace DifficultyTuningMod
 {
@@ -18,7 +19,7 @@ namespace DifficultyTuningMod
 
         #region Options UI
 
-        private bool freeze = false;
+        private bool freeze = true;
         private UIDropDown ddDifficulty;
         private UIDropDown ddConstructionCost;
         private UIDropDown ddRoadConstructionCost;
@@ -40,8 +41,13 @@ namespace DifficultyTuningMod
             dd.height = 24;
             dd.itemHeight = 14;
             dd.textScale = 0.8f;
-            dd.parent.height = 48;
+            dd.parent.height = 50;
             dd.parent.Find<UILabel>("Label").textScale = 0.8f;
+        }
+
+        private void placeToTheRight(UIDropDown targetDD, UIDropDown refDD)
+        {
+            targetDD.parent.absolutePosition = new UnityEngine.Vector3(refDD.parent.absolutePosition.x + 250, refDD.parent.absolutePosition.y);
         }
 
         public void OnSettingsUI(UIHelperBase helper)
@@ -49,15 +55,14 @@ namespace DifficultyTuningMod
             int dIndex = (int)DifficultyOptions.Instance.Difficulty;
             bool isCustom = (DifficultyOptions.Instance.Difficulty == Difficulties.Custom);
 
-            UIHelperBase difficultyLevelGroup = helper.AddGroup(DTMLang.Text("DTM_OPTIONS"));
-            ddDifficulty = (UIDropDown)difficultyLevelGroup.AddDropdown(
+            ddDifficulty = (UIDropDown)helper.AddDropdown(
                 DTMLang.Text("DIFFICULTY_LEVEL"),
                 DifficultyOptions.DifficultyList,
                 dIndex,
                 DifficultyLevelOnSelected
                 );
             ddDifficulty.width = 250;
-
+            ddDifficulty.height -= 2;
 
             UIHelperBase customOptionsGroup = helper.AddGroup(DTMLang.Text("CUSTOM_OPTIONS"));
 
@@ -70,15 +75,6 @@ namespace DifficultyTuningMod
                 );
             adjustSizes(ddConstructionCost);
 
-            // Road construction cost multiplier
-            ddRoadConstructionCost = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("ROAD_CONSTRUCTION_COST"),
-                DifficultyOptions.RoadConstructionCostMultiplierList,
-                isCustom ? DifficultyOptions.Instance.RoadConstructionCostMultiplierIndex : dIndex,
-                CustomValueOnSelected
-                );
-            adjustSizes(ddRoadConstructionCost);
-
             // Maintenance cost multiplier
             ddMaintenanceCostMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
                 DTMLang.Text("MAINTENANCE_COST"),
@@ -87,15 +83,6 @@ namespace DifficultyTuningMod
                 CustomValueOnSelected
                 );
             adjustSizes(ddMaintenanceCostMultiplier);
-
-            // Road maintenance cost multiplier
-            ddRoadMaintenanceCostMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("ROAD_MAINTENANCE_COST"),
-                DifficultyOptions.RoadMaintenanceCostMultiplierList,
-                isCustom ? DifficultyOptions.Instance.RoadMaintenanceCostMultiplierIndex : dIndex,
-                CustomValueOnSelected
-                );
-            adjustSizes(ddRoadMaintenanceCostMultiplier);
 
             // Area cost multiplier
             ddAreaCostMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
@@ -114,15 +101,6 @@ namespace DifficultyTuningMod
                 CustomValueOnSelected
                 );
             adjustSizes(ddDemandOffset);
-
-            // Demand multiplier
-            ddDemandMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("DEMAND_MULTIPLIER"),
-                DifficultyOptions.DemandMultiplierList,
-                isCustom ? DifficultyOptions.Instance.DemandMultiplierIndex : dIndex,
-                CustomValueOnSelected
-                );
-            adjustSizes(ddDemandMultiplier);
 
             // Reward multiplier
             ddRewardMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
@@ -178,7 +156,45 @@ namespace DifficultyTuningMod
                 );
             adjustSizes(ddOfficeTargetService);
 
-            customOptionsGroup.AddSpace(50);
+
+            //
+            // Custom layout from here
+            //
+
+            UIPanel groupPanel = (UIPanel)ddConstructionCost.parent.parent;
+            groupPanel.autoLayout = false;
+
+            // Road construction cost multiplier
+            ddRoadConstructionCost = (UIDropDown)customOptionsGroup.AddDropdown(
+                DTMLang.Text("ROAD_CONSTRUCTION_COST"),
+                DifficultyOptions.RoadConstructionCostMultiplierList,
+                isCustom ? DifficultyOptions.Instance.RoadConstructionCostMultiplierIndex : dIndex,
+                CustomValueOnSelected
+                );
+            adjustSizes(ddRoadConstructionCost);
+            placeToTheRight(ddRoadConstructionCost, ddConstructionCost);
+
+            // Road maintenance cost multiplier
+            ddRoadMaintenanceCostMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
+                DTMLang.Text("ROAD_MAINTENANCE_COST"),
+                DifficultyOptions.RoadMaintenanceCostMultiplierList,
+                isCustom ? DifficultyOptions.Instance.RoadMaintenanceCostMultiplierIndex : dIndex,
+                CustomValueOnSelected
+                );
+            adjustSizes(ddRoadMaintenanceCostMultiplier);
+            placeToTheRight(ddRoadMaintenanceCostMultiplier, ddMaintenanceCostMultiplier);
+
+            // Demand multiplier
+            ddDemandMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
+                DTMLang.Text("DEMAND_MULTIPLIER"),
+                DifficultyOptions.DemandMultiplierList,
+                isCustom ? DifficultyOptions.Instance.DemandMultiplierIndex : dIndex,
+                CustomValueOnSelected
+                );
+            adjustSizes(ddDemandMultiplier);
+            placeToTheRight(ddDemandMultiplier, ddDemandOffset);
+
+            freeze = false;
         }
 
         private void DifficultyLevelOnSelected(int sel)
