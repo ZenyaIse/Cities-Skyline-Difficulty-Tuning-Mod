@@ -75,6 +75,16 @@ namespace DifficultyTuningMod
                 );
             adjustSizes(ddConstructionCost);
 
+            // Road construction cost multiplier
+            ddRoadConstructionCost = (UIDropDown)customOptionsGroup.AddDropdown(
+                DTMLang.Text("ROAD_CONSTRUCTION_COST"),
+                DifficultyOptions.RoadConstructionCostMultiplierList,
+                isCustom ? DifficultyOptions.Instance.RoadConstructionCostMultiplierIndex : dIndex,
+                CustomValueOnSelected
+                );
+            adjustSizes(ddRoadConstructionCost);
+            placeToTheRight(ddRoadConstructionCost, ddConstructionCost);
+
             // Maintenance cost multiplier
             ddMaintenanceCostMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
                 DTMLang.Text("MAINTENANCE_COST"),
@@ -83,6 +93,16 @@ namespace DifficultyTuningMod
                 CustomValueOnSelected
                 );
             adjustSizes(ddMaintenanceCostMultiplier);
+
+            // Road maintenance cost multiplier
+            ddRoadMaintenanceCostMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
+                DTMLang.Text("ROAD_MAINTENANCE_COST"),
+                DifficultyOptions.RoadMaintenanceCostMultiplierList,
+                isCustom ? DifficultyOptions.Instance.RoadMaintenanceCostMultiplierIndex : dIndex,
+                CustomValueOnSelected
+                );
+            adjustSizes(ddRoadMaintenanceCostMultiplier);
+            placeToTheRight(ddRoadMaintenanceCostMultiplier, ddMaintenanceCostMultiplier);
 
             // Area cost multiplier
             ddAreaCostMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
@@ -101,6 +121,16 @@ namespace DifficultyTuningMod
                 CustomValueOnSelected
                 );
             adjustSizes(ddDemandOffset);
+
+            // Demand multiplier
+            ddDemandMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
+                DTMLang.Text("DEMAND_MULTIPLIER"),
+                DifficultyOptions.DemandMultiplierList,
+                isCustom ? DifficultyOptions.Instance.DemandMultiplierIndex : dIndex,
+                CustomValueOnSelected
+                );
+            adjustSizes(ddDemandMultiplier);
+            placeToTheRight(ddDemandMultiplier, ddDemandOffset);
 
             // Reward multiplier
             ddRewardMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
@@ -156,45 +186,49 @@ namespace DifficultyTuningMod
                 );
             adjustSizes(ddOfficeTargetService);
 
-
-            //
-            // Custom layout from here
-            //
-
-            UIPanel groupPanel = (UIPanel)ddConstructionCost.parent.parent;
-            groupPanel.autoLayout = false;
-
-            // Road construction cost multiplier
-            ddRoadConstructionCost = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("ROAD_CONSTRUCTION_COST"),
-                DifficultyOptions.RoadConstructionCostMultiplierList,
-                isCustom ? DifficultyOptions.Instance.RoadConstructionCostMultiplierIndex : dIndex,
-                CustomValueOnSelected
-                );
-            adjustSizes(ddRoadConstructionCost);
-            placeToTheRight(ddRoadConstructionCost, ddConstructionCost);
-
-            // Road maintenance cost multiplier
-            ddRoadMaintenanceCostMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("ROAD_MAINTENANCE_COST"),
-                DifficultyOptions.RoadMaintenanceCostMultiplierList,
-                isCustom ? DifficultyOptions.Instance.RoadMaintenanceCostMultiplierIndex : dIndex,
-                CustomValueOnSelected
-                );
-            adjustSizes(ddRoadMaintenanceCostMultiplier);
-            placeToTheRight(ddRoadMaintenanceCostMultiplier, ddMaintenanceCostMultiplier);
-
-            // Demand multiplier
-            ddDemandMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("DEMAND_MULTIPLIER"),
-                DifficultyOptions.DemandMultiplierList,
-                isCustom ? DifficultyOptions.Instance.DemandMultiplierIndex : dIndex,
-                CustomValueOnSelected
-                );
-            adjustSizes(ddDemandMultiplier);
-            placeToTheRight(ddDemandMultiplier, ddDemandOffset);
-
             freeze = false;
+
+
+            //
+            // Custom layout
+            //
+
+            UIPanel groupPanel = ddConstructionCost.parent.parent as UIPanel;
+            if (groupPanel != null)
+            {
+                groupPanel.autoLayout = false;
+
+                float x = 5;
+                float y = 0;
+                float dx = 250;
+                float dy = 60;
+
+                ddConstructionCost.parent.relativePosition = new UnityEngine.Vector3(x, y);
+                ddRoadConstructionCost.parent.relativePosition = new UnityEngine.Vector3(x + dx, y);
+                y += dy;
+                ddMaintenanceCostMultiplier.parent.relativePosition = new UnityEngine.Vector3(x, y);
+                ddRoadMaintenanceCostMultiplier.parent.relativePosition = new UnityEngine.Vector3(x + dx, y);
+                y += dy;
+                ddAreaCostMultiplier.parent.relativePosition = new UnityEngine.Vector3(x, y);
+                y += dy;
+                ddDemandOffset.parent.relativePosition = new UnityEngine.Vector3(x, y);
+                ddDemandMultiplier.parent.relativePosition = new UnityEngine.Vector3(x + dx, y);
+                y += dy;
+                ddRewardMultiplier.parent.relativePosition = new UnityEngine.Vector3(x, y);
+                y += dy;
+                ddRelocationCostMultiplier.parent.relativePosition = new UnityEngine.Vector3(x, y);
+                y += dy;
+                ddResidentialTargetLandValue.parent.relativePosition = new UnityEngine.Vector3(x, y);
+                y += dy;
+                ddCommercialTargetLandValue.parent.relativePosition = new UnityEngine.Vector3(x, y);
+                y += dy;
+                ddIndustrialTargetService.parent.relativePosition = new UnityEngine.Vector3(x, y);
+                y += dy;
+                ddOfficeTargetService.parent.relativePosition = new UnityEngine.Vector3(x, y);
+
+                y += dy;
+                groupPanel.height = y;
+            }
         }
 
         private void DifficultyLevelOnSelected(int sel)
