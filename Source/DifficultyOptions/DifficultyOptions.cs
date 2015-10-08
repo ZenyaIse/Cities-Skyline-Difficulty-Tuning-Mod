@@ -1,11 +1,10 @@
 namespace DifficultyTuningMod
 {
-    public class DifficultyOptions
+    public class DifficultyOptions : Singleton<DifficultyOptions>
     {
 		private Difficulties _difficulty = Difficulties.Normal;
-		public DifficultyOptions Instance;
 		
-		public static Difficulties Difficulty
+		public Difficulties Difficulty
 		{
 			get
 			{
