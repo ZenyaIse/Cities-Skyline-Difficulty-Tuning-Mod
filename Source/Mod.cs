@@ -45,41 +45,40 @@ namespace DifficultyTuningMod
             dd.parent.Find<UILabel>("Label").textScale = 0.8f;
         }
 
-        private void placeToTheRight(UIDropDown targetDD, UIDropDown refDD)
-        {
-            targetDD.parent.absolutePosition = new UnityEngine.Vector3(refDD.parent.absolutePosition.x + 250, refDD.parent.absolutePosition.y);
-        }
-
         public void OnSettingsUI(UIHelperBase helper)
         {
-            int dIndex = (int)DifficultyOptions.Instance.Difficulty;
-            bool isCustom = (DifficultyOptions.Instance.Difficulty == Difficulties.Custom);
-
+            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
+            
             ddDifficulty = (UIDropDown)helper.AddDropdown(
                 DTMLang.Text("DIFFICULTY_LEVEL"),
-                DifficultyOptions.DifficultyList,
-                dIndex,
+                d.DifficultiesStr,
+                (int)d.Difficulty,
                 DifficultyLevelOnSelected
                 );
             ddDifficulty.width = 250;
             ddDifficulty.height -= 2;
 
+			
+			//
+			// Custom options
+			//
+			
             UIHelperBase customOptionsGroup = helper.AddGroup(DTMLang.Text("CUSTOM_OPTIONS"));
 
             // Construction cost multiplier
             ddConstructionCost = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("CONSTRUCTION_COST"),
-                DifficultyOptions.ConstructionCostMultiplierList,
-                isCustom ? DifficultyOptions.Instance.ConstructionCostMultiplierIndex : dIndex,
+                d.ConstructionCostMultiplier.Description,
+                d.ConstructionCostMultiplier.CustomValuesStr,
+                d.ConstructionCostMultiplier.SelectedOptionIndex,
                 CustomValueOnSelected
                 );
             adjustSizes(ddConstructionCost);
 
             // Road construction cost multiplier
             ddRoadConstructionCost = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("ROAD_CONSTRUCTION_COST"),
-                DifficultyOptions.RoadConstructionCostMultiplierList,
-                isCustom ? DifficultyOptions.Instance.RoadConstructionCostMultiplierIndex : dIndex,
+                d.RoadConstructionCostMultiplier.Description,
+                d.RoadConstructionCostMultiplier.CustomValuesStr,
+                d.RoadConstructionCostMultiplier.SelectedOptionIndex,
                 CustomValueOnSelected
                 );
             adjustSizes(ddRoadConstructionCost);
@@ -87,18 +86,18 @@ namespace DifficultyTuningMod
 
             // Maintenance cost multiplier
             ddMaintenanceCostMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("MAINTENANCE_COST"),
-                DifficultyOptions.MaintenanceCostMultiplierList,
-                isCustom ? DifficultyOptions.Instance.MaintenanceCostMultiplierIndex : dIndex,
+                d.MaintenanceCostMultiplier.Description,
+                d.MaintenanceCostMultiplier.CustomValuesStr,
+                d.MaintenanceCostMultiplier.SelectedOptionIndex,
                 CustomValueOnSelected
                 );
             adjustSizes(ddMaintenanceCostMultiplier);
 
             // Road maintenance cost multiplier
             ddRoadMaintenanceCostMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("ROAD_MAINTENANCE_COST"),
-                DifficultyOptions.RoadMaintenanceCostMultiplierList,
-                isCustom ? DifficultyOptions.Instance.RoadMaintenanceCostMultiplierIndex : dIndex,
+                d.RoadMaintenanceCostMultiplier.Description,
+                d.RoadMaintenanceCostMultiplier.CustomValuesStr,
+                d.RoadMaintenanceCostMultiplier.SelectedOptionIndex,
                 CustomValueOnSelected
                 );
             adjustSizes(ddRoadMaintenanceCostMultiplier);
@@ -106,27 +105,27 @@ namespace DifficultyTuningMod
 
             // Area cost multiplier
             ddAreaCostMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("AREA_COST_MULTIPLIER"),
-                DifficultyOptions.AreaCostMultiplierList,
-                isCustom ? DifficultyOptions.Instance.AreaCostMultiplierIndex : dIndex,
+                d.AreaCostMultiplier.Description,
+                d.AreaCostMultiplier.CustomValuesStr,
+                d.AreaCostMultiplier.SelectedOptionIndex,
                 CustomValueOnSelected
                 );
             adjustSizes(ddAreaCostMultiplier);
 
             // Demand offset
             ddDemandOffset = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("DEMAND_OFFSET"),
-                DifficultyOptions.DemandOffsetList,
-                isCustom ? DifficultyOptions.Instance.DemandOffsetIndex : dIndex,
+                d.DemandOffset.Description,
+                d.DemandOffset.CustomValuesStr,
+                d.DemandOffset.SelectedOptionIndex,
                 CustomValueOnSelected
                 );
             adjustSizes(ddDemandOffset);
 
             // Demand multiplier
             ddDemandMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("DEMAND_MULTIPLIER"),
-                DifficultyOptions.DemandMultiplierList,
-                isCustom ? DifficultyOptions.Instance.DemandMultiplierIndex : dIndex,
+                d.DemandMultiplier.Description,
+                d.DemandMultiplier.CustomValuesStr,
+                d.DemandMultiplier.SelectedOptionIndex,
                 CustomValueOnSelected
                 );
             adjustSizes(ddDemandMultiplier);
@@ -134,54 +133,54 @@ namespace DifficultyTuningMod
 
             // Reward multiplier
             ddRewardMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("REWARD"),
-                DifficultyOptions.RewardMultiplierList,
-                isCustom ? DifficultyOptions.Instance.RewardMultiplierIndex : dIndex,
+                d.RewardMultiplier.Description,
+                d.RewardMultiplier.CustomValuesStr,
+                d.RewardMultiplier.SelectedOptionIndex,
                 CustomValueOnSelected
                 );
             adjustSizes(ddRewardMultiplier);
 
             // Relocation cost multiplier
             ddRelocationCostMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("RELOCATION_COST"),
-                DifficultyOptions.RelocationCostMultiplierList,
-                isCustom ? DifficultyOptions.Instance.RelocationCostMultiplierIndex : dIndex,
+                d.RelocationCostMultiplier.Description,
+                d.RelocationCostMultiplier.CustomValuesStr,
+                d.RelocationCostMultiplier.SelectedOptionIndex,
                 CustomValueOnSelected
                 );
             adjustSizes(ddRelocationCostMultiplier);
 
             // Residential target land value
             ddResidentialTargetLandValue = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("TARGET_RESIDENTIAL"),
-                DifficultyOptions.ResidentialTargetLandValueList,
-                isCustom ? DifficultyOptions.Instance.ResidentialTargetLandValueIndex : dIndex,
+                d.ResidentialTargetLandValue.Description,
+                d.ResidentialTargetLandValue.CustomValuesStr,
+                d.ResidentialTargetLandValue.SelectedOptionIndex,
                 CustomValueOnSelected
                 );
             adjustSizes(ddResidentialTargetLandValue);
 
             // Commercial target land value
             ddCommercialTargetLandValue = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("TARGET_COMMERCIAL"),
-                DifficultyOptions.CommercialTargetLandValueList,
-                isCustom ? DifficultyOptions.Instance.CommercialTargetLandValueIndex : dIndex,
+                d.CommercialTargetLandValue.Description,
+                d.CommercialTargetLandValue.CustomValuesStr,
+                d.CommercialTargetLandValue.SelectedOptionIndex,
                 CustomValueOnSelected
                 );
             adjustSizes(ddCommercialTargetLandValue);
 
             // Industrial target service
             ddIndustrialTargetService = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("TARGET_INDUSTRIAL"),
-                DifficultyOptions.IndustrialTargetServiceList,
-                isCustom ? DifficultyOptions.Instance.IndustrialTargetServiceIndex : dIndex,
+                d.IndustrialTargetService.Description,
+                d.IndustrialTargetService.CustomValuesStr,
+                d.IndustrialTargetService.SelectedOptionIndex,
                 CustomValueOnSelected
                 );
             adjustSizes(ddIndustrialTargetService);
 
             // Office target service
             ddOfficeTargetService = (UIDropDown)customOptionsGroup.AddDropdown(
-                DTMLang.Text("TARGET_OFFICE"),
-                DifficultyOptions.OfficeTargetServiceList,
-                isCustom ? DifficultyOptions.Instance.OfficeTargetServiceIndex : dIndex,
+                d.OfficeTargetService.Description,
+                d.OfficeTargetService.CustomValuesStr,
+                d.OfficeTargetService.SelectedOptionIndex,
                 CustomValueOnSelected
                 );
             adjustSizes(ddOfficeTargetService);
@@ -235,43 +234,28 @@ namespace DifficultyTuningMod
         {
             if (freeze) return;
 
+            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
+			
+            d.Difficulty = (Difficulties)sel;
+            
+			// Update controls
             freeze = true;
-            if ((Difficulties)sel == Difficulties.Custom)
-            {
-                if (ddConstructionCost != null) ddConstructionCost.selectedIndex = DifficultyOptions.Instance.ConstructionCostMultiplierIndex;
-                if (ddRoadConstructionCost != null) ddRoadConstructionCost.selectedIndex = DifficultyOptions.Instance.RoadConstructionCostMultiplierIndex;
-                if (ddMaintenanceCostMultiplier != null) ddMaintenanceCostMultiplier.selectedIndex = DifficultyOptions.Instance.MaintenanceCostMultiplierIndex;
-                if (ddRoadMaintenanceCostMultiplier != null) ddRoadMaintenanceCostMultiplier.selectedIndex = DifficultyOptions.Instance.RoadMaintenanceCostMultiplierIndex;
-                if (ddAreaCostMultiplier != null) ddAreaCostMultiplier.selectedIndex = DifficultyOptions.Instance.AreaCostMultiplierIndex;
-                if (ddDemandOffset != null) ddDemandOffset.selectedIndex = DifficultyOptions.Instance.DemandOffsetIndex;
-                if (ddDemandMultiplier != null) ddDemandMultiplier.selectedIndex = DifficultyOptions.Instance.DemandMultiplierIndex;
-                if (ddRewardMultiplier != null) ddRewardMultiplier.selectedIndex = DifficultyOptions.Instance.RewardMultiplierIndex;
-                if (ddRelocationCostMultiplier != null) ddRelocationCostMultiplier.selectedIndex = DifficultyOptions.Instance.RelocationCostMultiplierIndex;
-                if (ddResidentialTargetLandValue != null) ddResidentialTargetLandValue.selectedIndex = DifficultyOptions.Instance.ResidentialTargetLandValueIndex;
-                if (ddCommercialTargetLandValue != null) ddCommercialTargetLandValue.selectedIndex = DifficultyOptions.Instance.CommercialTargetLandValueIndex;
-                if (ddIndustrialTargetService != null) ddIndustrialTargetService.selectedIndex = DifficultyOptions.Instance.IndustrialTargetServiceIndex;
-                if (ddOfficeTargetService != null) ddOfficeTargetService.selectedIndex = DifficultyOptions.Instance.OfficeTargetServiceIndex;
-            }
-            else
-            {
-                if (ddConstructionCost != null) ddConstructionCost.selectedIndex = sel;
-                if (ddRoadConstructionCost != null) ddRoadConstructionCost.selectedIndex = sel;
-                if (ddMaintenanceCostMultiplier != null) ddMaintenanceCostMultiplier.selectedIndex = sel;
-                if (ddRoadMaintenanceCostMultiplier != null) ddRoadMaintenanceCostMultiplier.selectedIndex = sel;
-                if (ddAreaCostMultiplier != null) ddAreaCostMultiplier.selectedIndex = sel;
-                if (ddDemandOffset != null) ddDemandOffset.selectedIndex = sel;
-                if (ddDemandMultiplier != null) ddDemandMultiplier.selectedIndex = sel;
-                if (ddRewardMultiplier != null) ddRewardMultiplier.selectedIndex = sel;
-                if (ddRelocationCostMultiplier != null) ddRelocationCostMultiplier.selectedIndex = sel;
-                if (ddResidentialTargetLandValue != null) ddResidentialTargetLandValue.selectedIndex = sel;
-                if (ddCommercialTargetLandValue != null) ddCommercialTargetLandValue.selectedIndex = sel;
-                if (ddIndustrialTargetService != null) ddIndustrialTargetService.selectedIndex = sel;
-                if (ddOfficeTargetService != null) ddOfficeTargetService.selectedIndex = sel;
-            }
+			if (ddConstructionCost != null) ddConstructionCost.selectedIndex = d.ConstructionCostMultiplier.SelectedOptionIndex;
+			if (ddRoadConstructionCost != null) ddRoadConstructionCost.selectedIndex = d.RoadConstructionCostMultiplier.SelectedOptionIndex;
+			if (ddMaintenanceCostMultiplier != null) ddMaintenanceCostMultiplier.selectedIndex = d.MaintenanceCostMultiplier.SelectedOptionIndex;
+			if (ddRoadMaintenanceCostMultiplier != null) ddRoadMaintenanceCostMultiplier.selectedIndex = d.RoadMaintenanceCostMultiplier.SelectedOptionIndex;
+			if (ddAreaCostMultiplier != null) ddAreaCostMultiplier.selectedIndex = d.AreaCostMultiplier.SelectedOptionIndex;
+			if (ddDemandOffset != null) ddDemandOffset.selectedIndex = d.DemandOffset.SelectedOptionIndex;
+			if (ddDemandMultiplier != null) ddDemandMultiplier.selectedIndex = d.DemandMultiplier.SelectedOptionIndex;
+			if (ddRewardMultiplier != null) ddRewardMultiplier.selectedIndex = d.RewardMultiplier.SelectedOptionIndex;
+			if (ddRelocationCostMultiplier != null) ddRelocationCostMultiplier.selectedIndex = d.RelocationCostMultiplier.SelectedOptionIndex;
+			if (ddResidentialTargetLandValue != null) ddResidentialTargetLandValue.selectedIndex = d.ResidentialTargetLandValue.SelectedOptionIndex;
+			if (ddCommercialTargetLandValue != null) ddCommercialTargetLandValue.selectedIndex = d.CommercialTargetLandValue.SelectedOptionIndex;
+			if (ddIndustrialTargetService != null) ddIndustrialTargetService.selectedIndex = d.IndustrialTargetService.SelectedOptionIndex;
+			if (ddOfficeTargetService != null) ddOfficeTargetService.selectedIndex = d.OfficeTargetService.SelectedOptionIndex;
             freeze = false;
 
-            DifficultyOptions.Instance.Difficulty = (Difficulties)sel;
-            DifficultyOptions.Save();
+            //DifficultyOptions.Save();
 
             Achievements.Update();
         }
@@ -280,28 +264,31 @@ namespace DifficultyTuningMod
         {
             if (freeze) return;
 
-            DifficultyOptions.Instance.Difficulty = Difficulties.Custom;
+            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
+			
+            d.Difficulty = Difficulties.Custom;
+			
             freeze = true;
             ddDifficulty.selectedIndex = (int)Difficulties.Custom;
             freeze = false;
 
-            if (ddConstructionCost != null) DifficultyOptions.Instance.ConstructionCostMultiplierIndex = ddConstructionCost.selectedIndex;
-            if (ddRoadConstructionCost != null) DifficultyOptions.Instance.RoadConstructionCostMultiplierIndex = ddRoadConstructionCost.selectedIndex;
-            if (ddMaintenanceCostMultiplier != null) DifficultyOptions.Instance.MaintenanceCostMultiplierIndex = ddMaintenanceCostMultiplier.selectedIndex;
-            if (ddRoadMaintenanceCostMultiplier != null) DifficultyOptions.Instance.RoadMaintenanceCostMultiplierIndex = ddRoadMaintenanceCostMultiplier.selectedIndex;
-            if (ddAreaCostMultiplier != null) DifficultyOptions.Instance.AreaCostMultiplierIndex = ddAreaCostMultiplier.selectedIndex;
-            if (ddDemandOffset != null) DifficultyOptions.Instance.DemandOffsetIndex = ddDemandOffset.selectedIndex;
-            if (ddDemandMultiplier != null) DifficultyOptions.Instance.DemandMultiplierIndex = ddDemandMultiplier.selectedIndex;
-            if (ddRewardMultiplier != null) DifficultyOptions.Instance.RewardMultiplierIndex = ddRewardMultiplier.selectedIndex;
-            if (ddRelocationCostMultiplier != null) DifficultyOptions.Instance.RelocationCostMultiplierIndex = ddRelocationCostMultiplier.selectedIndex;
-            if (ddResidentialTargetLandValue != null) DifficultyOptions.Instance.ResidentialTargetLandValueIndex = ddResidentialTargetLandValue.selectedIndex;
-            if (ddResidentialTargetLandValue != null) DifficultyOptions.Instance.ResidentialTooLowLandValueIndex = ddResidentialTargetLandValue.selectedIndex;
-            if (ddCommercialTargetLandValue != null) DifficultyOptions.Instance.CommercialTargetLandValueIndex = ddCommercialTargetLandValue.selectedIndex;
-            if (ddCommercialTargetLandValue != null) DifficultyOptions.Instance.CommercialTooLowLandValueIndex = ddCommercialTargetLandValue.selectedIndex;
-            if (ddIndustrialTargetService != null) DifficultyOptions.Instance.IndustrialTargetServiceIndex = ddIndustrialTargetService.selectedIndex;
-            if (ddIndustrialTargetService != null) DifficultyOptions.Instance.IndustrialTooFewServiceIndex = ddIndustrialTargetService.selectedIndex;
-            if (ddOfficeTargetService != null) DifficultyOptions.Instance.OfficeTargetServiceIndex = ddOfficeTargetService.selectedIndex;
-            if (ddOfficeTargetService != null) DifficultyOptions.Instance.OfficeTooFewServiceIndex = ddOfficeTargetService.selectedIndex;
+            if (ddConstructionCost != null) d.ConstructionCostMultiplier.SelectedOptionIndex = ddConstructionCost.selectedIndex;
+            if (ddRoadConstructionCost != null) d.RoadConstructionCostMultiplier.SelectedOptionIndex = ddRoadConstructionCost.selectedIndex;
+            if (ddMaintenanceCostMultiplier != null) d.MaintenanceCostMultiplier.SelectedOptionIndex = ddMaintenanceCostMultiplier.selectedIndex;
+            if (ddRoadMaintenanceCostMultiplier != null) d.RoadMaintenanceCostMultiplier.SelectedOptionIndex = ddRoadMaintenanceCostMultiplier.selectedIndex;
+            if (ddAreaCostMultiplier != null) d.AreaCostMultiplier.SelectedOptionIndex = ddAreaCostMultiplier.selectedIndex;
+            if (ddDemandOffset != null) d.DemandOffset.SelectedOptionIndex = ddDemandOffset.selectedIndex;
+            if (ddDemandMultiplier != null) d.DemandMultiplier.SelectedOptionIndex = ddDemandMultiplier.selectedIndex;
+            if (ddRewardMultiplier != null) d.RewardMultiplier.SelectedOptionIndex = ddRewardMultiplier.selectedIndex;
+            if (ddRelocationCostMultiplier != null) d.RelocationCostMultiplier.SelectedOptionIndex = ddRelocationCostMultiplier.selectedIndex;
+            if (ddResidentialTargetLandValue != null) d.ResidentialTargetLandValue.SelectedOptionIndex = ddResidentialTargetLandValue.selectedIndex;
+            if (ddResidentialTargetLandValue != null) d.ResidentialTooLowLandValue.SelectedOptionIndex = ddResidentialTargetLandValue.selectedIndex;
+            if (ddCommercialTargetLandValue != null) d.CommercialTargetLandValue.SelectedOptionIndex = ddCommercialTargetLandValue.selectedIndex;
+            if (ddCommercialTargetLandValue != null) d.CommercialTooLowLandValue.SelectedOptionIndex = ddCommercialTargetLandValue.selectedIndex;
+            if (ddIndustrialTargetService != null) d.IndustrialTargetService.SelectedOptionIndex = ddIndustrialTargetService.selectedIndex;
+            if (ddIndustrialTargetService != null) d.IndustrialTooFewService.SelectedOptionIndex = ddIndustrialTargetService.selectedIndex;
+            if (ddOfficeTargetService != null) d.OfficeTargetService.SelectedOptionIndex = ddOfficeTargetService.selectedIndex;
+            if (ddOfficeTargetService != null) d.OfficeTooFewService.SelectedOptionIndex = ddOfficeTargetService.selectedIndex;
 
             DifficultyOptions.Save();
 

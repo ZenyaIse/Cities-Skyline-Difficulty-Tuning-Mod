@@ -6,14 +6,16 @@ namespace DifficultyTuningMod
     {
         public override ResidentialLevelUp OnCalculateResidentialLevelUp(ResidentialLevelUp levelUp, int averageEducation, int landValue, ushort buildingID, Service service, SubService subService, Level currentLevel)
         {
+            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
+            
             if (levelUp.landValueProgress != 0)
             {
                 Level targetLevel;
 
-                int target2 = DifficultyOptions.ResidentialTargetLandValueLevel2;
-                int target3 = DifficultyOptions.ResidentialTargetLandValueLevel3;
-                int target4 = DifficultyOptions.ResidentialTargetLandValueLevel4;
-                int target5 = DifficultyOptions.ResidentialTargetLandValueLevel5;
+                int target2 = d.ResidentialTargetLandValue.GetValue(Level.Level2);
+                int target3 = d.ResidentialTargetLandValue.GetValue(Level.Level3);
+                int target4 = d.ResidentialTargetLandValue.GetValue(Level.Level4);
+                int target5 = d.ResidentialTargetLandValue.GetValue(Level.Level5);
 
                 if (landValue < target2)
                 {
@@ -59,19 +61,19 @@ namespace DifficultyTuningMod
             levelUp.landValueTooLow = false;
             if (currentLevel == Level.Level2)
             {
-                if (landValue < DifficultyOptions.ResidentialTooLowLandValueLevel2) levelUp.landValueTooLow = true;
+                if (landValue < d.ResidentialTooLowLandValue.GetValue(Levels.Level2)) levelUp.landValueTooLow = true;
             }
             else if (currentLevel == Level.Level3)
             {
-                if (landValue < DifficultyOptions.ResidentialTooLowLandValueLevel3) levelUp.landValueTooLow = true;
+                if (landValue < d.ResidentialTooLowLandValue.GetValue(Levels.Level3)) levelUp.landValueTooLow = true;
             }
             else if (currentLevel == Level.Level4)
             {
-                if (landValue < DifficultyOptions.ResidentialTooLowLandValueLevel4) levelUp.landValueTooLow = true;
+                if (landValue < d.ResidentialTooLowLandValue.GetValue(Levels.Level4)) levelUp.landValueTooLow = true;
             }
             else if (currentLevel == Level.Level5)
             {
-                if (landValue < DifficultyOptions.ResidentialTooLowLandValueLevel5) levelUp.landValueTooLow = true;
+                if (landValue < d.ResidentialTooLowLandValue.GetValue(Levels.Level5)) levelUp.landValueTooLow = true;
             }
 
             return levelUp;
@@ -79,12 +81,14 @@ namespace DifficultyTuningMod
 
         public override CommercialLevelUp OnCalculateCommercialLevelUp(CommercialLevelUp levelUp, int averageWealth, int landValue, ushort buildingID, Service service, SubService subService, Level currentLevel)
         {
+            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
+            
             if (levelUp.landValueProgress != 0)
             {
                 Level targetLevel;
 
-                int target2 = DifficultyOptions.CommercialTargetLandValueLevel2;
-                int target3 = DifficultyOptions.CommercialTargetLandValueLevel3;
+                int target2 = d.CommercialTargetLandValue.GetValue(Level.Level2);
+                int target3 = d.CommercialTargetLandValue.GetValue(Level.Level3);
 
                 if (landValue < target2)
                 {
@@ -120,11 +124,11 @@ namespace DifficultyTuningMod
             levelUp.landValueTooLow = false;
             if (currentLevel == Level.Level2)
             {
-                if (landValue < DifficultyOptions.CommercialTooLowLandValueLevel2) levelUp.landValueTooLow = true;
+                if (landValue < d.CommercialTooLowLandValue.GetValue(Level.Level2)) levelUp.landValueTooLow = true;
             }
             else if (currentLevel == Level.Level3)
             {
-                if (landValue < DifficultyOptions.CommercialTooLowLandValueLevel3) levelUp.landValueTooLow = true;
+                if (landValue < d.CommercialTooLowLandValue.GetValue(Level.Level3)) levelUp.landValueTooLow = true;
             }
 
             return levelUp;
@@ -132,12 +136,14 @@ namespace DifficultyTuningMod
 
         public override IndustrialLevelUp OnCalculateIndustrialLevelUp(IndustrialLevelUp levelUp, int averageEducation, int serviceScore, ushort buildingID, Service service, SubService subService, Level currentLevel)
         {
+            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
+            
             if (levelUp.serviceProgress != 0)
             {
                 Level targetLevel;
 
-                int target2 = DifficultyOptions.IndustrialTargetServiceLevel2;
-                int target3 = DifficultyOptions.IndustrialTargetServiceLevel3;
+                int target2 = d.IndustrialTargetService.GetValue(Level.Level2);
+                int target3 = d.IndustrialTargetService.GetValue(Level.Level3);
 
                 if (serviceScore < target2)
                 {
@@ -173,11 +179,11 @@ namespace DifficultyTuningMod
             levelUp.tooFewServices = false;
             if (currentLevel == Level.Level2)
             {
-                if (serviceScore < DifficultyOptions.IndustrialTooFewServiceLevel2) levelUp.tooFewServices = true;
+                if (serviceScore < d.IndustrialTooFewService.GetValue(Level.Level2)) levelUp.tooFewServices = true;
             }
             else if (currentLevel == Level.Level3)
             {
-                if (serviceScore < DifficultyOptions.IndustrialTooFewServiceLevel3) levelUp.tooFewServices = true;
+                if (serviceScore < d.IndustrialTooFewService.GetValue(Level.Level3)) levelUp.tooFewServices = true;
             }
 
             return levelUp;
@@ -185,12 +191,14 @@ namespace DifficultyTuningMod
 
         public override OfficeLevelUp OnCalculateOfficeLevelUp(OfficeLevelUp levelUp, int averageEducation, int serviceScore, ushort buildingID, Service service, SubService subService, Level currentLevel)
         {
+            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
+            
             if (levelUp.serviceProgress != 0)
             {
                 Level targetLevel;
 
-                int target2 = DifficultyOptions.OfficeTargetServiceLevel2;
-                int target3 = DifficultyOptions.OfficeTargetServiceLevel3;
+                int target2 = d.OfficeTargetService.GetValue(Level.Level2);
+                int target3 = d.OfficeTargetService.GetValue(Level.Level3);
 
                 if (serviceScore < target2)
                 {
@@ -226,11 +234,11 @@ namespace DifficultyTuningMod
             levelUp.tooFewServices = false;
             if (currentLevel == Level.Level2)
             {
-                if (serviceScore < DifficultyOptions.OfficeTooFewServiceLevel2) levelUp.tooFewServices = true;
+                if (serviceScore < d.OfficeTooFewService.GetValue(Level.Level2)) levelUp.tooFewServices = true;
             }
             else if (currentLevel == Level.Level3)
             {
-                if (serviceScore < DifficultyOptions.OfficeTooFewServiceLevel3) levelUp.tooFewServices = true;
+                if (serviceScore < d.OfficeTooFewService.GetValue(Level.Level3)) levelUp.tooFewServices = true;
             }
 
             return levelUp;

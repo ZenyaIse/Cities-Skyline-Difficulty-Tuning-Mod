@@ -2,6 +2,7 @@ namespace DifficultyTuningMod
 {
     public enum Difficulties
     {
+        None = -1,
         Easy = 0,
         Normal = 1,
         Medium = 2,

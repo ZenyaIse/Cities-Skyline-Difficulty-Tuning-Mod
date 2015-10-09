@@ -16,7 +16,9 @@ namespace DifficultyTuningMod
 
         public int OnGetAreaPrice(uint ore, uint oil, uint forest, uint fertility, uint water, bool road, bool train, bool ship, bool plane, float landFlatness, int originalPrice)
         {
-            return (int)(originalPrice * DifficultyOptions.AreaCostMultiplier);
+            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
+            
+            return (int)(originalPrice * d.AreaCostMultiplier.Value);
         }
 
         public void OnReleased()

@@ -7,9 +7,10 @@ namespace DifficultyTuningMod
         public static void Update()
         {
             SimulationManager sm = Singleton<SimulationManager>.instance;
-            if (sm == null) return;
+            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
+            if (sm == null || d == null) return;
 
-            if (DifficultyOptions.GameDifficulty == Difficulties.Easy || DifficultyOptions.GameDifficulty == Difficulties.Custom)
+            if (d.Difficulty == Difficulties.Easy || d.Difficulty == Difficulties.Custom)
             {
                 sm.m_metaData.m_disableAchievements = SimulationMetaData.MetaBool.True;
             }

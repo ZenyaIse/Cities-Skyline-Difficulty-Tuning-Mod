@@ -9,6 +9,7 @@ namespace DifficultyTuningMod
         {
             if (mode == LoadMode.NewGame && DifficultyOptions.GameDifficulty == Difficulties.Impossible)
             {
+                // TODO: make optional
                 Singleton<EconomyManager>.instance.AddResource(EconomyManager.Resource.LoanAmount, 3000000, ItemClass.Service.None, ItemClass.SubService.None, ItemClass.Level.None);
             }
 
