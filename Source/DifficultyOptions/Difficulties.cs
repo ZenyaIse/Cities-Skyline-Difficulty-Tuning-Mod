@@ -1,16 +1,16 @@
-namespace DifficultyTuningMod
+namespace DifficultyTuningMod.DifficultyOptions
 {
     public enum Difficulties
     {
-        None = -1,
-        Easy = 0,
-        Normal = 1,
-        Medium = 2,
-        Hard = 3,
-        Advanced = 4,
-        Expert = 5,
-        Challenge = 6,
-        Impossible = 7,
-        Custom = 8
+        Undefined = -1,
+        Free = 0,
+        Easy,
+        Normal,
+        Advanced,
+        Hard,
+        Expert,
+        Challenge,
+        Impossible,
+        Custom
     }
 }

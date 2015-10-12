@@ -20,7 +20,12 @@ namespace DifficultyTuningMod
                 //DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, "localeID: " + selectedLanguage);
             }
 
-            return texts[key];
+            if (texts.ContainsKey(key))
+            {
+                return texts[key];
+            }
+
+            return key;
         }
 
         private static void fillDictionaryWithText(string localeID)
@@ -35,7 +40,7 @@ namespace DifficultyTuningMod
                 //texts["CUSTOM_OPTIONS"] = "Aangepaste instellingen (enkel gebruikt indien aangepaste moeilijkheidsgraad gekozen)";
                 texts["CUSTOM_OPTIONS"] = "Aangepaste instellingen";
                 texts["CONSTRUCTION_COST"] = "Bouwkosten (van alles behalve wegen)";
-                texts["ROAD_CONSTRUCTION_COST"] = "Wegenbouwkkosten";
+                texts["CONSTRUCTION_COST_ROADS"] = "Wegenbouwkkosten";
                 texts["MAINTENANCE_COST"] = "Onderhoudskosten (van alles behalve wegen)";
                 texts["ROAD_MAINTENANCE_COST"] = "Wegonderhoudskosten";
                 texts["AREA_COST_MULTIPLIER"] = "Vermenigvuldigingsfactor voor aankoop gebieden";
@@ -68,7 +73,7 @@ namespace DifficultyTuningMod
                 //texts["CUSTOM_OPTIONS"] = "Angepaßte Einstellungen (nur verwendet wenn angepaßte Schwierigkeitsgrad gewählt)";
                 texts["CUSTOM_OPTIONS"] = "Angepaßte Einstellungen";
                 texts["CONSTRUCTION_COST"] = "Baukosten (alles außer Straßen)";
-                texts["ROAD_CONSTRUCTION_COST"] = "Straßenbau-Kosten";
+                texts["CONSTRUCTION_COST_ROADS"] = "Straßenbau-Kosten";
                 texts["MAINTENANCE_COST"] = "Unterhaltskosten (alles außer Straßen)";
                 texts["ROAD_MAINTENANCE_COST"] = "Straßenunterhaltskosten";
                 texts["AREA_COST_MULTIPLIER"] = "Multiplikator für Ankauf Gebiete";
@@ -101,7 +106,7 @@ namespace DifficultyTuningMod
                 //texts["CUSTOM_OPTIONS"] = "Opzioni personalizzate (efficace se è stato selezionato livello difficoltà personalizzate)";
                 texts["CUSTOM_OPTIONS"] = "Opzioni personalizzate";
                 texts["CONSTRUCTION_COST"] = "Costo di costruzione (tutto tranne strade)";
-                texts["ROAD_CONSTRUCTION_COST"] = "Costo di costruzione strade";
+                texts["CONSTRUCTION_COST_ROADS"] = "Costo di costruzione strade";
                 texts["MAINTENANCE_COST"] = "Costo di manutenzione (tutti tranne strade)";
                 texts["ROAD_MAINTENANCE_COST"] = "Costo di manutenzione strade";
                 texts["AREA_COST_MULTIPLIER"] = "Moltiplicatore costi di aree";
@@ -134,7 +139,7 @@ namespace DifficultyTuningMod
                 //texts["CUSTOM_OPTIONS"] = "Opções personalizadas (eficaz se o nível de dificuldade personalizado foi selecionado)";
                 texts["CUSTOM_OPTIONS"] = "Opções personalizadas";
                 texts["CONSTRUCTION_COST"] = "Custo de construção (todos exceto estrs)"; // estradas
-                texts["ROAD_CONSTRUCTION_COST"] = "Custo de construção de estradas";
+                texts["CONSTRUCTION_COST_ROADS"] = "Custo de construção de estradas";
                 texts["MAINTENANCE_COST"] = "Custo de manutenção (todos exceto estrs)";
                 texts["ROAD_MAINTENANCE_COST"] = "Custo de manutenção de estradas";
                 texts["AREA_COST_MULTIPLIER"] = "Multiplicador de custos da área";
@@ -167,7 +172,7 @@ namespace DifficultyTuningMod
                 //texts["CUSTOM_OPTIONS"] = "Пользовательские настройки (работают только если выбран Пользовательский)";
                 texts["CUSTOM_OPTIONS"] = "Пользовательские настройки";
                 texts["CONSTRUCTION_COST"] = "Стоимость построек (кроме дорог)";
-                texts["ROAD_CONSTRUCTION_COST"] = "Стоимость прокладки дорог";
+                texts["CONSTRUCTION_COST_ROADS"] = "Стоимость прокладки дорог";
                 texts["MAINTENANCE_COST"] = "Содержание построек (кроме дорог)";
                 texts["ROAD_MAINTENANCE_COST"] = "Содержание дорог";
                 texts["AREA_COST_MULTIPLIER"] = "Коэффициент покупки области";
@@ -195,14 +200,19 @@ namespace DifficultyTuningMod
                 texts["MOD_NAME"] = "Difficulty Tuning Mod";
                 texts["MOD_DESCRIPTION"] = "Variety of difficulty levels. No changes in the gameplay.";
 
-                //texts["DTM_OPTIONS"] = "Difficulty Tuning Mod Options";
                 texts["DIFFICULTY_LEVEL"] = "Difficulty level";
-                //texts["CUSTOM_OPTIONS"] = "Custom options (effective if Custom difficulty level was selected)";
                 texts["CUSTOM_OPTIONS"] = "Custom options";
-                texts["CONSTRUCTION_COST"] = "Construction cost (all except roads)";
-                texts["ROAD_CONSTRUCTION_COST"] = "Road construction cost";
-                texts["MAINTENANCE_COST"] = "Maintenance cost (all except roads)";
-                texts["ROAD_MAINTENANCE_COST"] = "Road maintenance cost";
+
+                texts["CONSTRUCTION_COST_SERVICE"] = "Construction cost for buildings";
+                texts["CONSTRUCTION_COST_PUBLIC"] = "        Public transport";
+                texts["CONSTRUCTION_COST_ROADS"] = "Roads";
+                texts["CONSTRUCTION_COST_OTHERS"] = "Others";
+
+                texts["MAINTENANCE_COST_SERVICE"] = "Maintenance cost for buildings";
+                texts["MAINTENANCE_COST_PUBLIC"] = "        Public transport";
+                texts["MAINTENANCE_COST_ROADS"] = "Roads";
+                texts["MAINTENANCE_COST_OTHERS"] = "Others";
+
                 texts["AREA_COST_MULTIPLIER"] = "Area cost multiplier";
                 texts["DEMAND_OFFSET"] = "Demand offset";
                 texts["DEMAND_MULTIPLIER"] = "Demand multiplier >>> formula: (Demand + Offset) * multiplier";
@@ -213,11 +223,11 @@ namespace DifficultyTuningMod
                 texts["TARGET_INDUSTRIAL"] = "Target service score for industrial buildings to level up (Level2, 3)";
                 texts["TARGET_OFFICE"] = "Target service score for office buildings to level up (Level2, 3)";
 
+                texts["Free"] = "Free";
                 texts["Easy"] = "Easy";
                 texts["Normal"] = "Normal";
-                texts["Medium"] = "Medium";
-                texts["Hard"] = "Hard";
                 texts["Advanced"] = "Advanced";
+                texts["Hard"] = "Hard";
                 texts["Expert"] = "Expert";
                 texts["Challenge"] = "Challenge";
                 texts["Impossible"] = "Impossible";

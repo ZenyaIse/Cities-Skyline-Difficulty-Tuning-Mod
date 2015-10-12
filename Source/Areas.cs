@@ -1,4 +1,6 @@
 ﻿using ICities;
+using ColossalFramework;
+using DifficultyTuningMod.DifficultyOptions;
 
 namespace DifficultyTuningMod
 {
@@ -16,9 +18,9 @@ namespace DifficultyTuningMod
 
         public int OnGetAreaPrice(uint ore, uint oil, uint forest, uint fertility, uint water, bool road, bool train, bool ship, bool plane, float landFlatness, int originalPrice)
         {
-            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
-            
-            return (int)(originalPrice * d.AreaCostMultiplier.Value);
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
+
+            return originalPrice; // (int)(originalPrice * d.AreaCostMultiplier.Value);
         }
 
         public void OnReleased()

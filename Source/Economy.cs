@@ -1,5 +1,6 @@
 ﻿using ICities;
-//using ColossalFramework.Plugins;
+using ColossalFramework;
+using DifficultyTuningMod.DifficultyOptions;
 
 namespace DifficultyTuningMod
 {
@@ -9,9 +10,9 @@ namespace DifficultyTuningMod
         {
             if (resource == EconomyResource.RewardAmount)
             {
-                DifficultyOptions d = Singleton<DifficultyOptions>.instance;
-            
-                return (int)(amount * d.RewardMultiplier.Value);
+                DifficultyManager d = Singleton<DifficultyManager>.instance;
+
+                return amount; // (int)(amount * d.RewardMultiplier.Value);
             }
 
             return amount;
@@ -19,11 +20,20 @@ namespace DifficultyTuningMod
 
         public override int OnGetConstructionCost(int originalConstructionCost, Service service, SubService subService, Level level)
         {
-            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
             
             if (service == Service.Road)
             {
-                return (int)(originalConstructionCost * d.RoadConstructionCostMultiplier.Value);
+                return (int)(originalConstructionCost * d.ConstructionCostMultiplier_Road.Value);
+            }
+            else if (service == Service.PublicTransport)
+            {
+                return (int)(originalConstructionCost * d.ConstructionCostMultiplier_Public.Value);
+            }
+            else if (service == Service.Education || service == Service.Electricity || service == Service.FireDepartment ||
+                service == Service.Garbage || service == Service.HealthCare || service == Service.PoliceDepartment || service == Service.Water)
+            {
+                return (int)(originalConstructionCost * d.ConstructionCostMultiplier_Service.Value);
             }
 
             return (int)(originalConstructionCost * d.ConstructionCostMultiplier.Value);
@@ -31,21 +41,30 @@ namespace DifficultyTuningMod
 
         public override int OnGetMaintenanceCost(int originalMaintenanceCost, Service service, SubService subService, Level level)
         {
-            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
-            
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
+
             if (service == Service.Road)
             {
-                return (int)(originalMaintenanceCost * DifficultyOptions.RoadMaintenanceCostMultiplier);
+                return (int)(originalMaintenanceCost * d.MaintenanceCostMultiplier_Road.Value);
+            }
+            else if (service == Service.PublicTransport)
+            {
+                return (int)(originalMaintenanceCost * d.MaintenanceCostMultiplier_Public.Value);
+            }
+            else if (service == Service.Education || service == Service.Electricity || service == Service.FireDepartment ||
+                service == Service.Garbage || service == Service.HealthCare || service == Service.PoliceDepartment || service == Service.Water)
+            {
+                return (int)(originalMaintenanceCost * d.MaintenanceCostMultiplier_Service.Value);
             }
 
-            return (int)(originalMaintenanceCost * DifficultyOptions.MaintenanceCostMultiplier);
+            return (int)(originalMaintenanceCost * d.MaintenanceCostMultiplier.Value);
         }
 
         public override int OnGetRelocationCost(int constructionCost, int relocationCost, Service service, SubService subService, Level level)
         {
-            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
-            
-            return (int)(constructionCost * d.RelocationCostMultiplier.Value);
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
+
+            return constructionCost; // (int)(constructionCost * d.RelocationCostMultiplier.Value);
         }
 
         public override int OnGetRefundAmount(int constructionCost, int refundAmount, Service service, SubService subService, Level level)

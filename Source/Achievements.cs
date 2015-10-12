@@ -1,4 +1,5 @@
 ﻿using ColossalFramework;
+using DifficultyTuningMod.DifficultyOptions;
 
 namespace DifficultyTuningMod
 {
@@ -7,7 +8,7 @@ namespace DifficultyTuningMod
         public static void Update()
         {
             SimulationManager sm = Singleton<SimulationManager>.instance;
-            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
             if (sm == null || d == null) return;
 
             if (d.Difficulty == Difficulties.Easy || d.Difficulty == Difficulties.Custom)
