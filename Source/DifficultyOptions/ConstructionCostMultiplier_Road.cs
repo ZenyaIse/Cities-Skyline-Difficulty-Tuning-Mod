@@ -4,31 +4,31 @@
     {
         public ConstructionCostMultiplier_Road() : base() { }
 
-        public override float GetValue(Difficulties difficultyLevel)
+        public override int GetValue(Difficulties difficultyLevel)
         {
             switch (difficultyLevel)
             {
                 case Difficulties.Free:
                     return 0;
                 case Difficulties.Easy:
-                    return 0.5f;
+                    return 50;
                 case Difficulties.Normal:
-                    return 1f;
+                    return 100;
                 case Difficulties.Advanced:
-                    return 1.5f;
+                    return 150;
                 case Difficulties.Hard:
-                    return 2f;
+                    return 200;
                 case Difficulties.Expert:
-                    return 3f;
+                    return 300;
                 case Difficulties.Challenge:
-                    return 5f;
+                    return 500;
                 case Difficulties.Impossible:
-                    return 7f;
+                    return 700;
                 case Difficulties.Custom:
                     return CustomValue;
             }
 
-            return 1f;
+            return 100;
         }
     }
 }

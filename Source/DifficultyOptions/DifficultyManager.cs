@@ -16,7 +16,7 @@ namespace DifficultyTuningMod.DifficultyOptions
         public MaintenanceCostMultiplier_Service MaintenanceCostMultiplier_Service;
         public MaintenanceCostMultiplier_Public MaintenanceCostMultiplier_Public;
         public RelocationCostMultiplier RelocationCostMultiplier;
-        //public AreaCostMultiplierClass AreaCostMultiplier;
+        public AreaCostMultiplier AreaCostMultiplier;
         //public DemandOffsetClass DemandOffset;
         //public DemandMultiplierClass DemandMultiplier;
         //public RewardMultiplierClass RewardMultiplier;
@@ -38,7 +38,7 @@ namespace DifficultyTuningMod.DifficultyOptions
             MaintenanceCostMultiplier_Service = new MaintenanceCostMultiplier_Service();
             MaintenanceCostMultiplier_Public = new MaintenanceCostMultiplier_Public();
             RelocationCostMultiplier = new RelocationCostMultiplier();
-            //AreaCostMultiplier = new AreaCostMultiplierClass();
+            AreaCostMultiplier = new AreaCostMultiplier();
             //DemandOffset = new DemandOffsetClass();
             //DemandMultiplier = new DemandMultiplierClass();
             //RewardMultiplier = new RewardMultiplierClass();

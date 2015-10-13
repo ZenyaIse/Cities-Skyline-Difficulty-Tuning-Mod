@@ -1,52 +1,52 @@
 namespace DifficultyTuningMod.DifficultyOptions
 {
-    public class ConstructionCostMultiplier : DifficultyParameterFloat
+    public class ConstructionCostMultiplier : DifficultyParameterBase
     {
         public ConstructionCostMultiplier() : base() { }
 
         protected override void InitValues()
         {
-            CustomValue = 1f;
-            customValues = new float[50];
+            CustomValue = 100;
+            customValues = new int[50];
             
             int i;
-            for (i =  0; i <= 30; i++) customValues[i] = 0.05f * i;              // 0, 0.05, .. 1.5
-            for (i = 31; i <= 35; i++) customValues[i] = 1.5f + 0.1f * (i - 30); // 1.6, 1.7, .. 2.0
-            for (i = 36; i <= 40; i++) customValues[i] = 2.0f + 0.2f * (i - 35); // 2.2, 2.4, .. 3.0
-            for (i = 41; i <= 44; i++) customValues[i] = 3.0f + 0.5f * (i - 40); // 3.5, 4.0, 4.5, 5.0
-            for (i = 45; i <= 49; i++) customValues[i] = 5.0f + 1f * (i - 44);   // 6, 7, .. 10
+            for (i =  0; i <= 30; i++) customValues[i] = 5 * i;                // 0, 5, .. 150
+            for (i = 31; i <= 35; i++) customValues[i] = 150 + 10 * (i - 30);  // 160, 170, .. 200
+            for (i = 36; i <= 40; i++) customValues[i] = 200 + 20 * (i - 35);  // 220, 240, .. 300
+            for (i = 41; i <= 44; i++) customValues[i] = 300 + 50 * (i - 40);  // 350, 400, 450, 500
+            for (i = 45; i <= 49; i++) customValues[i] = 500 + 100 * (i - 44); // 600, 700, .. 1000
         }
         
-        public override float GetValue(Difficulties difficultyLevel)
+        public override int GetValue(Difficulties difficultyLevel)
         {
             switch (difficultyLevel)
             {
                 case Difficulties.Free:
                     return 0;
                 case Difficulties.Easy:
-                    return 0.5f;
+                    return 50;
                 case Difficulties.Normal:
-                    return 1f;
+                    return 100;
                 case Difficulties.Advanced:
-                    return 1.25f;
+                    return 125;
                 case Difficulties.Hard:
-                    return 1.5f;
+                    return 150;
                 case Difficulties.Expert:
-                    return 2f;
+                    return 200;
                 case Difficulties.Challenge:
-                    return 3f;
+                    return 300;
                 case Difficulties.Impossible:
-                    return 4f;
+                    return 400;
                 case Difficulties.Custom:
                     return CustomValue;
             }
 
-            return 1f;
+            return 100;
         }
         
-        protected override string valueToStr(float value)
+        protected override string valueToStr(int value)
         {
-            return (value * 100).ToString() + "%";
+            return value.ToString() + "%";
         }
     }
 }

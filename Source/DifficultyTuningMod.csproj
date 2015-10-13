@@ -54,18 +54,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Achievements.cs" />
+    <Compile Include="DifficultyOptions\AreaCostMultiplier.cs" />
     <Compile Include="DifficultyOptions\ConstructionCostMultiplier.cs" />
     <Compile Include="DifficultyOptions\ConstructionCostMultiplier_Public.cs" />
     <Compile Include="DifficultyOptions\ConstructionCostMultiplier_Service.cs" />
     <Compile Include="DifficultyOptions\Difficulties.cs" />
     <Compile Include="DifficultyOptions\DifficultyManager.cs" />
-    <Compile Include="DifficultyOptions\DifficultyParameterFloat.cs" />
+    <Compile Include="DifficultyOptions\DifficultyParameterBase.cs" />
     <Compile Include="DifficultyOptions\IDifficultyParameter.cs" />
     <Compile Include="DifficultyOptions\MaintenanceCostMultiplier.cs" />
     <Compile Include="DifficultyOptions\ConstructionCostMultiplier_Road.cs" />
     <Compile Include="DifficultyOptions\MaintenanceCostMultiplier_Public.cs" />
     <Compile Include="DifficultyOptions\MaintenanceCostMultiplier_Road.cs" />
     <Compile Include="DifficultyOptions\MaintenanceCostMultiplier_Service.cs" />
+    <Compile Include="DifficultyOptions\RelocationCostMultiplier.cs" />
     <Compile Include="DifficultyOptions_old.cs" />
     <Compile Include="Areas.cs" />
     <Compile Include="Demand.cs" />

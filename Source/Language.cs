@@ -198,30 +198,7 @@ namespace DifficultyTuningMod
             else
             {
                 texts["MOD_NAME"] = "Difficulty Tuning Mod";
-                texts["MOD_DESCRIPTION"] = "Variety of difficulty levels. No changes in the gameplay.";
-
-                texts["DIFFICULTY_LEVEL"] = "Difficulty level";
-                texts["CUSTOM_OPTIONS"] = "Custom options";
-
-                texts["CONSTRUCTION_COST_SERVICE"] = "Construction cost for buildings";
-                texts["CONSTRUCTION_COST_PUBLIC"] = "        Public transport";
-                texts["CONSTRUCTION_COST_ROADS"] = "Roads";
-                texts["CONSTRUCTION_COST_OTHERS"] = "Others";
-
-                texts["MAINTENANCE_COST_SERVICE"] = "Maintenance cost for buildings";
-                texts["MAINTENANCE_COST_PUBLIC"] = "        Public transport";
-                texts["MAINTENANCE_COST_ROADS"] = "Roads";
-                texts["MAINTENANCE_COST_OTHERS"] = "Others";
-
-                texts["AREA_COST_MULTIPLIER"] = "Area cost multiplier";
-                texts["DEMAND_OFFSET"] = "Demand offset";
-                texts["DEMAND_MULTIPLIER"] = "Demand multiplier >>> formula: (Demand + Offset) * multiplier";
-                texts["REWARD"] = "Reward (amount of money you get when a milestone is reached)";
-                texts["RELOCATION_COST"] = "Service building relocation cost";
-                texts["TARGET_RESIDENTIAL"] = "Target land values for residential buildings to level up (Level2, 3, 4, 5)";
-                texts["TARGET_COMMERCIAL"] = "Target land values for commercial buildings to level up (Level2, 3)";
-                texts["TARGET_INDUSTRIAL"] = "Target service score for industrial buildings to level up (Level2, 3)";
-                texts["TARGET_OFFICE"] = "Target service score for office buildings to level up (Level2, 3)";
+                texts["MOD_DESCRIPTION"] = "Variety of difficulty levels.";
 
                 texts["Free"] = "Free";
                 texts["Easy"] = "Easy";
@@ -232,6 +209,27 @@ namespace DifficultyTuningMod
                 texts["Challenge"] = "Challenge";
                 texts["Impossible"] = "Impossible";
                 texts["Custom"] = "Custom";
+
+                texts["DIFFICULTY_LEVEL"] = "Difficulty level";
+                texts["CUSTOM_OPTIONS"] = "Custom options";
+
+                texts["SERVICE_BUILDINGS"] = "Service buildings";
+                texts["PUBLIC_TRANSPORT"] = "Public transport";
+                texts["ROADS"] = "Roads";
+                texts["OTHERS"] = "Others";
+
+                texts["AREA_COST_MULTIPLIER"] = "Area cost multiplier";
+
+                texts["DEMAND"] = "Demand formula: (Demand + Offset) * multiplier";
+                texts["DEMAND_OFFSET"] = "Demand offset";
+                texts["DEMAND_MULTIPLIER"] = "Demand multiplier";
+
+                texts["REWARD"] = "Reward (amount of money you get when a milestone is reached)";
+
+                texts["TARGET_RESIDENTIAL"] = "Target land values for residential buildings to level up (Level2, 3, 4, 5)";
+                texts["TARGET_COMMERCIAL"] = "Target land values for commercial buildings to level up (Level2, 3)";
+                texts["TARGET_INDUSTRIAL"] = "Target service score for industrial buildings to level up (Level2, 3)";
+                texts["TARGET_OFFICE"] = "Target service score for office buildings to level up (Level2, 3)";
             }
         }
     }

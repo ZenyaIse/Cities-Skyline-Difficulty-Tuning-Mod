@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ICities;
 using ColossalFramework;
 using ColossalFramework.UI;
@@ -24,23 +25,12 @@ namespace DifficultyTuningMod
 
         private bool freeze = true;
         private UIDropDown ddDifficulty;
-        //private UIDropDown ddMaintenanceCost;
-        //private UIDropDown ddMaintenanceCost_Road;
-        //private UIDropDown ddMaintenanceCost_Public;
-        //private UIDropDown ddMaintenanceCost_Service;
-        //private UIDropDown ddAreaCostMultiplier;
-        //private UIDropDown ddDemandOffset;
-        //private UIDropDown ddDemandMultiplier;
-        //private UIDropDown ddRewardMultiplier;
-        //private UIDropDown ddRelocationCostMultiplier;
-        //private UIDropDown ddResidentialTargetLandValue;
-        //private UIDropDown ddCommercialTargetLandValue;
-        //private UIDropDown ddIndustrialTargetService;
-        //private UIDropDown ddOfficeTargetService;
 
         private float textScaleBig = 1.2f;
         private float textScaleMedium = 1.0f;
         private float textScaleSmall = 0.8f;
+
+        private Dictionary<UISlider, IDifficultyParameter> sliders = new Dictionary<UISlider, IDifficultyParameter>();
 
 
         //private void adjustSizes(UIDropDown dd)
@@ -85,15 +75,19 @@ namespace DifficultyTuningMod
             slider.eventValueChanged += delegate (UIComponent c, float val)
             {
                 label.text = param.GetValueStr((int)val);
-                eventCallback(val);
+                if (!freeze)
+                {
+                    param.SelectedIndex = (int)slider.value;
+                    eventCallback(val);
+                }
             };
+
+            sliders.Add(slider, param);
         }
 
-        private string truncateStr(string str, int countToTruncate)
+        private string truncateSemicolon(string str)
         {
-			if (countToTruncate == 0) return str;
-			
-            return str.Substring(0, str.Length - countToTruncate);
+            return str.Split(':')[0];
         }
 
         public void OnSettingsUI(UIHelperBase helper)
@@ -116,9 +110,10 @@ namespace DifficultyTuningMod
 
             float x = 5;
             float y = 0;
-			float dx1 = 100;
-			float dx2 = 300;
-			float dy1 = 30;
+			float dx1 = 140;
+			float dx2 = 375;
+			float dy1 = 24;
+            float dy2 = 36;
 
             ddDifficulty.parent.relativePosition = new Vector3(x, y);
             y += ddDifficulty.parent.height + 10;
@@ -127,34 +122,47 @@ namespace DifficultyTuningMod
             //
             // Custom options
             //
+            sliders.Clear();
 
             addLabel(scrollablePanel, DTMLang.Text("CUSTOM_OPTIONS"), new Vector3(x, y), textScaleBig);
-            y += 30;
+            y += dy2;
+            x += 10;
 
             // Construction cost
-            addLabel(scrollablePanel, truncateStr(Locale.Get("TOOL_CONSTRUCTION_COST"), 5), new Vector3(x, y), textScaleMedium);
-            addLabel(scrollablePanel, DTMLang.Text("SERVICE_BUILDINGS"), new Vector3(x, y), textScaleSmall);
+            addLabel(scrollablePanel, truncateSemicolon(Locale.Get("TOOL_CONSTRUCTION_COST")), new Vector3(x, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("SERVICE_BUILDINGS"), new Vector3(x, y + dy1), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1), OnCustomValueChanged, d.ConstructionCostMultiplier_Service);
-            addLabel(scrollablePanel, DTMLang.Text("PUBLIC_TRANSPORT"), new Vector3(x, y), textScaleSmall);
+            addLabel(scrollablePanel, DTMLang.Text("PUBLIC_TRANSPORT"), new Vector3(x, y + dy1 * 2), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 2), OnCustomValueChanged, d.ConstructionCostMultiplier_Public);
-            addLabel(scrollablePanel, DTMLang.Text("ROADS"), new Vector3(x, y), textScaleSmall);
+            addLabel(scrollablePanel, DTMLang.Text("ROADS"), new Vector3(x, y + dy1 * 3), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 3), OnCustomValueChanged, d.ConstructionCostMultiplier_Road);
-            addLabel(scrollablePanel, DTMLang.Text("OTHERS"), new Vector3(x, y), textScaleSmall);
+            addLabel(scrollablePanel, DTMLang.Text("OTHERS"), new Vector3(x, y + dy1 * 4), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 4), OnCustomValueChanged, d.ConstructionCostMultiplier);
 
             // Maintenance cost
 			x += dx2;
-            addLabel(scrollablePanel, truncateStr(Locale.Get("AIINFO_COST"), 0), new Vector3(x, y), textScaleMedium);
-            addLabel(scrollablePanel, DTMLang.Text("SERVICE_BUILDINGS"), new Vector3(x, y), textScaleSmall);
+            addLabel(scrollablePanel, truncateSemicolon(Locale.Get("AIINFO_UPKEEP")), new Vector3(x, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("SERVICE_BUILDINGS"), new Vector3(x, y + dy1), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1), OnCustomValueChanged, d.MaintenanceCostMultiplier_Service);
-            addLabel(scrollablePanel, DTMLang.Text("PUBLIC_TRANSPORT"), new Vector3(x, y), textScaleSmall);
+            addLabel(scrollablePanel, DTMLang.Text("PUBLIC_TRANSPORT"), new Vector3(x, y + dy1 * 2), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 2), OnCustomValueChanged, d.MaintenanceCostMultiplier_Public);
-            addLabel(scrollablePanel, DTMLang.Text("ROADS"), new Vector3(x, y), textScaleSmall);
+            addLabel(scrollablePanel, DTMLang.Text("ROADS"), new Vector3(x, y + dy1 * 3), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 3), OnCustomValueChanged, d.MaintenanceCostMultiplier_Road);
-            addLabel(scrollablePanel, DTMLang.Text("OTHERS"), new Vector3(x, y), textScaleSmall);
+            addLabel(scrollablePanel, DTMLang.Text("OTHERS"), new Vector3(x, y + dy1 * 4), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 4), OnCustomValueChanged, d.MaintenanceCostMultiplier);
 			x -= dx2;
+            y += dy1 * 4;
+            y += dy2;
 
+            addLabel(scrollablePanel, truncateSemicolon(Locale.Get("TOOL_RELOCATE_COST")), new Vector3(x, y), textScaleMedium);
+            y += dy1;
+            addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.RelocationCostMultiplier);
+            y += dy2;
+
+            addLabel(scrollablePanel, DTMLang.Text("AREA_COST_MULTIPLIER"), new Vector3(x, y), textScaleMedium);
+            y += dy1;
+            addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.AreaCostMultiplier);
+            y += dy2;
 
 
 
@@ -240,60 +248,11 @@ namespace DifficultyTuningMod
             //adjustSizes(ddOfficeTargetService);
 
             freeze = false;
-
-
-            //
-            // Custom layout
-            //
-
-            //UIPanel groupPanel = ddConstructionCost.parent.parent as UIPanel;
-            //if (groupPanel != null)
-            //{
-                //groupPanel.autoLayout = false;
-
-                //float x = 5;
-                //float y = 0;
-                //float dx = 190;
-                //float dy = 60;
-
-                //ddConstructionCost_Service.parent.relativePosition = new Vector3(x, y);
-                //ddConstructionCost_Public.parent.relativePosition = new Vector3(x + dx, y);
-                //ddConstructionCost_Road.parent.relativePosition = new Vector3(x + dx * 2, y);
-                //ddConstructionCost.parent.relativePosition = new Vector3(x + dx * 3, y);
-                //y += dy;
-                //ddMaintenanceCost_Service.parent.relativePosition = new Vector3(x, y);
-                //ddMaintenanceCost_Public.parent.relativePosition = new Vector3(x + dx, y);
-                //ddMaintenanceCost_Road.parent.relativePosition = new Vector3(x + dx * 2, y);
-                //ddMaintenanceCost.parent.relativePosition = new Vector3(x + dx * 3, y);
-                //y += dy;
-                //ddAreaCostMultiplier.parent.relativePosition = new UnityEngine.Vector3(x, y);
-                //y += dy;
-                //ddDemandOffset.parent.relativePosition = new UnityEngine.Vector3(x, y);
-                //ddDemandMultiplier.parent.relativePosition = new UnityEngine.Vector3(x + dx, y);
-                //y += dy;
-                //ddRewardMultiplier.parent.relativePosition = new UnityEngine.Vector3(x, y);
-                //y += dy;
-                //ddRelocationCostMultiplier.parent.relativePosition = new UnityEngine.Vector3(x, y);
-                //y += dy;
-                //ddResidentialTargetLandValue.parent.relativePosition = new UnityEngine.Vector3(x, y);
-                //y += dy;
-                //ddCommercialTargetLandValue.parent.relativePosition = new UnityEngine.Vector3(x, y);
-                //y += dy;
-                //ddIndustrialTargetService.parent.relativePosition = new UnityEngine.Vector3(x, y);
-                //y += dy;
-                //ddOfficeTargetService.parent.relativePosition = new UnityEngine.Vector3(x, y);
-
-
-                //y += dy;
-                //groupPanel.height = y;
-            //}
         }
 
         private void DifficultyLevelOnSelected(int sel)
         {
             if (freeze) return;
-
-            //if (ddConstructionCost == null) return;
 
             DifficultyManager d = Singleton<DifficultyManager>.instance;
             
@@ -301,26 +260,11 @@ namespace DifficultyTuningMod
             
             // Update controls
             freeze = true;
-            //ddConstructionCost.selectedIndex = d.ConstructionCostMultiplier.SelectedOptionIndex;
-            //ddConstructionCost_Road.selectedIndex = d.ConstructionCostMultiplier_Road.SelectedOptionIndex;
-            //ddConstructionCost_Service.selectedIndex = d.ConstructionCostMultiplier_Service.SelectedOptionIndex;
-            //ddConstructionCost_Public.selectedIndex = d.ConstructionCostMultiplier_Public.SelectedOptionIndex;
-            //ddMaintenanceCost.selectedIndex = d.MaintenanceCostMultiplier.SelectedOptionIndex;
-            //ddMaintenanceCost_Road.selectedIndex = d.MaintenanceCostMultiplier_Road.SelectedOptionIndex;
-            //ddMaintenanceCost_Service.selectedIndex = d.MaintenanceCostMultiplier_Service.SelectedOptionIndex;
-            //ddMaintenanceCost_Public.selectedIndex = d.MaintenanceCostMultiplier_Public.SelectedOptionIndex;
-            //if (ddAreaCostMultiplier != null) ddAreaCostMultiplier.selectedIndex = d.AreaCostMultiplier.SelectedOptionIndex;
-            //if (ddDemandOffset != null) ddDemandOffset.selectedIndex = d.DemandOffset.SelectedOptionIndex;
-            //if (ddDemandMultiplier != null) ddDemandMultiplier.selectedIndex = d.DemandMultiplier.SelectedOptionIndex;
-            //if (ddRewardMultiplier != null) ddRewardMultiplier.selectedIndex = d.RewardMultiplier.SelectedOptionIndex;
-            //if (ddRelocationCostMultiplier != null) ddRelocationCostMultiplier.selectedIndex = d.RelocationCostMultiplier.SelectedOptionIndex;
-            //if (ddResidentialTargetLandValue != null) ddResidentialTargetLandValue.selectedIndex = d.ResidentialTargetLandValue.SelectedOptionIndex;
-            //if (ddCommercialTargetLandValue != null) ddCommercialTargetLandValue.selectedIndex = d.CommercialTargetLandValue.SelectedOptionIndex;
-            //if (ddIndustrialTargetService != null) ddIndustrialTargetService.selectedIndex = d.IndustrialTargetService.SelectedOptionIndex;
-            //if (ddOfficeTargetService != null) ddOfficeTargetService.selectedIndex = d.OfficeTargetService.SelectedOptionIndex;
+            foreach (KeyValuePair<UISlider, IDifficultyParameter> item in sliders)
+            {
+                item.Key.value = item.Value.SelectedIndex;
+            }
             freeze = false;
-
-            //DifficultyOptions.Save();
 
             Achievements.Update();
         }
@@ -329,8 +273,6 @@ namespace DifficultyTuningMod
         {
             if (freeze) return;
 
-            //if (ddConstructionCost == null) return;
-
             DifficultyManager d = Singleton<DifficultyManager>.instance;
             
             d.Difficulty = Difficulties.Custom;
@@ -338,30 +280,6 @@ namespace DifficultyTuningMod
             freeze = true;
             ddDifficulty.selectedIndex = (int)Difficulties.Custom;
             freeze = false;
-
-            //d.ConstructionCostMultiplier.SelectedOptionIndex = ddConstructionCost.selectedIndex;
-            //d.ConstructionCostMultiplier_Road.SelectedOptionIndex = ddConstructionCost_Road.selectedIndex;
-            //d.ConstructionCostMultiplier_Service.SelectedOptionIndex = ddConstructionCost_Service.selectedIndex;
-            //d.ConstructionCostMultiplier_Public.SelectedOptionIndex = ddConstructionCost_Public.selectedIndex;
-            //d.MaintenanceCostMultiplier.SelectedOptionIndex = ddMaintenanceCost.selectedIndex;
-            //d.MaintenanceCostMultiplier_Road.SelectedOptionIndex = ddMaintenanceCost_Road.selectedIndex;
-            //d.MaintenanceCostMultiplier_Service.SelectedOptionIndex = ddMaintenanceCost_Service.selectedIndex;
-            //d.MaintenanceCostMultiplier_Public.SelectedOptionIndex = ddMaintenanceCost_Public.selectedIndex;
-            //if (ddAreaCostMultiplier != null) d.AreaCostMultiplier.SelectedOptionIndex = ddAreaCostMultiplier.selectedIndex;
-            //if (ddDemandOffset != null) d.DemandOffset.SelectedOptionIndex = ddDemandOffset.selectedIndex;
-            //if (ddDemandMultiplier != null) d.DemandMultiplier.SelectedOptionIndex = ddDemandMultiplier.selectedIndex;
-            //if (ddRewardMultiplier != null) d.RewardMultiplier.SelectedOptionIndex = ddRewardMultiplier.selectedIndex;
-            //if (ddRelocationCostMultiplier != null) d.RelocationCostMultiplier.SelectedOptionIndex = ddRelocationCostMultiplier.selectedIndex;
-            //if (ddResidentialTargetLandValue != null) d.ResidentialTargetLandValue.SelectedOptionIndex = ddResidentialTargetLandValue.selectedIndex;
-            //if (ddResidentialTargetLandValue != null) d.ResidentialTooLowLandValue.SelectedOptionIndex = ddResidentialTargetLandValue.selectedIndex;
-            //if (ddCommercialTargetLandValue != null) d.CommercialTargetLandValue.SelectedOptionIndex = ddCommercialTargetLandValue.selectedIndex;
-            //if (ddCommercialTargetLandValue != null) d.CommercialTooLowLandValue.SelectedOptionIndex = ddCommercialTargetLandValue.selectedIndex;
-            //if (ddIndustrialTargetService != null) d.IndustrialTargetService.SelectedOptionIndex = ddIndustrialTargetService.selectedIndex;
-            //if (ddIndustrialTargetService != null) d.IndustrialTooFewService.SelectedOptionIndex = ddIndustrialTargetService.selectedIndex;
-            //if (ddOfficeTargetService != null) d.OfficeTargetService.SelectedOptionIndex = ddOfficeTargetService.selectedIndex;
-            //if (ddOfficeTargetService != null) d.OfficeTooFewService.SelectedOptionIndex = ddOfficeTargetService.selectedIndex;
-
-            //DifficultyOptions.Save();
 
             Achievements.Update();
         }

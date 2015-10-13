@@ -4,31 +4,31 @@ namespace DifficultyTuningMod.DifficultyOptions
     {
         public MaintenanceCostMultiplier_Public() : base() { }
         
-        public override float GetValue(Difficulties difficultyLevel)
+        public override int GetValue(Difficulties difficultyLevel)
         {
             switch (difficultyLevel)
             {
                 case Difficulties.Free:
-                    return 0.5f;
+                    return 50;
                 case Difficulties.Easy:
-                    return 0.75f;
+                    return 75;
                 case Difficulties.Normal:
-                    return 1f;
+                    return 100;
                 case Difficulties.Advanced:
-                    return 1.1f;
+                    return 110;
                 case Difficulties.Hard:
-                    return 1.2f;
+                    return 120;
                 case Difficulties.Expert:
-                    return 1.3f;
+                    return 130;
                 case Difficulties.Challenge:
-                    return 1.4f;
+                    return 140;
                 case Difficulties.Impossible:
-                    return 1.5f;
+                    return 150;
                 case Difficulties.Custom:
                     return CustomValue;
             }
 
-            return 1f;
+            return 100;
         }
    }
 }

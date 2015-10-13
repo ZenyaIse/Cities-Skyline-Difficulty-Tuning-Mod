@@ -1,24 +1,23 @@
 using System;
-using System.Collections.Generic;
 using ColossalFramework;
 
 namespace DifficultyTuningMod.DifficultyOptions
 {
-    public abstract class DifficultyParameterFloat : IDifficultyParameter
+    public abstract class DifficultyParameterBase : IDifficultyParameter
     {
-        protected float[] customValues;
-        public float CustomValue;
+        protected int[] customValues;
+        public int CustomValue;
 
-        protected DifficultyParameterFloat()
+        protected DifficultyParameterBase()
         {
             InitValues();
         }
 
         protected abstract void InitValues();
 
-        public abstract float GetValue(Difficulties difficultyLevel);
+        public abstract int GetValue(Difficulties difficultyLevel);
 
-        protected Difficulties getDifficultyFromValue(float value)
+        protected Difficulties getDifficultyFromValue(int value)
         {
             for (Difficulties d = Difficulties.Free; d <= Difficulties.Impossible; d++)
             {
@@ -28,7 +27,7 @@ namespace DifficultyTuningMod.DifficultyOptions
             return Difficulties.Undefined;
         }
 
-        public float Value
+        public int Value
         {
             get
             {
@@ -56,22 +55,6 @@ namespace DifficultyTuningMod.DifficultyOptions
             }
         }
 
-        public string[] CustomValuesStr
-        {
-            get
-            {
-                List<string> sl = new List<string>();
-
-                for (int i = 0; i < customValues.Length; i++)
-                {
-                    Difficulties d = getDifficultyFromValue(customValues[i]);
-                    sl.Add(valueToStr(customValues[i]) + getDifficultyNamePostfix(d));
-                }
-
-                return sl.ToArray();
-            }
-        }
-
         public int MaxIndex
         {
             get
@@ -80,18 +63,34 @@ namespace DifficultyTuningMod.DifficultyOptions
             }
         }
 
-        protected abstract string valueToStr(float value);
-
-        private string getDifficultyNamePostfix(Difficulties d)
-        {
-            if (d == Difficulties.Undefined) return "";
-
-            return " - " + DTMLang.Text(d.ToString());
-        }
+        protected abstract string valueToStr(int value);
 
         public string GetValueStr(int index)
         {
             return valueToStr(customValues[index]);
         }
+
+        //public string[] CustomValuesStr
+        //{
+        //    get
+        //    {
+        //        List<string> sl = new List<string>();
+
+        //        for (int i = 0; i < customValues.Length; i++)
+        //        {
+        //            Difficulties d = getDifficultyFromValue(customValues[i]);
+        //            sl.Add(valueToStr(customValues[i]) + getDifficultyNamePostfix(d));
+        //        }
+
+        //        return sl.ToArray();
+        //    }
+        //}
+
+        //private string getDifficultyNamePostfix(Difficulties d)
+        //{
+        //    if (d == Difficulties.Undefined) return "";
+
+        //    return " - " + DTMLang.Text(d.ToString());
+        //}
     }
 }
