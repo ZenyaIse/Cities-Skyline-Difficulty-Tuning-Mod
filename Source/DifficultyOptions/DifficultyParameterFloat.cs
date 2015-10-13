@@ -16,8 +16,6 @@ namespace DifficultyTuningMod.DifficultyOptions
 
         protected abstract void InitValues();
 
-        public abstract string Description { get; }
-
         public abstract float GetValue(Difficulties difficultyLevel);
 
         protected Difficulties getDifficultyFromValue(float value)

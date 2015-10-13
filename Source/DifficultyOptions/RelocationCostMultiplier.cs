@@ -7,15 +7,10 @@ namespace DifficultyTuningMod.DifficultyOptions
         protected override void InitValues()
         {
             CustomValue = 1f;
-            customValues = new float[] { 0, 0.25f, 0.5f, 0.75f, 1f, 1.2f, 1.4f, 1.6f, 1.8f, 2f, 2.2f, 2.6f, 3f };
-        }
-
-        public override string Description
-        {
-            get
-            {
-                return DTMLang.Text("RELOCATION_COST");
-            }
+            customValues = new float[21];
+            
+            int i;
+            for (i = 0; i <= 20; i++) customValues[i] = 0.05f * i; // 0, 0.05, .. 1.0
         }
         
         public override float GetValue(Difficulties difficultyLevel)
@@ -29,25 +24,25 @@ namespace DifficultyTuningMod.DifficultyOptions
                 case Difficulties.Normal:
                     return 0.2f;
                 case Difficulties.Advanced:
-                    return 0.3f;
+                    return 0.35f;
                 case Difficulties.Hard:
-                    return 0.4f;
+                    return 0.5f;
                 case Difficulties.Expert:
-                    return 1.6f;
+                    return 0.6f;
                 case Difficulties.Challenge:
-                    return 0.8f;
+                    return 0.7f;
                 case Difficulties.Impossible:
-                    return 0.9f;
+                    return 0.8f;
                 case Difficulties.Custom:
                     return CustomValue;
             }
 
             return 1f;
         }
-		
-		protected override string valueToStr(float value)
-		{
-			return (value * 100).ToString() + "%";
-		}
+        
+        protected override string valueToStr(float value)
+        {
+            return (value * 100).ToString() + "%";
+        }
     }
 }

@@ -15,21 +15,21 @@ namespace DifficultyTuningMod.DifficultyOptions
         public MaintenanceCostMultiplier_Road MaintenanceCostMultiplier_Road;
         public MaintenanceCostMultiplier_Service MaintenanceCostMultiplier_Service;
         public MaintenanceCostMultiplier_Public MaintenanceCostMultiplier_Public;
+        public RelocationCostMultiplier RelocationCostMultiplier;
         //public AreaCostMultiplierClass AreaCostMultiplier;
         //public DemandOffsetClass DemandOffset;
         //public DemandMultiplierClass DemandMultiplier;
         //public RewardMultiplierClass RewardMultiplier;
-        //public RelocationCostMultiplierClass RelocationCostMultiplier;
         //public ResidentialTargetLandValueClass ResidentialTargetLandValue;
         //public CommercialTargetLandValueClass CommercialTargetLandValue;
         //public IndustrialTargetServiceClass IndustrialTargetService;
         //public OfficeTargetServiceClass OfficeTargetService;
 
         private DifficultyManager()
-		{
-			Difficulty = Difficulties.Normal;
-			
-			ConstructionCostMultiplier = new ConstructionCostMultiplier();
+        {
+            Difficulty = Difficulties.Normal;
+            
+            ConstructionCostMultiplier = new ConstructionCostMultiplier();
             ConstructionCostMultiplier_Road = new ConstructionCostMultiplier_Road();
             ConstructionCostMultiplier_Service = new ConstructionCostMultiplier_Service();
             ConstructionCostMultiplier_Public = new ConstructionCostMultiplier_Public();
@@ -37,11 +37,11 @@ namespace DifficultyTuningMod.DifficultyOptions
             MaintenanceCostMultiplier_Road = new MaintenanceCostMultiplier_Road();
             MaintenanceCostMultiplier_Service = new MaintenanceCostMultiplier_Service();
             MaintenanceCostMultiplier_Public = new MaintenanceCostMultiplier_Public();
+            RelocationCostMultiplier = new RelocationCostMultiplier();
             //AreaCostMultiplier = new AreaCostMultiplierClass();
             //DemandOffset = new DemandOffsetClass();
             //DemandMultiplier = new DemandMultiplierClass();
             //RewardMultiplier = new RewardMultiplierClass();
-            //RelocationCostMultiplier = new RelocationCostMultiplierClass();
             //ResidentialTargetLandValue = new ResidentialTargetLandValueClass();
             //CommercialTargetLandValue = new CommercialTargetLandValueClass();
             //IndustrialTargetService = new IndustrialTargetServiceClass();

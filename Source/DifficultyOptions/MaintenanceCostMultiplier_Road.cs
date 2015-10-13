@@ -3,14 +3,6 @@ namespace DifficultyTuningMod.DifficultyOptions
     public class MaintenanceCostMultiplier_Road : MaintenanceCostMultiplier
     {
         public MaintenanceCostMultiplier_Road() : base() { }
-
-        public override string Description
-        {
-            get
-            {
-                return DTMLang.Text("MAINTENANCE_COST_ROADS");
-            }
-        }
         
         public override float GetValue(Difficulties difficultyLevel)
         {

@@ -3,20 +3,6 @@ namespace DifficultyTuningMod.DifficultyOptions
     public class MaintenanceCostMultiplier_Public : MaintenanceCostMultiplier
     {
         public MaintenanceCostMultiplier_Public() : base() { }
-
-        protected override void InitValues()
-        {
-            CustomValue = 1f;
-            customValues = new float[] { 0, 0.25f, 0.5f, 0.75f, 1f, 1.1f, 1.2f, 1.3f, 1.4f, 1.5f, 1.6f, 1.8f, 2f };
-        }
-
-        public override string Description
-        {
-            get
-            {
-                return DTMLang.Text("MAINTENANCE_COST_PUBLIC");
-            }
-        }
         
         public override float GetValue(Difficulties difficultyLevel)
         {

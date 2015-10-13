@@ -24,10 +24,6 @@ namespace DifficultyTuningMod
 
         private bool freeze = true;
         private UIDropDown ddDifficulty;
-        //private UIDropDown ddConstructionCost;
-        //private UIDropDown ddConstructionCost_Road;
-        //private UIDropDown ddConstructionCost_Public;
-        //private UIDropDown ddConstructionCost_Service;
         //private UIDropDown ddMaintenanceCost;
         //private UIDropDown ddMaintenanceCost_Road;
         //private UIDropDown ddMaintenanceCost_Public;
@@ -43,6 +39,7 @@ namespace DifficultyTuningMod
         //private UIDropDown ddOfficeTargetService;
 
         private float textScaleBig = 1.2f;
+        private float textScaleMedium = 1.0f;
         private float textScaleSmall = 0.8f;
 
 
@@ -82,7 +79,7 @@ namespace DifficultyTuningMod
 
             UILabel label = panel.AddUIComponent<UILabel>();
             label.textScale = textScaleSmall;
-            label.text = param.GetValueStr(param.SelectedIndex);
+            label.text = param.GetValueStr((int)slider.value);
             label.relativePosition = new Vector3(position.x + 160, position.y);
 
             slider.eventValueChanged += delegate (UIComponent c, float val)
@@ -94,6 +91,8 @@ namespace DifficultyTuningMod
 
         private string truncateStr(string str, int countToTruncate)
         {
+			if (countToTruncate == 0) return str;
+			
             return str.Substring(0, str.Length - countToTruncate);
         }
 
@@ -117,6 +116,9 @@ namespace DifficultyTuningMod
 
             float x = 5;
             float y = 0;
+			float dx1 = 100;
+			float dx2 = 300;
+			float dy1 = 30;
 
             ddDifficulty.parent.relativePosition = new Vector3(x, y);
             y += ddDifficulty.parent.height + 10;
@@ -130,83 +132,30 @@ namespace DifficultyTuningMod
             y += 30;
 
             // Construction cost
-            addLabel(scrollablePanel, truncateStr(Locale.Get("TOOL_CONSTRUCTION_COST"), 5), new Vector3(x, y), textScaleSmall);
-            y += 25;
-            addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.ConstructionCostMultiplier_Service);
+            addLabel(scrollablePanel, truncateStr(Locale.Get("TOOL_CONSTRUCTION_COST"), 5), new Vector3(x, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("SERVICE_BUILDINGS"), new Vector3(x, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1), OnCustomValueChanged, d.ConstructionCostMultiplier_Service);
+            addLabel(scrollablePanel, DTMLang.Text("PUBLIC_TRANSPORT"), new Vector3(x, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 2), OnCustomValueChanged, d.ConstructionCostMultiplier_Public);
+            addLabel(scrollablePanel, DTMLang.Text("ROADS"), new Vector3(x, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 3), OnCustomValueChanged, d.ConstructionCostMultiplier_Road);
+            addLabel(scrollablePanel, DTMLang.Text("OTHERS"), new Vector3(x, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 4), OnCustomValueChanged, d.ConstructionCostMultiplier);
+
+            // Maintenance cost
+			x += dx2;
+            addLabel(scrollablePanel, truncateStr(Locale.Get("AIINFO_COST"), 0), new Vector3(x, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("SERVICE_BUILDINGS"), new Vector3(x, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1), OnCustomValueChanged, d.MaintenanceCostMultiplier_Service);
+            addLabel(scrollablePanel, DTMLang.Text("PUBLIC_TRANSPORT"), new Vector3(x, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 2), OnCustomValueChanged, d.MaintenanceCostMultiplier_Public);
+            addLabel(scrollablePanel, DTMLang.Text("ROADS"), new Vector3(x, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 3), OnCustomValueChanged, d.MaintenanceCostMultiplier_Road);
+            addLabel(scrollablePanel, DTMLang.Text("OTHERS"), new Vector3(x, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 4), OnCustomValueChanged, d.MaintenanceCostMultiplier);
+			x -= dx2;
 
 
-            //// Construction cost multiplier for service buildings
-            //ddConstructionCost_Service = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.ConstructionCostMultiplier_Service.Description,
-            //    d.ConstructionCostMultiplier_Service.CustomValuesStr,
-            //    d.ConstructionCostMultiplier_Service.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddConstructionCost_Service);
-
-            //// Construction cost multiplier for public transport
-            //ddConstructionCost_Public = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.ConstructionCostMultiplier_Public.Description,
-            //    d.ConstructionCostMultiplier_Public.CustomValuesStr,
-            //    d.ConstructionCostMultiplier_Public.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddConstructionCost_Public);
-
-            //// Construction cost multiplier for roads
-            //ddConstructionCost_Road = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.ConstructionCostMultiplier_Road.Description,
-            //    d.ConstructionCostMultiplier_Road.CustomValuesStr,
-            //    d.ConstructionCostMultiplier_Road.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddConstructionCost_Road);
-
-            //// Construction cost multiplier for others
-            //ddConstructionCost = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.ConstructionCostMultiplier.Description,
-            //    d.ConstructionCostMultiplier.CustomValuesStr,
-            //    d.ConstructionCostMultiplier.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddConstructionCost);
-
-
-            //// Maintenance cost multiplier for service buildings
-            //ddMaintenanceCost_Service = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.MaintenanceCostMultiplier_Service.Description,
-            //    d.MaintenanceCostMultiplier_Service.CustomValuesStr,
-            //    d.MaintenanceCostMultiplier_Service.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddMaintenanceCost_Service);
-
-            //// Maintenance cost multiplier for public transport
-            //ddMaintenanceCost_Public = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.MaintenanceCostMultiplier_Public.Description,
-            //    d.MaintenanceCostMultiplier_Public.CustomValuesStr,
-            //    d.MaintenanceCostMultiplier_Public.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddMaintenanceCost_Public);
-
-            //// Maintenance cost multiplier for roads
-            //ddMaintenanceCost_Road = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.MaintenanceCostMultiplier_Road.Description,
-            //    d.MaintenanceCostMultiplier_Road.CustomValuesStr,
-            //    d.MaintenanceCostMultiplier_Road.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddMaintenanceCost_Road);
-
-            //// Maintenance cost multiplier for others
-            //ddMaintenanceCost = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.MaintenanceCostMultiplier.Description,
-            //    d.MaintenanceCostMultiplier.CustomValuesStr,
-            //    d.MaintenanceCostMultiplier.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddMaintenanceCost);
 
 
             //// Area cost multiplier
