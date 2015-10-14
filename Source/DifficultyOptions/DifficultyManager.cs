@@ -21,8 +21,8 @@ namespace DifficultyTuningMod.DifficultyOptions
         public RewardMultiplier RewardMultiplier;
         public DemandOffset DemandOffset;
         public DemandMultiplier DemandMultiplier;
-        //public ResidentialTargetLandValueClass ResidentialTargetLandValue;
-        //public CommercialTargetLandValueClass CommercialTargetLandValue;
+        public ResidentialTargetLandValue ResidentialTargetLandValue;
+        public CommercialTargetLandValue CommercialTargetLandValue;
         //public IndustrialTargetServiceClass IndustrialTargetService;
         //public OfficeTargetServiceClass OfficeTargetService;
 
@@ -44,8 +44,8 @@ namespace DifficultyTuningMod.DifficultyOptions
             RewardMultiplier = new RewardMultiplier();
             DemandOffset = new DemandOffset();
             DemandMultiplier = new DemandMultiplier();
-            //ResidentialTargetLandValue = new ResidentialTargetLandValueClass();
-            //CommercialTargetLandValue = new CommercialTargetLandValueClass();
+            ResidentialTargetLandValue = new ResidentialTargetLandValue();
+            CommercialTargetLandValue = new CommercialTargetLandValue();
             //IndustrialTargetService = new IndustrialTargetServiceClass();
             //OfficeTargetService = new OfficeTargetServiceClass();
 

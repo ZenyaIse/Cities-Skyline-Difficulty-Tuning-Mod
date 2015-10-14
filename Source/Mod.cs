@@ -40,10 +40,10 @@ namespace DifficultyTuningMod
             label.relativePosition = position;
         }
 
-        private void addSlider(UIScrollablePanel panel, Vector3 position, OnValueChanged eventCallback, IDifficultyParameter param)
+        private void addSlider(UIScrollablePanel panel, Vector3 position, float width, OnValueChanged eventCallback, IDifficultyParameter param)
         {
             UISlider slider = panel.AddUIComponent<UISlider>();
-            slider.size = new Vector2(150, 8);
+            slider.size = new Vector2(width, 8);
             slider.relativePosition = position;
             slider.minValue = 0;
             slider.maxValue = param.MaxIndex;
@@ -59,7 +59,7 @@ namespace DifficultyTuningMod
             UILabel label = panel.AddUIComponent<UILabel>();
             label.textScale = textScaleSmall;
             label.text = param.GetValueStr((int)slider.value);
-            label.relativePosition = new Vector3(position.x + 160, position.y);
+            label.relativePosition = new Vector3(position.x + width + 10, position.y);
 
             slider.eventValueChanged += delegate (UIComponent c, float val)
             {
@@ -97,14 +97,17 @@ namespace DifficultyTuningMod
             UIScrollablePanel scrollablePanel = (UIScrollablePanel)ddDifficulty.parent.parent;
             scrollablePanel.autoLayout = false;
 
-            float x = 5;
+            float x1 = 15;
+            float x2 = x1 + 140;
+            float x3 = x1 + 375;
+            float x4 = x3 + 140;
             float y = 0;
-			float dx1 = 140;
-			float dx2 = 375;
 			float dy1 = 24;
-            float dy2 = 36;
+            float dy2 = 40;
+            float w1 = 150;
+            float w2 = w1 + 140;
 
-            ddDifficulty.parent.relativePosition = new Vector3(x, y);
+            ddDifficulty.parent.relativePosition = new Vector3(5, y);
             y += ddDifficulty.parent.height + 10;
 
 
@@ -113,93 +116,80 @@ namespace DifficultyTuningMod
             //
             sliders.Clear();
 
-            addLabel(scrollablePanel, DTMLang.Text("CUSTOM_OPTIONS"), new Vector3(x, y), textScaleBig);
+            addLabel(scrollablePanel, DTMLang.Text("CUSTOM_OPTIONS"), new Vector3(5, y), textScaleBig);
             y += dy2;
-            x += 10;
 
             // Construction cost
-            addLabel(scrollablePanel, truncateSemicolon(Locale.Get("TOOL_CONSTRUCTION_COST")), new Vector3(x, y), textScaleMedium);
-            addLabel(scrollablePanel, DTMLang.Text("SERVICE_BUILDINGS"), new Vector3(x, y + dy1), textScaleSmall);
-            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1), OnCustomValueChanged, d.ConstructionCostMultiplier_Service);
-            addLabel(scrollablePanel, DTMLang.Text("PUBLIC_TRANSPORT"), new Vector3(x, y + dy1 * 2), textScaleSmall);
-            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 2), OnCustomValueChanged, d.ConstructionCostMultiplier_Public);
-            addLabel(scrollablePanel, DTMLang.Text("ROADS"), new Vector3(x, y + dy1 * 3), textScaleSmall);
-            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 3), OnCustomValueChanged, d.ConstructionCostMultiplier_Road);
-            addLabel(scrollablePanel, DTMLang.Text("OTHERS"), new Vector3(x, y + dy1 * 4), textScaleSmall);
-            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 4), OnCustomValueChanged, d.ConstructionCostMultiplier);
+            addLabel(scrollablePanel, truncateSemicolon(Locale.Get("TOOL_CONSTRUCTION_COST")), new Vector3(x2, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("SERVICE_BUILDINGS"), new Vector3(x1, y + dy1), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x2, y + dy1), w1, OnCustomValueChanged, d.ConstructionCostMultiplier_Service);
+            addLabel(scrollablePanel, DTMLang.Text("PUBLIC_TRANSPORT"), new Vector3(x1, y + dy1 * 2), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x2, y + dy1 * 2), w1, OnCustomValueChanged, d.ConstructionCostMultiplier_Public);
+            addLabel(scrollablePanel, DTMLang.Text("ROADS"), new Vector3(x1, y + dy1 * 3), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x2, y + dy1 * 3), w1, OnCustomValueChanged, d.ConstructionCostMultiplier_Road);
+            addLabel(scrollablePanel, DTMLang.Text("OTHERS"), new Vector3(x1, y + dy1 * 4), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x2, y + dy1 * 4), w1, OnCustomValueChanged, d.ConstructionCostMultiplier);
 
             // Maintenance cost
-			x += dx2;
-            addLabel(scrollablePanel, truncateSemicolon(Locale.Get("AIINFO_UPKEEP")), new Vector3(x, y), textScaleMedium);
-            addLabel(scrollablePanel, DTMLang.Text("SERVICE_BUILDINGS"), new Vector3(x, y + dy1), textScaleSmall);
-            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1), OnCustomValueChanged, d.MaintenanceCostMultiplier_Service);
-            addLabel(scrollablePanel, DTMLang.Text("PUBLIC_TRANSPORT"), new Vector3(x, y + dy1 * 2), textScaleSmall);
-            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 2), OnCustomValueChanged, d.MaintenanceCostMultiplier_Public);
-            addLabel(scrollablePanel, DTMLang.Text("ROADS"), new Vector3(x, y + dy1 * 3), textScaleSmall);
-            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 3), OnCustomValueChanged, d.MaintenanceCostMultiplier_Road);
-            addLabel(scrollablePanel, DTMLang.Text("OTHERS"), new Vector3(x, y + dy1 * 4), textScaleSmall);
-            addSlider(scrollablePanel, new Vector3(x + dx1, y + dy1 * 4), OnCustomValueChanged, d.MaintenanceCostMultiplier);
-			x -= dx2;
+            addLabel(scrollablePanel, truncateSemicolon(Locale.Get("AIINFO_UPKEEP")), new Vector3(x4, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("SERVICE_BUILDINGS"), new Vector3(x3, y + dy1), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x4, y + dy1), w1, OnCustomValueChanged, d.MaintenanceCostMultiplier_Service);
+            addLabel(scrollablePanel, DTMLang.Text("PUBLIC_TRANSPORT"), new Vector3(x3, y + dy1 * 2), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x4, y + dy1 * 2), w1, OnCustomValueChanged, d.MaintenanceCostMultiplier_Public);
+            addLabel(scrollablePanel, DTMLang.Text("ROADS"), new Vector3(x3, y + dy1 * 3), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x4, y + dy1 * 3), w1, OnCustomValueChanged, d.MaintenanceCostMultiplier_Road);
+            addLabel(scrollablePanel, DTMLang.Text("OTHERS"), new Vector3(x3, y + dy1 * 4), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x4, y + dy1 * 4), w1, OnCustomValueChanged, d.MaintenanceCostMultiplier);
             y += dy1 * 4;
             y += dy2;
 
             // Relocate cost
-            addLabel(scrollablePanel, truncateSemicolon(Locale.Get("TOOL_RELOCATE_COST")), new Vector3(x, y), textScaleMedium);
+            addLabel(scrollablePanel, truncateSemicolon(Locale.Get("TOOL_RELOCATE_COST")), new Vector3(x1, y), textScaleMedium);
             y += dy1;
-            addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.RelocationCostMultiplier);
-            y += dy2;
+            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.RelocationCostMultiplier);
+            y -= dy1;
 
             // Area purchase cost
-            addLabel(scrollablePanel, DTMLang.Text("AREA_COST_MULTIPLIER"), new Vector3(x, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("AREA_COST_MULTIPLIER"), new Vector3(x3, y), textScaleMedium);
             y += dy1;
-            addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.AreaCostMultiplier);
+            addSlider(scrollablePanel, new Vector3(x3, y), w2, OnCustomValueChanged, d.AreaCostMultiplier);
             y += dy2;
 
             // Initial money
-            addLabel(scrollablePanel, DTMLang.Text("INITIAL_MONEY"), new Vector3(x, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("INITIAL_MONEY"), new Vector3(x1, y), textScaleMedium);
             y += dy1;
-            addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.InitialMoney);
-            y += dy2;
+            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.InitialMoney);
+            y -= dy1;
 
             // Reward amount
-            y -= dy1 + dy2;
-			x += dx2;
-            addLabel(scrollablePanel, DTMLang.Text("REWARD"), new Vector3(x, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("REWARD"), new Vector3(x3, y), textScaleMedium);
             y += dy1;
-            addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.RewardMultiplier);
-			x -= dx2;
+            addSlider(scrollablePanel, new Vector3(x3, y), w2, OnCustomValueChanged, d.RewardMultiplier);
             y += dy2;
 
             // Demand
-            addLabel(scrollablePanel, DTMLang.Text("DEMAND"), new Vector3(x, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("DEMAND"), new Vector3(x1, y), textScaleMedium);
             y += dy1;
-            addLabel(scrollablePanel, DTMLang.Text("DEMAND_OFFSET"), new Vector3(x, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("DEMAND_OFFSET"), new Vector3(x1, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.DemandOffset);
             y += dy1;
-            addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.DemandOffset);
-            y -= dy1;
-			x += dx2;
-            addLabel(scrollablePanel, DTMLang.Text("DEMAND_MULTIPLIER"), new Vector3(x, y), textScaleMedium);
-            y += dy1;
-            addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.DemandMultiplier);
-			x -= dx2;
+            addLabel(scrollablePanel, DTMLang.Text("DEMAND_MULTIPLIER"), new Vector3(x1, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.DemandMultiplier);
             y += dy2;
 
             // Residential target land value
-            addLabel(scrollablePanel, DTMLang.Text("TARGET_RESIDENTIAL"), new Vector3(x, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("RESIDENTIAL_LEVELUP"), new Vector3(x1, y), textScaleMedium);
             y += dy1;
-            addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.ResidentialTargetLandValue);
+            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.ResidentialTargetLandValue);
+            y += dy2;
+
+            // Commercial target land value
+            addLabel(scrollablePanel, DTMLang.Text("COMMERCIAL_LEVELUP"), new Vector3(x1, y), textScaleMedium);
+            y += dy1;
+            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.CommercialTargetLandValue);
             y += dy2;
 
 
-
-            //// Commercial target land value
-            //ddCommercialTargetLandValue = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.CommercialTargetLandValue.Description,
-            //    d.CommercialTargetLandValue.CustomValuesStr,
-            //    d.CommercialTargetLandValue.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddCommercialTargetLandValue);
 
             //// Industrial target service
             //ddIndustrialTargetService = (UIDropDown)customOptionsGroup.AddDropdown(

@@ -42,7 +42,7 @@ namespace DifficultyTuningMod.DifficultyOptions
         
         protected override string valueToStr(int value)
         {
-            return value.ToString() + " 000₡";
+            return (value == 0) ? "0₡" : (value.ToString() + " 000₡");
         }
     }
 }

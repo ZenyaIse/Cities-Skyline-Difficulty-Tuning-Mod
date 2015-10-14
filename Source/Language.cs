@@ -226,10 +226,10 @@ namespace DifficultyTuningMod
                 texts["DEMAND_OFFSET"] = "Demand offset";
                 texts["DEMAND_MULTIPLIER"] = "Demand multiplier";
 
-                texts["TARGET_RESIDENTIAL"] = "Target land values for residential buildings to level up (Level2, 3, 4, 5)";
-                texts["TARGET_COMMERCIAL"] = "Target land values for commercial buildings to level up (Level2, 3)";
-                texts["TARGET_INDUSTRIAL"] = "Target service score for industrial buildings to level up (Level2, 3)";
-                texts["TARGET_OFFICE"] = "Target service score for office buildings to level up (Level2, 3)";
+                texts["RESIDENTIAL_LEVELUP"] = "Target land values for residential buildings to level up (Level2, 3, 4, 5)";
+                texts["COMMERCIAL_LEVELUP"] = "Target land values for commercial buildings to level up (Level2, 3)";
+                texts["INDUSTRIAL_LEVELUP"] = "Target service score for industrial buildings to level up (Level2, 3)";
+                texts["OFFICE_LEVELUP"] = "Target service score for office buildings to level up (Level2, 3)";
             }
         }
     }

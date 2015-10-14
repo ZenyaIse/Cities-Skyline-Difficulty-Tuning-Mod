@@ -1,8 +1,8 @@
 namespace DifficultyTuningMod.DifficultyOptions
 {
-    public class DemandMultiplier : DifficultyParameterBase
+    public class DemandOffset : DifficultyParameterBase
     {
-        public DemandMultiplier() : base() { }
+        public DemandOffset() : base() { }
 
         protected override void InitValues()
         {

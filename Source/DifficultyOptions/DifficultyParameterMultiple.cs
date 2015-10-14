@@ -1,4 +1,4 @@
-using System;
+using System.Text;
 using ICities;
 using ColossalFramework;
 
@@ -18,14 +18,39 @@ namespace DifficultyTuningMod.DifficultyOptions
         }
 
         protected abstract void InitValues();
-        
-        public abstract int GetValue(Level level);
-        
+
+        public int GetValue(Level level)
+        {
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
+
+            int n = (d.Difficulty == Difficulties.Custom) ? nCustom : (int)d.Difficulty;
+
+            return getValue(n, level);
+        }
+
+        public int GetTooLowValue(Level level)
+        {
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
+
+            int n = (d.Difficulty == Difficulties.Custom) ? nCustom : (int)d.Difficulty;
+
+            return getTooLowValue(n, level);
+        }
+
         public int SelectedIndex
         {
             get
             {
-                return nCustom - nMin;
+                DifficultyManager d = Singleton<DifficultyManager>.instance;
+
+                if (d.Difficulty == Difficulties.Custom)
+                {
+                    return nCustom - nMin;
+                }
+                else
+                {
+                    return (int)d.Difficulty - nMin;
+                }
             }
 
             set
@@ -49,19 +74,21 @@ namespace DifficultyTuningMod.DifficultyOptions
             int n = index + nMin;
             StringBuilder sb = new StringBuilder();
             
-            for (Levels level = Levels.Level2; level <= Levels.Level5; level++)
+            for (Level level = Level.Level2; level <= Level.Level5; level++)
             {
                 int value = getValue(n, level);
-                if (n == InvalidValue) break;
+                if (value == InvalidValue) break;
                 
-                if (level != Levels.Level1) sb.Append(",");
+                if (level != Level.Level2) sb.Append(", ");
                 
-                sb.Append(value.ToSting());
+                sb.Append(value < 0 ? 0 : value);
             }
             
             return sb.ToString();
         }
         
         protected abstract int getValue(int n, Level level);
+
+        protected abstract int getTooLowValue(int n, Level level);
     }
 }
