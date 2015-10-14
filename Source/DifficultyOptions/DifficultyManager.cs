@@ -17,9 +17,10 @@ namespace DifficultyTuningMod.DifficultyOptions
         public MaintenanceCostMultiplier_Public MaintenanceCostMultiplier_Public;
         public RelocationCostMultiplier RelocationCostMultiplier;
         public AreaCostMultiplier AreaCostMultiplier;
-        //public DemandOffsetClass DemandOffset;
-        //public DemandMultiplierClass DemandMultiplier;
-        //public RewardMultiplierClass RewardMultiplier;
+        public InitialMoney InitialMoney;
+        public RewardMultiplier RewardMultiplier;
+        public DemandOffset DemandOffset;
+        public DemandMultiplier DemandMultiplier;
         //public ResidentialTargetLandValueClass ResidentialTargetLandValue;
         //public CommercialTargetLandValueClass CommercialTargetLandValue;
         //public IndustrialTargetServiceClass IndustrialTargetService;
@@ -39,9 +40,10 @@ namespace DifficultyTuningMod.DifficultyOptions
             MaintenanceCostMultiplier_Public = new MaintenanceCostMultiplier_Public();
             RelocationCostMultiplier = new RelocationCostMultiplier();
             AreaCostMultiplier = new AreaCostMultiplier();
-            //DemandOffset = new DemandOffsetClass();
-            //DemandMultiplier = new DemandMultiplierClass();
-            //RewardMultiplier = new RewardMultiplierClass();
+            InitialMoney = new InitialMoney();
+            RewardMultiplier = new RewardMultiplier();
+            DemandOffset = new DemandOffset();
+            DemandMultiplier = new DemandMultiplier();
             //ResidentialTargetLandValue = new ResidentialTargetLandValueClass();
             //CommercialTargetLandValue = new CommercialTargetLandValueClass();
             //IndustrialTargetService = new IndustrialTargetServiceClass();

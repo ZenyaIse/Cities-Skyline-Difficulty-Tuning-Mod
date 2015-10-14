@@ -32,17 +32,6 @@ namespace DifficultyTuningMod
 
         private Dictionary<UISlider, IDifficultyParameter> sliders = new Dictionary<UISlider, IDifficultyParameter>();
 
-
-        //private void adjustSizes(UIDropDown dd)
-        //{
-        //    dd.width = 160;
-        //    dd.height = 24;
-        //    dd.itemHeight = 14;
-        //    dd.textScale = 0.8f;
-        //    dd.parent.height = 50;
-        //    dd.parent.Find<UILabel>("Label").textScale = 0.8f;
-        //}
-
         private void addLabel(UIScrollablePanel panel, string text, Vector3 position, float scale)
         {
             UILabel label = panel.AddUIComponent<UILabel>();
@@ -154,71 +143,54 @@ namespace DifficultyTuningMod
             y += dy1 * 4;
             y += dy2;
 
+            // Relocate cost
             addLabel(scrollablePanel, truncateSemicolon(Locale.Get("TOOL_RELOCATE_COST")), new Vector3(x, y), textScaleMedium);
             y += dy1;
             addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.RelocationCostMultiplier);
             y += dy2;
 
+            // Area purchase cost
             addLabel(scrollablePanel, DTMLang.Text("AREA_COST_MULTIPLIER"), new Vector3(x, y), textScaleMedium);
             y += dy1;
             addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.AreaCostMultiplier);
             y += dy2;
 
+            // Initial money
+            addLabel(scrollablePanel, DTMLang.Text("INITIAL_MONEY"), new Vector3(x, y), textScaleMedium);
+            y += dy1;
+            addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.InitialMoney);
+            y += dy2;
+
+            // Reward amount
+            y -= dy1 + dy2;
+			x += dx2;
+            addLabel(scrollablePanel, DTMLang.Text("REWARD"), new Vector3(x, y), textScaleMedium);
+            y += dy1;
+            addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.RewardMultiplier);
+			x -= dx2;
+            y += dy2;
+
+            // Demand
+            addLabel(scrollablePanel, DTMLang.Text("DEMAND"), new Vector3(x, y), textScaleMedium);
+            y += dy1;
+            addLabel(scrollablePanel, DTMLang.Text("DEMAND_OFFSET"), new Vector3(x, y), textScaleMedium);
+            y += dy1;
+            addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.DemandOffset);
+            y -= dy1;
+			x += dx2;
+            addLabel(scrollablePanel, DTMLang.Text("DEMAND_MULTIPLIER"), new Vector3(x, y), textScaleMedium);
+            y += dy1;
+            addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.DemandMultiplier);
+			x -= dx2;
+            y += dy2;
+
+            // Residential target land value
+            addLabel(scrollablePanel, DTMLang.Text("TARGET_RESIDENTIAL"), new Vector3(x, y), textScaleMedium);
+            y += dy1;
+            addSlider(scrollablePanel, new Vector3(x, y), OnCustomValueChanged, d.ResidentialTargetLandValue);
+            y += dy2;
 
 
-            //// Area cost multiplier
-            //ddAreaCostMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.AreaCostMultiplier.Description,
-            //    d.AreaCostMultiplier.CustomValuesStr,
-            //    d.AreaCostMultiplier.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddAreaCostMultiplier);
-
-            //// Demand offset
-            //ddDemandOffset = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.DemandOffset.Description,
-            //    d.DemandOffset.CustomValuesStr,
-            //    d.DemandOffset.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddDemandOffset);
-
-            //// Demand multiplier
-            //ddDemandMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.DemandMultiplier.Description,
-            //    d.DemandMultiplier.CustomValuesStr,
-            //    d.DemandMultiplier.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddDemandMultiplier);
-
-            //// Reward multiplier
-            //ddRewardMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.RewardMultiplier.Description,
-            //    d.RewardMultiplier.CustomValuesStr,
-            //    d.RewardMultiplier.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddRewardMultiplier);
-
-            //// Relocation cost multiplier
-            //ddRelocationCostMultiplier = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.RelocationCostMultiplier.Description,
-            //    d.RelocationCostMultiplier.CustomValuesStr,
-            //    d.RelocationCostMultiplier.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddRelocationCostMultiplier);
-
-            //// Residential target land value
-            //ddResidentialTargetLandValue = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.ResidentialTargetLandValue.Description,
-            //    d.ResidentialTargetLandValue.CustomValuesStr,
-            //    d.ResidentialTargetLandValue.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddResidentialTargetLandValue);
 
             //// Commercial target land value
             //ddCommercialTargetLandValue = (UIDropDown)customOptionsGroup.AddDropdown(

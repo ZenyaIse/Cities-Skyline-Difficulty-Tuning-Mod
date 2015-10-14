@@ -20,7 +20,7 @@ namespace DifficultyTuningMod
         {
             DifficultyManager d = Singleton<DifficultyManager>.instance;
 
-            return originalPrice * d.AreaCostMultiplier.Value / 10;
+            return (int)(0.1f * originalPrice * d.AreaCostMultiplier.Value);
         }
 
         public void OnReleased()

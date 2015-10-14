@@ -1,248 +1,248 @@
-﻿//using ICities;
-//using ColossalFramework;
+﻿using ICities;
+using ColossalFramework;
 
-//namespace DifficultyTuningMod
-//{
-//    public class LevelUp : LevelUpExtensionBase
-//    {
-//        public override ResidentialLevelUp OnCalculateResidentialLevelUp(ResidentialLevelUp levelUp, int averageEducation, int landValue, ushort buildingID, Service service, SubService subService, Level currentLevel)
-//        {
-//            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
+namespace DifficultyTuningMod
+{
+   public class LevelUp : LevelUpExtensionBase
+   {
+       public override ResidentialLevelUp OnCalculateResidentialLevelUp(ResidentialLevelUp levelUp, int averageEducation, int landValue, ushort buildingID, Service service, SubService subService, Level currentLevel)
+       {
+           DifficultyOptions d = Singleton<DifficultyOptions>.instance;
             
-//            if (levelUp.landValueProgress != 0)
-//            {
-//                Level targetLevel;
+           if (levelUp.landValueProgress != 0)
+           {
+               Level targetLevel;
 
-//                int target2 = d.ResidentialTargetLandValue.GetValue(Level.Level2);
-//                int target3 = d.ResidentialTargetLandValue.GetValue(Level.Level3);
-//                int target4 = d.ResidentialTargetLandValue.GetValue(Level.Level4);
-//                int target5 = d.ResidentialTargetLandValue.GetValue(Level.Level5);
+               int target2 = d.ResidentialTargetLandValue.GetValue(Level.Level2);
+               int target3 = d.ResidentialTargetLandValue.GetValue(Level.Level3);
+               int target4 = d.ResidentialTargetLandValue.GetValue(Level.Level4);
+               int target5 = d.ResidentialTargetLandValue.GetValue(Level.Level5);
 
-//                if (landValue < target2)
-//                {
-//                    targetLevel = Level.Level1;
-//                    levelUp.landValueProgress = 1 + (int)(15f * landValue / target2 + 0.49);
-//                }
-//                else if (landValue < target3)
-//                {
-//                    targetLevel = Level.Level2;
-//                    levelUp.landValueProgress = 1 + (int)(15f * (landValue - target2) / (target3 - target2) + 0.49);
-//                }
-//                else if (landValue < target4)
-//                {
-//                    targetLevel = Level.Level3;
-//                    levelUp.landValueProgress = 1 + (int)(15f * (landValue - target3) / (target4 - target3) + 0.49);
-//                }
-//                else if (landValue < target5)
-//                {
-//                    targetLevel = Level.Level4;
-//                    levelUp.landValueProgress = 1 + (int)(15f * (landValue - target4) / (target5 - target4) + 0.49);
-//                }
-//                else
-//                {
-//                    targetLevel = Level.Level5;
-//                    levelUp.landValueProgress = 1;
-//                }
+               if (landValue < target2)
+               {
+                   targetLevel = Level.Level1;
+                   levelUp.landValueProgress = 1 + (int)(15f * landValue / target2 + 0.49f);
+               }
+               else if (landValue < target3)
+               {
+                   targetLevel = Level.Level2;
+                   levelUp.landValueProgress = 1 + (int)(15f * (landValue - target2) / (target3 - target2) + 0.49f);
+               }
+               else if (landValue < target4)
+               {
+                   targetLevel = Level.Level3;
+                   levelUp.landValueProgress = 1 + (int)(15f * (landValue - target3) / (target4 - target3) + 0.49f);
+               }
+               else if (landValue < target5)
+               {
+                   targetLevel = Level.Level4;
+                   levelUp.landValueProgress = 1 + (int)(15f * (landValue - target4) / (target5 - target4) + 0.49f);
+               }
+               else
+               {
+                   targetLevel = Level.Level5;
+                   levelUp.landValueProgress = 1;
+               }
 
-//                if (targetLevel < currentLevel)
-//                {
-//                    levelUp.landValueProgress = 1;
-//                }
-//                else if (targetLevel > currentLevel)
-//                {
-//                    levelUp.landValueProgress = 15;
-//                }
+               if (targetLevel < currentLevel)
+               {
+                   levelUp.landValueProgress = 1;
+               }
+               else if (targetLevel > currentLevel)
+               {
+                   levelUp.landValueProgress = 15;
+               }
 
-//                if (targetLevel < levelUp.targetLevel)
-//                {
-//                    levelUp.targetLevel = targetLevel;
-//                }
-//            }
+               if (targetLevel < levelUp.targetLevel)
+               {
+                   levelUp.targetLevel = targetLevel;
+               }
+           }
 
-//            levelUp.landValueTooLow = false;
-//            if (currentLevel == Level.Level2)
-//            {
-//                if (landValue < d.ResidentialTooLowLandValue.GetValue(Levels.Level2)) levelUp.landValueTooLow = true;
-//            }
-//            else if (currentLevel == Level.Level3)
-//            {
-//                if (landValue < d.ResidentialTooLowLandValue.GetValue(Levels.Level3)) levelUp.landValueTooLow = true;
-//            }
-//            else if (currentLevel == Level.Level4)
-//            {
-//                if (landValue < d.ResidentialTooLowLandValue.GetValue(Levels.Level4)) levelUp.landValueTooLow = true;
-//            }
-//            else if (currentLevel == Level.Level5)
-//            {
-//                if (landValue < d.ResidentialTooLowLandValue.GetValue(Levels.Level5)) levelUp.landValueTooLow = true;
-//            }
+           levelUp.landValueTooLow = false;
+           if (currentLevel == Level.Level2)
+           {
+               //if (landValue < d.ResidentialTooLowLandValue.GetValue(Levels.Level2)) levelUp.landValueTooLow = true;
+           }
+           else if (currentLevel == Level.Level3)
+           {
+               //if (landValue < d.ResidentialTooLowLandValue.GetValue(Levels.Level3)) levelUp.landValueTooLow = true;
+           }
+           else if (currentLevel == Level.Level4)
+           {
+               //if (landValue < d.ResidentialTooLowLandValue.GetValue(Levels.Level4)) levelUp.landValueTooLow = true;
+           }
+           else if (currentLevel == Level.Level5)
+           {
+               //if (landValue < d.ResidentialTooLowLandValue.GetValue(Levels.Level5)) levelUp.landValueTooLow = true;
+           }
 
-//            return levelUp;
-//        }
+           return levelUp;
+       }
 
-//        public override CommercialLevelUp OnCalculateCommercialLevelUp(CommercialLevelUp levelUp, int averageWealth, int landValue, ushort buildingID, Service service, SubService subService, Level currentLevel)
-//        {
-//            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
+       public override CommercialLevelUp OnCalculateCommercialLevelUp(CommercialLevelUp levelUp, int averageWealth, int landValue, ushort buildingID, Service service, SubService subService, Level currentLevel)
+       {
+           DifficultyOptions d = Singleton<DifficultyOptions>.instance;
             
-//            if (levelUp.landValueProgress != 0)
-//            {
-//                Level targetLevel;
+           if (levelUp.landValueProgress != 0)
+           {
+               Level targetLevel;
 
-//                int target2 = d.CommercialTargetLandValue.GetValue(Level.Level2);
-//                int target3 = d.CommercialTargetLandValue.GetValue(Level.Level3);
+               int target2 = d.CommercialTargetLandValue.GetValue(Level.Level2);
+               int target3 = d.CommercialTargetLandValue.GetValue(Level.Level3);
 
-//                if (landValue < target2)
-//                {
-//                    targetLevel = Level.Level1;
-//                    levelUp.landValueProgress = 1 + (int)(15f * landValue / target2 + 0.49);
-//                }
-//                else if (landValue < target3)
-//                {
-//                    targetLevel = Level.Level2;
-//                    levelUp.landValueProgress = 1 + (int)(15f * (landValue - target2) / (target3 - target2) + 0.49);
-//                }
-//                else
-//                {
-//                    targetLevel = Level.Level5;
-//                    levelUp.landValueProgress = 1;
-//                }
+               if (landValue < target2)
+               {
+                   targetLevel = Level.Level1;
+                   levelUp.landValueProgress = 1 + (int)(15f * landValue / target2 + 0.49f);
+               }
+               else if (landValue < target3)
+               {
+                   targetLevel = Level.Level2;
+                   levelUp.landValueProgress = 1 + (int)(15f * (landValue - target2) / (target3 - target2) + 0.49f);
+               }
+               else
+               {
+                   targetLevel = Level.Level5;
+                   levelUp.landValueProgress = 1;
+               }
 
-//                if (targetLevel < currentLevel)
-//                {
-//                    levelUp.landValueProgress = 1;
-//                }
-//                else if (targetLevel > currentLevel)
-//                {
-//                    levelUp.landValueProgress = 15;
-//                }
+               if (targetLevel < currentLevel)
+               {
+                   levelUp.landValueProgress = 1;
+               }
+               else if (targetLevel > currentLevel)
+               {
+                   levelUp.landValueProgress = 15;
+               }
 
-//                if (targetLevel < levelUp.targetLevel)
-//                {
-//                    levelUp.targetLevel = targetLevel;
-//                }
-//            }
+               if (targetLevel < levelUp.targetLevel)
+               {
+                   levelUp.targetLevel = targetLevel;
+               }
+           }
 
-//            levelUp.landValueTooLow = false;
-//            if (currentLevel == Level.Level2)
-//            {
-//                if (landValue < d.CommercialTooLowLandValue.GetValue(Level.Level2)) levelUp.landValueTooLow = true;
-//            }
-//            else if (currentLevel == Level.Level3)
-//            {
-//                if (landValue < d.CommercialTooLowLandValue.GetValue(Level.Level3)) levelUp.landValueTooLow = true;
-//            }
+           levelUp.landValueTooLow = false;
+           if (currentLevel == Level.Level2)
+           {
+               if (landValue < d.CommercialTooLowLandValue.GetValue(Level.Level2)) levelUp.landValueTooLow = true;
+           }
+           else if (currentLevel == Level.Level3)
+           {
+               if (landValue < d.CommercialTooLowLandValue.GetValue(Level.Level3)) levelUp.landValueTooLow = true;
+           }
 
-//            return levelUp;
-//        }
+           return levelUp;
+       }
 
-//        public override IndustrialLevelUp OnCalculateIndustrialLevelUp(IndustrialLevelUp levelUp, int averageEducation, int serviceScore, ushort buildingID, Service service, SubService subService, Level currentLevel)
-//        {
-//            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
+       public override IndustrialLevelUp OnCalculateIndustrialLevelUp(IndustrialLevelUp levelUp, int averageEducation, int serviceScore, ushort buildingID, Service service, SubService subService, Level currentLevel)
+       {
+           DifficultyOptions d = Singleton<DifficultyOptions>.instance;
             
-//            if (levelUp.serviceProgress != 0)
-//            {
-//                Level targetLevel;
+           if (levelUp.serviceProgress != 0)
+           {
+               Level targetLevel;
 
-//                int target2 = d.IndustrialTargetService.GetValue(Level.Level2);
-//                int target3 = d.IndustrialTargetService.GetValue(Level.Level3);
+               int target2 = d.IndustrialTargetService.GetValue(Level.Level2);
+               int target3 = d.IndustrialTargetService.GetValue(Level.Level3);
 
-//                if (serviceScore < target2)
-//                {
-//                    targetLevel = Level.Level1;
-//                    levelUp.serviceProgress = 1 + (int)(15f * serviceScore / target2 + 0.49);
-//                }
-//                else if (serviceScore < target3)
-//                {
-//                    targetLevel = Level.Level2;
-//                    levelUp.serviceProgress = 1 + (int)(15f * (serviceScore - target2) / (target3 - target2) + 0.49);
-//                }
-//                else
-//                {
-//                    targetLevel = Level.Level5;
-//                    levelUp.serviceProgress = 1;
-//                }
+               if (serviceScore < target2)
+               {
+                   targetLevel = Level.Level1;
+                   levelUp.serviceProgress = 1 + (int)(15f * serviceScore / target2 + 0.49f);
+               }
+               else if (serviceScore < target3)
+               {
+                   targetLevel = Level.Level2;
+                   levelUp.serviceProgress = 1 + (int)(15f * (serviceScore - target2) / (target3 - target2) + 0.49f);
+               }
+               else
+               {
+                   targetLevel = Level.Level5;
+                   levelUp.serviceProgress = 1;
+               }
 
-//                if (targetLevel < currentLevel)
-//                {
-//                    levelUp.serviceProgress = 1;
-//                }
-//                else if (targetLevel > currentLevel)
-//                {
-//                    levelUp.serviceProgress = 15;
-//                }
+               if (targetLevel < currentLevel)
+               {
+                   levelUp.serviceProgress = 1;
+               }
+               else if (targetLevel > currentLevel)
+               {
+                   levelUp.serviceProgress = 15;
+               }
 
-//                if (targetLevel < levelUp.targetLevel)
-//                {
-//                    levelUp.targetLevel = targetLevel;
-//                }
-//            }
+               if (targetLevel < levelUp.targetLevel)
+               {
+                   levelUp.targetLevel = targetLevel;
+               }
+           }
 
-//            levelUp.tooFewServices = false;
-//            if (currentLevel == Level.Level2)
-//            {
-//                if (serviceScore < d.IndustrialTooFewService.GetValue(Level.Level2)) levelUp.tooFewServices = true;
-//            }
-//            else if (currentLevel == Level.Level3)
-//            {
-//                if (serviceScore < d.IndustrialTooFewService.GetValue(Level.Level3)) levelUp.tooFewServices = true;
-//            }
+           levelUp.tooFewServices = false;
+           if (currentLevel == Level.Level2)
+           {
+               if (serviceScore < d.IndustrialTooFewService.GetValue(Level.Level2)) levelUp.tooFewServices = true;
+           }
+           else if (currentLevel == Level.Level3)
+           {
+               if (serviceScore < d.IndustrialTooFewService.GetValue(Level.Level3)) levelUp.tooFewServices = true;
+           }
 
-//            return levelUp;
-//        }
+           return levelUp;
+       }
 
-//        public override OfficeLevelUp OnCalculateOfficeLevelUp(OfficeLevelUp levelUp, int averageEducation, int serviceScore, ushort buildingID, Service service, SubService subService, Level currentLevel)
-//        {
-//            DifficultyOptions d = Singleton<DifficultyOptions>.instance;
+       public override OfficeLevelUp OnCalculateOfficeLevelUp(OfficeLevelUp levelUp, int averageEducation, int serviceScore, ushort buildingID, Service service, SubService subService, Level currentLevel)
+       {
+           DifficultyOptions d = Singleton<DifficultyOptions>.instance;
             
-//            if (levelUp.serviceProgress != 0)
-//            {
-//                Level targetLevel;
+           if (levelUp.serviceProgress != 0)
+           {
+               Level targetLevel;
 
-//                int target2 = d.OfficeTargetService.GetValue(Level.Level2);
-//                int target3 = d.OfficeTargetService.GetValue(Level.Level3);
+               int target2 = d.OfficeTargetService.GetValue(Level.Level2);
+               int target3 = d.OfficeTargetService.GetValue(Level.Level3);
 
-//                if (serviceScore < target2)
-//                {
-//                    targetLevel = Level.Level1;
-//                    levelUp.serviceProgress = 1 + (int)(15f * serviceScore / target2 + 0.49);
-//                }
-//                else if (serviceScore < target3)
-//                {
-//                    targetLevel = Level.Level2;
-//                    levelUp.serviceProgress = 1 + (int)(15f * (serviceScore - target2) / (target3 - target2) + 0.49);
-//                }
-//                else
-//                {
-//                    targetLevel = Level.Level5;
-//                    levelUp.serviceProgress = 1;
-//                }
+               if (serviceScore < target2)
+               {
+                   targetLevel = Level.Level1;
+                   levelUp.serviceProgress = 1 + (int)(15f * serviceScore / target2 + 0.49f);
+               }
+               else if (serviceScore < target3)
+               {
+                   targetLevel = Level.Level2;
+                   levelUp.serviceProgress = 1 + (int)(15f * (serviceScore - target2) / (target3 - target2) + 0.49f);
+               }
+               else
+               {
+                   targetLevel = Level.Level5;
+                   levelUp.serviceProgress = 1;
+               }
 
-//                if (targetLevel < currentLevel)
-//                {
-//                    levelUp.serviceProgress = 1;
-//                }
-//                else if (targetLevel > currentLevel)
-//                {
-//                    levelUp.serviceProgress = 15;
-//                }
+               if (targetLevel < currentLevel)
+               {
+                   levelUp.serviceProgress = 1;
+               }
+               else if (targetLevel > currentLevel)
+               {
+                   levelUp.serviceProgress = 15;
+               }
 
-//                if (targetLevel < levelUp.targetLevel)
-//                {
-//                    levelUp.targetLevel = targetLevel;
-//                }
-//            }
+               if (targetLevel < levelUp.targetLevel)
+               {
+                   levelUp.targetLevel = targetLevel;
+               }
+           }
 
-//            levelUp.tooFewServices = false;
-//            if (currentLevel == Level.Level2)
-//            {
-//                if (serviceScore < d.OfficeTooFewService.GetValue(Level.Level2)) levelUp.tooFewServices = true;
-//            }
-//            else if (currentLevel == Level.Level3)
-//            {
-//                if (serviceScore < d.OfficeTooFewService.GetValue(Level.Level3)) levelUp.tooFewServices = true;
-//            }
+           levelUp.tooFewServices = false;
+           if (currentLevel == Level.Level2)
+           {
+               if (serviceScore < d.OfficeTooFewService.GetValue(Level.Level2)) levelUp.tooFewServices = true;
+           }
+           else if (currentLevel == Level.Level3)
+           {
+               if (serviceScore < d.OfficeTooFewService.GetValue(Level.Level3)) levelUp.tooFewServices = true;
+           }
 
-//            return levelUp;
-//        }
-//    }
-//}
+           return levelUp;
+       }
+   }
+}

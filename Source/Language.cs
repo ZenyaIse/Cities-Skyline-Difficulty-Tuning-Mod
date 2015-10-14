@@ -219,12 +219,12 @@ namespace DifficultyTuningMod
                 texts["OTHERS"] = "Others";
 
                 texts["AREA_COST_MULTIPLIER"] = "Area cost multiplier";
+                texts["INITIAL_MONEY"] = "Initial money";
+                texts["REWARD"] = "Reward amount"; // amount of money you get when a milestone is reached
 
                 texts["DEMAND"] = "Demand formula: (Demand + Offset) * multiplier";
                 texts["DEMAND_OFFSET"] = "Demand offset";
                 texts["DEMAND_MULTIPLIER"] = "Demand multiplier";
-
-                texts["REWARD"] = "Reward (amount of money you get when a milestone is reached)";
 
                 texts["TARGET_RESIDENTIAL"] = "Target land values for residential buildings to level up (Level2, 3, 4, 5)";
                 texts["TARGET_COMMERCIAL"] = "Target land values for commercial buildings to level up (Level2, 3)";

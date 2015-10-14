@@ -26,7 +26,7 @@ namespace DifficultyTuningMod
         {
             DifficultyManager d = Singleton<DifficultyManager>.instance;
 
-            float value = demandValue; // (demandValue + d.DemandOffset.Value) * d.DemandMultiplier.Value;
+            float value = 0.01f * (demandValue + d.DemandOffset.Value) * d.DemandMultiplier.Value;
             return Math.Min(100, (int)Math.Round(value)); // Limit to 100 to avoid possible uncompatibility with other mods
         }
     }
