@@ -189,25 +189,16 @@ namespace DifficultyTuningMod
             addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.CommercialTargetLandValue);
             y += dy2;
 
+            // Industrial target service score
+            addLabel(scrollablePanel, DTMLang.Text("INDUSTRIAL_LEVELUP"), new Vector3(x1, y), textScaleMedium);
+            y += dy1;
+            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.IndustrialTargetScore);
+            y += dy2;
 
-
-            //// Industrial target service
-            //ddIndustrialTargetService = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.IndustrialTargetService.Description,
-            //    d.IndustrialTargetService.CustomValuesStr,
-            //    d.IndustrialTargetService.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddIndustrialTargetService);
-
-            //// Office target service
-            //ddOfficeTargetService = (UIDropDown)customOptionsGroup.AddDropdown(
-            //    d.OfficeTargetService.Description,
-            //    d.OfficeTargetService.CustomValuesStr,
-            //    d.OfficeTargetService.SelectedOptionIndex,
-            //    CustomValueOnSelected
-            //    );
-            //adjustSizes(ddOfficeTargetService);
+            // Office target service score
+            addLabel(scrollablePanel, DTMLang.Text("OFFICE_LEVELUP"), new Vector3(x1, y), textScaleMedium);
+            y += dy1;
+            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.OfficeTargetScore);
 
             freeze = false;
         }
@@ -219,6 +210,7 @@ namespace DifficultyTuningMod
             DifficultyManager d = Singleton<DifficultyManager>.instance;
             
             d.Difficulty = (Difficulties)sel;
+            d.Modified = true;
             
             // Update controls
             freeze = true;
@@ -238,6 +230,7 @@ namespace DifficultyTuningMod
             DifficultyManager d = Singleton<DifficultyManager>.instance;
             
             d.Difficulty = Difficulties.Custom;
+            d.Modified = true;
             
             freeze = true;
             ddDifficulty.selectedIndex = (int)Difficulties.Custom;

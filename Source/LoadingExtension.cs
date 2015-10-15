@@ -18,5 +18,15 @@ namespace DifficultyTuningMod
 
             Achievements.Update();
         }
+        
+        public override void OnLevelUnloaded(LoadMode mode)
+        {
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
+
+            if (d != null && d.Modified)
+            {
+                d.Save();
+            }
+        }
     }
 }

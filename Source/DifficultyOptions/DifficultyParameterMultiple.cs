@@ -9,7 +9,7 @@ namespace DifficultyTuningMod.DifficultyOptions
         protected const int InvalidValue = -9999;
         protected int nMin;
         protected int nMax;
-        protected int nCustom;
+        public int nCustom;
 
         protected DifficultyParameterMultiple()
         {

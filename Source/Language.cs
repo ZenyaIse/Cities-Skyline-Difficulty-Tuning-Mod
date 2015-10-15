@@ -132,68 +132,74 @@ namespace DifficultyTuningMod
             else if (selectedLanguage == "pt")
             {
                 texts["MOD_NAME"] = "Mod Ajuste de Dificuldade";
-                texts["MOD_DESCRIPTION"] = "A variedade de níveis de dificuldade. Não ocorreram alterações na jogabilidade.";
+                texts["MOD_DESCRIPTION"] = "A variedade de níveis de dificuldade.";
 
-                //texts["DTM_OPTIONS"] = "Opções a Mod Ajuste de Dificuldade";
-                texts["DIFFICULTY_LEVEL"] = "Nível de dificuldade";
-                //texts["CUSTOM_OPTIONS"] = "Opções personalizadas (eficaz se o nível de dificuldade personalizado foi selecionado)";
-                texts["CUSTOM_OPTIONS"] = "Opções personalizadas";
-                texts["CONSTRUCTION_COST"] = "Custo de construção (todos exceto estrs)"; // estradas
-                texts["CONSTRUCTION_COST_ROADS"] = "Custo de construção de estradas";
-                texts["MAINTENANCE_COST"] = "Custo de manutenção (todos exceto estrs)";
-                texts["ROAD_MAINTENANCE_COST"] = "Custo de manutenção de estradas";
-                texts["AREA_COST_MULTIPLIER"] = "Multiplicador de custos da área";
-                texts["DEMAND_OFFSET"] = "Compensação de demanda";
-                texts["DEMAND_MULTIPLIER"] = "Multiplicador de demanda >>> fórmula: (Demanda + Compensação) * multiplicador";
-                texts["REWARD"] = "Recompensa (valor de dinheiro se obtém quando um marco é atingido)";
-                texts["RELOCATION_COST"] = "Custo de deslocalizações de edifícios de serviços";
-                texts["TARGET_RESIDENTIAL"] = "Valores-alvo do custo da terra para edifícios residenciais a subir de nível (Nível 2, 3, 4, 5)";
-                texts["TARGET_COMMERCIAL"] = "Valores-alvo do custo da terra para edifícios comerciais a subir de nível (Nível 2, 3)";
-                texts["TARGET_INDUSTRIAL"] = "Valores-alvo do custo da terra para edifícios industriais a subir de nível (Nível 2, 3)";
-                texts["TARGET_OFFICE"] = "Valores-alvo do custo da terra para edifícios de escritórios a subir de nível (Nível 2, 3)";
-
+                texts["Free"] = "Free"; // To translate
                 texts["Easy"] = "Fácil";
                 texts["Normal"] = "Normal";
-                texts["Medium"] = "Médio";
-                texts["Hard"] = "Difício";
                 texts["Advanced"] = "Advançado";
+                texts["Hard"] = "Difício";
                 texts["Expert"] = "Perito";
                 texts["Challenge"] = "Desafio";
                 texts["Impossible"] = "Imposivel";
                 texts["Custom"] = "Personalizado";
+
+                texts["DIFFICULTY_LEVEL"] = "Nível de dificuldade";
+                texts["CUSTOM_OPTIONS"] = "Opções personalizadas";
+
+                texts["SERVICE_BUILDINGS"] = "Edifícios de serviços";
+                texts["PUBLIC_TRANSPORT"] = "Transporte público";
+                texts["ROADS"] = "Estradas";
+                texts["OTHERS"] = "Others"; // To translate
+
+                texts["AREA_COST_MULTIPLIER"] = "Multiplicador de custos da área";
+                texts["INITIAL_MONEY"] = "Capital inicial";
+                texts["REWARD"] = "Recompensa";
+
+                texts["DEMAND"] = "Demanda fórmula: (Demanda + Compensação) * multiplicador";
+                texts["DEMAND_OFFSET"] = "Compensação de demanda";
+                texts["DEMAND_MULTIPLIER"] = "Multiplicador de demanda";
+
+                texts["RESIDENTIAL_LEVELUP"] = "Valores-alvo do custo da terra para edifícios residenciais a subir de nível (Nível 2, 3, 4, 5)";
+                texts["COMMERCIAL_LEVELUP"] = "Valores-alvo do custo da terra para edifícios comerciais a subir de nível (Nível 2, 3)";
+                texts["INDUSTRIAL_LEVELUP"] = "Valores-alvo do custo da terra para edifícios industriais a subir de nível (Nível 2, 3)";
+                texts["OFFICE_LEVELUP"] = "Valores-alvo do custo da terra para edifícios de escritórios a subir de nível (Nível 2, 3)";
             }
             else if (selectedLanguage == "ru")
             {
                 texts["MOD_NAME"] = "Настройка сложности";
-                texts["MOD_DESCRIPTION"] = "Различные уровни сложности (без изменения игровой механики).";
+                texts["MOD_DESCRIPTION"] = "Различные уровни сложности.";
 
-                //texts["DTM_OPTIONS"] = "Настройка уровня сложности";
-                texts["DIFFICULTY_LEVEL"] = "Уровень сложности";
-                //texts["CUSTOM_OPTIONS"] = "Пользовательские настройки (работают только если выбран Пользовательский)";
-                texts["CUSTOM_OPTIONS"] = "Пользовательские настройки";
-                texts["CONSTRUCTION_COST"] = "Стоимость построек (кроме дорог)";
-                texts["CONSTRUCTION_COST_ROADS"] = "Стоимость прокладки дорог";
-                texts["MAINTENANCE_COST"] = "Содержание построек (кроме дорог)";
-                texts["ROAD_MAINTENANCE_COST"] = "Содержание дорог";
-                texts["AREA_COST_MULTIPLIER"] = "Коэффициент покупки области";
-                texts["DEMAND_OFFSET"] = "Смещение потребности";
-                texts["DEMAND_MULTIPLIER"] = "Коэффициент потребности >>> формула: (Потребность + Смещение) * Коэффициент";
-                texts["REWARD"] = "Награда (сумма, которую дают игроку после достижения некоторых этапов)";
-                texts["RELOCATION_COST"] = "Стоимость перемещения зданий";
-                texts["TARGET_RESIDENTIAL"] = "Цена земли, необходимая для повышения уровня жилых зданий (уровень 2, 3, 4, 5)";
-                texts["TARGET_COMMERCIAL"] = "Цена земли, необходимая для повышения уровня коммерческих зданий (уровень 2, 3)";
-                texts["TARGET_INDUSTRIAL"] = "Сервис, необходимый для повышения уровня промышленных зданий (уровень 2, 3)";
-                texts["TARGET_OFFICE"] = "Сервис, необходимый для повышения уровня офисных зданий (уровень 2, 3)";
-
+                texts["Free"] = "Бесплатный";
                 texts["Easy"] = "Легкий";
                 texts["Normal"] = "Обычный";
-                texts["Medium"] = "Средний";
-                texts["Hard"] = "Сложный";
                 texts["Advanced"] = "Продвинутый";
+                texts["Hard"] = "Сложный";
                 texts["Expert"] = "Эксперт";
                 texts["Challenge"] = "Челендж";
                 texts["Impossible"] = "Невозможный";
                 texts["Custom"] = "Пользовательский";
+
+                texts["DIFFICULTY_LEVEL"] = "Уровень сложности";
+                texts["CUSTOM_OPTIONS"] = "Пользовательские настройки";
+
+                texts["SERVICE_BUILDINGS"] = "Постройки";
+                texts["PUBLIC_TRANSPORT"] = "Общественный транспорт";
+                texts["ROADS"] = "Дороги";
+                texts["OTHERS"] = "Остальное";
+
+                texts["AREA_COST_MULTIPLIER"] = "Коэффициент покупки области";
+                texts["INITIAL_MONEY"] = "Начальный капитал";
+                texts["REWARD"] = "Награда (сумма, которую дают игроку после достижения некоторых этапов)";
+
+                texts["DEMAND"] = "Формула потребности: (Потребность + Смещение) * Коэффициент";
+                texts["DEMAND_OFFSET"] = "Смещение";
+                texts["DEMAND_MULTIPLIER"] = "Коэффициент";
+
+                texts["RESIDENTIAL_LEVELUP"] = "Цена земли, необходимая для повышения уровня жилых зданий (уровень 2, 3, 4, 5)";
+                texts["COMMERCIAL_LEVELUP"] = "Цена земли, необходимая для повышения уровня коммерческих зданий (уровень 2, 3)";
+                texts["INDUSTRIAL_LEVELUP"] = "Сервис, необходимый для повышения уровня промышленных зданий (уровень 2, 3)";
+                texts["OFFICE_LEVELUP"] = "Сервис, необходимый для повышения уровня офисных зданий (уровень 2, 3)";
             }
             else
             {
@@ -219,7 +225,7 @@ namespace DifficultyTuningMod
                 texts["OTHERS"] = "Others";
 
                 texts["AREA_COST_MULTIPLIER"] = "Area cost multiplier";
-                texts["INITIAL_MONEY"] = "Initial money";
+                texts["INITIAL_MONEY"] = "Initial capital";
                 texts["REWARD"] = "Reward amount"; // amount of money you get when a milestone is reached
 
                 texts["DEMAND"] = "Demand formula: (Demand + Offset) * multiplier";

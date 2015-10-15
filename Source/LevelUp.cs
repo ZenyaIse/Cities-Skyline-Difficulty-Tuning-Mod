@@ -140,53 +140,53 @@ namespace DifficultyTuningMod
         {
             DifficultyManager d = Singleton<DifficultyManager>.instance;
 
-            //if (levelUp.serviceProgress != 0)
-            //{
-            //    Level targetLevel;
+            if (levelUp.serviceProgress != 0)
+            {
+                Level targetLevel;
 
-            //    int target2 = d.IndustrialTargetService.GetValue(Level.Level2);
-            //    int target3 = d.IndustrialTargetService.GetValue(Level.Level3);
+                int target2 = d.IndustrialTargetScore.GetValue(Level.Level2);
+                int target3 = d.IndustrialTargetScore.GetValue(Level.Level3);
 
-            //    if (serviceScore < target2)
-            //    {
-            //        targetLevel = Level.Level1;
-            //        levelUp.serviceProgress = 1 + (int)(15f * serviceScore / target2 + 0.49f);
-            //    }
-            //    else if (serviceScore < target3)
-            //    {
-            //        targetLevel = Level.Level2;
-            //        levelUp.serviceProgress = 1 + (int)(15f * (serviceScore - target2) / (target3 - target2) + 0.49f);
-            //    }
-            //    else
-            //    {
-            //        targetLevel = Level.Level5;
-            //        levelUp.serviceProgress = 1;
-            //    }
+                if (serviceScore < target2)
+                {
+                    targetLevel = Level.Level1;
+                    levelUp.serviceProgress = 1 + (int)(15f * serviceScore / target2 + 0.49f);
+                }
+                else if (serviceScore < target3)
+                {
+                    targetLevel = Level.Level2;
+                    levelUp.serviceProgress = 1 + (int)(15f * (serviceScore - target2) / (target3 - target2) + 0.49f);
+                }
+                else
+                {
+                    targetLevel = Level.Level5;
+                    levelUp.serviceProgress = 1;
+                }
 
-            //    if (targetLevel < currentLevel)
-            //    {
-            //        levelUp.serviceProgress = 1;
-            //    }
-            //    else if (targetLevel > currentLevel)
-            //    {
-            //        levelUp.serviceProgress = 15;
-            //    }
+                if (targetLevel < currentLevel)
+                {
+                    levelUp.serviceProgress = 1;
+                }
+                else if (targetLevel > currentLevel)
+                {
+                    levelUp.serviceProgress = 15;
+                }
 
-            //    if (targetLevel < levelUp.targetLevel)
-            //    {
-            //        levelUp.targetLevel = targetLevel;
-            //    }
-            //}
+                if (targetLevel < levelUp.targetLevel)
+                {
+                    levelUp.targetLevel = targetLevel;
+                }
+            }
 
-            //levelUp.tooFewServices = false;
-            //if (currentLevel == Level.Level2)
-            //{
-            //    if (serviceScore < d.IndustrialTooFewService.GetValue(Level.Level2)) levelUp.tooFewServices = true;
-            //}
-            //else if (currentLevel == Level.Level3)
-            //{
-            //    if (serviceScore < d.IndustrialTooFewService.GetValue(Level.Level3)) levelUp.tooFewServices = true;
-            //}
+            levelUp.tooFewServices = false;
+            if (currentLevel == Level.Level2)
+            {
+                if (serviceScore < d.IndustrialTargetScore.GetTooLowValue(Level.Level2)) levelUp.tooFewServices = true;
+            }
+            else if (currentLevel == Level.Level3)
+            {
+                if (serviceScore < d.IndustrialTargetScore.GetTooLowValue(Level.Level3)) levelUp.tooFewServices = true;
+            }
 
             return levelUp;
         }
@@ -195,53 +195,53 @@ namespace DifficultyTuningMod
         {
             DifficultyManager d = Singleton<DifficultyManager>.instance;
 
-            //if (levelUp.serviceProgress != 0)
-            //{
-            //    Level targetLevel;
+            if (levelUp.serviceProgress != 0)
+            {
+                Level targetLevel;
 
-            //    int target2 = d.OfficeTargetService.GetValue(Level.Level2);
-            //    int target3 = d.OfficeTargetService.GetValue(Level.Level3);
+                int target2 = d.OfficeTargetScore.GetValue(Level.Level2);
+                int target3 = d.OfficeTargetScore.GetValue(Level.Level3);
 
-            //    if (serviceScore < target2)
-            //    {
-            //        targetLevel = Level.Level1;
-            //        levelUp.serviceProgress = 1 + (int)(15f * serviceScore / target2 + 0.49f);
-            //    }
-            //    else if (serviceScore < target3)
-            //    {
-            //        targetLevel = Level.Level2;
-            //        levelUp.serviceProgress = 1 + (int)(15f * (serviceScore - target2) / (target3 - target2) + 0.49f);
-            //    }
-            //    else
-            //    {
-            //        targetLevel = Level.Level5;
-            //        levelUp.serviceProgress = 1;
-            //    }
+                if (serviceScore < target2)
+                {
+                    targetLevel = Level.Level1;
+                    levelUp.serviceProgress = 1 + (int)(15f * serviceScore / target2 + 0.49f);
+                }
+                else if (serviceScore < target3)
+                {
+                    targetLevel = Level.Level2;
+                    levelUp.serviceProgress = 1 + (int)(15f * (serviceScore - target2) / (target3 - target2) + 0.49f);
+                }
+                else
+                {
+                    targetLevel = Level.Level5;
+                    levelUp.serviceProgress = 1;
+                }
 
-            //    if (targetLevel < currentLevel)
-            //    {
-            //        levelUp.serviceProgress = 1;
-            //    }
-            //    else if (targetLevel > currentLevel)
-            //    {
-            //        levelUp.serviceProgress = 15;
-            //    }
+                if (targetLevel < currentLevel)
+                {
+                    levelUp.serviceProgress = 1;
+                }
+                else if (targetLevel > currentLevel)
+                {
+                    levelUp.serviceProgress = 15;
+                }
 
-            //    if (targetLevel < levelUp.targetLevel)
-            //    {
-            //        levelUp.targetLevel = targetLevel;
-            //    }
-            //}
+                if (targetLevel < levelUp.targetLevel)
+                {
+                    levelUp.targetLevel = targetLevel;
+                }
+            }
 
-            //levelUp.tooFewServices = false;
-            //if (currentLevel == Level.Level2)
-            //{
-            //    if (serviceScore < d.OfficeTooFewService.GetValue(Level.Level2)) levelUp.tooFewServices = true;
-            //}
-            //else if (currentLevel == Level.Level3)
-            //{
-            //    if (serviceScore < d.OfficeTooFewService.GetValue(Level.Level3)) levelUp.tooFewServices = true;
-            //}
+            levelUp.tooFewServices = false;
+            if (currentLevel == Level.Level2)
+            {
+                if (serviceScore < d.OfficeTargetScore.GetTooLowValue(Level.Level2)) levelUp.tooFewServices = true;
+            }
+            else if (currentLevel == Level.Level3)
+            {
+                if (serviceScore < d.OfficeTargetScore.GetTooLowValue(Level.Level3)) levelUp.tooFewServices = true;
+            }
 
             return levelUp;
         }

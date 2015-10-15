@@ -32,19 +32,7 @@ namespace DifficultyTuningMod.DifficultyOptions
 
         protected override int getTooLowValue(int n, Level level)
         {
-            switch (level)
-            {
-                case Level.Level2:
-                    return -3 + 2 * n;
-                case Level.Level3:
-                    return 1 + 5 * n;
-                case Level.Level4:
-                    return 15 + 8 * n;
-                case Level.Level5:
-                    return 31 + 10 * n;
-            }
-
-            return InvalidValue;
+            return getValue(n, level) - 10;
         }
     }
 }

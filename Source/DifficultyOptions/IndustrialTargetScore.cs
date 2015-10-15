@@ -3,13 +3,13 @@ using ColossalFramework;
 
 namespace DifficultyTuningMod.DifficultyOptions
 {
-    public class CommercialTargetLandValue : DifficultyParameterMultiple
+    public class IndustrialTargetScore : DifficultyParameterMultiple
     {
-        public CommercialTargetLandValue() : base() { }
+        public IndustrialTargetScore() : base() { }
 
         protected override void InitValues()
         {
-            nMin = -3;
+            nMin = -4;
             nMax = 10;
         }
 
@@ -18,9 +18,9 @@ namespace DifficultyTuningMod.DifficultyOptions
             switch (level)
             {
                 case Level.Level2:
-                    return 11 + 5 * n;
+                    return 20 + 5 * n;
                 case Level.Level3:
-                    return 21 + 10 * n;
+                    return 40 + 10 * n;
             }
 
             return InvalidValue;
@@ -28,7 +28,17 @@ namespace DifficultyTuningMod.DifficultyOptions
 
         protected override int getTooLowValue(int n, Level level)
         {
-            return getValue(n, level) - 10;
+            int value = getValue(n, level);
+            
+            switch (level)
+            {
+                case Level.Level2:
+                    return value - 10;
+                case Level.Level3:
+                    return value - 20;
+            }
+
+            return InvalidValue;
         }
     }
 }
