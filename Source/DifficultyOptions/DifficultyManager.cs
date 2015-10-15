@@ -1,5 +1,3 @@
-using System.IO;
-using System.Xml.Serialization;
 using System.Collections.Generic;
 using ColossalFramework;
 
@@ -7,7 +5,7 @@ namespace DifficultyTuningMod.DifficultyOptions
 {
     public class DifficultyManager : Singleton<DifficultyManager>
     {
-        private const string optionsFileName = "DifficultyTuningModOptions_v20151015.xml";
+        private const string optionsFileName = "DifficultyTuningModOptions_v2.xml";
         
         public bool Modified = false;
         
@@ -55,7 +53,7 @@ namespace DifficultyTuningMod.DifficultyOptions
             IndustrialTargetScore = new IndustrialTargetScore();
             OfficeTargetScore = new OfficeTargetScore();
 
-            // Load from file
+            Load();
         }
 
         public string[] DifficultiesStr
@@ -92,10 +90,10 @@ namespace DifficultyTuningMod.DifficultyOptions
             options.RewardMultiplier = this.RewardMultiplier.CustomValue;
             options.DemandOffset = this.DemandOffset.CustomValue;
             options.DemandMultiplier = this.DemandMultiplier.CustomValue;
-            options.ResidentialTargetLandValueIndex = this.ResidentialTargetLandValueIndex.nCustom;
-            options.CommercialTargetLandValueIndex = this.CommercialTargetLandValueIndex.nCustom;
-            options.IndustrialTargetScoreIndex = this.IndustrialTargetScoreIndex.nCustom;
-            options.OfficeTargetScoreIndex = this.OfficeTargetScoreIndex.nCustom;
+            options.ResidentialTargetLandValueIndex = this.ResidentialTargetLandValue.nCustom;
+            options.CommercialTargetLandValueIndex = this.CommercialTargetLandValue.nCustom;
+            options.IndustrialTargetScoreIndex = this.IndustrialTargetScore.nCustom;
+            options.OfficeTargetScoreIndex = this.OfficeTargetScore.nCustom;
             
             options.Save();
             
@@ -106,7 +104,17 @@ namespace DifficultyTuningMod.DifficultyOptions
         {
             DifficultyOptionsSerializable options = DifficultyOptionsSerializable.CreateFromFile();
             
-            if (options != null)
+            if (options == null)
+            {
+                // Force to save if the options file does not exist yet.
+                Modified = true;
+
+                // Try to load from previous version
+                //
+                //
+                //
+            }
+            else
             {
                 this.Difficulty = options.Difficulty;
                 this.ConstructionCostMultiplier.CustomValue = options.ConstructionCostMultiplier;
@@ -123,10 +131,10 @@ namespace DifficultyTuningMod.DifficultyOptions
                 this.RewardMultiplier.CustomValue = options.RewardMultiplier;
                 this.DemandOffset.CustomValue = options.DemandOffset;
                 this.DemandMultiplier.CustomValue = options.DemandMultiplier;
-                this.ResidentialTargetLandValueIndex.nCustom = options.ResidentialTargetLandValueIndex;
-                this.CommercialTargetLandValueIndex.nCustom = options.CommercialTargetLandValueIndex;
-                this.IndustrialTargetScoreIndex.nCustom = options.IndustrialTargetScoreIndex;
-                this.OfficeTargetScoreIndex.nCustom = options.OfficeTargetScoreIndex;
+                this.ResidentialTargetLandValue.nCustom = options.ResidentialTargetLandValueIndex;
+                this.CommercialTargetLandValue.nCustom = options.CommercialTargetLandValueIndex;
+                this.IndustrialTargetScore.nCustom = options.IndustrialTargetScoreIndex;
+                this.OfficeTargetScore.nCustom = options.OfficeTargetScoreIndex;
             }
         }
     }

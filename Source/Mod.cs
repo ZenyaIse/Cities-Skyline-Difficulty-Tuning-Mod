@@ -82,14 +82,14 @@ namespace DifficultyTuningMod
         public void OnSettingsUI(UIHelperBase helper)
         {
             DifficultyManager d = Singleton<DifficultyManager>.instance;
-            
+
             ddDifficulty = (UIDropDown)helper.AddDropdown(
                 DTMLang.Text("DIFFICULTY_LEVEL"),
                 d.DifficultiesStr,
                 (int)d.Difficulty,
                 DifficultyLevelOnSelected
                 );
-            ddDifficulty.width = 250;
+            ddDifficulty.width = 315;
             ddDifficulty.height -= 2;
 
             //DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, ddDifficulty.parent.parent.ToString());
@@ -103,11 +103,19 @@ namespace DifficultyTuningMod
             float x4 = x3 + 140;
             float y = 0;
 			float dy1 = 24;
-            float dy2 = 40;
+            float dy2 = 44;
             float w1 = 150;
             float w2 = w1 + 140;
 
             ddDifficulty.parent.relativePosition = new Vector3(5, y);
+
+            UIButton btn = (UIButton)helper.AddButton(Locale.Get("SAVE"), saveBtnClicked);
+            btn.autoSize = false;
+            btn.textHorizontalAlignment = UIHorizontalAlignment.Center;
+            btn.width = 200;
+            btn.height = ddDifficulty.height;
+            btn.relativePosition = new Vector3(x3, y + 24);
+
             y += ddDifficulty.parent.height + 10;
 
 
@@ -177,28 +185,24 @@ namespace DifficultyTuningMod
             addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.DemandMultiplier);
             y += dy2;
 
-            // Residential target land value
-            addLabel(scrollablePanel, DTMLang.Text("RESIDENTIAL_LEVELUP"), new Vector3(x1, y), textScaleMedium);
+            // Target land value
+            addLabel(scrollablePanel, DTMLang.Text("TAGRET_LANDVALUE"), new Vector3(x1, y), textScaleMedium);
             y += dy1;
-            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.ResidentialTargetLandValue);
+            addLabel(scrollablePanel, DTMLang.Text("RESIDENTIAL"), new Vector3(x1, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.ResidentialTargetLandValue);
+            y += dy1;
+            addLabel(scrollablePanel, DTMLang.Text("COMMERCIAL"), new Vector3(x1, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.CommercialTargetLandValue);
             y += dy2;
 
-            // Commercial target land value
-            addLabel(scrollablePanel, DTMLang.Text("COMMERCIAL_LEVELUP"), new Vector3(x1, y), textScaleMedium);
+            // Target service score
+            addLabel(scrollablePanel, DTMLang.Text("TAGRET_SCORE"), new Vector3(x1, y), textScaleMedium);
             y += dy1;
-            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.CommercialTargetLandValue);
-            y += dy2;
-
-            // Industrial target service score
-            addLabel(scrollablePanel, DTMLang.Text("INDUSTRIAL_LEVELUP"), new Vector3(x1, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("INDUSTRIAL"), new Vector3(x1, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.IndustrialTargetScore);
             y += dy1;
-            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.IndustrialTargetScore);
-            y += dy2;
-
-            // Office target service score
-            addLabel(scrollablePanel, DTMLang.Text("OFFICE_LEVELUP"), new Vector3(x1, y), textScaleMedium);
-            y += dy1;
-            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.OfficeTargetScore);
+            addLabel(scrollablePanel, DTMLang.Text("OFFICE"), new Vector3(x1, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.OfficeTargetScore);
 
             freeze = false;
         }
@@ -237,6 +241,16 @@ namespace DifficultyTuningMod
             freeze = false;
 
             Achievements.Update();
+        }
+
+        private void saveBtnClicked()
+        {
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
+
+            if (d != null && d.Modified)
+            {
+                d.Save();
+            }
         }
 
         #endregion

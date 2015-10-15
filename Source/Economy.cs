@@ -12,7 +12,7 @@ namespace DifficultyTuningMod
             {
                 DifficultyManager d = Singleton<DifficultyManager>.instance;
 
-                return (int)(0.01f * amount * d.RewardMultiplier.Value);
+                return (int)(0.01f * amount * d.RewardMultiplier.Value + 0.49f);
             }
 
             return amount;
@@ -41,7 +41,7 @@ namespace DifficultyTuningMod
                 multiplier = d.ConstructionCostMultiplier.Value;
             }
 			
-			return (int)(0.01f * originalConstructionCost * multiplier);
+			return (int)(0.01f * originalConstructionCost * multiplier + 0.49f);
         }
 
         public override int OnGetMaintenanceCost(int originalMaintenanceCost, Service service, SubService subService, Level level)
@@ -67,14 +67,14 @@ namespace DifficultyTuningMod
                 multiplier = d.MaintenanceCostMultiplier.Value;
             }
             
-			return (int)(0.01f * originalMaintenanceCost * multiplier);
+			return (int)(0.01f * originalMaintenanceCost * multiplier + 0.49f);
         }
 
         public override int OnGetRelocationCost(int constructionCost, int relocationCost, Service service, SubService subService, Level level)
         {
             DifficultyManager d = Singleton<DifficultyManager>.instance;
 
-            return (int)(0.01f * constructionCost * d.RelocationCostMultiplier.Value);
+            return (int)(0.01f * constructionCost * d.RelocationCostMultiplier.Value + 0.49f);
         }
 
         public override int OnGetRefundAmount(int constructionCost, int refundAmount, Service service, SubService subService, Level level)

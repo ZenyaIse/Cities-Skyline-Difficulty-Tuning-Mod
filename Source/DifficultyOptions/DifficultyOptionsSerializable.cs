@@ -38,10 +38,10 @@ namespace DifficultyTuningMod.DifficultyOptions
         
         public static DifficultyOptionsSerializable CreateFromFile()
         {
-            if (!File.Exists(fileName)) return null;
+            if (!File.Exists(optionsFileName)) return null;
             
             XmlSerializer ser = new XmlSerializer(typeof(DifficultyOptionsSerializable));
-            TextReader reader = new StreamReader(fileName);
+            TextReader reader = new StreamReader(optionsFileName);
             DifficultyOptionsSerializable instance = (DifficultyOptionsSerializable)ser.Deserialize(reader);
             reader.Close();
             
