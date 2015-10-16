@@ -6,11 +6,12 @@ namespace DifficultyTuningMod.DifficultyOptions
 
         protected override void InitValues()
         {
-            CustomValue = 10;
-            customValues = new int[21];
+            CustomValue = 70;
+            customValues = new int[27];
             
             int i;
             for (i = 0; i <= 20; i++) customValues[i] = 10 * i; // 0, 10, .. 200
+            for (i = 21; i <= 26; i++) customValues[i] = 200 + 50 * (i - 20); // 250, 300, .. 500
         }
 
         public override int GetValue(Difficulties difficultyLevel)
@@ -20,7 +21,7 @@ namespace DifficultyTuningMod.DifficultyOptions
                 case Difficulties.Free:
                     return 0;
                 case Difficulties.Easy:
-                    return 70;
+                    return 200;
                 case Difficulties.Normal:
                     return 70;
                 case Difficulties.Advanced:
@@ -42,7 +43,7 @@ namespace DifficultyTuningMod.DifficultyOptions
         
         protected override string valueToStr(int value)
         {
-            return (value == 0) ? "0₡" : (value.ToString() + " 000₡");
+            return "₡" + value.ToString() + (value == 0 ? "" : " 000");
         }
     }
 }

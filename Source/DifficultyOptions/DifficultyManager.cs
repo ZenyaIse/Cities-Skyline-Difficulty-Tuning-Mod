@@ -109,10 +109,7 @@ namespace DifficultyTuningMod.DifficultyOptions
                 // Force to save if the options file does not exist yet.
                 Modified = true;
 
-                // Try to load from previous version
-                //
-                //
-                //
+                tryLoadFromOldVersion();
             }
             else
             {
@@ -135,6 +132,60 @@ namespace DifficultyTuningMod.DifficultyOptions
                 this.CommercialTargetLandValue.nCustom = options.CommercialTargetLandValueIndex;
                 this.IndustrialTargetScore.nCustom = options.IndustrialTargetScoreIndex;
                 this.OfficeTargetScore.nCustom = options.OfficeTargetScoreIndex;
+            }
+        }
+        
+        private void tryLoadFromOldVersion()
+        {
+            DifficultyOptions_old.DifficultyManager d_old = DifficultyOptions_old.DifficultyManager.TryCreateFromFile();
+            
+            if (d_old != null)
+            {
+                // Convert difficulty level from the old version to new.
+                switch (d_old.Difficulty)
+                {
+                    case DifficultyOptions_old.Difficulties.Easy:
+                        Difficulty = Difficulties.Easy;
+                    case DifficultyOptions_old.Difficulties.Normal:
+                        Difficulty = Difficulties.Normal;
+                    case DifficultyOptions_old.Difficulties.Medium:
+                        Difficulty = Difficulties.Normal; // No Medium level any more.
+                    case DifficultyOptions_old.Difficulties.Hard:
+                        Difficulty = Difficulties.Advanced; // Hard and Advanced are replaced
+                    case DifficultyOptions_old.Difficulties.Advanced:
+                        Difficulty = Difficulties.Hard; // Hard and Advanced are replaced
+                    case DifficultyOptions_old.Difficulties.Expert:
+                        Difficulty = Difficulties.Expert;
+                    case DifficultyOptions_old.Difficulties.Challenge:
+                        Difficulty = Difficulties.Challenge;
+                    case DifficultyOptions_old.Difficulties.Impossible:
+                        Difficulty = Difficulties.Impossible;
+                    case DifficultyOptions_old.Difficulties.Custom:
+                        Difficulty = Difficulties.Custom;
+                }
+                
+                // Convert custom values from the old version to new.
+                ConstructionCostMultiplier.CustomValue = (int)System.Math.Round(d_old.getConstructionCostMultiplier() * 100);
+                ConstructionCostMultiplier_Road.CustomValue = (int)System.Math.Round(d_old.getRoadConstructionCostMultiplier() * 100);
+                ConstructionCostMultiplier_Service.CustomValue = ConstructionCostMultiplier.CustomValue;
+                ConstructionCostMultiplier_Public.CustomValue = ConstructionCostMultiplier.CustomValue;
+                MaintenanceCostMultiplier.CustomValue = (int)System.Math.Round(d_old.getMaintenanceCostMultiplier() * 100);
+                MaintenanceCostMultiplier_Road.CustomValue = (int)System.Math.Round(d_old.getRoadMaintenanceCostMultiplier() * 100);
+                MaintenanceCostMultiplier_Service.CustomValue = MaintenanceCostMultiplier.CustomValue;
+                MaintenanceCostMultiplier_Public.CustomValue = MaintenanceCostMultiplier.CustomValue;
+                RelocationCostMultiplier.CustomValue = (int)System.Math.Round(d_old.getRelocationCostMultiplier() * 100);
+                AreaCostMultiplier.CustomValue = (int)System.Math.Round(d_old.getAreaCostMultiplier() * 10);
+                RewardMultiplier.CustomValue = (int)System.Math.Round(d_old.getRewardMultiplier() * 100);
+                DemandOffset.CustomValue = d_old.getDemandOffset();
+                DemandMultiplier.CustomValue.nCustom = (int)System.Math.Round(d_old.getDemandMultiplier() * 100);
+                ResidentialTargetLandValue.nCustom = d_old.ResidentialTargetLandValueIndex + 1;
+                CommercialTargetLandValue.nCustom = d_old.CommercialTargetLandValueIndex + 1;
+                IndustrialTargetScore.nCustom = d_old.IndustrialTargetServiceIndex + 1;
+                OfficeTargetScore.nCustom = d_old.OfficeTargetServiceIndex + 1;
+               
+                Save();
+                
+                d_old.DeleteOptionsFile();
             }
         }
     }

@@ -35,7 +35,7 @@ namespace DifficultyTuningMod.DifficultyOptions
             }
             set
             {
-                CustomValue = Value;
+                CustomValue = value;
             }
         }
 
@@ -69,28 +69,5 @@ namespace DifficultyTuningMod.DifficultyOptions
         {
             return valueToStr(customValues[index]);
         }
-
-        //public string[] CustomValuesStr
-        //{
-        //    get
-        //    {
-        //        List<string> sl = new List<string>();
-
-        //        for (int i = 0; i < customValues.Length; i++)
-        //        {
-        //            Difficulties d = getDifficultyFromValue(customValues[i]);
-        //            sl.Add(valueToStr(customValues[i]) + getDifficultyNamePostfix(d));
-        //        }
-
-        //        return sl.ToArray();
-        //    }
-        //}
-
-        //private string getDifficultyNamePostfix(Difficulties d)
-        //{
-        //    if (d == Difficulties.Undefined) return "";
-
-        //    return " - " + DTMLang.Text(d.ToString());
-        //}
     }
 }

@@ -189,20 +189,20 @@ namespace DifficultyTuningMod
             addLabel(scrollablePanel, DTMLang.Text("TAGRET_LANDVALUE"), new Vector3(x1, y), textScaleMedium);
             y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("RESIDENTIAL"), new Vector3(x1, y), textScaleSmall);
-            addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.ResidentialTargetLandValue);
+            addSlider(scrollablePanel, new Vector3(x2, y), w2, OnCustomValueChanged, d.ResidentialTargetLandValue);
             y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("COMMERCIAL"), new Vector3(x1, y), textScaleSmall);
-            addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.CommercialTargetLandValue);
+            addSlider(scrollablePanel, new Vector3(x2, y), w2, OnCustomValueChanged, d.CommercialTargetLandValue);
             y += dy2;
 
             // Target service score
             addLabel(scrollablePanel, DTMLang.Text("TAGRET_SCORE"), new Vector3(x1, y), textScaleMedium);
             y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("INDUSTRIAL"), new Vector3(x1, y), textScaleSmall);
-            addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.IndustrialTargetScore);
+            addSlider(scrollablePanel, new Vector3(x2, y), w2, OnCustomValueChanged, d.IndustrialTargetScore);
             y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("OFFICE"), new Vector3(x1, y), textScaleSmall);
-            addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.OfficeTargetScore);
+            addSlider(scrollablePanel, new Vector3(x2, y), w2, OnCustomValueChanged, d.OfficeTargetScore);
 
             freeze = false;
         }
