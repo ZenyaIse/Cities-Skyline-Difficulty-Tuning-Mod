@@ -11,7 +11,7 @@ namespace DifficultyTuningMod
             DifficultyManager d = Singleton<DifficultyManager>.instance;
             if (sm == null || d == null) return;
 
-            if (d.Difficulty == Difficulties.Easy || d.Difficulty == Difficulties.Custom)
+            if (d.Difficulty == Difficulties.Easy || d.Difficulty == Difficulties.Free)
             {
                 sm.m_metaData.m_disableAchievements = SimulationMetaData.MetaBool.True;
             }

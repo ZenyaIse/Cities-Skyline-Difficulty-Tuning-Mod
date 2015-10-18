@@ -8,8 +8,6 @@ namespace DifficultyTuningMod.DifficultyOptions
         {
             switch (difficultyLevel)
             {
-                case Difficulties.Free:
-                    return 50;
                 case Difficulties.Easy:
                     return 75;
                 case Difficulties.Normal:
@@ -23,9 +21,12 @@ namespace DifficultyTuningMod.DifficultyOptions
                 case Difficulties.Challenge:
                     return 260;
                 case Difficulties.Impossible:
+                case Difficulties.HardAndFast:
                     return 300;
                 case Difficulties.Custom:
                     return CustomValue;
+                case Difficulties.Free:
+                    return 50;
             }
 
             return 100;

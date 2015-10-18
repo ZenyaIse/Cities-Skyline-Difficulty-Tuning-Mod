@@ -17,16 +17,6 @@ namespace DifficultyTuningMod.DifficultyOptions
 
         public abstract int GetValue(Difficulties difficultyLevel);
 
-        protected Difficulties getDifficultyFromValue(int value)
-        {
-            for (Difficulties d = Difficulties.Free; d <= Difficulties.Impossible; d++)
-            {
-                if (GetValue(d) == value) return d;
-            }
-
-            return Difficulties.Undefined;
-        }
-
         public int Value
         {
             get

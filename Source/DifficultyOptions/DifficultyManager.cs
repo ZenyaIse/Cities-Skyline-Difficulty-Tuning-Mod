@@ -5,8 +5,6 @@ namespace DifficultyTuningMod.DifficultyOptions
 {
     public class DifficultyManager : Singleton<DifficultyManager>
     {
-        private const string optionsFileName = "DifficultyTuningModOptions_v2.xml";
-        
         public bool Modified = false;
         
         public Difficulties Difficulty;
@@ -62,7 +60,7 @@ namespace DifficultyTuningMod.DifficultyOptions
             {
                 List<string> sl = new List<string>();
 
-                for (Difficulties d = Difficulties.Free; d <= Difficulties.Custom; d++)
+                for (Difficulties d = Difficulties.Easy; d <= Difficulties.HardAndFast; d++)
                 {
                     sl.Add(DTMLang.Text(d.ToString()));
                 }
@@ -137,7 +135,7 @@ namespace DifficultyTuningMod.DifficultyOptions
         
         private void tryLoadFromOldVersion()
         {
-            DifficultyOptions_old.DifficultyManager d_old = DifficultyOptions_old.DifficultyManager.TryCreateFromFile();
+            DifficultyOptions_old.DifficultyOptions d_old = DifficultyOptions_old.DifficultyOptions.TryCreateFromFile();
             
             if (d_old != null)
             {
@@ -146,24 +144,33 @@ namespace DifficultyTuningMod.DifficultyOptions
                 {
                     case DifficultyOptions_old.Difficulties.Easy:
                         Difficulty = Difficulties.Easy;
+                        break;
                     case DifficultyOptions_old.Difficulties.Normal:
                         Difficulty = Difficulties.Normal;
+                        break;
                     case DifficultyOptions_old.Difficulties.Medium:
                         Difficulty = Difficulties.Normal; // No Medium level any more.
+                        break;
                     case DifficultyOptions_old.Difficulties.Hard:
                         Difficulty = Difficulties.Advanced; // Hard and Advanced are replaced
+                        break;
                     case DifficultyOptions_old.Difficulties.Advanced:
                         Difficulty = Difficulties.Hard; // Hard and Advanced are replaced
+                        break;
                     case DifficultyOptions_old.Difficulties.Expert:
                         Difficulty = Difficulties.Expert;
+                        break;
                     case DifficultyOptions_old.Difficulties.Challenge:
                         Difficulty = Difficulties.Challenge;
+                        break;
                     case DifficultyOptions_old.Difficulties.Impossible:
                         Difficulty = Difficulties.Impossible;
+                        break;
                     case DifficultyOptions_old.Difficulties.Custom:
                         Difficulty = Difficulties.Custom;
+                        break;
                 }
-                
+
                 // Convert custom values from the old version to new.
                 ConstructionCostMultiplier.CustomValue = (int)System.Math.Round(d_old.getConstructionCostMultiplier() * 100);
                 ConstructionCostMultiplier_Road.CustomValue = (int)System.Math.Round(d_old.getRoadConstructionCostMultiplier() * 100);
@@ -177,11 +184,11 @@ namespace DifficultyTuningMod.DifficultyOptions
                 AreaCostMultiplier.CustomValue = (int)System.Math.Round(d_old.getAreaCostMultiplier() * 10);
                 RewardMultiplier.CustomValue = (int)System.Math.Round(d_old.getRewardMultiplier() * 100);
                 DemandOffset.CustomValue = d_old.getDemandOffset();
-                DemandMultiplier.CustomValue.nCustom = (int)System.Math.Round(d_old.getDemandMultiplier() * 100);
-                ResidentialTargetLandValue.nCustom = d_old.ResidentialTargetLandValueIndex + 1;
-                CommercialTargetLandValue.nCustom = d_old.CommercialTargetLandValueIndex + 1;
-                IndustrialTargetScore.nCustom = d_old.IndustrialTargetServiceIndex + 1;
-                OfficeTargetScore.nCustom = d_old.OfficeTargetServiceIndex + 1;
+                DemandMultiplier.CustomValue = (int)System.Math.Round(d_old.getDemandMultiplier() * 100);
+                ResidentialTargetLandValue.nCustom = d_old.ResidentialTargetLandValueIndex;
+                CommercialTargetLandValue.nCustom = d_old.CommercialTargetLandValueIndex;
+                IndustrialTargetScore.nCustom = d_old.IndustrialTargetServiceIndex;
+                OfficeTargetScore.nCustom = d_old.OfficeTargetServiceIndex;
                
                 Save();
                 

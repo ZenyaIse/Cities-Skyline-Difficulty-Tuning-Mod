@@ -6,7 +6,7 @@ namespace DifficultyTuningMod.DifficultyOptions
 
         protected override void InitValues()
         {
-            CustomValue = 100;
+            CustomValue = 20;
             customValues = new int[21];
             
             int i;
@@ -17,8 +17,6 @@ namespace DifficultyTuningMod.DifficultyOptions
         {
             switch (difficultyLevel)
             {
-                case Difficulties.Free:
-                    return 0;
                 case Difficulties.Easy:
                     return 10;
                 case Difficulties.Normal:
@@ -32,9 +30,12 @@ namespace DifficultyTuningMod.DifficultyOptions
                 case Difficulties.Challenge:
                     return 70;
                 case Difficulties.Impossible:
+                case Difficulties.HardAndFast:
                     return 80;
                 case Difficulties.Custom:
                     return CustomValue;
+                case Difficulties.Free:
+                    return 0;
             }
 
             return 20;

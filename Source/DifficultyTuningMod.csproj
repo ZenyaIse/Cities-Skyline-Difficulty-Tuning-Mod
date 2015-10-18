@@ -64,7 +64,7 @@
     <Compile Include="DifficultyOptions\Difficulties.cs" />
     <Compile Include="DifficultyOptions\DifficultyManager.cs" />
     <Compile Include="DifficultyOptions_old\Difficulties.cs" />
-    <Compile Include="DifficultyOptions_old\DifficultyManager.cs" />
+    <Compile Include="DifficultyOptions_old\DifficultyOptions.cs" />
     <Compile Include="DifficultyOptions\DifficultyOptionsSerializable.cs" />
     <Compile Include="DifficultyOptions\DifficultyParameterBase.cs" />
     <Compile Include="DifficultyOptions\DifficultyParameterMultiple.cs" />

@@ -8,8 +8,6 @@
         {
             switch (difficultyLevel)
             {
-                case Difficulties.Free:
-                    return 0;
                 case Difficulties.Easy:
                     return 50;
                 case Difficulties.Normal:
@@ -26,6 +24,9 @@
                     return 700;
                 case Difficulties.Custom:
                     return CustomValue;
+                case Difficulties.Free:
+                case Difficulties.HardAndFast:
+                    return 0;
             }
 
             return 100;

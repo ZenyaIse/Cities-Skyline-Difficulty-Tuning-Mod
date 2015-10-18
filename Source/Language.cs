@@ -35,15 +35,20 @@ namespace DifficultyTuningMod
                 texts["MOD_NAME"] = "Moeilijkheidstuningmod";
                 texts["MOD_DESCRIPTION"] = "Variatie in de moeilijkheidsgraad.";
 
-                texts["Free"] = "Free"; // To translate
-                texts["Easy"] = "Gemakkelijk";
-                texts["Normal"] = "Normaal";
-                texts["Advanced"] = "Vergevorderd";
-                texts["Hard"] = "Moeilijk";
-                texts["Expert"] = "Expert";
-                texts["Challenge"] = "Uitdaging";
-                texts["Impossible"] = "Onmogelijk";
-                texts["Custom"] = "Aangepast";
+                texts["Easy"] = "1. Gemakkelijk";
+                texts["Normal"] = "2. Normaal";
+                texts["Advanced"] = "3. Vergevorderd";
+                texts["Hard"] = "4. Moeilijk";
+                texts["Expert"] = "5. Expert";
+                texts["Challenge"] = "6. Uitdaging";
+                texts["Impossible"] = "7. Onmogelijk";
+                texts["Custom"] = "-- Aangepast --";
+                texts["Free"] = "Special: Free"; // To translate
+                texts["FiveHundred"] = "Special: ₡500,000 at start"; // To translate
+                texts["Demand111"] = "Special: Demand 100%"; // To translate
+                texts["PublicTransport"] = "Special: Free Public Transport"; // To translate
+                texts["LowCity"] = "Special: Low city"; // To translate
+                texts["HardAndFast"] = "Special: Hard and fast"; // To translate
 
                 texts["DIFFICULTY_LEVEL"] = "Moeilijkheidsgraad";
                 texts["CUSTOM_OPTIONS"] = "Aangepaste instellingen";
@@ -73,15 +78,20 @@ namespace DifficultyTuningMod
                 texts["MOD_NAME"] = "Schwierigkeitstuningmod";
                 texts["MOD_DESCRIPTION"] = "Variation in der Schwierigkeitsgrad.";
 
-                texts["Free"] = "Free"; // To translate
-                texts["Easy"] = "Einfach";
-                texts["Normal"] = "Normal";
-                texts["Hard"] = "Schwer";
-                texts["Advanced"] = "Fortgeschritten";
-                texts["Expert"] = "Expert";
-                texts["Challenge"] = "Herausforderung";
-                texts["Impossible"] = "Unmöglich";
-                texts["Custom"] = "Angepast";
+                texts["Easy"] = "1. Einfach";
+                texts["Normal"] = "2. Normal";
+                texts["Hard"] = "3. Schwer";
+                texts["Advanced"] = "4. Fortgeschritten";
+                texts["Expert"] = "5. Expert";
+                texts["Challenge"] = "6. Herausforderung";
+                texts["Impossible"] = "7. Unmöglich";
+                texts["Custom"] = "-- Angepast --";
+                texts["Free"] = "Special: Free"; // To translate
+                texts["FiveHundred"] = "Special: ₡500,000 at start"; // To translate
+                texts["Demand111"] = "Special: Demand 100%"; // To translate
+                texts["PublicTransport"] = "Special: Free Public Transport"; // To translate
+                texts["LowCity"] = "Special: Low city"; // To translate
+                texts["HardAndFast"] = "Special: Hard and fast"; // To translate
 
                 texts["DIFFICULTY_LEVEL"] = "Schwierigkeitsgrad";
                 texts["CUSTOM_OPTIONS"] = "Angepaßte Einstellungen";
@@ -96,8 +106,8 @@ namespace DifficultyTuningMod
                 texts["REWARD"] = "Belohnung";
 
                 texts["DEMAND"] = "Frage Formel: (Frage + Impuls) * Multiplikator"; // To check
-                texts["DEMAND_OFFSET"] = "Frage-impuls";
-                texts["DEMAND_MULTIPLIER"] = "Fragemultiplikationsfaktor";
+                texts["DEMAND_OFFSET"] = "Impuls";
+                texts["DEMAND_MULTIPLIER"] = "Multiplikator";
 
                 texts["TAGRET_LANDVALUE"] = "Bodenrichtpreise zu verbesseren (Stufe 2, 3, 4, 5)";
                 texts["RESIDENTIAL"] = "Wohngebäude";
@@ -111,15 +121,20 @@ namespace DifficultyTuningMod
                 texts["MOD_NAME"] = "Mod Sintonia di Difficultà";
                 texts["MOD_DESCRIPTION"] = "Varietà di livelli di difficoltà.";
 
-                texts["Free"] = "Free"; // To translate
-                texts["Easy"] = "Facile";
-                texts["Normal"] = "Normale";
-                texts["Advanced"] = "Avanzato";
-                texts["Hard"] = "Difficile";
-                texts["Expert"] = "Esperto";
-                texts["Challenge"] = "Sfida";
-                texts["Impossible"] = "Impossibile";
-                texts["Custom"] = "Personalizzato";
+                texts["Easy"] = "1. Facile";
+                texts["Normal"] = "2. Normale";
+                texts["Advanced"] = "3. Avanzato";
+                texts["Hard"] = "4. Difficile";
+                texts["Expert"] = "5. Esperto";
+                texts["Challenge"] = "6. Sfida";
+                texts["Impossible"] = "7. Impossibile";
+                texts["Custom"] = "-- Personalizzato --";
+                texts["Free"] = "Special: Free"; // To translate
+                texts["FiveHundred"] = "Special: ₡500,000 at start"; // To translate
+                texts["Demand111"] = "Special: Demand 100%"; // To translate
+                texts["PublicTransport"] = "Special: Free Public Transport"; // To translate
+                texts["LowCity"] = "Special: Low city"; // To translate
+                texts["HardAndFast"] = "Special: Hard and fast"; // To translate
 
                 texts["DIFFICULTY_LEVEL"] = "Livello di difficoltà";
                 texts["CUSTOM_OPTIONS"] = "Opzioni personalizzate";
@@ -134,8 +149,8 @@ namespace DifficultyTuningMod
                 texts["REWARD"] = "Ricompensa";
 
                 texts["DEMAND"] = "Domanda formula: (Domanda + Impulso) * Moltiplicatore";
-                texts["DEMAND_OFFSET"] = "Impulso di domanda";
-                texts["DEMAND_MULTIPLIER"] = "Moltiplicatore di domanda";
+                texts["DEMAND_OFFSET"] = "Impulso";
+                texts["DEMAND_MULTIPLIER"] = "Moltiplicatore";
 
                 texts["TAGRET_LANDVALUE"] = "Obiettivo valore del terreno per edifici a salire livello (Livello 2, 3, 4, 5)"; // To check
                 texts["RESIDENTIAL"] = "Residenziale";
@@ -149,15 +164,20 @@ namespace DifficultyTuningMod
                 texts["MOD_NAME"] = "Mod Ajuste de Dificuldade";
                 texts["MOD_DESCRIPTION"] = "A variedade de níveis de dificuldade.";
 
-                texts["Free"] = "Free"; // To translate
-                texts["Easy"] = "Fácil";
-                texts["Normal"] = "Normal";
-                texts["Advanced"] = "Advançado";
-                texts["Hard"] = "Difício";
-                texts["Expert"] = "Perito";
-                texts["Challenge"] = "Desafio";
-                texts["Impossible"] = "Imposivel";
-                texts["Custom"] = "Personalizado";
+                texts["Easy"] = "1. Fácil";
+                texts["Normal"] = "2. Normal";
+                texts["Advanced"] = "3. Advançado";
+                texts["Hard"] = "4. Difício";
+                texts["Expert"] = "5. Perito";
+                texts["Challenge"] = "6. Desafio";
+                texts["Impossible"] = "7. Imposivel";
+                texts["Custom"] = "-- Personalizado --";
+                texts["Free"] = "Special: Free"; // To translate
+                texts["FiveHundred"] = "Special: ₡500,000 at start"; // To translate
+                texts["Demand111"] = "Special: Demand 100%"; // To translate
+                texts["PublicTransport"] = "Special: Free Public Transport"; // To translate
+                texts["LowCity"] = "Special: Low city"; // To translate
+                texts["HardAndFast"] = "Special: Hard and fast"; // To translate
 
                 texts["DIFFICULTY_LEVEL"] = "Nível de dificuldade";
                 texts["CUSTOM_OPTIONS"] = "Opções personalizadas";
@@ -172,8 +192,8 @@ namespace DifficultyTuningMod
                 texts["REWARD"] = "Recompensa";
 
                 texts["DEMAND"] = "Demanda fórmula: (Demanda + Compensação) * multiplicador";
-                texts["DEMAND_OFFSET"] = "Compensação de demanda";
-                texts["DEMAND_MULTIPLIER"] = "Multiplicador de demanda";
+                texts["DEMAND_OFFSET"] = "Compensação";
+                texts["DEMAND_MULTIPLIER"] = "Multiplicador";
 
                 texts["TAGRET_LANDVALUE"] = "Valores-alvo do custo da terra para edifícios a subir de nível (Nível 2, 3, 4, 5)"; // To check
                 texts["RESIDENTIAL"] = "Residenciais";
@@ -187,15 +207,20 @@ namespace DifficultyTuningMod
                 texts["MOD_NAME"] = "Настройка сложности";
                 texts["MOD_DESCRIPTION"] = "Различные уровни сложности.";
 
-                texts["Free"] = "Бесплатный";
-                texts["Easy"] = "Легкий";
-                texts["Normal"] = "Обычный";
-                texts["Advanced"] = "Продвинутый";
-                texts["Hard"] = "Сложный";
-                texts["Expert"] = "Эксперт";
-                texts["Challenge"] = "Челендж";
-                texts["Impossible"] = "Невозможный";
-                texts["Custom"] = "Пользовательский";
+                texts["Easy"] = "1. Легкий";
+                texts["Normal"] = "2. Обычный";
+                texts["Advanced"] = "3. Продвинутый";
+                texts["Hard"] = "4. Сложный";
+                texts["Expert"] = "5. Эксперт";
+                texts["Challenge"] = "6. Челендж";
+                texts["Impossible"] = "7. Невозможный";
+                texts["Custom"] = "-- Пользовательский --";
+                texts["Free"] = "Спец.: Бесплатный";
+                texts["FiveHundred"] = "Спец.: Начало с ₡500,000";
+                texts["Demand111"] = "Спец.: Потребность 100%";
+                texts["PublicTransport"] = "Спец.: Общ. транспорт бесплатно";
+                texts["LowCity"] = "Спец.: Большая деревня";
+                texts["HardAndFast"] = "Спец.: Сложно и быстро";
 
                 texts["DIFFICULTY_LEVEL"] = "Уровень сложности";
                 texts["CUSTOM_OPTIONS"] = "Пользовательские настройки";
@@ -225,15 +250,20 @@ namespace DifficultyTuningMod
                 texts["MOD_NAME"] = "Difficulty Tuning Mod";
                 texts["MOD_DESCRIPTION"] = "Variety of difficulty levels.";
 
-                texts["Free"] = "Free";
-                texts["Easy"] = "Easy";
-                texts["Normal"] = "Normal";
-                texts["Advanced"] = "Advanced";
-                texts["Hard"] = "Hard";
-                texts["Expert"] = "Expert";
-                texts["Challenge"] = "Challenge";
-                texts["Impossible"] = "Impossible";
-                texts["Custom"] = "Custom";
+                texts["Easy"] = "1. Easy";
+                texts["Normal"] = "2. Normal";
+                texts["Advanced"] = "3. Advanced";
+                texts["Hard"] = "4. Hard";
+                texts["Expert"] = "5. Expert";
+                texts["Challenge"] = "6. Challenge";
+                texts["Impossible"] = "7. Impossible";
+                texts["Custom"] = "-- Custom --";
+                texts["Free"] = "Special: Free";
+                texts["FiveHundred"] = "Special: ₡500,000 at start";
+                texts["Demand111"] = "Special: Demand 100%";
+                texts["PublicTransport"] = "Special: Free Public Transport";
+                texts["LowCity"] = "Special: Low city";
+                texts["HardAndFast"] = "Special: Hard and fast";
 
                 texts["DIFFICULTY_LEVEL"] = "Difficulty level";
                 texts["CUSTOM_OPTIONS"] = "Custom options";

@@ -5,7 +5,7 @@ namespace DifficultyTuningMod.DifficultyOptions
 {
     public class DifficultyOptionsSerializable
     {
-        private const string optionsFileName = "DifficultyTuningModOptions_v20151015.xml";
+        private const string optionsFileName = "DifficultyTuningModOptions_v2.xml";
         
         public Difficulties Difficulty;
         

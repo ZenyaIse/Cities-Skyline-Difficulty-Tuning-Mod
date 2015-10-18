@@ -64,11 +64,7 @@ namespace DifficultyTuningMod
             slider.eventValueChanged += delegate (UIComponent c, float val)
             {
                 label.text = param.GetValueStr((int)val);
-                if (!freeze)
-                {
-                    param.SelectedIndex = (int)slider.value;
-                    eventCallback(val);
-                }
+                eventCallback(val);
             };
 
             sliders.Add(slider, param);
@@ -89,13 +85,15 @@ namespace DifficultyTuningMod
                 (int)d.Difficulty,
                 DifficultyLevelOnSelected
                 );
-            ddDifficulty.width = 315;
+            ddDifficulty.width = 350;
             ddDifficulty.height -= 2;
 
             //DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, ddDifficulty.parent.parent.ToString());
 
             UIScrollablePanel scrollablePanel = (UIScrollablePanel)ddDifficulty.parent.parent;
             scrollablePanel.autoLayout = false;
+
+            scrollablePanel.eventVisibilityChanged += ScrollablePanel_eventVisibilityChanged;
 
             float x1 = 15;
             float x2 = x1 + 140;
@@ -108,14 +106,6 @@ namespace DifficultyTuningMod
             float w2 = w1 + 140;
 
             ddDifficulty.parent.relativePosition = new Vector3(5, y);
-
-            UIButton btn = (UIButton)helper.AddButton(Locale.Get("SAVE"), saveBtnClicked);
-            btn.autoSize = false;
-            btn.textHorizontalAlignment = UIHorizontalAlignment.Center;
-            btn.width = 200;
-            btn.height = ddDifficulty.height;
-            btn.relativePosition = new Vector3(x3, y + 24);
-
             y += ddDifficulty.parent.height + 10;
 
 
@@ -207,6 +197,18 @@ namespace DifficultyTuningMod
             freeze = false;
         }
 
+        private void ScrollablePanel_eventVisibilityChanged(UIComponent component, bool value)
+        {
+            if (value) return;
+
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
+
+            if (d != null && d.Modified)
+            {
+                d.Save();
+            }
+        }
+
         private void DifficultyLevelOnSelected(int sel)
         {
             if (freeze) return;
@@ -238,19 +240,13 @@ namespace DifficultyTuningMod
             
             freeze = true;
             ddDifficulty.selectedIndex = (int)Difficulties.Custom;
+            foreach (KeyValuePair<UISlider, IDifficultyParameter> item in sliders)
+            {
+                item.Value.SelectedIndex = (int)(item.Key.value + 0.001f);
+            }
             freeze = false;
 
             Achievements.Update();
-        }
-
-        private void saveBtnClicked()
-        {
-            DifficultyManager d = Singleton<DifficultyManager>.instance;
-
-            if (d != null && d.Modified)
-            {
-                d.Save();
-            }
         }
 
         #endregion

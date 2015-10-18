@@ -1,6 +1,10 @@
-﻿namespace DifficultyTuningMod.DifficultyOptions_old
+﻿using System.IO;
+using System.Xml.Serialization;
+using ColossalFramework.Plugins;
+
+namespace DifficultyTuningMod.DifficultyOptions_old
 {
-    public class DifficultyManager
+    public class DifficultyOptions
     {
         private const string optionsFileName = "DifficultyTuningModOptions.xml";
         
@@ -24,21 +28,29 @@
         public int OfficeTargetServiceIndex;
         public int OfficeTooFewServiceIndex;
         
-        public static DifficultyManager TryCreateFromFile()
+        public static DifficultyOptions TryCreateFromFile()
         {
             if (!File.Exists(optionsFileName)) return null;
-            
-            XmlSerializer ser = new XmlSerializer(typeof(DifficultyManager));
+
+            //DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, "1");
+            XmlSerializer ser = new XmlSerializer(typeof(DifficultyOptions));
             TextReader reader = new StreamReader(optionsFileName);
-            DifficultyManager instance = (DifficultyManager)ser.Deserialize(reader);
+            DifficultyOptions instance = (DifficultyOptions)ser.Deserialize(reader);
             reader.Close();
-            
+
             return instance;
         }
         
         public void DeleteOptionsFile()
         {
-            System.IO.File.Delete(optionsFileName);
+            try
+            {
+                File.Delete(optionsFileName);
+            }
+            catch
+            {
+                // Ignore
+            }
         }
         
         public float getConstructionCostMultiplier()
