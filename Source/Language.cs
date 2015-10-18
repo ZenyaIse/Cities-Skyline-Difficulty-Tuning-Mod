@@ -43,35 +43,35 @@ namespace DifficultyTuningMod
                 texts["Challenge"] = "6. Uitdaging";
                 texts["Impossible"] = "7. Onmogelijk";
                 texts["Custom"] = "-- Aangepast --";
-                texts["Free"] = "Special: Free"; // To translate
-                texts["FiveHundred"] = "Special: ₡500,000 at start"; // To translate
-                texts["Demand111"] = "Special: Demand 100%"; // To translate
-                texts["PublicTransport"] = "Special: Free Public Transport"; // To translate
-                texts["LowCity"] = "Special: Low city"; // To translate
-                texts["HardAndFast"] = "Special: Hard and fast"; // To translate
+                texts["Free"] = "Speciaal: Gratis";
+                texts["FiveHundred"] = "Speciaal: ₡500,000 bij aanvang";
+                texts["Demand111"] = "Speciaal: Vraag 100%";
+                texts["PublicTransport"] = "Speciaal: Gratis openbaar vervoer";
+                texts["LowCity"] = "Speciaal: Laagbouwstad"; 
+                texts["HardAndFast"] = "Speciaal: Moeilijk en snel";
 
                 texts["DIFFICULTY_LEVEL"] = "Moeilijkheidsgraad";
                 texts["CUSTOM_OPTIONS"] = "Aangepaste instellingen";
 
                 texts["SERVICE_BUILDINGS"] = "Dienstgebouwen";
                 texts["PUBLIC_TRANSPORT"] = "Openbaar vervoer";
-                texts["ROADS"] = "Roads"; // To translate
-                texts["OTHERS"] = "Others"; // To translate
+                texts["ROADS"] = "Wegen";
+                texts["OTHERS"] = "Andere";
 
                 texts["AREA_COST_MULTIPLIER"] = "Vermenigvuldigingsfactor voor aankoop gebieden";
                 texts["INITIAL_MONEY"] = "Startkapitaal";
                 texts["REWARD"] = "Beloning";
 
-                texts["DEMAND"] = "Vraag formule: (Vraag + Impuls) * vermenigvuldigingsfactor"; // To check
+                texts["DEMAND"] = "Vraagformule: (Vraag + Impuls) * vermenigvuldigingsfactor";
                 texts["DEMAND_OFFSET"] = "Impuls";
                 texts["DEMAND_MULTIPLIER"] = "Vermenigvuldigingsfactor";
 
                 texts["TAGRET_LANDVALUE"] = "Grondrichtprijzen om op te waarderen (niveau 2, 3, 4, 5)";
                 texts["RESIDENTIAL"] = "Woongebouwen";
                 texts["COMMERCIAL"] = "Handelsgebouwen";
-                texts["TAGRET_SCORE"] = "Target service score for buildings to level up (niveau 2, 3)"; // To translate
+                texts["TAGRET_SCORE"] = "Dienstenscoredoel voor gebouwen om op te waarderen (niveau 2, 3)";
                 texts["INDUSTRIAL"] = "Industriegebouwen";
-                texts["OFFICE"] = "Kantoorgebouwen";
+                texts["OFFICE"] = "Kantoorgebouwen"; 
             }
             else if (selectedLanguage == "de")
             {
@@ -86,33 +86,35 @@ namespace DifficultyTuningMod
                 texts["Challenge"] = "6. Herausforderung";
                 texts["Impossible"] = "7. Unmöglich";
                 texts["Custom"] = "-- Angepast --";
-                texts["Free"] = "Special: Free"; // To translate
-                texts["FiveHundred"] = "Special: ₡500,000 at start"; // To translate
-                texts["Demand111"] = "Special: Demand 100%"; // To translate
-                texts["PublicTransport"] = "Special: Free Public Transport"; // To translate
-                texts["LowCity"] = "Special: Low city"; // To translate
-                texts["HardAndFast"] = "Special: Hard and fast"; // To translate
+                texts["Free"] = "Speziell: Kostenlos";
+                texts["FiveHundred"] = "Speziell: ₡500,000 am Anfang";
+                texts["Demand111"] = "Speziell: Frage 100%";
+                texts["PublicTransport"] = "Speziell: Kostenloser öffentlichen Verkehrsmittel";
+                texts["LowCity"] = "Speziell: Flachbaustadt";
+                texts["HardAndFast"] = "Special: Schwer und schnell";
 
                 texts["DIFFICULTY_LEVEL"] = "Schwierigkeitsgrad";
                 texts["CUSTOM_OPTIONS"] = "Angepaßte Einstellungen";
 
-                texts["SERVICE_BUILDINGS"] = "Dienstleistungsgebäude"; // To check
-                texts["PUBLIC_TRANSPORT"] = "Öffentlicher Verkehr"; // To check
-                texts["ROADS"] = "Straßen"; // To check
-                texts["OTHERS"] = "Others"; // To translate
+                /* My dictionary says "Stadtwerke", which I think would be better,
+                  but the game itself uses Dienstleistungsgebaude, so lets continue to use that: */
+                texts["SERVICE_BUILDINGS"] = "Dienstleistungsgebäude"; 
+                texts["PUBLIC_TRANSPORT"] = "Öffentlichen Verkehrsmittel";
+                texts["ROADS"] = "Straßen";
+                texts["OTHERS"] = "Sonstige";
 
                 texts["AREA_COST_MULTIPLIER"] = "Multiplikator für Ankauf Gebiete";
-                texts["INITIAL_MONEY"] = "Anfangskapital"; // To check
+                texts["INITIAL_MONEY"] = "Anfangskapital";
                 texts["REWARD"] = "Belohnung";
 
-                texts["DEMAND"] = "Frage Formel: (Frage + Impuls) * Multiplikator"; // To check
+                texts["DEMAND"] = "Frage-formel: (Frage + Impuls) * Multiplikator"; 
                 texts["DEMAND_OFFSET"] = "Impuls";
                 texts["DEMAND_MULTIPLIER"] = "Multiplikator";
 
-                texts["TAGRET_LANDVALUE"] = "Bodenrichtpreise zu verbesseren (Stufe 2, 3, 4, 5)";
+                texts["TAGRET_LANDVALUE"] = "Bodenrichtpreise für Gebaude zu verbesseren (Stufe 2, 3, 4, 5)";
                 texts["RESIDENTIAL"] = "Wohngebäude";
                 texts["COMMERCIAL"] = "Gewerbgebäude";
-                texts["TAGRET_SCORE"] = "Target service score for buildings to level up (Stufe 2, 3)"; // To translate
+                texts["TAGRET_SCORE"] = "Dienstergebnisziel für Gebaude zu verbesseren (Stufe 2, 3)";
                 texts["INDUSTRIAL"] = "Industriegebäude";
                 texts["OFFICE"] = "Bürogebäude";
             }
@@ -129,20 +131,20 @@ namespace DifficultyTuningMod
                 texts["Challenge"] = "6. Sfida";
                 texts["Impossible"] = "7. Impossibile";
                 texts["Custom"] = "-- Personalizzato --";
-                texts["Free"] = "Special: Free"; // To translate
-                texts["FiveHundred"] = "Special: ₡500,000 at start"; // To translate
-                texts["Demand111"] = "Special: Demand 100%"; // To translate
-                texts["PublicTransport"] = "Special: Free Public Transport"; // To translate
-                texts["LowCity"] = "Special: Low city"; // To translate
-                texts["HardAndFast"] = "Special: Hard and fast"; // To translate
+                texts["Free"] = "Speciale: Gratis";
+                texts["FiveHundred"] = "Speciale: ₡500,000 all'inizio";
+                texts["Demand111"] = "Speciale: Domanda 100%";
+                texts["PublicTransport"] = "Speciale: Trasporto pubblico gratis";
+                texts["LowCity"] = "Speciale: Citá edificio basso";
+                texts["HardAndFast"] = "Speciale: Difficile e veloce";
 
                 texts["DIFFICULTY_LEVEL"] = "Livello di difficoltà";
                 texts["CUSTOM_OPTIONS"] = "Opzioni personalizzate";
 
-                texts["SERVICE_BUILDINGS"] = "Edifici di servizio"; // To check
+                texts["SERVICE_BUILDINGS"] = "Edifici di utilità";
                 texts["PUBLIC_TRANSPORT"] = "Trasporto pubblico";
                 texts["ROADS"] = "Strade";
-                texts["OTHERS"] = "Others"; // To translate
+                texts["OTHERS"] = "Altri";
 
                 texts["AREA_COST_MULTIPLIER"] = "Moltiplicatore costi di aree";
                 texts["INITIAL_MONEY"] = "Capitale iniziale";
@@ -157,7 +159,7 @@ namespace DifficultyTuningMod
                 texts["COMMERCIAL"] = "Commerciale";
                 texts["TAGRET_SCORE"] = "Target service score for buildings to level up (Livello 2, 3)"; // To translate
                 texts["INDUSTRIAL"] = "Industriale";
-                texts["OFFICE"] = "Uffuci";
+                texts["OFFICE"] = "Uffici";
             }
             else if (selectedLanguage == "pt")
             {
