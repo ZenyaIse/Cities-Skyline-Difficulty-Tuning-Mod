@@ -1,5 +1,6 @@
 ﻿using ICities;
 using ColossalFramework;
+using DifficultyTuningMod.DifficultyOptions;
 
 namespace DifficultyTuningMod
 {
@@ -7,9 +8,12 @@ namespace DifficultyTuningMod
     {
         public override void OnLevelLoaded(LoadMode mode)
         {
-            if (mode == LoadMode.NewGame && DifficultyOptions.GameDifficulty == Difficulties.Impossible)
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
+
+            if (mode == LoadMode.NewGame)
             {
-                Singleton<EconomyManager>.instance.AddResource(EconomyManager.Resource.LoanAmount, 3000000, ItemClass.Service.None, ItemClass.SubService.None, ItemClass.Level.None);
+                int moneyToAdd = (d.InitialMoney.Value - 70) * 100000;
+                Singleton<EconomyManager>.instance.AddResource(EconomyManager.Resource.LoanAmount, moneyToAdd, ItemClass.Service.None, ItemClass.SubService.None, ItemClass.Level.None);
             }
 
             Achievements.Update();

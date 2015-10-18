@@ -1,5 +1,6 @@
 ﻿using ICities;
-//using ColossalFramework.Plugins;
+using ColossalFramework;
+using DifficultyTuningMod.DifficultyOptions;
 
 namespace DifficultyTuningMod
 {
@@ -9,7 +10,9 @@ namespace DifficultyTuningMod
         {
             if (resource == EconomyResource.RewardAmount)
             {
-                return (int)(amount * DifficultyOptions.RewardMultiplier);
+                DifficultyManager d = Singleton<DifficultyManager>.instance;
+
+                return (int)(0.01f * amount * d.RewardMultiplier.Value + 0.49f);
             }
 
             return amount;
@@ -17,39 +20,66 @@ namespace DifficultyTuningMod
 
         public override int OnGetConstructionCost(int originalConstructionCost, Service service, SubService subService, Level level)
         {
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
+			int multiplier;
+            
             if (service == Service.Road)
             {
-                return (int)(originalConstructionCost * DifficultyOptions.RoadConstructionCostMultiplier);
+                multiplier = d.ConstructionCostMultiplier_Road.Value;
             }
-
-            return (int)(originalConstructionCost * DifficultyOptions.ConstructionCostMultiplier);
+            else if (service == Service.PublicTransport)
+            {
+                multiplier = d.ConstructionCostMultiplier_Public.Value;
+            }
+            else if (service == Service.Education || service == Service.Electricity || service == Service.FireDepartment ||
+                service == Service.Garbage || service == Service.HealthCare || service == Service.PoliceDepartment || service == Service.Water)
+            {
+                multiplier = d.ConstructionCostMultiplier_Service.Value;
+            }
+            else
+            {
+                multiplier = d.ConstructionCostMultiplier.Value;
+            }
+			
+			return (int)(0.01f * originalConstructionCost * multiplier + 0.49f);
         }
 
         public override int OnGetMaintenanceCost(int originalMaintenanceCost, Service service, SubService subService, Level level)
         {
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
+			int multiplier;
+
             if (service == Service.Road)
             {
-                return (int)(originalMaintenanceCost * DifficultyOptions.RoadMaintenanceCostMultiplier);
+                multiplier = d.MaintenanceCostMultiplier_Road.Value;
             }
-
-            return (int)(originalMaintenanceCost * DifficultyOptions.MaintenanceCostMultiplier);
+            else if (service == Service.PublicTransport)
+            {
+                multiplier = d.MaintenanceCostMultiplier_Public.Value;
+            }
+            else if (service == Service.Education || service == Service.Electricity || service == Service.FireDepartment ||
+                service == Service.Garbage || service == Service.HealthCare || service == Service.PoliceDepartment || service == Service.Water)
+            {
+                multiplier = d.MaintenanceCostMultiplier_Service.Value;
+            }
+            else
+            {
+                multiplier = d.MaintenanceCostMultiplier.Value;
+            }
+            
+			return (int)(0.01f * originalMaintenanceCost * multiplier + 0.49f);
         }
 
         public override int OnGetRelocationCost(int constructionCost, int relocationCost, Service service, SubService subService, Level level)
         {
-            //try
-            //{
-            //    DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, "Service: " + service.ToString() + " subService: " + subService.ToString());
-            //}
-            //catch
-            //{
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
 
-            //}
-            return (int)(constructionCost * DifficultyOptions.RelocationCostMultiplier);
+            return (int)(0.01f * constructionCost * d.RelocationCostMultiplier.Value + 0.49f);
         }
 
         public override int OnGetRefundAmount(int constructionCost, int refundAmount, Service service, SubService subService, Level level)
         {
+            // TODO: make optional
             if (service == Service.Road)
             {
                 return constructionCost;

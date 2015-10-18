@@ -1,4 +1,5 @@
 ﻿using ColossalFramework;
+using DifficultyTuningMod.DifficultyOptions;
 
 namespace DifficultyTuningMod
 {
@@ -7,9 +8,10 @@ namespace DifficultyTuningMod
         public static void Update()
         {
             SimulationManager sm = Singleton<SimulationManager>.instance;
-            if (sm == null) return;
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
+            if (sm == null || d == null) return;
 
-            if (DifficultyOptions.GameDifficulty == Difficulties.Easy || DifficultyOptions.GameDifficulty == Difficulties.Custom)
+            if (d.Difficulty == Difficulties.Easy || d.Difficulty == Difficulties.Free)
             {
                 sm.m_metaData.m_disableAchievements = SimulationMetaData.MetaBool.True;
             }
