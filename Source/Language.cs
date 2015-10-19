@@ -72,6 +72,8 @@ namespace DifficultyTuningMod
                 texts["TAGRET_SCORE"] = "Target service score for buildings to level up (niveau 2, 3)"; // To translate
                 texts["INDUSTRIAL"] = "Industriegebouwen";
                 texts["OFFICE"] = "Kantoorgebouwen";
+
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Population target multiplier to unlock milestones"; // To translate
             }
             else if (selectedLanguage == "de")
             {
@@ -115,6 +117,8 @@ namespace DifficultyTuningMod
                 texts["TAGRET_SCORE"] = "Target service score for buildings to level up (Stufe 2, 3)"; // To translate
                 texts["INDUSTRIAL"] = "Industriegebäude";
                 texts["OFFICE"] = "Bürogebäude";
+
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Population target multiplier to unlock milestones"; // To translate
             }
             else if (selectedLanguage == "it")
             {
@@ -158,6 +162,8 @@ namespace DifficultyTuningMod
                 texts["TAGRET_SCORE"] = "Target service score for buildings to level up (Livello 2, 3)"; // To translate
                 texts["INDUSTRIAL"] = "Industriale";
                 texts["OFFICE"] = "Uffuci";
+
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Population target multiplier to unlock milestones"; // To translate
             }
             else if (selectedLanguage == "pt")
             {
@@ -201,6 +207,8 @@ namespace DifficultyTuningMod
                 texts["TAGRET_SCORE"] = "Target service score for buildings to level up (Nível 2, 3)"; // To translate
                 texts["INDUSTRIAL"] = "Industriais";
                 texts["OFFICE"] = "Escritórios";
+
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Population target multiplier to unlock milestones"; // To translate
             }
             else if (selectedLanguage == "ru")
             {
@@ -244,6 +252,8 @@ namespace DifficultyTuningMod
                 texts["TAGRET_SCORE"] = "Сервис, необходимый для повышения уровня зданий (уровень 2, 3)";
                 texts["INDUSTRIAL"] = "Промышленных";
                 texts["OFFICE"] = "Офисных";
+
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Коэффициент количества населения, необходимого для достижения этапов";
             }
             else
             {
@@ -287,6 +297,8 @@ namespace DifficultyTuningMod
                 texts["TAGRET_SCORE"] = "Target service score for buildings to level up (Level 2, 3)";
                 texts["INDUSTRIAL"] = "Industrial";
                 texts["OFFICE"] = "Office";
+
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Population target multiplier to unlock milestones";
             }
         }
     }

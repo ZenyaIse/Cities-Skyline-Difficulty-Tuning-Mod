@@ -27,6 +27,7 @@ namespace DifficultyTuningMod.DifficultyOptions
         public CommercialTargetLandValue CommercialTargetLandValue;
         public IndustrialTargetScore IndustrialTargetScore;
         public OfficeTargetScore OfficeTargetScore;
+        public PopulationTargetMultiplier PopulationTargetMultiplier;
 
         private DifficultyManager()
         {
@@ -50,6 +51,7 @@ namespace DifficultyTuningMod.DifficultyOptions
             CommercialTargetLandValue = new CommercialTargetLandValue();
             IndustrialTargetScore = new IndustrialTargetScore();
             OfficeTargetScore = new OfficeTargetScore();
+            PopulationTargetMultiplier = new PopulationTargetMultiplier();
 
             Load();
         }
