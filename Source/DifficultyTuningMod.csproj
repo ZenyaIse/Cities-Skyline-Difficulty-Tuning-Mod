@@ -63,6 +63,7 @@
     <Compile Include="DifficultyOptions\DemandOffset.cs" />
     <Compile Include="DifficultyOptions\Difficulties.cs" />
     <Compile Include="DifficultyOptions\DifficultyManager.cs" />
+    <Compile Include="DifficultyOptions\PopulationTargetMultiplier.cs" />
     <Compile Include="DifficultyOptions_old\Difficulties.cs" />
     <Compile Include="DifficultyOptions_old\DifficultyOptions.cs" />
     <Compile Include="DifficultyOptions\DifficultyOptionsSerializable.cs" />

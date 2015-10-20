@@ -1,4 +1,5 @@
 ﻿using System;
+using ColossalFramework;
 using ICities;
 using DifficultyTuningMod.DifficultyOptions;
 
@@ -11,7 +12,7 @@ namespace DifficultyTuningMod
             milestonesManager.UnlockMilestone("Basic Road Created");
         }
 
-        public int OnGetPopulationTarget(int originalTarget, int scaledTarget)
+        public override int OnGetPopulationTarget(int originalTarget, int scaledTarget)
         {
             DifficultyManager d = Singleton<DifficultyManager>.instance;
 

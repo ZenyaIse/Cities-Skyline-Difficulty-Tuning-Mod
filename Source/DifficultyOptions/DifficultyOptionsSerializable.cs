@@ -27,6 +27,7 @@ namespace DifficultyTuningMod.DifficultyOptions
         public int CommercialTargetLandValueIndex;
         public int IndustrialTargetScoreIndex;
         public int OfficeTargetScoreIndex;
+        public int PopulationTargetMultiplier;
 
         public void Save()
         {

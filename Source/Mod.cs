@@ -193,12 +193,12 @@ namespace DifficultyTuningMod
             y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("OFFICE"), new Vector3(x1, y), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x2, y), w2, OnCustomValueChanged, d.OfficeTargetScore);
+            y += dy2;
 
             // Population target multiplier
             addLabel(scrollablePanel, DTMLang.Text("POPULATION_TARGET_MULTIPLIER"), new Vector3(x1, y), textScaleMedium);
             y += dy1;
             addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.PopulationTargetMultiplier);
-            y += dy2;
 
             freeze = false;
         }

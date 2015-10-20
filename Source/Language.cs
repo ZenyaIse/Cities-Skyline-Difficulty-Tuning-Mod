@@ -73,7 +73,7 @@ namespace DifficultyTuningMod
                 texts["INDUSTRIAL"] = "Industriegebouwen";
                 texts["OFFICE"] = "Kantoorgebouwen"; 
 
-                texts["POPULATION_TARGET_MULTIPLIER"] = "Population target multiplier to unlock milestones"; // To translate
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Population required to unlock milestones"; // To translate
             }
             else if (selectedLanguage == "de")
             {
@@ -120,7 +120,7 @@ namespace DifficultyTuningMod
                 texts["INDUSTRIAL"] = "Industriegebäude";
                 texts["OFFICE"] = "Bürogebäude";
 
-                texts["POPULATION_TARGET_MULTIPLIER"] = "Population target multiplier to unlock milestones"; // To translate
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Population required to unlock milestones"; // To translate
             }
             else if (selectedLanguage == "it")
             {
@@ -165,7 +165,7 @@ namespace DifficultyTuningMod
                 texts["INDUSTRIAL"] = "Industriale";
                 texts["OFFICE"] = "Uffici";
 
-                texts["POPULATION_TARGET_MULTIPLIER"] = "Population target multiplier to unlock milestones"; // To translate
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Population required to unlock milestones"; // To translate
             }
             else if (selectedLanguage == "pt")
             {
@@ -210,7 +210,7 @@ namespace DifficultyTuningMod
                 texts["INDUSTRIAL"] = "Industriais";
                 texts["OFFICE"] = "Escritórios";
 
-                texts["POPULATION_TARGET_MULTIPLIER"] = "Population target multiplier to unlock milestones"; // To translate
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Population required to unlock milestones"; // To translate
             }
             else if (selectedLanguage == "ru")
             {
@@ -255,7 +255,7 @@ namespace DifficultyTuningMod
                 texts["INDUSTRIAL"] = "Промышленных";
                 texts["OFFICE"] = "Офисных";
 
-                texts["POPULATION_TARGET_MULTIPLIER"] = "Коэффициент количества населения, необходимого для достижения этапов";
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Количество населения, необходимое для достижения этапов";
             }
             else
             {
@@ -300,7 +300,7 @@ namespace DifficultyTuningMod
                 texts["INDUSTRIAL"] = "Industrial";
                 texts["OFFICE"] = "Office";
 
-                texts["POPULATION_TARGET_MULTIPLIER"] = "Population target multiplier to unlock milestones";
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Population required to unlock milestones";
             }
         }
     }

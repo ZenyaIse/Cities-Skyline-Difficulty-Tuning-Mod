@@ -94,7 +94,8 @@ namespace DifficultyTuningMod.DifficultyOptions
             options.CommercialTargetLandValueIndex = this.CommercialTargetLandValue.nCustom;
             options.IndustrialTargetScoreIndex = this.IndustrialTargetScore.nCustom;
             options.OfficeTargetScoreIndex = this.OfficeTargetScore.nCustom;
-            
+            options.PopulationTargetMultiplier = this.PopulationTargetMultiplier.CustomValue;
+
             options.Save();
             
             Modified = false;
@@ -132,6 +133,7 @@ namespace DifficultyTuningMod.DifficultyOptions
                 this.CommercialTargetLandValue.nCustom = options.CommercialTargetLandValueIndex;
                 this.IndustrialTargetScore.nCustom = options.IndustrialTargetScoreIndex;
                 this.OfficeTargetScore.nCustom = options.OfficeTargetScoreIndex;
+                this.PopulationTargetMultiplier.CustomValue = options.PopulationTargetMultiplier;
             }
         }
         
