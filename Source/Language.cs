@@ -193,7 +193,7 @@ namespace DifficultyTuningMod
                 texts["SERVICE_BUILDINGS"] = "Edifícios de serviços";
                 texts["PUBLIC_TRANSPORT"] = "Transporte público";
                 texts["ROADS"] = "Estradas";
-                texts["OTHERS"] = "Others"; // To translate
+                texts["OTHERS"] = "Outros";
 
                 texts["AREA_COST_MULTIPLIER"] = "Multiplicador de custos da área";
                 texts["INITIAL_MONEY"] = "Capital inicial";
