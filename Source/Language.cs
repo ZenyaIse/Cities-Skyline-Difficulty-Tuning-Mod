@@ -259,8 +259,8 @@ namespace DifficultyTuningMod
             }
             else if (selectedLanguage == "ja")
             {
-                texts["MOD_NAME"] = "難易度調整モード";
-                texts["MOD_DESCRIPTION"] = "さまざまな難易度レベル";
+                texts["MOD_NAME"] = "難易度設定モード";
+                texts["MOD_DESCRIPTION"] = "さまざまな難易度レベル、詳細設定。";
 
                 texts["Easy"] = "1. 簡単";
                 texts["Normal"] = "2. 普通";
@@ -280,27 +280,27 @@ namespace DifficultyTuningMod
                 texts["DIFFICULTY_LEVEL"] = "難易度";
                 texts["CUSTOM_OPTIONS"] = "カスタム設定";
 
-                texts["SERVICE_BUILDINGS"] = "建物・設備";
+                texts["SERVICE_BUILDINGS"] = "公共施設";
                 texts["PUBLIC_TRANSPORT"] = "交通機関";
                 texts["ROADS"] = "道路";
                 texts["OTHERS"] = "その他";
 
-                texts["AREA_COST_MULTIPLIER"] = "領域購入コスト係数";
+                texts["AREA_COST_MULTIPLIER"] = "地域購入コスト係数";
                 texts["INITIAL_MONEY"] = "初期金額";
                 texts["REWARD"] = "報酬の割合";
 
-                texts["DEMAND"] = "デマンド。次式で計算：　（デマンド＋オフセット）＊係数";
-                texts["DEMAND_OFFSET"] = "デマンドオフセット";
-                texts["DEMAND_MULTIPLIER"] = "デマンド係数";
+                texts["DEMAND"] = "需要。次式で計算：　（需要＋オフセット）＊係数";
+                texts["DEMAND_OFFSET"] = "オフセット";
+                texts["DEMAND_MULTIPLIER"] = "係数";
 
-                texts["TAGRET_LANDVALUE"] = "建物レベルアップのための地価の目標値（レベル1,2,3,4,5）";
+                texts["TAGRET_LANDVALUE"] = "建物レベルアップのための地価の目標値（レベル2,3,4,5）";
                 texts["RESIDENTIAL"] = "住宅";
                 texts["COMMERCIAL"] = "商業";
-                texts["TAGRET_SCORE"] = "建物レベルアップのためのサービススコアの目標値（レベル1,2,3,4,5）";
-                texts["INDUSTRIAL"] = "工業";
+                texts["TAGRET_SCORE"] = "建物レベルアップのためのサービススコアの目標値（レベル2,3）";
+                texts["INDUSTRIAL"] = "産業";
                 texts["OFFICE"] = "オフィス";
 
-                texts["POPULATION_TARGET_MULTIPLIER"] = "マイルストーンロック解除条件の人工";
+                texts["POPULATION_TARGET_MULTIPLIER"] = "マイルストーンの目標人口の係数";
             }
             else
             {
