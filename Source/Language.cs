@@ -257,6 +257,51 @@ namespace DifficultyTuningMod
 
                 texts["POPULATION_TARGET_MULTIPLIER"] = "Количество населения, необходимое для достижения этапов";
             }
+            else if (selectedLanguage == "ja")
+            {
+                texts["MOD_NAME"] = "難易度調整モード";
+                texts["MOD_DESCRIPTION"] = "さまざまな難易度レベル";
+
+                texts["Easy"] = "1. 簡単";
+                texts["Normal"] = "2. 普通";
+                texts["Advanced"] = "3. 難しい";
+                texts["Hard"] = "4. ハード";
+                texts["Expert"] = "5. エキスパート";
+                texts["Challenge"] = "6. 挑戦";
+                texts["Impossible"] = "7. インポッシブル";
+                texts["Custom"] = "-- カスタム --";
+                texts["Free"] = "スペシャル：　無料";
+                texts["FiveHundred"] = "スペシャル：　最初から₡500,000";
+                texts["Demand111"] = "スペシャル：　100%デマンド";
+                texts["PublicTransport"] = "スペシャル：　無料交通機関";
+                texts["LowCity"] = "スペシャル：　低い町";
+                texts["HardAndFast"] = "スペシャル：　ハードとファスト";
+
+                texts["DIFFICULTY_LEVEL"] = "難易度";
+                texts["CUSTOM_OPTIONS"] = "カスタム設定";
+
+                texts["SERVICE_BUILDINGS"] = "建物・設備";
+                texts["PUBLIC_TRANSPORT"] = "交通機関";
+                texts["ROADS"] = "道路";
+                texts["OTHERS"] = "その他";
+
+                texts["AREA_COST_MULTIPLIER"] = "領域購入コスト係数";
+                texts["INITIAL_MONEY"] = "初期金額";
+                texts["REWARD"] = "報酬の割合";
+
+                texts["DEMAND"] = "デマンド。次式で計算：　（デマンド＋オフセット）＊係数";
+                texts["DEMAND_OFFSET"] = "デマンドオフセット";
+                texts["DEMAND_MULTIPLIER"] = "デマンド係数";
+
+                texts["TAGRET_LANDVALUE"] = "建物レベルアップのための地価の目標値（レベル1,2,3,4,5）";
+                texts["RESIDENTIAL"] = "住宅";
+                texts["COMMERCIAL"] = "商業";
+                texts["TAGRET_SCORE"] = "建物レベルアップのためのサービススコアの目標値（レベル1,2,3,4,5）";
+                texts["INDUSTRIAL"] = "工業";
+                texts["OFFICE"] = "オフィス";
+
+                texts["POPULATION_TARGET_MULTIPLIER"] = "マイルストーンロック解除条件の人工";
+            }
             else
             {
                 texts["MOD_NAME"] = "Difficulty Tuning Mod";
