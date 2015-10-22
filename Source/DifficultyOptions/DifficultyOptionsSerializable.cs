@@ -1,5 +1,6 @@
 using System.IO;
 using System.Xml.Serialization;
+using System.ComponentModel;
 
 namespace DifficultyTuningMod.DifficultyOptions
 {
@@ -27,6 +28,8 @@ namespace DifficultyTuningMod.DifficultyOptions
         public int CommercialTargetLandValueIndex;
         public int IndustrialTargetScoreIndex;
         public int OfficeTargetScoreIndex;
+
+        [DefaultValue(100)]
         public int PopulationTargetMultiplier;
 
         public void Save()
