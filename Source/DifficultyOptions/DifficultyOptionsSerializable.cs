@@ -1,6 +1,5 @@
 using System.IO;
 using System.Xml.Serialization;
-using System.ComponentModel;
 
 namespace DifficultyTuningMod.DifficultyOptions
 {
@@ -28,11 +27,33 @@ namespace DifficultyTuningMod.DifficultyOptions
         public int CommercialTargetLandValueIndex;
         public int IndustrialTargetScoreIndex;
         public int OfficeTargetScoreIndex;
-
-        [DefaultValue(100)]
         public int PopulationTargetMultiplier;
 
-        public void Save()
+        public DifficultyOptionsSerializable()
+        {
+            // Set default values in case of an xml tag is missing
+            ConstructionCostMultiplier = 100;
+            ConstructionCostMultiplier_Road = 100;
+            ConstructionCostMultiplier_Service = 100;
+            ConstructionCostMultiplier_Public = 100;
+            MaintenanceCostMultiplier = 100;
+            MaintenanceCostMultiplier_Road = 100;
+            MaintenanceCostMultiplier_Service = 100;
+            MaintenanceCostMultiplier_Public = 100;
+            RelocationCostMultiplier = 100;
+            AreaCostMultiplier = 10;
+            InitialMoney = 70;
+            RewardMultiplier = 100;
+            DemandOffset = 0;
+            DemandMultiplier = 100;
+            ResidentialTargetLandValueIndex = 1;
+            CommercialTargetLandValueIndex = 1;
+            IndustrialTargetScoreIndex = 1;
+            OfficeTargetScoreIndex = 1;
+            PopulationTargetMultiplier = 100;
+        }
+
+    public void Save()
         {
             XmlSerializer ser = new XmlSerializer(typeof(DifficultyOptionsSerializable));
             TextWriter writer = new StreamWriter(optionsFileName);
