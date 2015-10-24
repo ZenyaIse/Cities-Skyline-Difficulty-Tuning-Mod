@@ -28,6 +28,7 @@ namespace DifficultyTuningMod.DifficultyOptions
         public int IndustrialTargetScoreIndex;
         public int OfficeTargetScoreIndex;
         public int PopulationTargetMultiplier;
+        public int LoanMultiplier;
 
         public DifficultyOptionsSerializable()
         {
@@ -51,6 +52,7 @@ namespace DifficultyTuningMod.DifficultyOptions
             IndustrialTargetScoreIndex = 1;
             OfficeTargetScoreIndex = 1;
             PopulationTargetMultiplier = 100;
+            LoanMultiplier = 100;
         }
 
     public void Save()

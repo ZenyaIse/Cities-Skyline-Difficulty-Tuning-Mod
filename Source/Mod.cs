@@ -153,16 +153,20 @@ namespace DifficultyTuningMod
             addSlider(scrollablePanel, new Vector3(x3, y), w2, OnCustomValueChanged, d.AreaCostMultiplier);
             y += dy2;
 
+            // Economy
+            addLabel(scrollablePanel, Locale.Get("ECONOMY_TITLE"), new Vector3(x2, y), textScaleMedium);
+            y += dy1;
             // Initial money
-            addLabel(scrollablePanel, DTMLang.Text("INITIAL_MONEY"), new Vector3(x1, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("INITIAL_MONEY"), new Vector3(x1, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.InitialMoney);
             y += dy1;
-            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.InitialMoney);
-            y -= dy1;
-
             // Reward amount
-            addLabel(scrollablePanel, DTMLang.Text("REWARD"), new Vector3(x3, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("REWARD"), new Vector3(x1, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.RewardMultiplier);
             y += dy1;
-            addSlider(scrollablePanel, new Vector3(x3, y), w2, OnCustomValueChanged, d.RewardMultiplier);
+            // Loan amount and length
+            addLabel(scrollablePanel, Locale.Get("ECONOMY_LOANS"), new Vector3(x1, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.LoanMultiplier);
             y += dy2;
 
             // Demand
@@ -173,6 +177,12 @@ namespace DifficultyTuningMod
             y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("DEMAND_MULTIPLIER"), new Vector3(x1, y), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.DemandMultiplier);
+            y += dy2;
+
+            // Population target multiplier
+            addLabel(scrollablePanel, DTMLang.Text("POPULATION_TARGET_MULTIPLIER"), new Vector3(x1, y), textScaleMedium);
+            y += dy1;
+            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.PopulationTargetMultiplier);
             y += dy2;
 
             // Target land value
@@ -193,12 +203,6 @@ namespace DifficultyTuningMod
             y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("OFFICE"), new Vector3(x1, y), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x2, y), w2, OnCustomValueChanged, d.OfficeTargetScore);
-            y += dy2;
-
-            // Population target multiplier
-            addLabel(scrollablePanel, DTMLang.Text("POPULATION_TARGET_MULTIPLIER"), new Vector3(x1, y), textScaleMedium);
-            y += dy1;
-            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.PopulationTargetMultiplier);
 
             freeze = false;
         }

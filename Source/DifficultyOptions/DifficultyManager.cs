@@ -28,6 +28,7 @@ namespace DifficultyTuningMod.DifficultyOptions
         public IndustrialTargetScore IndustrialTargetScore;
         public OfficeTargetScore OfficeTargetScore;
         public PopulationTargetMultiplier PopulationTargetMultiplier;
+        public LoanMultiplier LoanMultiplier;
 
         private DifficultyManager()
         {
@@ -52,6 +53,7 @@ namespace DifficultyTuningMod.DifficultyOptions
             IndustrialTargetScore = new IndustrialTargetScore();
             OfficeTargetScore = new OfficeTargetScore();
             PopulationTargetMultiplier = new PopulationTargetMultiplier();
+            LoanMultiplier = new LoanMultiplier();
 
             Load();
         }
@@ -95,6 +97,7 @@ namespace DifficultyTuningMod.DifficultyOptions
             options.IndustrialTargetScoreIndex = this.IndustrialTargetScore.nCustom;
             options.OfficeTargetScoreIndex = this.OfficeTargetScore.nCustom;
             options.PopulationTargetMultiplier = this.PopulationTargetMultiplier.CustomValue;
+            options.LoanMultiplier = this.LoanMultiplier.CustomValue;
 
             options.Save();
             
@@ -134,6 +137,7 @@ namespace DifficultyTuningMod.DifficultyOptions
                 this.IndustrialTargetScore.nCustom = options.IndustrialTargetScoreIndex;
                 this.OfficeTargetScore.nCustom = options.OfficeTargetScoreIndex;
                 this.PopulationTargetMultiplier.CustomValue = options.PopulationTargetMultiplier;
+                this.LoanMultiplier.CustomValue = options.LoanMultiplier;
             }
         }
         
