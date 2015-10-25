@@ -3,12 +3,13 @@
 ## Difficulty Levels
 - **Easy.** All costs are halved. Upkeep decreased by 25%. ₡200,000 at start. Higher demand. Easier level up.
 - **Normal.** Almost the same as vanilla.
-- **Advanced.** A little harder than vanilla.
-- **Hard.** Close to the Hard Mod which comes with the game.
+- **Advanced.** Close to the Hard Mod which comes with the game.
+- **Hard.** Even harder.
 - **Expert.** Recommended for experienced players.
 - **Challenge.** Very accurate city planning required.
-- **Impossible.** Near the limit of playability. More money at the start to help surviving. (Added a screenshot to demonstrate that the difficulty "Impossible" is playable.)
+- **Impossible.** Near the limit of playability. (Added a screenshot to demonstrate that the difficulty "Impossible" is playable.)
 - **Custom.** A lot of customizable parameters.
+Initial money and loan amount are increased for high difficulties.
 
 ## Special Difficulty Levels
 These special levels are made for fun and experimenting.
@@ -22,28 +23,36 @@ These special levels are made for fun and experimenting.
 Difficulty settings are available from the Main Menu.
 Main Menu > Options > Mods Settings > Difficulty Tuning Mod
 
-Changing difficulty options during a game is possible, but cost values displayed in the info panels will not update until reloading the game.
-Better to exit to the Main Menu, change the difficulty options, and load the game again.
+Changing difficulty options during a game is possible, but cost values displayed in the info panels will not update until reloading the game. Better to exit to the Main Menu, change the difficulty options, and load the game again.
 
-## Custom difficulty
-Allows tuning of each difficulty parameter.
+## Customizable parameters
 - Construction and upkeep cost (separate for service buildings, public transportation, roads and for everything else)
 - Demand offset and multiplier. Calculated by formula (Demand + Offset) * Multiplier
 - Relocation cost multiplier
 - Area cost multiplier
-- Start money amount
 - Reward percentage (amount of money you get when a milestone is reached)
-- Land value requirements for level up of Residential and Commercial buildings.
-- Service score requirements for level up of Industrial and Office buildings.
+- Start money amount
+- Loan amount
+- Population required to unlock milestones
+- Land value requirements for level up of Residential and Commercial buildings
+- Service score requirements for level up of Industrial and Office buildings
 
 When you change a difficulty parameter, the game difficulty is automatically set to "Custom".
-When switch back to the Custom difficulty, your previously set custom settings are restored.
 
 ## Additional features
 - Unlock purchasing all 25 area tiles, when the last milestone is reached.
 - Unlock the "Basic Road Created" milestone from the beginning.
 - 100% refund from recently built roads at all difficulty levels.
 - Steam achievements are enabled for all difficulty levels except Easy and Free.
+
+## Translations
+- English
+- Nederlands
+- Deutsch
+- Italiano
+- Português
+- 日本語
+- Русский
 
 ## Mod compatibility
 - Using together with a mod that changes costs, level up requirements, or demand, may cause game balance issues.
