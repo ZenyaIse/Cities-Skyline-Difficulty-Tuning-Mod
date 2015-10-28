@@ -36,6 +36,39 @@ namespace DifficultyTuningMod
             }
 
             Achievements.Update();
+
+            //updatePrefabs();
+        }
+
+        private void updatePrefabs()
+        {
+            try
+            {
+                foreach (BuildingCollection bc in UnityEngine.Object.FindObjectsOfType<BuildingCollection>())
+                {
+                    foreach (BuildingInfo bi in bc.m_prefabs)
+                    {
+                        BuildingAI bAI = bi.m_buildingAI;
+                        PowerPlantAI ppAI = bAI as PowerPlantAI;
+                        if (ppAI != null)
+                        {
+                            DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, ppAI.name + ": " + ppAI.m_pollutionRadius.ToString());
+                            ppAI.m_pollutionRadius *= 2f;
+                        }
+
+                        LandfillSiteAI lfsAI = bAI as LandfillSiteAI;
+                        if (lfsAI != null)
+                        {
+                            DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, lfsAI.name + ": " + lfsAI.m_pollutionRadius.ToString());
+                            lfsAI.m_pollutionRadius *= 2f;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, ex.Message);
+            }
         }
     }
 }
