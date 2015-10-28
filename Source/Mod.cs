@@ -203,6 +203,12 @@ namespace DifficultyTuningMod
             y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("OFFICE"), new Vector3(x1, y), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x2, y), w2, OnCustomValueChanged, d.OfficeTargetScore);
+            y += dy2;
+
+            // Pollution radius multiplier
+            addLabel(scrollablePanel, Locale.Get("INFO_POLLUTION_GROUND"), new Vector3(x1, y), textScaleMedium);
+            y += dy1;
+            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.PollutionRadiusMultiplier);
 
             freeze = false;
         }
