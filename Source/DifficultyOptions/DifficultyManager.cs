@@ -29,7 +29,7 @@ namespace DifficultyTuningMod.DifficultyOptions
         public OfficeTargetScore OfficeTargetScore;
         public PopulationTargetMultiplier PopulationTargetMultiplier;
         public LoanMultiplier LoanMultiplier;
-        public PollutionRadiusMultiplier PollutionRadiusMultiplier;
+        public GroundPollutionRadiusMultiplier GroundPollutionRadiusMultiplier;
 
         private DifficultyManager()
         {
@@ -55,7 +55,7 @@ namespace DifficultyTuningMod.DifficultyOptions
             OfficeTargetScore = new OfficeTargetScore();
             PopulationTargetMultiplier = new PopulationTargetMultiplier();
             LoanMultiplier = new LoanMultiplier();
-            PollutionRadiusMultiplier = new PollutionRadiusMultiplier();
+            GroundPollutionRadiusMultiplier = new GroundPollutionRadiusMultiplier();
 
             Load();
         }
@@ -100,7 +100,7 @@ namespace DifficultyTuningMod.DifficultyOptions
             options.OfficeTargetScoreIndex = this.OfficeTargetScore.nCustom;
             options.PopulationTargetMultiplier = this.PopulationTargetMultiplier.CustomValue;
             options.LoanMultiplier = this.LoanMultiplier.CustomValue;
-            options.PollutionRadiusMultiplier = this.PollutionRadiusMultiplier.CustomValue;
+            options.GroundPollutionRadiusMultiplier = this.GroundPollutionRadiusMultiplier.CustomValue;
 
             options.Save();
             
@@ -141,7 +141,7 @@ namespace DifficultyTuningMod.DifficultyOptions
                 this.OfficeTargetScore.nCustom = options.OfficeTargetScoreIndex;
                 this.PopulationTargetMultiplier.CustomValue = options.PopulationTargetMultiplier;
                 this.LoanMultiplier.CustomValue = options.LoanMultiplier;
-                this.PollutionRadiusMultiplier.CustomValue = options.PollutionRadiusMultiplier;
+                this.GroundPollutionRadiusMultiplier.CustomValue = options.GroundPollutionRadiusMultiplier;
             }
         }
         

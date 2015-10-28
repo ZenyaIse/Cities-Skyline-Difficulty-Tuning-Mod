@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Achievements.cs" />
+    <Compile Include="DifficultyOptions\GroundPollutionRadiusMultiplier.cs" />
     <Compile Include="DifficultyOptions\LoanMultiplier.cs" />
     <Compile Include="DifficultyOptions\AreaCostMultiplier.cs" />
     <Compile Include="DifficultyOptions\CommercialTargetLandValue.cs" />

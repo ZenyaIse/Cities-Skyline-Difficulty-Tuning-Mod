@@ -1,8 +1,8 @@
 namespace DifficultyTuningMod.DifficultyOptions
 {
-    public class PollutionRadiusMultiplier : DifficultyParameterBase
+    public class GroundPollutionRadiusMultiplier : DifficultyParameterBase
     {
-        public PollutionRadiusMultiplier() : base() { }
+        public GroundPollutionRadiusMultiplier() : base() { }
 
         protected override void InitValues()
         {

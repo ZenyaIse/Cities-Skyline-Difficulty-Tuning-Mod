@@ -29,7 +29,7 @@ namespace DifficultyTuningMod.DifficultyOptions
         public int OfficeTargetScoreIndex;
         public int PopulationTargetMultiplier;
         public int LoanMultiplier;
-        public int PollutionRadiusMultiplier;
+        public int GroundPollutionRadiusMultiplier;
 
         public DifficultyOptionsSerializable()
         {
@@ -54,7 +54,7 @@ namespace DifficultyTuningMod.DifficultyOptions
             OfficeTargetScoreIndex = 1;
             PopulationTargetMultiplier = 100;
             LoanMultiplier = 100;
-            PollutionRadiusMultiplier = 100;
+            GroundPollutionRadiusMultiplier = 100;
         }
 
     public void Save()

@@ -208,7 +208,7 @@ namespace DifficultyTuningMod
             // Pollution radius multiplier
             addLabel(scrollablePanel, Locale.Get("INFO_POLLUTION_GROUND"), new Vector3(x1, y), textScaleMedium);
             y += dy1;
-            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.PollutionRadiusMultiplier);
+            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.GroundPollutionRadiusMultiplier);
 
             freeze = false;
         }

@@ -42,6 +42,8 @@ namespace DifficultyTuningMod
 
         private void updatePrefabs()
         {
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
+
             try
             {
                 foreach (BuildingCollection bc in UnityEngine.Object.FindObjectsOfType<BuildingCollection>())
@@ -49,19 +51,30 @@ namespace DifficultyTuningMod
                     foreach (BuildingInfo bi in bc.m_prefabs)
                     {
                         BuildingAI bAI = bi.m_buildingAI;
+
                         PowerPlantAI ppAI = bAI as PowerPlantAI;
                         if (ppAI != null)
                         {
                             DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, ppAI.name + ": " + ppAI.m_pollutionRadius.ToString());
-                            ppAI.m_pollutionRadius *= 2f;
+                            ppAI.m_pollutionRadius *= 0.01f * d.GroundPollutionRadiusMultiplier.Value;
+                            continue;
                         }
 
                         LandfillSiteAI lfsAI = bAI as LandfillSiteAI;
                         if (lfsAI != null)
                         {
                             DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, lfsAI.name + ": " + lfsAI.m_pollutionRadius.ToString());
-                            lfsAI.m_pollutionRadius *= 2f;
+                            lfsAI.m_pollutionRadius *= 0.01f * d.GroundPollutionRadiusMultiplier.Value;
+                            continue;
                         }
+
+                        //WaterFacilityAI wfAI = bAI as WaterFacilityAI;
+                        //if (wfAI != null)
+                        //{
+                        //    DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, wfAI.name + ": " + wfAI.m_pollutionRadius.ToString());
+                        //    wfAI.m_pollutionRadius *= 0.01f * d.GroundPollutionRadiusMultiplier.Value;
+                        //    continue;
+                        //}
                     }
                 }
             }
