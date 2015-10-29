@@ -14,7 +14,7 @@ Initial money and loan amount are increased for high difficulties.
 
 ## Special Difficulty Levels
 These special levels are made for fun and experimenting.
-- **Free.** Construction is free. Upkeep is halved. Demand is very high. Land value and service score are not required for buidings to level up. No ground and noise pollution from service buildings. Initial money is zero.
+- **Free.** Construction is free. Upkeep is halved. Demand is very high. Land value and service score are not required for buidings to level up. No ground and noise pollution from power, water, and garbage facilities. Initial money is zero.
 - **₡500,000 at start.** Normal difficulty with ₡500,000 at start.
 - **Demand 100%.** Demand is always 100%. Other settings are normal.
 - **Free public transport.** Normal difficulty. Zero cost and upkeep for public transport.
@@ -29,7 +29,7 @@ Changing difficulty options during a game is possible, but cost values displayed
 ## Customizable parameters
 - Construction and upkeep cost (separate for service buildings, public transportation, roads and for everything else)
 - Demand offset and multiplier. Calculated by formula (Demand + Offset) * Multiplier
-- Ground and noise pollution radius
+- Ground and noise pollution radius (for power, water, and garbage facilities only)
 - Relocation cost multiplier
 - Area cost multiplier
 - Reward percentage (amount of money you get when a milestone is reached)
@@ -42,8 +42,8 @@ Changing difficulty options during a game is possible, but cost values displayed
 When you change a difficulty parameter, the game difficulty is automatically set to "Custom".
 
 ## Additional features
-- Unlock purchasing all 25 area tiles, when the last milestone is reached. (The area cost is affected in this mod.)
-- Unlock the "Basic Road Created" milestone from the beginning. (This is very minor thing that removes the requirement to build a piece of two-lane road before building somethin else.)
+- Unlock purchasing all 25 area tiles, when the last milestone is reached.
+- Unlock the "Basic Road Created" milestone from the beginning. (This is very minor thing that removes the requirement to build a piece of two-lane road before building something else.)
 - 100% refund from recently built roads at all difficulty levels. (Consider it as an "undo" feature for roads.)
 - Steam achievements are enabled for all difficulty levels except Easy and Free. (Yes. You can get achievemets with this mod.)
 
