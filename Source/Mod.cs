@@ -106,7 +106,7 @@ namespace DifficultyTuningMod
             float w2 = w1 + 140;
 
             ddDifficulty.parent.relativePosition = new Vector3(5, y);
-            y += ddDifficulty.parent.height + 10;
+            y += ddDifficulty.parent.height + 20;
 
 
             //
@@ -145,24 +145,26 @@ namespace DifficultyTuningMod
             addLabel(scrollablePanel, truncateSemicolon(Locale.Get("TOOL_RELOCATE_COST")), new Vector3(x1, y), textScaleMedium);
             y += dy1;
             addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.RelocationCostMultiplier);
-            y += dy2;
+            y += dy1;
 
             // Area purchase cost
-            addLabel(scrollablePanel, DTMLang.Text("AREA_COST_MULTIPLIER"), new Vector3(x3, y), textScaleMedium);
+            addLabel(scrollablePanel, DTMLang.Text("AREA_COST_MULTIPLIER"), new Vector3(x1, y), textScaleMedium);
             y += dy1;
-            addSlider(scrollablePanel, new Vector3(x3, y), w2, OnCustomValueChanged, d.AreaCostMultiplier);
+            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.AreaCostMultiplier);
 
             // Pollution
-            y -= dy2 + 2 * dy1;
-            addLabel(scrollablePanel, Locale.Get("INFO_POLLUTION_TITLE"), new Vector3(x4, y), textScaleMedium);
+            y -= 3 * dy1;
+            addLabel(scrollablePanel, DTMLang.Text("POLLUTION_RADIUS"), new Vector3(x4, y), textScaleMedium);
             y += dy1;
             // Ground pollution radius multiplier
-            addLabel(scrollablePanel, Locale.Get("INFO_POLLUTION_GROUND"), new Vector3(x3, y), textScaleSmall);
+            addLabel(scrollablePanel, DTMLang.Text("GROUND_POLLUTION"), new Vector3(x3, y), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x4, y), w1, OnCustomValueChanged, d.GroundPollutionRadiusMultiplier);
             y += dy1;
             addLabel(scrollablePanel, Locale.Get("INFO_NOISEPOLLUTION_TITLE"), new Vector3(x3, y), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x4, y), w1, OnCustomValueChanged, d.NoisePollutionRadiusMultiplier);
-            y += 2 * dy2;
+            y += dy1;
+            addLabel(scrollablePanel, DTMLang.Text("ONLY_POWER_WATER_GARBAGE"), new Vector3(x3, y), textScaleSmall);
+            y += dy2;
 
             // Economy
             addLabel(scrollablePanel, Locale.Get("ECONOMY_TITLE"), new Vector3(x2, y), textScaleMedium);
@@ -229,6 +231,7 @@ namespace DifficultyTuningMod
             if (d != null && d.Modified)
             {
                 d.Save();
+                PrefabsManager.UpdatePrefabs(true);
             }
         }
 

@@ -62,6 +62,10 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "Startkapitaal";
                 texts["REWARD"] = "Beloning";
 
+                texts["POLLUTION_RADIUS"] = "Pollution radius"; // To translate
+                texts["GROUND_POLLUTION"] = "Ground pollution"; // To translate
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*Power, water, and garbage facilities only"; // To translate
+
                 texts["DEMAND"] = "Vraag";
                 texts["DEMAND_FORMULA"] = "Formule: (Vraag + Impuls) * vermenigvuldigingsfactor";
                 texts["DEMAND_OFFSET"] = "Impuls";
@@ -110,6 +114,10 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "Anfangskapital";
                 texts["REWARD"] = "Belohnung";
 
+                texts["POLLUTION_RADIUS"] = "Pollution radius"; // To translate
+                texts["GROUND_POLLUTION"] = "Ground pollution"; // To translate
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*Power, water, and garbage facilities only"; // To translate
+
                 texts["DEMAND"] = "Frage";
                 texts["DEMAND_FORMULA"] = "Formel: (Frage + Impuls) * Multiplikator";
                 texts["DEMAND_OFFSET"] = "Impuls";
@@ -155,6 +163,10 @@ namespace DifficultyTuningMod
                 texts["AREA_COST_MULTIPLIER"] = "Moltiplicatore costi di aree";
                 texts["INITIAL_MONEY"] = "Capitale iniziale";
                 texts["REWARD"] = "Ricompensa";
+
+                texts["POLLUTION_RADIUS"] = "Pollution radius"; // To translate
+                texts["GROUND_POLLUTION"] = "Ground pollution"; // To translate
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*Power, water, and garbage facilities only"; // To translate
 
                 texts["DEMAND"] = "Domanda";
                 texts["DEMAND_FORMULA"] = "Formula: (Domanda + Impulso) * Moltiplicatore";
@@ -202,19 +214,23 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "Capital inicial";
                 texts["REWARD"] = "Recompensa";
 
+                texts["POLLUTION_RADIUS"] = "Pollution radius"; // To translate
+                texts["GROUND_POLLUTION"] = "Ground pollution"; // To translate
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*Power, water, and garbage facilities only"; // To translate
+
                 texts["DEMAND"] = "Demanda";
                 texts["DEMAND_FORMULA"] = "Fórmula: (Demanda + Compensação) * multiplicador";
                 texts["DEMAND_OFFSET"] = "Compensação";
                 texts["DEMAND_MULTIPLIER"] = "Multiplicador";
 
-                texts["TAGRET_LANDVALUE"] = "Valores-alvo do custo da terra para edifícios a subir de nível (Nível 2, 3, 4, 5)"; // To check
+                texts["TAGRET_LANDVALUE"] = "Valores-alvo do custo da terra para edifícios a subir de nível (Nível 2, 3, 4, 5)";
                 texts["RESIDENTIAL"] = "Residenciais";
                 texts["COMMERCIAL"] = "Comerciais";
-                texts["TAGRET_SCORE"] = "Target service score for buildings to level up (Nível 2, 3)"; // To translate
+                texts["TAGRET_SCORE"] = "Valores-alvo da pontuação serviço para edifícios a subir de nível (Nível 2, 3)";
                 texts["INDUSTRIAL"] = "Industriais";
                 texts["OFFICE"] = "Escritórios";
 
-                texts["POPULATION_TARGET_MULTIPLIER"] = "Population required to unlock milestones"; // To translate
+                texts["POPULATION_TARGET_MULTIPLIER"] = "A população necessária para desbloquear marcos";
             }
             else if (selectedLanguage == "ru")
             {
@@ -247,6 +263,10 @@ namespace DifficultyTuningMod
                 texts["AREA_COST_MULTIPLIER"] = "Коэффициент покупки области";
                 texts["INITIAL_MONEY"] = "Начальный капитал";
                 texts["REWARD"] = "Награды";
+
+                texts["POLLUTION_RADIUS"] = "Радиус загрязнений";
+                texts["GROUND_POLLUTION"] = "Загрязнения почвы";
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*Только для электро, водных и мусорных предприятий";
 
                 texts["DEMAND"] = "Потребность";
                 texts["DEMAND_FORMULA"] = "Формула: (Потребность + Смещение) * Коэффициент";
@@ -294,6 +314,10 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "初期金額";
                 texts["REWARD"] = "報酬の割合";
 
+                texts["POLLUTION_RADIUS"] = "汚染半径";
+                texts["GROUND_POLLUTION"] = "土壌汚染";
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*電力、上下水道、ゴミ施設のみ";
+
                 texts["DEMAND"] = "需要";
                 texts["DEMAND_FORMULA"] = "式：　（需要＋オフセット）＊係数";
                 texts["DEMAND_OFFSET"] = "オフセット";
@@ -340,8 +364,12 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "Initial capital";
                 texts["REWARD"] = "Reward amount"; // amount of money you get when a milestone is reached
 
+                texts["POLLUTION_RADIUS"] = "Pollution radius";
+                texts["GROUND_POLLUTION"] = "Ground pollution";
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*Power, water, and garbage facilities only";
+
                 texts["DEMAND"] = "Demand";
-                texts["DEMAND_FORMULA"] = "Formula: (Demand + Offset) * multiplier";
+                texts["DEMAND_FORMULA"] = "*Formula: (Demand + Offset) * multiplier";
                 texts["DEMAND_OFFSET"] = "Demand offset";
                 texts["DEMAND_MULTIPLIER"] = "Demand multiplier";
 

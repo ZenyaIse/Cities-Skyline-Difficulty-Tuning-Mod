@@ -65,6 +65,7 @@
     <Compile Include="DifficultyOptions\DemandOffset.cs" />
     <Compile Include="DifficultyOptions\Difficulties.cs" />
     <Compile Include="DifficultyOptions\DifficultyManager.cs" />
+    <Compile Include="DifficultyOptions\NoisePollutionRadiusMultiplier.cs" />
     <Compile Include="DifficultyOptions\PopulationTargetMultiplier.cs" />
     <Compile Include="DifficultyOptions_old\Difficulties.cs" />
     <Compile Include="DifficultyOptions_old\DifficultyOptions.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Mod.cs" />
     <Compile Include="Economy.cs" />
     <Compile Include="Milestones.cs" />
+    <Compile Include="PrefabsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
