@@ -114,8 +114,8 @@ namespace DifficultyTuningMod
             //
             sliders.Clear();
 
-            addLabel(scrollablePanel, DTMLang.Text("CUSTOM_OPTIONS"), new Vector3(5, y), textScaleBig);
-            y += dy2;
+            //addLabel(scrollablePanel, DTMLang.Text("CUSTOM_OPTIONS"), new Vector3(5, y), textScaleBig);
+            //y += dy2;
 
             // Construction cost
             addLabel(scrollablePanel, truncateSemicolon(Locale.Get("TOOL_CONSTRUCTION_COST")), new Vector3(x2, y), textScaleMedium);
@@ -145,13 +145,24 @@ namespace DifficultyTuningMod
             addLabel(scrollablePanel, truncateSemicolon(Locale.Get("TOOL_RELOCATE_COST")), new Vector3(x1, y), textScaleMedium);
             y += dy1;
             addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.RelocationCostMultiplier);
-            y -= dy1;
+            y += dy2;
 
             // Area purchase cost
             addLabel(scrollablePanel, DTMLang.Text("AREA_COST_MULTIPLIER"), new Vector3(x3, y), textScaleMedium);
             y += dy1;
             addSlider(scrollablePanel, new Vector3(x3, y), w2, OnCustomValueChanged, d.AreaCostMultiplier);
-            y += dy2;
+
+            // Pollution
+            y -= dy2 + 2 * dy1;
+            addLabel(scrollablePanel, Locale.Get("INFO_POLLUTION_TITLE"), new Vector3(x4, y), textScaleMedium);
+            y += dy1;
+            // Ground pollution radius multiplier
+            addLabel(scrollablePanel, Locale.Get("INFO_POLLUTION_GROUND"), new Vector3(x3, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x4, y), w1, OnCustomValueChanged, d.GroundPollutionRadiusMultiplier);
+            y += dy1;
+            addLabel(scrollablePanel, Locale.Get("INFO_NOISEPOLLUTION_TITLE"), new Vector3(x3, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x4, y), w1, OnCustomValueChanged, d.NoisePollutionRadiusMultiplier);
+            y += 2 * dy2;
 
             // Economy
             addLabel(scrollablePanel, Locale.Get("ECONOMY_TITLE"), new Vector3(x2, y), textScaleMedium);
@@ -167,16 +178,18 @@ namespace DifficultyTuningMod
             // Loan amount and length
             addLabel(scrollablePanel, Locale.Get("ECONOMY_LOANS"), new Vector3(x1, y), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.LoanMultiplier);
-            y += dy2;
 
             // Demand
-            addLabel(scrollablePanel, DTMLang.Text("DEMAND"), new Vector3(x1, y), textScaleMedium);
+            y -= dy1 * 3;
+            addLabel(scrollablePanel, Locale.Get("MAIN_ZONING_DEMAND"), new Vector3(x4, y), textScaleMedium);
             y += dy1;
-            addLabel(scrollablePanel, DTMLang.Text("DEMAND_OFFSET"), new Vector3(x1, y), textScaleSmall);
-            addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.DemandOffset);
+            addLabel(scrollablePanel, DTMLang.Text("DEMAND_OFFSET"), new Vector3(x3, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x4, y), w1, OnCustomValueChanged, d.DemandOffset);
             y += dy1;
-            addLabel(scrollablePanel, DTMLang.Text("DEMAND_MULTIPLIER"), new Vector3(x1, y), textScaleSmall);
-            addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.DemandMultiplier);
+            addLabel(scrollablePanel, DTMLang.Text("DEMAND_MULTIPLIER"), new Vector3(x3, y), textScaleSmall);
+            addSlider(scrollablePanel, new Vector3(x4, y), w1, OnCustomValueChanged, d.DemandMultiplier);
+            y += dy1;
+            addLabel(scrollablePanel, DTMLang.Text("DEMAND_FORMULA"), new Vector3(x3, y), textScaleSmall);
             y += dy2;
 
             // Population target multiplier
@@ -203,12 +216,6 @@ namespace DifficultyTuningMod
             y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("OFFICE"), new Vector3(x1, y), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x2, y), w2, OnCustomValueChanged, d.OfficeTargetScore);
-            y += dy2;
-
-            // Pollution radius multiplier
-            addLabel(scrollablePanel, Locale.Get("INFO_POLLUTION_GROUND"), new Vector3(x1, y), textScaleMedium);
-            y += dy1;
-            addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.GroundPollutionRadiusMultiplier);
 
             freeze = false;
         }

@@ -30,6 +30,7 @@ namespace DifficultyTuningMod.DifficultyOptions
         public PopulationTargetMultiplier PopulationTargetMultiplier;
         public LoanMultiplier LoanMultiplier;
         public GroundPollutionRadiusMultiplier GroundPollutionRadiusMultiplier;
+        public NoisePollutionRadiusMultiplier NoisePollutionRadiusMultiplier;
 
         private DifficultyManager()
         {
@@ -56,6 +57,7 @@ namespace DifficultyTuningMod.DifficultyOptions
             PopulationTargetMultiplier = new PopulationTargetMultiplier();
             LoanMultiplier = new LoanMultiplier();
             GroundPollutionRadiusMultiplier = new GroundPollutionRadiusMultiplier();
+            NoisePollutionRadiusMultiplier = new NoisePollutionRadiusMultiplier();
 
             Load();
         }
@@ -101,6 +103,7 @@ namespace DifficultyTuningMod.DifficultyOptions
             options.PopulationTargetMultiplier = this.PopulationTargetMultiplier.CustomValue;
             options.LoanMultiplier = this.LoanMultiplier.CustomValue;
             options.GroundPollutionRadiusMultiplier = this.GroundPollutionRadiusMultiplier.CustomValue;
+            options.NoisePollutionRadiusMultiplier = this.NoisePollutionRadiusMultiplier.CustomValue;
 
             options.Save();
             
@@ -142,6 +145,7 @@ namespace DifficultyTuningMod.DifficultyOptions
                 this.PopulationTargetMultiplier.CustomValue = options.PopulationTargetMultiplier;
                 this.LoanMultiplier.CustomValue = options.LoanMultiplier;
                 this.GroundPollutionRadiusMultiplier.CustomValue = options.GroundPollutionRadiusMultiplier;
+                this.NoisePollutionRadiusMultiplier.CustomValue = options.NoisePollutionRadiusMultiplier;
             }
         }
         

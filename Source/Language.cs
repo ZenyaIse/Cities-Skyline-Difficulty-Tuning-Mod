@@ -62,7 +62,8 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "Startkapitaal";
                 texts["REWARD"] = "Beloning";
 
-                texts["DEMAND"] = "Vraagformule: (Vraag + Impuls) * vermenigvuldigingsfactor";
+                texts["DEMAND"] = "Vraag";
+                texts["DEMAND_FORMULA"] = "Formule: (Vraag + Impuls) * vermenigvuldigingsfactor";
                 texts["DEMAND_OFFSET"] = "Impuls";
                 texts["DEMAND_MULTIPLIER"] = "Vermenigvuldigingsfactor";
 
@@ -109,7 +110,8 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "Anfangskapital";
                 texts["REWARD"] = "Belohnung";
 
-                texts["DEMAND"] = "Frage-formel: (Frage + Impuls) * Multiplikator"; 
+                texts["DEMAND"] = "Frage";
+                texts["DEMAND_FORMULA"] = "Formel: (Frage + Impuls) * Multiplikator";
                 texts["DEMAND_OFFSET"] = "Impuls";
                 texts["DEMAND_MULTIPLIER"] = "Multiplikator";
 
@@ -154,7 +156,8 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "Capitale iniziale";
                 texts["REWARD"] = "Ricompensa";
 
-                texts["DEMAND"] = "Domanda formula: (Domanda + Impulso) * Moltiplicatore";
+                texts["DEMAND"] = "Domanda";
+                texts["DEMAND_FORMULA"] = "Formula: (Domanda + Impulso) * Moltiplicatore";
                 texts["DEMAND_OFFSET"] = "Impulso";
                 texts["DEMAND_MULTIPLIER"] = "Moltiplicatore";
 
@@ -199,7 +202,8 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "Capital inicial";
                 texts["REWARD"] = "Recompensa";
 
-                texts["DEMAND"] = "Demanda fórmula: (Demanda + Compensação) * multiplicador";
+                texts["DEMAND"] = "Demanda";
+                texts["DEMAND_FORMULA"] = "Fórmula: (Demanda + Compensação) * multiplicador";
                 texts["DEMAND_OFFSET"] = "Compensação";
                 texts["DEMAND_MULTIPLIER"] = "Multiplicador";
 
@@ -244,7 +248,8 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "Начальный капитал";
                 texts["REWARD"] = "Награды";
 
-                texts["DEMAND"] = "Формула потребности: (Потребность + Смещение) * Коэффициент";
+                texts["DEMAND"] = "Потребность";
+                texts["DEMAND_FORMULA"] = "Формула: (Потребность + Смещение) * Коэффициент";
                 texts["DEMAND_OFFSET"] = "Смещение";
                 texts["DEMAND_MULTIPLIER"] = "Коэффициент";
 
@@ -289,7 +294,8 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "初期金額";
                 texts["REWARD"] = "報酬の割合";
 
-                texts["DEMAND"] = "需要。次式で計算：　（需要＋オフセット）＊係数";
+                texts["DEMAND"] = "需要";
+                texts["DEMAND_FORMULA"] = "式：　（需要＋オフセット）＊係数";
                 texts["DEMAND_OFFSET"] = "オフセット";
                 texts["DEMAND_MULTIPLIER"] = "係数";
 
@@ -334,7 +340,8 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "Initial capital";
                 texts["REWARD"] = "Reward amount"; // amount of money you get when a milestone is reached
 
-                texts["DEMAND"] = "Demand formula: (Demand + Offset) * multiplier";
+                texts["DEMAND"] = "Demand";
+                texts["DEMAND_FORMULA"] = "Formula: (Demand + Offset) * multiplier";
                 texts["DEMAND_OFFSET"] = "Demand offset";
                 texts["DEMAND_MULTIPLIER"] = "Demand multiplier";
 
