@@ -67,7 +67,7 @@ namespace DifficultyTuningMod
                 texts["ONLY_POWER_WATER_GARBAGE"] = "*Power, water, and garbage facilities only"; // To translate
 
                 texts["DEMAND"] = "Vraag";
-                texts["DEMAND_FORMULA"] = "Formule: (Vraag + Impuls) * vermenigvuldigingsfactor";
+                texts["DEMAND_FORMULA"] = "*Formule: (Vraag + Impuls) * vermenigvuldigingsfactor";
                 texts["DEMAND_OFFSET"] = "Impuls";
                 texts["DEMAND_MULTIPLIER"] = "Vermenigvuldigingsfactor";
 
@@ -119,7 +119,7 @@ namespace DifficultyTuningMod
                 texts["ONLY_POWER_WATER_GARBAGE"] = "*Power, water, and garbage facilities only"; // To translate
 
                 texts["DEMAND"] = "Frage";
-                texts["DEMAND_FORMULA"] = "Formel: (Frage + Impuls) * Multiplikator";
+                texts["DEMAND_FORMULA"] = "*Formel: (Frage + Impuls) * Multiplikator";
                 texts["DEMAND_OFFSET"] = "Impuls";
                 texts["DEMAND_MULTIPLIER"] = "Multiplikator";
 
@@ -169,7 +169,7 @@ namespace DifficultyTuningMod
                 texts["ONLY_POWER_WATER_GARBAGE"] = "*Power, water, and garbage facilities only"; // To translate
 
                 texts["DEMAND"] = "Domanda";
-                texts["DEMAND_FORMULA"] = "Formula: (Domanda + Impulso) * Moltiplicatore";
+                texts["DEMAND_FORMULA"] = "*Formula: (Domanda + Impulso) * Moltiplicatore";
                 texts["DEMAND_OFFSET"] = "Impulso";
                 texts["DEMAND_MULTIPLIER"] = "Moltiplicatore";
 
@@ -219,7 +219,7 @@ namespace DifficultyTuningMod
                 texts["ONLY_POWER_WATER_GARBAGE"] = "*Power, water, and garbage facilities only"; // To translate
 
                 texts["DEMAND"] = "Demanda";
-                texts["DEMAND_FORMULA"] = "Fórmula: (Demanda + Compensação) * multiplicador";
+                texts["DEMAND_FORMULA"] = "*Fórmula: (Demanda + Compensação) * multiplicador";
                 texts["DEMAND_OFFSET"] = "Compensação";
                 texts["DEMAND_MULTIPLIER"] = "Multiplicador";
 
@@ -269,7 +269,7 @@ namespace DifficultyTuningMod
                 texts["ONLY_POWER_WATER_GARBAGE"] = "*Только для электро, водных и мусорных предприятий";
 
                 texts["DEMAND"] = "Потребность";
-                texts["DEMAND_FORMULA"] = "Формула: (Потребность + Смещение) * Коэффициент";
+                texts["DEMAND_FORMULA"] = "*Формула: (Потребность + Смещение) * Коэффициент";
                 texts["DEMAND_OFFSET"] = "Смещение";
                 texts["DEMAND_MULTIPLIER"] = "Коэффициент";
 
@@ -316,10 +316,10 @@ namespace DifficultyTuningMod
 
                 texts["POLLUTION_RADIUS"] = "汚染半径";
                 texts["GROUND_POLLUTION"] = "土壌汚染";
-                texts["ONLY_POWER_WATER_GARBAGE"] = "*電力、上下水道、ゴミ施設のみ";
+                texts["ONLY_POWER_WATER_GARBAGE"] = "※電力、上下水道、ゴミ施設のみ";
 
                 texts["DEMAND"] = "需要";
-                texts["DEMAND_FORMULA"] = "式：　（需要＋オフセット）＊係数";
+                texts["DEMAND_FORMULA"] = "※式：　（需要＋オフセット）＊係数";
                 texts["DEMAND_OFFSET"] = "オフセット";
                 texts["DEMAND_MULTIPLIER"] = "係数";
 
