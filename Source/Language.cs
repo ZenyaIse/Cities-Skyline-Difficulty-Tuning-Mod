@@ -195,12 +195,12 @@ namespace DifficultyTuningMod
                 texts["Challenge"] = "6. Desafio";
                 texts["Impossible"] = "7. Imposivel";
                 texts["Custom"] = "-- Personalizado --";
-                texts["Free"] = "Special: Free"; // To translate
-                texts["FiveHundred"] = "Special: ₡500,000 at start"; // To translate
-                texts["Demand111"] = "Special: Demand 100%"; // To translate
-                texts["PublicTransport"] = "Special: Free Public Transport"; // To translate
-                texts["LowCity"] = "Special: Low city"; // To translate
-                texts["HardAndFast"] = "Special: Hard and fast"; // To translate
+                texts["Free"] = "Especial: Grátis";
+                texts["FiveHundred"] = "Especial: ₡500.000 no início";
+                texts["Demand111"] = "Especial: Demande em 100%";
+                texts["PublicTransport"] = "Especial: Transporte Público Gratuito";
+                texts["LowCity"] = "Especial: Cidade de baixo crescimento";
+                texts["HardAndFast"] = "Especial: Difícil e rápido";
 
                 texts["DIFFICULTY_LEVEL"] = "Nível de dificuldade";
                 texts["CUSTOM_OPTIONS"] = "Opções personalizadas";
@@ -214,9 +214,9 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "Capital inicial";
                 texts["REWARD"] = "Recompensa";
 
-                texts["POLLUTION_RADIUS"] = "Pollution radius"; // To translate
-                texts["GROUND_POLLUTION"] = "Ground pollution"; // To translate
-                texts["ONLY_POWER_WATER_GARBAGE"] = "*Power, water, and garbage facilities only"; // To translate
+                texts["POLLUTION_RADIUS"] = "Raio Poluição";
+                texts["GROUND_POLLUTION"] = "Poluição do Solo";
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*apenas de energia, instalações de água e de lixo";
 
                 texts["DEMAND"] = "Demanda";
                 texts["DEMAND_FORMULA"] = "*Fórmula: (Demanda + Compensação) * multiplicador";
