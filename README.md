@@ -53,6 +53,7 @@ When you change a difficulty parameter, the game difficulty is automatically set
 - Deutsch
 - Italiano
 - Português
+- Français
 - 日本語
 - Русский
 

@@ -30,7 +30,57 @@ namespace DifficultyTuningMod
 
         private static void fillDictionaryWithText(string localeID)
         {
-            if (selectedLanguage == "nl")
+            if (selectedLanguage == "fr")
+            {
+                texts["MOD_NAME"] = "Difficulté Tuning Mod";
+                texts["MOD_DESCRIPTION"] = "Variété de niveaux de difficulté.";
+
+                texts["Easy"] = "1. Facile";
+                texts["Normal"] = "2. Normal";
+                texts["Advanced"] = "3. Avancée";
+                texts["Hard"] = "4. Difficile";
+                texts["Expert"] = "5. Expert";
+                texts["Challenge"] = "6. Challenge";
+                texts["Impossible"] = "7. Impossible";
+                texts["Custom"] = "-- Personnalisées --";
+                texts["Free"] = "Special: Gratuit";
+                texts["FiveHundred"] = "Special: ¢500,000 Au Commencement";
+                texts["Demand111"] = "Special: Demande 100%";
+                texts["PublicTransport"] = "Special: Transport en Commun Gratuit";
+                texts["LowCity"] = "Special: Ville Basse";
+                texts["HardAndFast"] = "Special: Rapide et Difficile";
+
+                texts["DIFFICULTY_LEVEL"] = "Niveau de Difficulté";
+                texts["CUSTOM_OPTIONS"] = "Options Personnalisées";
+
+                texts["SERVICE_BUILDINGS"] = "Les Bâtiments De Service";
+                texts["PUBLIC_TRANSPORT"] = "Transport en commun ";
+                texts["ROADS"] = "Route";
+                texts["OTHERS"] = "Autre";
+
+                texts["AREA_COST_MULTIPLIER"] = "Zone multiplicateur de coût";
+                texts["INITIAL_MONEY"] = "Capital initial";
+                texts["REWARD"] = "Montant De Récompense"; // Montant d'argent que vous obtenez lorsque une étape est franchie
+
+                texts["POLLUTION_RADIUS"] = "Rayon de la Pollution";
+                texts["GROUND_POLLUTION"] = "Pollution des Sols";
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*Installations d'Alimentation, d'Eau et Des Déchets Seulement";
+
+                texts["DEMAND"] = "Demande";
+                texts["DEMAND_FORMULA"] = "*Formule: (Demande + Offset) * Multiplicateur";
+                texts["DEMAND_OFFSET"] = "Demande offset";
+                texts["DEMAND_MULTIPLIER"] = "Demande multiplicateur";
+
+                texts["TAGRET_LANDVALUE"] = "Cibler les valeurs Foncières pour les Bâtiments de monter de Niveau (Niveau 2, 3, 4, 5)";
+                texts["RESIDENTIAL"] = "Residential";
+                texts["COMMERCIAL"] = "Commercial";
+                texts["TAGRET_SCORE"] = "Ciblez des notes de service pour les Bâtiments de monter de Niveau (Niveau 2, 3)";
+                texts["INDUSTRIAL"] = "Industriel";
+                texts["OFFICE"] = "Bureau";
+
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Population requis pour Déverrouiller Jalons";
+            }
+            else if (selectedLanguage == "nl")
             {
                 texts["MOD_NAME"] = "Moeilijkheidstuningmod";
                 texts["MOD_DESCRIPTION"] = "Variatie in de moeilijkheidsgraad.";
@@ -47,7 +97,7 @@ namespace DifficultyTuningMod
                 texts["FiveHundred"] = "Speciaal: ₡500,000 bij aanvang";
                 texts["Demand111"] = "Speciaal: Vraag 100%";
                 texts["PublicTransport"] = "Speciaal: Gratis openbaar vervoer";
-                texts["LowCity"] = "Speciaal: Laagbouwstad"; 
+                texts["LowCity"] = "Speciaal: Laagbouwstad";
                 texts["HardAndFast"] = "Speciaal: Moeilijk en snel";
 
                 texts["DIFFICULTY_LEVEL"] = "Moeilijkheidsgraad";
@@ -76,7 +126,7 @@ namespace DifficultyTuningMod
                 texts["COMMERCIAL"] = "Handelsgebouwen";
                 texts["TAGRET_SCORE"] = "Dienstenscoredoel voor gebouwen om op te waarderen (niveau 2, 3)";
                 texts["INDUSTRIAL"] = "Industriegebouwen";
-                texts["OFFICE"] = "Kantoorgebouwen"; 
+                texts["OFFICE"] = "Kantoorgebouwen";
 
                 texts["POPULATION_TARGET_MULTIPLIER"] = "Population required to unlock milestones"; // To translate
             }
@@ -105,7 +155,7 @@ namespace DifficultyTuningMod
 
                 /* My dictionary says "Stadtwerke", which I think would be better,
                   but the game itself uses Dienstleistungsgebaude, so lets continue to use that: */
-                texts["SERVICE_BUILDINGS"] = "Dienstleistungsgebäude"; 
+                texts["SERVICE_BUILDINGS"] = "Dienstleistungsgebäude";
                 texts["PUBLIC_TRANSPORT"] = "Öffentlichen Verkehrsmittel";
                 texts["ROADS"] = "Straßen";
                 texts["OTHERS"] = "Sonstige";
