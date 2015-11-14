@@ -1,7 +1,6 @@
 ﻿using System;
 using ICities;
 using ColossalFramework;
-using ColossalFramework.Plugins;
 using DifficultyTuningMod.DifficultyOptions;
 
 namespace DifficultyTuningMod
@@ -26,12 +25,15 @@ namespace DifficultyTuningMod
                     EconomyManager.Bank bank = em.m_properties.m_banks[i];
                     EconomyManager.LoanInfo li = bank.m_loanOffers[0];
 
-                    li.m_amount = (int)Math.Round(0.01f * li.m_amount * d.LoanMultiplier.Value);
-                    li.m_length = (int)Math.Round(0.01f * li.m_length * d.LoanMultiplier.Value);
+                    int newAmount = (int)Math.Round(li.m_amount * 0.01f * d.LoanMultiplier.Value);
+                    int newLength = (int)Math.Round(li.m_length * (1 + 0.01f * d.LoanMultiplier.Value) / 2f); // Halve the effect to prevent too long loan length.
+                    Helper.ValueChangedMessage(bank.m_bankName, "Loan amount", li.m_amount, newAmount);
+                    Helper.ValueChangedMessage(bank.m_bankName, "Loan length", li.m_length, newLength);
+                    li.m_amount = newAmount;
+                    li.m_length = newLength;
 
                     bank.m_loanOffers[0] = li;
                     em.m_properties.m_banks[i] = bank;
-                    //DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, bank.m_bankName);
                 }
             }
 
