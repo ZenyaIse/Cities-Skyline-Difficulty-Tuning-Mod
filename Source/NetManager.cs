@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using ColossalFramework;
-using ColossalFramework.Plugins;
 using DifficultyTuningMod.DifficultyOptions;
+using ColossalFramework.Plugins;
 
 namespace DifficultyTuningMod
 {
@@ -11,8 +11,22 @@ namespace DifficultyTuningMod
         private static int MaxSlope_old = -1;
         private static Dictionary<string, float> maxSlopeOriginal = new Dictionary<string, float>();
 
+        private static Dictionary<ulong, string> incompatibleMods = new Dictionary<ulong, string>()
+        {
+            { 413311572u, "Stricter Slope Limits" },
+            { 440635326u, "Configurable Slope Limiter" },
+            { 512194601u, "Slope Limits (WtM)" }
+        };
+
         public static void UpdateSlopes(bool maybeDuringGame)
         {
+            ulong incompatibleModID = getOtherActiveSlopeModID();
+            if (incompatibleModID > 0)
+            {
+                DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, "[" + incompatibleMods[incompatibleModID] + "] mod detected. >>>>> \"Maximum slope\" option is disabled.");
+                return;
+            }
+
             DifficultyManager d = Singleton<DifficultyManager>.instance;
 
             if (maybeDuringGame)
@@ -45,7 +59,7 @@ namespace DifficultyTuningMod
                             if (!maxSlopeOriginal.ContainsKey(ni.name)) maxSlopeOriginal.Add(ni.name, ni.m_maxSlope);
 
                             newMaxSlope = maxSlopeOriginal[ni.name] * multiplier;
-                            valueChangedMessage(ni.name + " (" + className + ")", "maximum slope", maxSlopeOriginal[ni.name], newMaxSlope);
+                            Helper.ValueChangedMessage(ni.name + " (" + className + ")", "maximum slope", maxSlopeOriginal[ni.name], newMaxSlope);
                             ni.m_maxSlope = newMaxSlope;
                         }
                     }
@@ -59,9 +73,17 @@ namespace DifficultyTuningMod
             }
         }
 
-        private static void valueChangedMessage(string prefabName, string paramName, float oldValue, float newValue)
+        private static ulong getOtherActiveSlopeModID()
         {
-            DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, String.Format("{0}: {1} changed from {2} to {3}", prefabName, paramName, oldValue, newValue));
+            foreach (var plugin in PluginManager.instance.GetPluginsInfo())
+            {
+                if (incompatibleMods.ContainsKey(plugin.publishedFileID.AsUInt64))
+                {
+                    return plugin.publishedFileID.AsUInt64;
+                }
+            }
+
+            return 0;
         }
     }
 }

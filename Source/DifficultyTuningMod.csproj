@@ -89,6 +89,7 @@
     <Compile Include="DifficultyOptions_old.cs" />
     <Compile Include="Areas.cs" />
     <Compile Include="Demand.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="LevelUp.cs" />
     <Compile Include="LoadingExtension.cs" />

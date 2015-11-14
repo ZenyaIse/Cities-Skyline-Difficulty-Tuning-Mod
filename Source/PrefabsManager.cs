@@ -44,12 +44,12 @@ namespace DifficultyTuningMod
                         {
                             if (!groundPollutionRadiusOriginal.ContainsKey(ppAI.name)) groundPollutionRadiusOriginal.Add(ppAI.name, ppAI.m_pollutionRadius);
                             newPollutionRadius = groundPollutionRadiusOriginal[ppAI.name] * 0.01f * d.GroundPollutionRadiusMultiplier.Value;
-                            valueChangedMessage(ppAI.name, "ground pollution radius", groundPollutionRadiusOriginal[ppAI.name], newPollutionRadius);
+                            Helper.ValueChangedMessage(ppAI.name, "ground pollution radius", groundPollutionRadiusOriginal[ppAI.name], newPollutionRadius);
                             ppAI.m_pollutionRadius = newPollutionRadius;
 
                             if (!noiseRadiusOriginal.ContainsKey(ppAI.name)) noiseRadiusOriginal.Add(ppAI.name, ppAI.m_noiseRadius);
                             newNoiseRadius = noiseRadiusOriginal[ppAI.name] * 0.01f * d.NoisePollutionRadiusMultiplier.Value;
-                            valueChangedMessage(ppAI.name, "noise pollution radius", noiseRadiusOriginal[ppAI.name], newNoiseRadius);
+                            Helper.ValueChangedMessage(ppAI.name, "noise pollution radius", noiseRadiusOriginal[ppAI.name], newNoiseRadius);
                             ppAI.m_noiseRadius = newNoiseRadius;
 
                             continue;
@@ -60,12 +60,12 @@ namespace DifficultyTuningMod
                         {
                             if (!groundPollutionRadiusOriginal.ContainsKey(lfsAI.name)) groundPollutionRadiusOriginal.Add(lfsAI.name, lfsAI.m_pollutionRadius);
                             newPollutionRadius = groundPollutionRadiusOriginal[lfsAI.name] * 0.01f * d.GroundPollutionRadiusMultiplier.Value;
-                            valueChangedMessage(lfsAI.name, "ground pollution radius", groundPollutionRadiusOriginal[lfsAI.name], newPollutionRadius);
+                            Helper.ValueChangedMessage(lfsAI.name, "ground pollution radius", groundPollutionRadiusOriginal[lfsAI.name], newPollutionRadius);
                             lfsAI.m_pollutionRadius = newPollutionRadius;
 
                             if (!noiseRadiusOriginal.ContainsKey(lfsAI.name)) noiseRadiusOriginal.Add(lfsAI.name, lfsAI.m_noiseRadius);
                             newNoiseRadius = noiseRadiusOriginal[lfsAI.name] * 0.01f * d.NoisePollutionRadiusMultiplier.Value;
-                            valueChangedMessage(lfsAI.name, "noise pollution radius", noiseRadiusOriginal[lfsAI.name], newNoiseRadius);
+                            Helper.ValueChangedMessage(lfsAI.name, "noise pollution radius", noiseRadiusOriginal[lfsAI.name], newNoiseRadius);
                             lfsAI.m_noiseRadius = newNoiseRadius;
 
                             continue;
@@ -76,7 +76,7 @@ namespace DifficultyTuningMod
                         {
                             if (!noiseRadiusOriginal.ContainsKey(wfAI.name)) noiseRadiusOriginal.Add(wfAI.name, wfAI.m_noiseRadius);
                             newNoiseRadius = noiseRadiusOriginal[wfAI.name] * 0.01f * d.NoisePollutionRadiusMultiplier.Value;
-                            valueChangedMessage(wfAI.name, "noise pollution radius", noiseRadiusOriginal[wfAI.name], newNoiseRadius);
+                            Helper.ValueChangedMessage(wfAI.name, "noise pollution radius", noiseRadiusOriginal[wfAI.name], newNoiseRadius);
                             wfAI.m_noiseRadius = newNoiseRadius;
 
                             continue;
@@ -91,11 +91,6 @@ namespace DifficultyTuningMod
             {
                 DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, ex.Message);
             }
-        }
-
-        private static void valueChangedMessage(string prefabName, string paramName, float oldValue, float newValue)
-        {
-            DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, String.Format("{0}: {1} changed from {2} to {3}", prefabName, paramName, oldValue, newValue));
         }
     }
 }
