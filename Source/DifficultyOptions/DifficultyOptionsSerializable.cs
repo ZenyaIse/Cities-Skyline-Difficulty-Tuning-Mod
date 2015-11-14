@@ -31,6 +31,7 @@ namespace DifficultyTuningMod.DifficultyOptions
         public int LoanMultiplier;
         public int GroundPollutionRadiusMultiplier;
         public int NoisePollutionRadiusMultiplier;
+        public int MaxSlope;
 
         public DifficultyOptionsSerializable()
         {
@@ -57,6 +58,7 @@ namespace DifficultyTuningMod.DifficultyOptions
             LoanMultiplier = 100;
             GroundPollutionRadiusMultiplier = 100;
             NoisePollutionRadiusMultiplier = 100;
+            MaxSlope = 25;
         }
 
     public void Save()

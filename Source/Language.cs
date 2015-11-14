@@ -431,6 +431,7 @@ namespace DifficultyTuningMod
                 texts["OFFICE"] = "Office";
 
                 texts["POPULATION_TARGET_MULTIPLIER"] = "Population required to unlock milestones";
+                texts["MAX_SLOPE"] = "Maximum slope for roads, railroads and metro";
             }
         }
     }

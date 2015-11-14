@@ -38,6 +38,7 @@ namespace DifficultyTuningMod
             Achievements.Update();
 
             PrefabsManager.UpdatePrefabs(false);
+            NetManager.UpdateSlopes(false);
         }
     }
 }

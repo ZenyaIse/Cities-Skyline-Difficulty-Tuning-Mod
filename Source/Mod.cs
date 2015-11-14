@@ -139,15 +139,15 @@ namespace DifficultyTuningMod
             addLabel(scrollablePanel, DTMLang.Text("OTHERS"), new Vector3(x3, y + dy1 * 4), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x4, y + dy1 * 4), w1, OnCustomValueChanged, d.MaintenanceCostMultiplier);
             y += dy1 * 4;
-            y += dy2;
 
             // Relocate cost
+            y += dy2;
             addLabel(scrollablePanel, truncateSemicolon(Locale.Get("TOOL_RELOCATE_COST")), new Vector3(x1, y), textScaleMedium);
             y += dy1;
             addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.RelocationCostMultiplier);
-            y += dy1;
 
             // Area purchase cost
+            y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("AREA_COST_MULTIPLIER"), new Vector3(x1, y), textScaleMedium);
             y += dy1;
             addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.AreaCostMultiplier);
@@ -164,20 +164,20 @@ namespace DifficultyTuningMod
             addSlider(scrollablePanel, new Vector3(x4, y), w1, OnCustomValueChanged, d.NoisePollutionRadiusMultiplier);
             y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("ONLY_POWER_WATER_GARBAGE"), new Vector3(x3, y), textScaleSmall);
-            y += dy2;
 
             // Economy
+            y += dy2;
             addLabel(scrollablePanel, Locale.Get("ECONOMY_TITLE"), new Vector3(x2, y), textScaleMedium);
-            y += dy1;
             // Initial money
+            y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("INITIAL_MONEY"), new Vector3(x1, y), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.InitialMoney);
-            y += dy1;
             // Reward amount
+            y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("REWARD"), new Vector3(x1, y), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.RewardMultiplier);
-            y += dy1;
             // Loan amount and length
+            y += dy1;
             addLabel(scrollablePanel, Locale.Get("ECONOMY_LOANS"), new Vector3(x1, y), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x2, y), w1, OnCustomValueChanged, d.LoanMultiplier);
 
@@ -192,12 +192,18 @@ namespace DifficultyTuningMod
             addSlider(scrollablePanel, new Vector3(x4, y), w1, OnCustomValueChanged, d.DemandMultiplier);
             y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("DEMAND_FORMULA"), new Vector3(x3, y), textScaleSmall);
-            y += dy2;
 
             // Population target multiplier
+            y += dy2;
             addLabel(scrollablePanel, DTMLang.Text("POPULATION_TARGET_MULTIPLIER"), new Vector3(x1, y), textScaleMedium);
             y += dy1;
             addSlider(scrollablePanel, new Vector3(x1, y), w2, OnCustomValueChanged, d.PopulationTargetMultiplier);
+
+            // Max slope
+            y -= dy1;
+            addLabel(scrollablePanel, DTMLang.Text("MAX_SLOPE"), new Vector3(x3, y), textScaleMedium);
+            y += dy1;
+            addSlider(scrollablePanel, new Vector3(x3, y), w2, OnCustomValueChanged, d.MaxSlope);
             y += dy2;
 
             // Target land value
@@ -208,9 +214,9 @@ namespace DifficultyTuningMod
             y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("COMMERCIAL"), new Vector3(x1, y), textScaleSmall);
             addSlider(scrollablePanel, new Vector3(x2, y), w2, OnCustomValueChanged, d.CommercialTargetLandValue);
-            y += dy2;
 
             // Target service score
+            y += dy2;
             addLabel(scrollablePanel, DTMLang.Text("TAGRET_SCORE"), new Vector3(x1, y), textScaleMedium);
             y += dy1;
             addLabel(scrollablePanel, DTMLang.Text("INDUSTRIAL"), new Vector3(x1, y), textScaleSmall);
@@ -232,6 +238,7 @@ namespace DifficultyTuningMod
             {
                 d.Save();
                 PrefabsManager.UpdatePrefabs(true);
+                NetManager.UpdateSlopes(true);
             }
         }
 

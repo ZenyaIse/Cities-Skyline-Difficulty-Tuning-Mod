@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Achievements.cs" />
+    <Compile Include="DifficultyOptions\DifficultyParameterContinuous.cs" />
     <Compile Include="DifficultyOptions\GroundPollutionRadiusMultiplier.cs" />
     <Compile Include="DifficultyOptions\LoanMultiplier.cs" />
     <Compile Include="DifficultyOptions\AreaCostMultiplier.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="DifficultyOptions\DemandOffset.cs" />
     <Compile Include="DifficultyOptions\Difficulties.cs" />
     <Compile Include="DifficultyOptions\DifficultyManager.cs" />
+    <Compile Include="DifficultyOptions\MaxSlope.cs" />
     <Compile Include="DifficultyOptions\NoisePollutionRadiusMultiplier.cs" />
     <Compile Include="DifficultyOptions\PopulationTargetMultiplier.cs" />
     <Compile Include="DifficultyOptions_old\Difficulties.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="Mod.cs" />
     <Compile Include="Economy.cs" />
     <Compile Include="Milestones.cs" />
+    <Compile Include="NetManager.cs" />
     <Compile Include="PrefabsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
