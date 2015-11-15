@@ -79,6 +79,7 @@ namespace DifficultyTuningMod
                 texts["OFFICE"] = "Bureau";
 
                 texts["POPULATION_TARGET_MULTIPLIER"] = "Population requis pour Déverrouiller Jalons";
+                texts["MAX_SLOPE"] = "Maximum slope for roads, railroads and metro";
             }
             else if (selectedLanguage == "nl")
             {
@@ -129,6 +130,7 @@ namespace DifficultyTuningMod
                 texts["OFFICE"] = "Kantoorgebouwen";
 
                 texts["POPULATION_TARGET_MULTIPLIER"] = "Population required to unlock milestones"; // To translate
+                texts["MAX_SLOPE"] = "Maximum slope for roads, railroads and metro";
             }
             else if (selectedLanguage == "de")
             {
@@ -181,6 +183,7 @@ namespace DifficultyTuningMod
                 texts["OFFICE"] = "Bürogebäude";
 
                 texts["POPULATION_TARGET_MULTIPLIER"] = "Population required to unlock milestones"; // To translate
+                texts["MAX_SLOPE"] = "Maximum slope for roads, railroads and metro";
             }
             else if (selectedLanguage == "it")
             {
@@ -231,6 +234,7 @@ namespace DifficultyTuningMod
                 texts["OFFICE"] = "Uffici";
 
                 texts["POPULATION_TARGET_MULTIPLIER"] = "Population required to unlock milestones"; // To translate
+                texts["MAX_SLOPE"] = "Maximum slope for roads, railroads and metro";
             }
             else if (selectedLanguage == "pt")
             {
@@ -281,6 +285,7 @@ namespace DifficultyTuningMod
                 texts["OFFICE"] = "Escritórios";
 
                 texts["POPULATION_TARGET_MULTIPLIER"] = "A população necessária para desbloquear marcos";
+                texts["MAX_SLOPE"] = "Maximum slope for roads, railroads and metro";
             }
             else if (selectedLanguage == "ru")
             {
@@ -330,7 +335,8 @@ namespace DifficultyTuningMod
                 texts["INDUSTRIAL"] = "Промышленных";
                 texts["OFFICE"] = "Офисных";
 
-                texts["POPULATION_TARGET_MULTIPLIER"] = "Количество населения, необходимое для достижения этапов";
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Числ. населения для достижения этапов";
+                texts["MAX_SLOPE"] = "Максимальный уклон авто-, жел. дорог и метро";
             }
             else if (selectedLanguage == "ja")
             {
@@ -381,6 +387,7 @@ namespace DifficultyTuningMod
                 texts["OFFICE"] = "オフィス";
 
                 texts["POPULATION_TARGET_MULTIPLIER"] = "マイルストーンの目標人口の係数";
+                texts["MAX_SLOPE"] = "道路、鉄道、地下鉄の線路の最大勾配";
             }
             else
             {
