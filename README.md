@@ -35,7 +35,7 @@ Strictly speaking, the construction cost is not critical. Increasing it even in 
 In general, at higher difficulties, roads are set to be the most expensive - you should plan your traffic ways and road types more thoroughly. On the other hand, upkeep for public transportation is not changed much. You do not have to restrain yourself from building a good public transport network.
 
 **Demand offset and multiplier.**  
-Calculated by the following formula: New_Demand = (Original_Demand + Offset) * Multiplier
+Calculated by the following formula: New_Demand=(Original_Demand+Offset)*Multiplier  
 In very general meaning, changing the offset will result in changing the city growth condition (grow or do not grow). Changing the multiplier will result in changing the city growth speed (fast grow or slow grow).
 
 **Ground and noise pollution radius**  
