@@ -21,16 +21,16 @@
                 case Difficulties.Normal:
                     return 25;
                 case Difficulties.Advanced:
-                    return 23;
+                    return 22;
                 case Difficulties.Hard:
-                    return 21;
-                case Difficulties.Expert:
                     return 19;
+                case Difficulties.Expert:
+                    return 16;
                 case Difficulties.Challenge:
-                    return 17;
+                    return 14;
                 case Difficulties.Impossible:
                 case Difficulties.HardAndFast:
-                    return 15;
+                    return 12;
                 case Difficulties.Custom:
                     return CustomValue;
                 case Difficulties.Free:
