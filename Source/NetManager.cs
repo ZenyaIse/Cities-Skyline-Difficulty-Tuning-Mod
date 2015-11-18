@@ -77,7 +77,7 @@ namespace DifficultyTuningMod
         {
             foreach (var plugin in PluginManager.instance.GetPluginsInfo())
             {
-                if (incompatibleMods.ContainsKey(plugin.publishedFileID.AsUInt64))
+                if (incompatibleMods.ContainsKey(plugin.publishedFileID.AsUInt64) && plugin.isEnabled)
                 {
                     return plugin.publishedFileID.AsUInt64;
                 }
