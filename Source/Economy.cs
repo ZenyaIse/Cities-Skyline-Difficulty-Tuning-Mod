@@ -79,13 +79,9 @@ namespace DifficultyTuningMod
 
         public override int OnGetRefundAmount(int constructionCost, int refundAmount, Service service, SubService subService, Level level)
         {
-            // TODO: make optional
-            if (service == Service.Road)
-            {
-                return constructionCost;
-            }
-
-            return refundAmount;
+            // Full refund for all recently built roads and facilities.
+            // Consider it as an "undo" feature.
+            return constructionCost;
         }
     }
 }
