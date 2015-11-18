@@ -7,11 +7,11 @@ namespace DifficultyTuningMod.DifficultyOptions
         protected override void InitValues()
         {
             CustomValue = 100;
-            customValues = new int[36];
+            customValues = new int[46];
             
             int i;
             for (i =  0; i <= 30; i++) customValues[i] = 5 * i;                // 0, 5, .. 150
-            for (i = 31; i <= 35; i++) customValues[i] = 150 + 10 * (i - 30);  // 160, 170, .. 200
+            for (i = 31; i <= 45; i++) customValues[i] = 150 + 10 * (i - 30);  // 160, 170, .. 300
         }
         
         public override int GetValue(Difficulties difficultyLevel)
