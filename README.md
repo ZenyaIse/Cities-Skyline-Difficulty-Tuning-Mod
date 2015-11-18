@@ -45,7 +45,7 @@ Bigger radius for high difficulties. Can be set from 0 (no pollution) to x5 in t
 Varies from 0 (free relocation) to 80% of the construction cost depending on difficulty. In vanilla you can relocate a building at 20% of its cost.
 
 **Maximum slope for roads, railroads, and metro**  
-Easy: 30%, normal: 25%, expert: 16%, impossible: 12%. Can be set from 5% (very gentle) to 100% (45 deg.) in the custom options. Please note that setting the slope limit below 15% will make road/track constructing tricky (especially near tunnel entrances). Using Fine Road Heights mod may help if you set the maximum slope less than 15%.
+Easy: 30%, normal: 25%, expert: 19%, impossible: 15%. Can be set from 5% (very gentle) to 100% (45 deg.) in the custom options. Please note that setting the slope limit below 15% will make road/track constructing tricky (especially tunnel entrances). Using Fine Road Heights mod may help.
 
 **Area cost multiplier**  
 Expanding is quite expensive at higher difficulties.
