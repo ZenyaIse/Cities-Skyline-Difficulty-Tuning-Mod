@@ -34,7 +34,7 @@ namespace DifficultyTuningMod.DifficultyOptions
                 case Difficulties.Challenge:
                     return 300;
                 case Difficulties.Impossible:
-                    return 400;
+                    return 500;
                 case Difficulties.Custom:
                     return CustomValue;
                 case Difficulties.Free:

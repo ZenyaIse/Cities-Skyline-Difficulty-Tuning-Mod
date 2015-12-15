@@ -17,12 +17,12 @@ namespace DifficultyTuningMod.DifficultyOptions
                 case Difficulties.Hard:
                     return 180;
                 case Difficulties.Expert:
-                    return 220;
+                    return 240;
                 case Difficulties.Challenge:
-                    return 260;
+                    return 300;
                 case Difficulties.Impossible:
                 case Difficulties.HardAndFast:
-                    return 300;
+                    return 400;
                 case Difficulties.Custom:
                     return CustomValue;
                 case Difficulties.Free:

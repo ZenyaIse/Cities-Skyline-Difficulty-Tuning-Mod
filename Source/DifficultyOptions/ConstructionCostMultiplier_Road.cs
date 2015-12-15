@@ -21,7 +21,7 @@
                 case Difficulties.Challenge:
                     return 500;
                 case Difficulties.Impossible:
-                    return 700;
+                    return 800;
                 case Difficulties.Custom:
                     return CustomValue;
                 case Difficulties.Free:
