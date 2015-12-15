@@ -121,8 +121,6 @@ namespace DifficultyTuningMod.DifficultyOptions
             {
                 // Force to save if the options file does not exist yet.
                 Modified = true;
-
-                tryLoadFromOldVersion();
             }
             else
             {
@@ -150,69 +148,6 @@ namespace DifficultyTuningMod.DifficultyOptions
                 this.GroundPollutionRadiusMultiplier.CustomValue = options.GroundPollutionRadiusMultiplier;
                 this.NoisePollutionRadiusMultiplier.CustomValue = options.NoisePollutionRadiusMultiplier;
                 this.MaxSlope.CustomValue = options.MaxSlope;
-            }
-        }
-        
-        private void tryLoadFromOldVersion()
-        {
-            DifficultyOptions_old.DifficultyOptions d_old = DifficultyOptions_old.DifficultyOptions.TryCreateFromFile();
-            
-            if (d_old != null)
-            {
-                // Convert difficulty level from the old version to new.
-                switch (d_old.Difficulty)
-                {
-                    case DifficultyOptions_old.Difficulties.Easy:
-                        Difficulty = Difficulties.Easy;
-                        break;
-                    case DifficultyOptions_old.Difficulties.Normal:
-                        Difficulty = Difficulties.Normal;
-                        break;
-                    case DifficultyOptions_old.Difficulties.Medium:
-                        Difficulty = Difficulties.Normal; // No Medium level any more.
-                        break;
-                    case DifficultyOptions_old.Difficulties.Hard:
-                        Difficulty = Difficulties.Advanced; // Hard and Advanced are replaced
-                        break;
-                    case DifficultyOptions_old.Difficulties.Advanced:
-                        Difficulty = Difficulties.Hard; // Hard and Advanced are replaced
-                        break;
-                    case DifficultyOptions_old.Difficulties.Expert:
-                        Difficulty = Difficulties.Expert;
-                        break;
-                    case DifficultyOptions_old.Difficulties.Challenge:
-                        Difficulty = Difficulties.Challenge;
-                        break;
-                    case DifficultyOptions_old.Difficulties.Impossible:
-                        Difficulty = Difficulties.Impossible;
-                        break;
-                    case DifficultyOptions_old.Difficulties.Custom:
-                        Difficulty = Difficulties.Custom;
-                        break;
-                }
-
-                // Convert custom values from the old version to new.
-                ConstructionCostMultiplier.CustomValue = (int)System.Math.Round(d_old.getConstructionCostMultiplier() * 100);
-                ConstructionCostMultiplier_Road.CustomValue = (int)System.Math.Round(d_old.getRoadConstructionCostMultiplier() * 100);
-                ConstructionCostMultiplier_Service.CustomValue = ConstructionCostMultiplier.CustomValue;
-                ConstructionCostMultiplier_Public.CustomValue = ConstructionCostMultiplier.CustomValue;
-                MaintenanceCostMultiplier.CustomValue = (int)System.Math.Round(d_old.getMaintenanceCostMultiplier() * 100);
-                MaintenanceCostMultiplier_Road.CustomValue = (int)System.Math.Round(d_old.getRoadMaintenanceCostMultiplier() * 100);
-                MaintenanceCostMultiplier_Service.CustomValue = MaintenanceCostMultiplier.CustomValue;
-                MaintenanceCostMultiplier_Public.CustomValue = MaintenanceCostMultiplier.CustomValue;
-                RelocationCostMultiplier.CustomValue = (int)System.Math.Round(d_old.getRelocationCostMultiplier() * 100);
-                AreaCostMultiplier.CustomValue = (int)System.Math.Round(d_old.getAreaCostMultiplier() * 10);
-                RewardMultiplier.CustomValue = (int)System.Math.Round(d_old.getRewardMultiplier() * 100);
-                DemandOffset.CustomValue = d_old.getDemandOffset();
-                DemandMultiplier.CustomValue = (int)System.Math.Round(d_old.getDemandMultiplier() * 100);
-                ResidentialTargetLandValue.nCustom = d_old.ResidentialTargetLandValueIndex;
-                CommercialTargetLandValue.nCustom = d_old.CommercialTargetLandValueIndex;
-                IndustrialTargetScore.nCustom = d_old.IndustrialTargetServiceIndex;
-                OfficeTargetScore.nCustom = d_old.OfficeTargetServiceIndex;
-               
-                Save();
-                
-                d_old.DeleteOptionsFile();
             }
         }
     }
