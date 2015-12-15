@@ -91,8 +91,9 @@ namespace DifficultyTuningMod
             //DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, ddDifficulty.parent.parent.ToString());
 
             UIScrollablePanel scrollablePanel = (UIScrollablePanel)ddDifficulty.parent.parent;
-            scrollablePanel.autoLayout = false;
+            if (scrollablePanel == null) return;
 
+            scrollablePanel.autoLayout = false;
             scrollablePanel.eventVisibilityChanged += ScrollablePanel_eventVisibilityChanged;
 
             float x1 = 15;
