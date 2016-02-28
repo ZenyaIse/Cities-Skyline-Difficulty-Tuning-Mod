@@ -113,9 +113,9 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "Startkapitaal";
                 texts["REWARD"] = "Beloning";
 
-                texts["POLLUTION_RADIUS"] = "Pollution radius"; // To translate
-                texts["GROUND_POLLUTION"] = "Ground pollution"; // To translate
-                texts["ONLY_POWER_WATER_GARBAGE"] = "*Power, water, and garbage facilities only"; // To translate
+                texts["POLLUTION_RADIUS"] = "Vervuilingsstraal";
+                texts["GROUND_POLLUTION"] = "Grondvervuiling";
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*Enkel elektriciteits-, water- en afvalfaciliteiten";
 
                 texts["DEMAND"] = "Vraag";
                 texts["DEMAND_FORMULA"] = "*Formule: (Vraag + Impuls) * vermenigvuldigingsfactor";
@@ -129,8 +129,8 @@ namespace DifficultyTuningMod
                 texts["INDUSTRIAL"] = "Industriegebouwen";
                 texts["OFFICE"] = "Kantoorgebouwen";
 
-                texts["POPULATION_TARGET_MULTIPLIER"] = "Population required to unlock milestones"; // To translate
-                texts["MAX_SLOPE"] = "Maximum slope for roads, railroads and metro";
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Vereiste bevolking om mijlpalen te ontgrendelen";
+                texts["MAX_SLOPE"] = "Maximale helling voor wegen, spoor en metro";
             }
             else if (selectedLanguage == "de")
             {
@@ -150,7 +150,7 @@ namespace DifficultyTuningMod
                 texts["Demand111"] = "Speziell: Frage 100%";
                 texts["PublicTransport"] = "Speziell: Kostenloser öffentlichen Verkehrsmittel";
                 texts["LowCity"] = "Speziell: Flachbaustadt";
-                texts["HardAndFast"] = "Special: Schwer und schnell";
+                texts["HardAndFast"] = "Speziell: Schwer und schnell";
 
                 texts["DIFFICULTY_LEVEL"] = "Schwierigkeitsgrad";
                 texts["CUSTOM_OPTIONS"] = "Angepaßte Einstellungen";
@@ -166,9 +166,9 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "Anfangskapital";
                 texts["REWARD"] = "Belohnung";
 
-                texts["POLLUTION_RADIUS"] = "Pollution radius"; // To translate
-                texts["GROUND_POLLUTION"] = "Ground pollution"; // To translate
-                texts["ONLY_POWER_WATER_GARBAGE"] = "*Power, water, and garbage facilities only"; // To translate
+                texts["POLLUTION_RADIUS"] = "Verschmutzungsradius";
+                texts["GROUND_POLLUTION"] = "Bodenverschmutzung";
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*Nur Strom-, Wasser- und Abfallanlagen";
 
                 texts["DEMAND"] = "Frage";
                 texts["DEMAND_FORMULA"] = "*Formel: (Frage + Impuls) * Multiplikator";
@@ -182,8 +182,8 @@ namespace DifficultyTuningMod
                 texts["INDUSTRIAL"] = "Industriegebäude";
                 texts["OFFICE"] = "Bürogebäude";
 
-                texts["POPULATION_TARGET_MULTIPLIER"] = "Population required to unlock milestones"; // To translate
-                texts["MAX_SLOPE"] = "Maximum slope for roads, railroads and metro";
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Erforderliche Bevölkerung um Meilensteine zu entsperren";
+                texts["MAX_SLOPE"] = "Maximale Gefälle für Straßen, Eisenbahnen und U-Bahnen";
             }
             else if (selectedLanguage == "it")
             {
@@ -217,9 +217,9 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "Capitale iniziale";
                 texts["REWARD"] = "Ricompensa";
 
-                texts["POLLUTION_RADIUS"] = "Pollution radius"; // To translate
-                texts["GROUND_POLLUTION"] = "Ground pollution"; // To translate
-                texts["ONLY_POWER_WATER_GARBAGE"] = "*Power, water, and garbage facilities only"; // To translate
+                texts["POLLUTION_RADIUS"] = "Raggio di inquinamento";
+                texts["GROUND_POLLUTION"] = "Inquinamento del suolo";
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*Solo strutture elettricità, acqua e spazzatura";
 
                 texts["DEMAND"] = "Domanda";
                 texts["DEMAND_FORMULA"] = "*Formula: (Domanda + Impulso) * Moltiplicatore";
@@ -229,12 +229,12 @@ namespace DifficultyTuningMod
                 texts["TAGRET_LANDVALUE"] = "Obiettivo valore del terreno per edifici a salire livello (Livello 2, 3, 4, 5)"; // To check
                 texts["RESIDENTIAL"] = "Residenziale";
                 texts["COMMERCIAL"] = "Commerciale";
-                texts["TAGRET_SCORE"] = "Target service score for buildings to level up (Livello 2, 3)"; // To translate
+                texts["TAGRET_SCORE"] = "Obiettivo punteggio di servizio per edifici a salire livello (Livello 2, 3)";
                 texts["INDUSTRIAL"] = "Industriale";
                 texts["OFFICE"] = "Uffici";
 
-                texts["POPULATION_TARGET_MULTIPLIER"] = "Population required to unlock milestones"; // To translate
-                texts["MAX_SLOPE"] = "Maximum slope for roads, railroads and metro";
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Popolazione necessaria per sbloccare pietre miliari";
+                texts["MAX_SLOPE"] = "Pendenza massima per strade, ferrovie e metropolitane";
             }
             else if (selectedLanguage == "pt")
             {
