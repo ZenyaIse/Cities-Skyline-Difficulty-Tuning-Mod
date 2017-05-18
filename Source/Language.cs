@@ -389,7 +389,7 @@ namespace DifficultyTuningMod
                 texts["POPULATION_TARGET_MULTIPLIER"] = "マイルストーンの目標人口の係数";
                 texts["MAX_SLOPE"] = "道路、鉄道、地下鉄の線路の最大勾配";
             }
-            else if (selectedLanguage == "kr")
+            else if (selectedLanguage == "ko")
             {
                 texts["MOD_NAME"] = "난이도 조절 모드";
                 texts["MOD_DESCRIPTION"] = "다양한 난이도를 제공합니다.";
