@@ -90,6 +90,7 @@
     <Compile Include="Language.cs" />
     <Compile Include="LevelUp.cs" />
     <Compile Include="LoadingExtension.cs" />
+    <Compile Include="Loans.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="Economy.cs" />
     <Compile Include="Milestones.cs" />
