@@ -389,6 +389,57 @@ namespace DifficultyTuningMod
                 texts["POPULATION_TARGET_MULTIPLIER"] = "マイルストーンの目標人口の係数";
                 texts["MAX_SLOPE"] = "道路、鉄道、地下鉄の線路の最大勾配";
             }
+            else if (selectedLanguage == "ko")
+            {
+                texts["MOD_NAME"] = "난이도 조절 모드";
+                texts["MOD_DESCRIPTION"] = "다양한 난이도를 제공합니다.";
+
+                texts["Easy"] = "1. 쉬움";
+                texts["Normal"] = "2. 보통";
+                texts["Advanced"] = "3. 권장";
+                texts["Hard"] = "4. 어려움";
+                texts["Expert"] = "5. 전문가";
+                texts["Challenge"] = "6. 도전";
+                texts["Impossible"] = "7. 불가능";
+                texts["Custom"] = "-- 커스텀 --";
+                texts["Free"] = "특별 난이도 : 모두 무료";
+                texts["FiveHundred"] = "특별 난이도 : 시작 금액 ₡500,000";
+                texts["Demand111"] = "특별 난이도 : 수요 100%";
+                texts["PublicTransport"] = "특별 난이도: 대중교통 유지비용 무료;
+                texts["LowCity"] = "특별 난이도 : 낮은건물 도시";
+                texts["HardAndFast"] = "특별 난이도 : 어렵고 빠름";
+
+                texts["DIFFICULTY_LEVEL"] = "난이도 선택";
+                texts["CUSTOM_OPTIONS"] = "커스텀 옵션";
+
+                texts["SERVICE_BUILDINGS"] = "서비스 건물";
+                texts["PUBLIC_TRANSPORT"] = "공공 건물;
+                texts["ROADS"] = "도로";
+                texts["OTHERS"] = "기타";
+
+                texts["AREA_COST_MULTIPLIER"] = "맵 확상 비용";
+                texts["INITIAL_MONEY"] = "시작 금액";
+                texts["REWARD"] = "단계 보상 금액";
+
+                texts["POLLUTION_RADIUS"] = "오염 수치";
+                texts["GROUND_POLLUTION"] = "토양 오염";
+                texts["ONLY_POWER_WATER_GARBAGE"] = "※ 전기, 물, 쓰레기 시설만 해당";
+
+                texts["DEMAND"] = "수요";
+                texts["DEMAND_FORMULA"] = "공식 : (수요 + 성장여부) * 성장속도";
+                texts["DEMAND_OFFSET"] = "성장 여부";
+                texts["DEMAND_MULTIPLIER"] = "성장 속도";
+
+                texts["TAGRET_LANDVALUE"] = "건물 성장에 필요한 값(레벨 2, 3, 4)";
+                texts["RESIDENTIAL"] = "주거";
+                texts["COMMERCIAL"] = "상업";
+                texts["TAGRET_SCORE"] = "산업 성장에 필요한 값(레벨 2, 3)";
+                texts["INDUSTRIAL"] = "산업";
+                texts["OFFICE"] = "오피스";
+
+                texts["POPULATION_TARGET_MULTIPLIER"] = "단계 보상 인구 수 비율";
+                texts["MAX_SLOPE"] = "도로 및 철로 최대 경사도";
+            }
             else
             {
                 texts["MOD_NAME"] = "Difficulty Tuning Mod";
