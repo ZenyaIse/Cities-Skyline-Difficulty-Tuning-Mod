@@ -405,7 +405,7 @@ namespace DifficultyTuningMod
                 texts["Free"] = "특별 난이도 : 모두 무료";
                 texts["FiveHundred"] = "특별 난이도 : 시작 금액 ₡500,000";
                 texts["Demand111"] = "특별 난이도 : 수요 100%";
-                texts["PublicTransport"] = "특별 난이도: 대중교통 유지비용 무료;
+                texts["PublicTransport"] = "특별 난이도: 대중교통 유지비용 무료";
                 texts["LowCity"] = "특별 난이도 : 낮은건물 도시";
                 texts["HardAndFast"] = "특별 난이도 : 어렵고 빠름";
 
@@ -413,7 +413,7 @@ namespace DifficultyTuningMod
                 texts["CUSTOM_OPTIONS"] = "커스텀 옵션";
 
                 texts["SERVICE_BUILDINGS"] = "서비스 건물";
-                texts["PUBLIC_TRANSPORT"] = "공공 건물;
+                texts["PUBLIC_TRANSPORT"] = "공공 건물";
                 texts["ROADS"] = "도로";
                 texts["OTHERS"] = "기타";
 
@@ -439,6 +439,135 @@ namespace DifficultyTuningMod
 
                 texts["POPULATION_TARGET_MULTIPLIER"] = "단계 보상 인구 수 비율";
                 texts["MAX_SLOPE"] = "도로 및 철로 최대 경사도";
+            }
+            else if (selectedLanguage == "zh")
+            {
+                texts["MOD_NAME"] = "经济难度调节";
+                texts["MOD_DESCRIPTION"] = "设置不同难度的游戏内经济";
+                texts["Easy"] = "1.简单模式";
+                texts["Normal"] = "2. 正常模式";
+                texts["Advanced"] = "3.高级模式";
+                texts["Hard"] = "4. 困难模式";
+                texts["Expert"] = "5. 专家模式";
+                texts["Challenge"] = "6. 挑战模式";
+                texts["Impossible"] = "7. 无敌模式";
+                texts["Custom"] = "-- 老司机翻译 自定义选择 --";
+                texts["Free"] = "自定义: 全免费";
+                texts["FiveHundred"] = "自定义: 500,000 初始资金";
+                texts["Demand111"] = "自定义: 100%需求";
+                texts["PublicTransport"] = "自定义: 公共交通免费";
+                texts["LowCity"] = "自定义: 地势低洼的城市";
+                texts["HardAndFast"] = "自定义: 来不及操作模式";
+                texts["DIFFICULTY_LEVEL"] = "难度";
+                texts["CUSTOM_OPTIONS"] = "自定义选项";
+                texts["SERVICE_BUILDINGS"] = "服务类建筑";
+                texts["PUBLIC_TRANSPORT"] = "公共交通";
+                texts["ROADS"] = "道路";
+                texts["OTHERS"] = "其他乱七八糟的东西";
+                texts["AREA_COST_MULTIPLIER"] = "区域花费";
+                texts["INITIAL_MONEY"] = "初始资金";
+                texts["REWARD"] = "奖励数量";
+                texts["POLLUTION_RADIUS"] = "污染半径";
+                texts["GROUND_POLLUTION"] = "土地污染";
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*仅限供电供水和垃圾处理设施";
+                texts["DEMAND"] = "需求";
+                texts["DEMAND_FORMULA"] = "*公式: (需求 +改动值 ) * 改动倍数";
+                texts["DEMAND_OFFSET"] = "需求改动值";
+                texts["DEMAND_MULTIPLIER"] = "需求改动";
+                texts["TAGRET_LANDVALUE"] = "建筑升级所需的地价 (等级 2, 3, 4, 5)";
+                texts["RESIDENTIAL"] = "居民区";
+                texts["COMMERCIAL"] = "商业区";
+                texts["TAGRET_SCORE"] = "建筑升级所需的服务分数(等级 2, 3)";
+                texts["INDUSTRIAL"] = "工业";
+                texts["OFFICE"] = "办公";
+                texts["POPULATION_TARGET_MULTIPLIER"] = "解锁里程碑所需的人口";
+                texts["MAX_SLOPE"] = "道路铁路和地铁允许的最大倾斜程度";
+            }
+            else if (selectedLanguage == "zh-cn")
+            {
+                texts["MOD_NAME"] = "经济难度调节";
+                texts["MOD_DESCRIPTION"] = "设置不同难度的游戏内经济";
+                texts["Easy"] = "1.简单模式";
+                texts["Normal"] = "2. 正常模式";
+                texts["Advanced"] = "3.高级模式";
+                texts["Hard"] = "4. 困难模式";
+                texts["Expert"] = "5. 专家模式";
+                texts["Challenge"] = "6. 挑战模式";
+                texts["Impossible"] = "7. 无敌模式";
+                texts["Custom"] = "-- 老司机翻译 自定义选择 --";
+                texts["Free"] = "自定义: 全免费";
+                texts["FiveHundred"] = "自定义: 500,000 初始资金";
+                texts["Demand111"] = "自定义: 100%需求";
+                texts["PublicTransport"] = "自定义: 公共交通免费";
+                texts["LowCity"] = "特殊: 地势低洼的城市";
+                texts["HardAndFast"] = "特殊:来不及操作模式";
+                texts["DIFFICULTY_LEVEL"] = "难度";
+                texts["CUSTOM_OPTIONS"] = "自定义选项";
+                texts["SERVICE_BUILDINGS"] = "服务类建筑";
+                texts["PUBLIC_TRANSPORT"] = "公共交通";
+                texts["ROADS"] = "道路";
+                texts["OTHERS"] = "其他乱七八糟的东西";
+                texts["AREA_COST_MULTIPLIER"] = "区域花费";
+                texts["INITIAL_MONEY"] = "初始资金";
+                texts["REWARD"] = "奖励数量";
+                texts["POLLUTION_RADIUS"] = "污染半径";
+                texts["GROUND_POLLUTION"] = "土地污染";
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*仅限供电供水和垃圾处理设施";
+                texts["DEMAND"] = "需求";
+                texts["DEMAND_FORMULA"] = "*公式: (需求 +改动值 ) * 改动倍数";
+                texts["DEMAND_OFFSET"] = "需求改动值";
+                texts["DEMAND_MULTIPLIER"] = "需求改动";
+                texts["TAGRET_LANDVALUE"] = "建筑升级所需的地价 (等级 2, 3, 4, 5)";
+                texts["RESIDENTIAL"] = "居民区";
+                texts["COMMERCIAL"] = "商业区";
+                texts["TAGRET_SCORE"] = "建筑升级所需的服务分数(等级 2, 3)";
+                texts["INDUSTRIAL"] = "工业";
+                texts["OFFICE"] = "办公";
+                texts["POPULATION_TARGET_MULTIPLIER"] = "解锁里程碑所需的人口";
+                texts["MAX_SLOPE"] = "道路铁路和地铁允许的最大倾斜程度";
+            }
+            else if (selectedLanguage == "zh-tw")
+            {
+                texts["MOD_NAME"] = "經濟難度調節";
+                texts["MOD_DESCRIPTION"] = "設置不同難度的遊戲內經濟";
+                texts["Easy"] = "1.簡單模式";
+                texts["Normal"] = "2.正常模式";
+                texts["Advanced"] = "3.高級模式";
+                texts["Hard"] = "4.困難模式";
+                texts["Expert"] = "5.專家模式";
+                texts["Challenge"] = "6.挑戰模式";
+                texts["Impossible"] = "7.無敵模式";
+                texts["Custom"] = "-- 老司機翻譯 自定義選擇 --";
+                texts["Free"] = "自定義: 全免費";
+                texts["FiveHundred"] = "自定義: 500,000 初始資金";
+                texts["Demand111"] = "自定義: 100%需求";
+                texts["PublicTransport"] = "自定義: 公共交通免費";
+                texts["LowCity"] = "特殊: 地勢低窪的城市";
+                texts["HardAndFast"] = "特殊:來不及操作模式";
+                texts["DIFFICULTY_LEVEL"] = "難度";
+                texts["CUSTOM_OPTIONS"] = "自定義選項";
+                texts["SERVICE_BUILDINGS"] = "服務類建築";
+                texts["PUBLIC_TRANSPORT"] = "公共交通";
+                texts["ROADS"] = "道路";
+                texts["OTHERS"] = "其他亂七八糟的東西";
+                texts["AREA_COST_MULTIPLIER"] = "區域花費";
+                texts["INITIAL_MONEY"] = "初始資金";
+                texts["REWARD"] = "獎勵數量";
+                texts["POLLUTION_RADIUS"] = "污染半徑";
+                texts["GROUND_POLLUTION"] = "土地污染";
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*僅限供電供水和垃圾處理設施";
+                texts["DEMAND"] = "需求";
+                texts["DEMAND_FORMULA"] = "*公式: (需求 +改動值 ) * 改動倍數";
+                texts["DEMAND_OFFSET"] = "需求改動值";
+                texts["DEMAND_MULTIPLIER"] = "需求改動";
+                texts["TAGRET_LANDVALUE"] = "建築升級所需的地價 (等級 2, 3, 4, 5)";
+                texts["RESIDENTIAL"] = "居民區";
+                texts["COMMERCIAL"] = "商業區";
+                texts["TAGRET_SCORE"] = "建築升級所需的服務分數(等級 2, 3)";
+                texts["INDUSTRIAL"] = "工業";
+                texts["OFFICE"] = "辦公";
+                texts["POPULATION_TARGET_MULTIPLIER"] = "解鎖里程碑所需的人口";
+                texts["MAX_SLOPE"] = "道路鐵路和地鐵允許的最大傾斜程度";
             }
             else
             {
