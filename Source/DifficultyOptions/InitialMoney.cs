@@ -29,9 +29,9 @@ namespace DifficultyTuningMod.DifficultyOptions
                 case Difficulties.Expert:
                     return 70;
                 case Difficulties.Challenge:
-                    return 80;
+                    return 100;
                 case Difficulties.Impossible:
-                    return 120;
+                    return 150;
                 case Difficulties.Custom:
                     return CustomValue;
                 case Difficulties.Free:

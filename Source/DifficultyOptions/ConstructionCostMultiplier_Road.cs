@@ -19,9 +19,9 @@
                 case Difficulties.Expert:
                     return 300;
                 case Difficulties.Challenge:
-                    return 500;
+                    return 400;
                 case Difficulties.Impossible:
-                    return 800;
+                    return 600;
                 case Difficulties.Custom:
                     return CustomValue;
                 case Difficulties.Free:

@@ -11,22 +11,8 @@ namespace DifficultyTuningMod
         private static int MaxSlope_old = -1;
         private static Dictionary<string, float> maxSlopeOriginal = new Dictionary<string, float>();
 
-        private static Dictionary<ulong, string> incompatibleMods = new Dictionary<ulong, string>()
-        {
-            { 413311572u, "Stricter Slope Limits" },
-            { 440635326u, "Configurable Slope Limiter" },
-            { 512194601u, "Slope Limits (WtM)" }
-        };
-
         public static void UpdateSlopes(bool maybeDuringGame)
         {
-            ulong incompatibleModID = getOtherActiveSlopeModID();
-            if (incompatibleModID > 0)
-            {
-                DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, "[" + incompatibleMods[incompatibleModID] + "] mod detected. >>>>> \"Maximum slope\" option is disabled.");
-                return;
-            }
-
             DifficultyManager d = Singleton<DifficultyManager>.instance;
 
             if (maybeDuringGame)
@@ -71,19 +57,6 @@ namespace DifficultyTuningMod
             {
                 DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, ex.Message);
             }
-        }
-
-        private static ulong getOtherActiveSlopeModID()
-        {
-            foreach (var plugin in PluginManager.instance.GetPluginsInfo())
-            {
-                if (incompatibleMods.ContainsKey(plugin.publishedFileID.AsUInt64) && plugin.isEnabled)
-                {
-                    return plugin.publishedFileID.AsUInt64;
-                }
-            }
-
-            return 0;
         }
     }
 }

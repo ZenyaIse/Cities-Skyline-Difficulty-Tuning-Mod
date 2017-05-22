@@ -84,7 +84,6 @@
     <Compile Include="DifficultyOptions\RelocationCostMultiplier.cs" />
     <Compile Include="DifficultyOptions\ResidentialTargetLandValue.cs" />
     <Compile Include="DifficultyOptions\RewardMultiplier.cs" />
-    <Compile Include="DifficultyOptions_old.cs" />
     <Compile Include="Areas.cs" />
     <Compile Include="Demand.cs" />
     <Compile Include="Helper.cs" />

@@ -8,7 +8,7 @@ namespace DifficultyTuningMod.DifficultyOptions
 
         protected override void InitValues()
         {
-            nMin = -8;
+            nMin = -11;
             nMax = 10;
         }
 
@@ -17,9 +17,9 @@ namespace DifficultyTuningMod.DifficultyOptions
             switch (level)
             {
                 case Level.Level2:
-                    return 40 + 5 * n;
+                    return 41 + 4 * n;
                 case Level.Level3:
-                    return 80 + 10 * n;
+                    return 82 + 8 * n;
             }
 
             return InvalidValue;

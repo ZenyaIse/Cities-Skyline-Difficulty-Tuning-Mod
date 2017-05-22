@@ -1,5 +1,4 @@
 using ICities;
-using ColossalFramework;
 
 namespace DifficultyTuningMod.DifficultyOptions
 {
@@ -9,7 +8,7 @@ namespace DifficultyTuningMod.DifficultyOptions
 
         protected override void InitValues()
         {
-            nMin = -5;
+            nMin = -6;
             nMax = 10;
         }
 
@@ -18,13 +17,13 @@ namespace DifficultyTuningMod.DifficultyOptions
             switch (level)
             {
                 case Level.Level2:
-                    return 2 + 4 * n;
+                    return 3 + 3 * n;
                 case Level.Level3:
-                    return 14 + 7 * n;
+                    return 16 + 5 * n;
                 case Level.Level4:
-                    return 31 + 10 * n;
+                    return 34 + 7 * n;
                 case Level.Level5:
-                    return 49 + 12 * n;
+                    return 52 + 9 * n;
             }
 
             return InvalidValue;
