@@ -1,3 +1,7 @@
+[b]Last update from 2017/5/24[/b]
+
+Compatible with all DLCs.
+
 [h1]Difficulty Levels[/h1]
 - [b]Easy.[/b] All costs are halved. Upkeep decreased by 25%. ₡200,000 at start. Higher demand. Easier level up. Less polution. Steeper roads allowed.
 - [b]Normal.[/b] Almost the same as vanilla.
@@ -75,16 +79,18 @@ High requirements at higher difficulties. Education requirements are not changed
 
 [h1]Translations[/h1]
 - English
-- Nederlands
-- Deutsch
-- Italiano
-- Português
-- Français
+- Nederlands (by daniel.mantione)
+- Deutsch (by daniel.dmantione)
+- Italiano (by daniel.dmantione)
+- Português (by roberto tomás ?)
+- Français (by NicoRobin)
 - 日本語
 - Русский
+- 한국어 (by ToothlessFLY-LShst)
+- 中文 (by Lost丶青柠)
 
 [h1]Mod compatibility[/h1]
 - Should be compatible with most mods. Please report about any compatibility issues.
 - Using together with a mod that changes costs, level up requirements, or demand, may cause game balance issues.
-- Made special efforts to be compatible with Improved Mods Panel.
-- In order to be compatible with mods that change road slope limits, the Maximum slope option is be disabled in case one of the following mods is active: "Stricter Slope Limits", "Configurable Slope Limiter", "Slope Limits (WtM)".
+
+[url=https://github.com/ZenyaIse/Cities-Skyline-Difficulty-Tuning-Mod]Source code[/url]

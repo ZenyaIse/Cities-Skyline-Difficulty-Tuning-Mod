@@ -77,16 +77,16 @@ High requirements at higher difficulties. Education requirements are not changed
 
 ## Translations
 - English
-- Nederlands
-- Deutsch
-- Italiano
-- Português
-- Français
+- Nederlands (by daniel.mantione)
+- Deutsch (by daniel.dmantione)
+- Italiano (by daniel.dmantione)
+- Português (by roberto tomás ?)
+- Français (by NicoRobin)
 - 日本語
 - Русский
+- 한국어 (by ToothlessFLY-LShst)
+- 中文 (by Lost丶青柠)
 
 ## Mod compatibility
 - Should be compatible with most mods. Please report about any compatibility issues.
 - Using together with a mod that changes costs, level up requirements, or demand, may cause game balance issues.
-- Made special efforts to be compatible with Improved Mods Panel.
-- In order to be compatible with mods that change road slope limits, the Maximum slope option is be disabled in case one of the following mods is active: "Stricter Slope Limits", "Configurable Slope Limiter", "Slope Limits (WtM)".
