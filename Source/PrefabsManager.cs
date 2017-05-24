@@ -92,5 +92,59 @@ namespace DifficultyTuningMod
                 DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, ex.Message);
             }
         }
+
+        public static void ResetPrefabs()
+        {
+            foreach (BuildingCollection bc in UnityEngine.Object.FindObjectsOfType<BuildingCollection>())
+            {
+                foreach (BuildingInfo bi in bc.m_prefabs)
+                {
+                    BuildingAI bAI = bi.m_buildingAI;
+
+                    PowerPlantAI ppAI = bAI as PowerPlantAI;
+                    if (ppAI != null)
+                    {
+                        if (groundPollutionRadiusOriginal.ContainsKey(ppAI.name))
+                        {
+                            ppAI.m_pollutionRadius = groundPollutionRadiusOriginal[ppAI.name];
+                        }
+
+                        if (noiseRadiusOriginal.ContainsKey(ppAI.name))
+                        {
+                            ppAI.m_noiseRadius = noiseRadiusOriginal[ppAI.name];
+                        }
+
+                        continue;
+                    }
+
+                    LandfillSiteAI lfsAI = bAI as LandfillSiteAI;
+                    if (lfsAI != null)
+                    {
+                        if (groundPollutionRadiusOriginal.ContainsKey(lfsAI.name))
+                        {
+                            lfsAI.m_pollutionRadius = groundPollutionRadiusOriginal[lfsAI.name];
+                        }
+
+                        if (noiseRadiusOriginal.ContainsKey(lfsAI.name))
+                        {
+                            lfsAI.m_noiseRadius = noiseRadiusOriginal[lfsAI.name];
+                        }
+
+                        continue;
+                    }
+
+                    WaterFacilityAI wfAI = bAI as WaterFacilityAI;
+                    if (wfAI != null)
+                    {
+                        if (noiseRadiusOriginal.ContainsKey(wfAI.name))
+                        {
+                            wfAI.m_noiseRadius = noiseRadiusOriginal[wfAI.name];
+                        }
+
+                        continue;
+                    }
+                }
+            }
+        }
     }
 }

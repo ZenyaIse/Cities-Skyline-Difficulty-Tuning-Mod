@@ -31,6 +31,8 @@ namespace DifficultyTuningMod
         public override void OnLevelUnloading()
         {
             Loans.ResetLoans();
+            NetManager.ResetSlopes();
+            PrefabsManager.ResetPrefabs();
         }
     }
 }

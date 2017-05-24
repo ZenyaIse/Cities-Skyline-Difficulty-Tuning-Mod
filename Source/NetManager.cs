@@ -58,5 +58,21 @@ namespace DifficultyTuningMod
                 DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, ex.Message);
             }
         }
+
+        public static void ResetSlopes()
+        {
+            DifficultyManager d = Singleton<DifficultyManager>.instance;
+
+            foreach (NetCollection nc in UnityEngine.Object.FindObjectsOfType<NetCollection>())
+            {
+                foreach (NetInfo ni in nc.m_prefabs)
+                {
+                    if (maxSlopeOriginal.ContainsKey(ni.name))
+                    {
+                        ni.m_maxSlope = maxSlopeOriginal[ni.name];
+                    }
+                }
+            }
+        }
     }
 }
