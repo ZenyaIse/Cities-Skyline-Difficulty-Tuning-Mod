@@ -338,6 +338,57 @@ namespace DifficultyTuningMod
                 texts["POPULATION_TARGET_MULTIPLIER"] = "Числ. населения для достижения этапов";
                 texts["MAX_SLOPE"] = "Максимальный уклон авто-, жел. дорог и метро";
             }
+			else if (selectedLanguage == "bg")
+            {
+                texts["MOD_NAME"] = "Настройка на трудността";
+                texts["MOD_DESCRIPTION"] = "Набор от различни нива на трудност.";
+
+                texts["Easy"] = "1. Лесно";
+                texts["Normal"] = "2. Нормално";
+                texts["Advanced"] = "3. Напреднало";
+                texts["Hard"] = "4. Трудно";
+                texts["Expert"] = "5. Експертно";
+                texts["Challenge"] = "6. Предизвикателство";
+                texts["Impossible"] = "7. Невъзможно";
+                texts["Custom"] = "-- По избор --";
+                texts["Free"] = "Специално: безплатно строене";
+                texts["FiveHundred"] = "Специално: започване с 500 000 лева";
+                texts["Demand111"] = "Специално: търсене на 100%";
+                texts["PublicTransport"] = "Специално: безплатен градски превоз";
+                texts["LowCity"] = "Специално: нисък град";
+                texts["HardAndFast"] = "Специално: бързо и трудно";
+
+                texts["DIFFICULTY_LEVEL"] = "Ниво на трудност";
+                texts["CUSTOM_OPTIONS"] = "Настройки по избор";
+
+                texts["SERVICE_BUILDINGS"] = "Службени сгради";
+                texts["PUBLIC_TRANSPORT"] = "Градски превоз";
+                texts["ROADS"] = "Пътища";
+                texts["OTHERS"] = "Други";
+
+                texts["AREA_COST_MULTIPLIER"] = "Коефициент на цената на райони";
+                texts["INITIAL_MONEY"] = "Първоначален капитал";
+                texts["REWARD"] = "Награда";
+
+                texts["POLLUTION_RADIUS"] = "Радиус на замърсяване";
+                texts["GROUND_POLLUTION"] = "Замърсяване на почвата";
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*Само за съоръжения за вода, ток и отпадъци";
+
+                texts["DEMAND"] = "Търсене";
+                texts["DEMAND_FORMULA"] = "*Формула: (търсене + изместване) * коефициент";
+                texts["DEMAND_OFFSET"] = "Изместване на търсенето";
+                texts["DEMAND_MULTIPLIER"] = "Коефициент на търсене";
+
+                texts["TAGRET_LANDVALUE"] = "Нужна стойност на земята за вдигане на нивото (Нива 2, 3, 4, 5)";
+                texts["RESIDENTIAL"] = "Жилищни";
+                texts["COMMERCIAL"] = "Търговски";
+                texts["TAGRET_SCORE"] = "Нужни служби за вдигане на нивото (Нива 2, 3)";
+                texts["INDUSTRIAL"] = "Промишлени";
+                texts["OFFICE"] = "Офисни";
+
+                texts["POPULATION_TARGET_MULTIPLIER"] = "Необходимо население за отключване на етапи";
+                texts["MAX_SLOPE"] = "Максимален наклон за пътища, железопътища и метропътища";
+            }
             else if (selectedLanguage == "ja")
             {
                 texts["MOD_NAME"] = "難易度設定モード";
