@@ -88,6 +88,7 @@ High requirements at higher difficulties. Education requirements are not changed
 - Русский
 - 한국어 (by ToothlessFLY-LShst)
 - 中文 (by Lost丶青柠)
+- български (by AdmiralAnimE)
 
 [h1]Mod compatibility[/h1]
 - Should be compatible with most mods. Please report about any compatibility issues.
