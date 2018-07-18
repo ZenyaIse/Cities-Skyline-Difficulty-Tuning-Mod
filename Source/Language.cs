@@ -238,16 +238,16 @@ namespace DifficultyTuningMod
             }
             else if (selectedLanguage == "pt")
             {
-                texts["MOD_NAME"] = "Mod Ajuste de Dificuldade";
-                texts["MOD_DESCRIPTION"] = "A variedade de níveis de dificuldade.";
+                texts["MOD_NAME"] = "Ajuste de Dificuldade";
+                texts["MOD_DESCRIPTION"] = "Variedade de níveis de dificuldade.";
 
                 texts["Easy"] = "1. Fácil";
                 texts["Normal"] = "2. Normal";
-                texts["Advanced"] = "3. Advançado";
-                texts["Hard"] = "4. Difício";
+                texts["Advanced"] = "3. Avançado";
+                texts["Hard"] = "4. Difícil";
                 texts["Expert"] = "5. Perito";
                 texts["Challenge"] = "6. Desafio";
-                texts["Impossible"] = "7. Imposivel";
+                texts["Impossible"] = "7. Impossível";
                 texts["Custom"] = "-- Personalizado --";
                 texts["Free"] = "Especial: Grátis";
                 texts["FiveHundred"] = "Especial: ₡500.000 no início";
@@ -268,24 +268,24 @@ namespace DifficultyTuningMod
                 texts["INITIAL_MONEY"] = "Capital inicial";
                 texts["REWARD"] = "Recompensa";
 
-                texts["POLLUTION_RADIUS"] = "Raio Poluição";
-                texts["GROUND_POLLUTION"] = "Poluição do Solo";
-                texts["ONLY_POWER_WATER_GARBAGE"] = "*apenas de energia, instalações de água e de lixo";
+                texts["POLLUTION_RADIUS"] = "Raio de poluição";
+                texts["GROUND_POLLUTION"] = "Poluição do solo";
+                texts["ONLY_POWER_WATER_GARBAGE"] = "*Apenas de energia, instalações de água e de lixo";
 
                 texts["DEMAND"] = "Demanda";
                 texts["DEMAND_FORMULA"] = "*Fórmula: (Demanda + Compensação) * multiplicador";
                 texts["DEMAND_OFFSET"] = "Compensação";
                 texts["DEMAND_MULTIPLIER"] = "Multiplicador";
 
-                texts["TAGRET_LANDVALUE"] = "Valores-alvo do custo da terra para edifícios a subir de nível (Nível 2, 3, 4, 5)";
+                texts["TAGRET_LANDVALUE"] = "Valor alvo da terra para os edifícios subirem de nível (Nível 2, 3, 4, 5)";
                 texts["RESIDENTIAL"] = "Residenciais";
                 texts["COMMERCIAL"] = "Comerciais";
-                texts["TAGRET_SCORE"] = "Valores-alvo da pontuação serviço para edifícios a subir de nível (Nível 2, 3)";
+                texts["TAGRET_SCORE"] = "Pontuação alvo dos serviços para os edifícios subirem de nível (Nível 2, 3)";
                 texts["INDUSTRIAL"] = "Industriais";
                 texts["OFFICE"] = "Escritórios";
 
-                texts["POPULATION_TARGET_MULTIPLIER"] = "A população necessária para desbloquear marcos";
-                texts["MAX_SLOPE"] = "Maximum slope for roads, railroads and metro";
+                texts["POPULATION_TARGET_MULTIPLIER"] = "População requerida para desbloquear marcos";
+                texts["MAX_SLOPE"] = "Inclinação máx. para estradas, ferrovias etc.";
             }
             else if (selectedLanguage == "ru")
             {
