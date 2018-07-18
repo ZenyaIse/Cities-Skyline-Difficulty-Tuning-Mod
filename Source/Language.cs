@@ -245,7 +245,7 @@ namespace DifficultyTuningMod
                 texts["Normal"] = "2. Normal";
                 texts["Advanced"] = "3. Avançado";
                 texts["Hard"] = "4. Difícil";
-                texts["Expert"] = "5. Perito";
+                texts["Expert"] = "5. Especialista";
                 texts["Challenge"] = "6. Desafio";
                 texts["Impossible"] = "7. Impossível";
                 texts["Custom"] = "-- Personalizado --";
