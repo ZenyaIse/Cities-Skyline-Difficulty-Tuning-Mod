@@ -197,3 +197,6 @@ FakesAssemblies/
 
 # ACDSee projects
 *.acdc
+
+# My
+Screenshots/
