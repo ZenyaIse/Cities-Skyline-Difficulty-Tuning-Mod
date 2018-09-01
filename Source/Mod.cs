@@ -17,7 +17,7 @@ namespace DifficultyTuningMod
 
         public string Description
         {
-            get { return DTMLang.Text("MOD_DESCRIPTION") + " (2017/5/24)"; }
+            get { return DTMLang.Text("MOD_DESCRIPTION") + " (2018/9/1)"; }
         }
 
 

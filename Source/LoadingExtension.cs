@@ -1,6 +1,7 @@
 ﻿using ICities;
 using ColossalFramework;
 using DifficultyTuningMod.DifficultyOptions;
+using UnityEngine;
 
 namespace DifficultyTuningMod
 {
@@ -26,6 +27,8 @@ namespace DifficultyTuningMod
 
             PrefabsManager.UpdatePrefabs(false);
             NetManager.UpdateSlopes(false);
+
+            Debug.Log("DifficultyTuningMod loaded. Version 2018/9/1");
         }
 
         public override void OnLevelUnloading()
